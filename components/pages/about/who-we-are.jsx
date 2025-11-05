@@ -30,7 +30,7 @@ const WhoWeAre = () => {
                                     </div>
                                 </div>
                                 {/* The button can link to your main services page */}
-                                <Link className="btn-two" href="/corporate-services">Explore Our Services<i className="far fa-chevron-double-right"></i></Link>
+                                <Link className="btn-two" href="/services">Explore Our Services<i className="far fa-chevron-double-right"></i></Link>
                             </div>
                         </div>
                         <div className="col-xl-6 col-lg-5">

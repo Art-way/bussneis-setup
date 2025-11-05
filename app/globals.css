@@ -8,3 +8,79 @@
 @import "../public/assets/font/flaticon_conbix.css";
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap');
+/* --- START: Custom Cluster Navigation Styling (SVG Version) --- */
+
+/* Main container for spacing */
+.cluster__navigation {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    overflow: hidden; /* يمنع ظهور أي أشرطة تمرير غير مرغوب فيها */
+}
+
+/* The clickable card item */
+.cluster__navigation-item {
+    display: block;
+    text-decoration: none;
+    padding: 30px;
+    background-color: var(--color-white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Professional Hover Effect */
+.cluster__navigation-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    border-color: var(--primary-color-one);
+}
+
+/* Typography inside the card */
+.cluster__navigation-item h4 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.cluster__navigation-item:hover h4 {
+    color: var(--primary-color-one);
+}
+
+.cluster__navigation-item p {
+    font-size: 16px;
+    color: var(--text-color);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Arrow Styling inside the card */
+.cluster__navigation-item .cluster-arrow {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color-one);
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+.cluster__navigation-item:hover .cluster-arrow {
+    transform: translateX(8px);
+}
+
+/* Header Styling */
+.cluster__navigation .work__area-title h2 {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.cluster__navigation .work__area-title p {
+    font-size: 18px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- END: Custom Cluster Navigation Styling --- */

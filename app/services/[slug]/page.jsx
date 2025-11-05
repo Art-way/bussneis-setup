@@ -52,6 +52,48 @@ const RenderSection = ({ section, slug }) => {
                     </div>
                 </div>
             );
+                case 'clusterNavigation':
+    // بناء مصفوفة العناصر مع الفواصل الرسومية بينها
+    const clustersWithConnectors = section.clusters.reduce((acc, cluster, index) => {
+        // إضافة بطاقة العنصر الأساسية
+        acc.push(
+            <div className="col-xl-5 col-md-6 mb-30" key={cluster.link}>
+                <Link href={cluster.link} className="cluster__navigation-item">
+                    <h4>{cluster.title}</h4>
+                    <p>{cluster.description}</p>
+                    <span className="cluster-arrow">→</span>
+                </Link>
+            </div>
+        );
+
+        // إضافة فاصل رسومي بعد العنصر الأول في الصف على شاشات سطح المكتب
+        if (index % 2 === 0 && index < section.clusters.length - 1) {
+            acc.push(
+                <div key={`connector-${index}`} className="col-xl-2 col-md-0 d-none d-xl-flex cluster-connector-col">
+                  
+                </div>
+            );
+        }
+        
+        return acc;
+    }, []);
+
+    return (
+        <div className="cluster__navigation">
+            <div className="row mb-60">
+                <div className="col-xl-12">
+                    <div className="work__area-title t-center">
+                        <span className="subtitle-one">{section.subtitle || "Explore"}</span>
+                        <h2>{section.title}</h2>
+                        <p>{section.description}</p>
+                    </div>
+                </div>
+            </div>
+            <div className="row justify-content-center align-items-center">
+                {clustersWithConnectors}
+            </div>
+        </div>
+    );
         case 'stepByStep':
             return (
                 <div className="work__area">

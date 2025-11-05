@@ -9,7 +9,7 @@ const FooterTwo = () => {
             <div className="footer__two" data-background="assets/img/shape/footer-bg-1.png">
                 
                 {/* Main Footer Widgets - We removed the subscription area */}
-                <div className="container" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
+                <div className="container" style={{ paddingTop: '180px', paddingBottom: '80px' }}>
                     <div className="row">
 
                         {/* Column 1: About Widget */}
@@ -60,19 +60,19 @@ const FooterTwo = () => {
                                 {/* Using the post__item structure for a "nice format" as requested */}
                                 <div className="post__item">
                                     <div className="post__item-title">
-                                        <h6><Link href="/mainland-company-setup">Mainland Company Setup</Link></h6>
+                                        <h6><Link href="/services/mainland-company-formation">Mainland Company Setup</Link></h6>
                                         <span>Full access to the UAE local market.</span>
                                     </div>
                                 </div>
                                 <div className="post__item">
                                     <div className="post__item-title">
-                                        <h6><Link href="/free-zone-company-setup">Free Zone Company Setup</Link></h6>
+                                        <h6><Link href="/services/free-zone-company-formation">Free Zone Company Setup</Link></h6>
                                         <span>100% foreign ownership and tax benefits.</span>
                                     </div>
                                 </div>
                                 <div className="post__item">
                                     <div className="post__item-title">
-                                        <h6><Link href="/corporate-services">Corporate Services</Link></h6>
+                                        <h6><Link href="/services">Corporate Services</Link></h6>
                                         <span>Ongoing support for your business operations.</span>
                                     </div>
                                 </div>

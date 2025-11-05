@@ -5,7 +5,7 @@ import HeaderOne from "@/components/layout/headers/header-two";
 import BreadCrumb from "../common/breadcrumb";
 import FooterTwo from "@/components/layout/footers/footer-two";
 import ScrollToTop from "../common/scroll/scroll-to-top";
-
+import WhatsAppButton from "@/components/pages/common/whatsapp-button";
 const ContactUs = () => {
     // State for the contact form
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -160,6 +160,7 @@ const ContactUs = () => {
             <div className='all-footer'>
                 <FooterTwo />
             </div>
+             <WhatsAppButton />
             <ScrollToTop />
         </>
     );

@@ -27,7 +27,7 @@ const Consulting = () => {
                                 <span><i className="far fa-check"></i>Free Zones offer 100% ownership and tax benefits.</span>
                             </div>
                             {/* This button now links to your high-value comparison guide */}
-                            <Link className="btn-six" href="/mainland-vs-free-zone">Read Our Comparison Guide<i className="far fa-chevron-double-right"></i></Link>
+                            <Link className="btn-six" href="/blog/mainland-vs-free-zone-which-is-right-for-your-business">Read Our Comparison Guide<i className="far fa-chevron-double-right"></i></Link>
                         </div>
                     </div>
                 </div>

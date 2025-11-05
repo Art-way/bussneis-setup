@@ -11,7 +11,7 @@ const portfolioData = [
         title: 'Mainland Setup',
         subtitle: 'Market Access',
         image: image1, // Using the required imported image
-        link: '/mainland-company-setup',
+        link: '/services/mainland-company-formation',
         category: "business", // Kept for potential compatibility with filter pages
     },
     {        
@@ -19,7 +19,7 @@ const portfolioData = [
         title: 'Free Zone Setup',
         subtitle: '100% Ownership',
         image: image2, // Using the required imported image
-        link: '/free-zone-company-setup',
+        link: '/services/free-zone-company-formation',
         category: "business",
     },
     {        
@@ -27,7 +27,7 @@ const portfolioData = [
         title: 'Offshore Setup',
         subtitle: 'Asset Protection',
         image: image3, // Using the required imported image
-        link: '/offshore-company-setup',
+        link: '/services/offshore-company-formation',
         category: "corporate",
     },
     {        
@@ -35,7 +35,7 @@ const portfolioData = [
         title: 'Corporate Services',
         subtitle: 'Ongoing Support',
         image: image4, // Using the required imported image
-        link: '/corporate-services',
+        link: '/business-setup-services',
         category: "corporate",
     },
     // The original items using image5 and image6 are removed,

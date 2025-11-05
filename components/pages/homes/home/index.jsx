@@ -15,6 +15,7 @@ import ScrollToTop from "../../common/scroll/scroll-to-top";
 import CtaArea from "./cta"; // The CTA Area component was missing from the original layout
 import Video from "./video";
 import Testimonial from "./testimonial";
+import WhatsAppButton from "@/components/pages/common/whatsapp-button";
 const HomeTwo = ({addClass}) => {
     return (
         <>
@@ -36,6 +37,7 @@ const HomeTwo = ({addClass}) => {
             <Blog />
              <CtaArea />
             <FooterTwo />
+             <WhatsAppButton />
             <ScrollToTop addClass={addClass} />
         </>
     );
