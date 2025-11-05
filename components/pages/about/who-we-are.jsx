@@ -22,11 +22,11 @@ const WhoWeAre = () => {
                                 <div className="company__two-left-skill">
                                     <div className="company__two-left-skill-item">
                                         <h2><Count number={98} />%</h2>
-                                        <h6>Client Satisfaction Rate</h6>
+                                          <div className="counter-visual">Client Satisfaction Rate</div>
                                     </div>
                                     <div className="company__two-left-skill-item">
                                         <h2><Count number={40} />+</h2>
-                                        <h6>Free Zones Covered</h6>
+                                          <div className="counter-visual">Free Zones Covered</div>
                                     </div>
                                 </div>
                                 {/* The button can link to your main services page */}

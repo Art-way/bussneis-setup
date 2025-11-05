@@ -55,11 +55,11 @@ const BannerTwo = () => {
 									<div className="banner__two-content">
 										<b className="subtitle">Company Formation Specialists</b>
 										<span>Streamlined & Compliant</span>
-										<h1>Your Trusted Partner for Business Setup in the UAE</h1>
+										<h1 role="heading" aria-level="2">Your Trusted Partner for Business Setup in the UAE</h1>
 										<div className="banner__two-content-button">
 											<Link className="btn-five" href="/services">Explore Our Services<i className="far fa-chevron-double-right"></i></Link>
 										</div>
-										<img className="banner__two-image-shape-one" src="assets/img/shape/banner-1.png" alt="decorative shape" />
+										<img className="banner__two-image-shape-one" src="assets/img/shape/banner-1.png-" alt="decorative shape" />
 									</div>
 									<img className="banner__two-image-shape-two" src="assets/img/shape/banner-2.png" alt="decorative shape" />
 								</div>

@@ -63,7 +63,7 @@ const Services = () => {
                                             <div className="services__two-item-content-icon">
                                                 {data.icon}
                                             </div>
-                                            <h4><Link href={data.link}>{data.title}</Link></h4>
+                                            <h3><Link href={data.link}>{data.title}</Link></h3>
                                             <p>{data.description}</p>
                                             <Link className="simple-btn-2" href={data.link}>Read More<i className="far fa-chevron-double-right"></i></Link>
                                         </div>

@@ -43,10 +43,11 @@ const About = () => {
                             </div>
                             <div className="about__two-right-experience">
                                 <div className="about__two-right-experience-counter">
-                                    <h1><Count number={aboutData.count}/>+</h1>
+                                        <div className="counter-visual"><Count number={aboutData.count}/>+</div>
+
                                 </div>
                                 <div>
-                                    <h6>{aboutData.exp}</h6>
+                                    <h3>{aboutData.exp}</h3>
                                 </div>
                             </div>
                             {/* SIMPLIFIED BUTTON SECTION: Removed the specific author/avatar part */}

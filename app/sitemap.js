@@ -1,54 +1,57 @@
-// In: app/sitemap.js (The New, Intelligent Version)
+// In: app/sitemap.js
 
 import blogData from '@/components/data/blog-data';
 import allServicesData from '@/components/data/services-data';
-// --- 1. استيراد قائمة الروابط المختصرة ---
 import { getAllServiceSlugs } from '@/components/data/service-slugs.js';
+// --- 1. استيراد بيانات الفريق ---
+import teamData from '@/components/data/team-data';
 
 export default function sitemap() {
   const baseUrl = 'https://businesssetupuae.ae';
 
-  // --- 2. الحصول على قائمة الروابط المختصرة (مثل 'mainland-company-setup') ---
   const specialServiceSlugs = getAllServiceSlugs().map(item => item.source.replace('/', ''));
 
-  // الصفحات الثابتة (تبقى كما هي)
+  // الصفحات الثابتة
   const staticPages = [
     '/',
     '/about-us',
     '/contact',
     '/faq',
-    '/services', // الصفحة الرئيسية للخدمات
+    '/services',
+    '/testimonial',
     '/blog',
+    '/team', // --- 2. إضافة صفحة الفريق الرئيسية ---
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
   }));
 
-  // صفحات المدونة الديناميكية (تبقى كما هي)
+  // صفحات المدونة الديناميكية
   const blogPages = blogData.map((post) => ({
     url: `${baseUrl}/blog/${post.id}`,
     lastModified: new Date(post.dateModified).toISOString(),
   }));
 
-  // --- 3. بناء روابط الخدمات بذكاء ---
+  // بناء روابط الخدمات بذكاء
   const servicePages = allServicesData.map((service) => {
     let serviceUrl;
-
-    // التحقق إذا كانت الخدمة لها رابط مختصر
     if (specialServiceSlugs.includes(service.slug)) {
-      // إذا كان لها رابط مختصر، استخدمه
       serviceUrl = `${baseUrl}/${service.slug}`;
     } else {
-      // إذا لم يكن لها رابط مختصر، استخدم المسار الكامل
       serviceUrl = `${baseUrl}/services/${service.slug}`;
     }
-
     return {
       url: serviceUrl,
       lastModified: new Date().toISOString(),
     };
   });
   
+  // --- 3. بناء روابط صفحات أعضاء الفريق ---
+  const teamPages = teamData.map((member) => ({
+    url: `${baseUrl}/team/${member.id}`,
+    lastModified: new Date().toISOString(), // استخدام التاريخ الحالي
+  }));
+
   // دمج جميع الصفحات في خريطة واحدة
-  return [...staticPages, ...servicePages, ...blogPages];
+  return [...staticPages, ...servicePages, ...blogPages, ...teamPages];
 }

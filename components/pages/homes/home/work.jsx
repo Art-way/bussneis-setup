@@ -16,7 +16,7 @@ const Work = () => {
                     <div className="col-xl-3 col-sm-6 xl-mb-30">
                         <div className="work__area-item">
                             <span>01</span>
-                            <h6>Initial Consultation</h6>
+                            <h3 className="work-step-title">Initial Consultation</h3>
                             <p>We start by listening to your business goals to advise on the best path forward for your venture.</p>
                             <img className="work__area-item-arrow sm-display-n dark-n" src="assets/img/icon/arrow-1.png" alt="arrow shape" />
                             <img className="work__area-item-arrow sm-display-n light-n" src="assets/img/icon/arrow-1-dark.png" alt="arrow shape" />
@@ -25,7 +25,7 @@ const Work = () => {
                     <div className="col-xl-3 col-sm-6 sm-mb-30">
                         <div className="work__area-item">
                             <span>02</span>
-                            <h6>Jurisdiction & Structure</h6>
+                            <h3 className="work-step-title">Jurisdiction & Structure</h3>
                             <p>We help you choose the ideal setup: Mainland for local access, or Free Zone for 100% ownership.</p>
                             <img className="work__area-item-arrow xl-display-n dark-n" src="assets/img/icon/arrow-2.png" alt="arrow shape" />
                             <img className="work__area-item-arrow xl-display-n light-n" src="assets/img/icon/arrow-2-dark.png" alt="arrow shape" />
@@ -34,7 +34,7 @@ const Work = () => {
                     <div className="col-xl-3 col-sm-6 sm-mb-30">
                         <div className="work__area-item">
                             <span>03</span>
-                            <h6>License & Documentation</h6>
+                            <h3 className="work-step-title">License & Documentation</h3>
                             <p>Our expert team handles all the required paperwork and government approvals on your behalf.</p>
                             <img className="work__area-item-arrow xl-display-n dark-n" src="assets/img/icon/arrow-1.png" alt="arrow shape" />
                             <img className="work__area-item-arrow xl-display-n light-n" src="assets/img/icon/arrow-1-dark.png" alt="arrow shape" />
@@ -45,7 +45,7 @@ const Work = () => {
                     <div className="col-xl-3 col-sm-6">
                         <div className="work__area-item">
                             <span>04</span>
-                            <h6>Visa & Bank Account</h6>
+                            <h3 className="work-step-title">Visa & Bank Account</h3>
                             <p>We complete the process by securing your residence visa and corporate bank account.</p>
                         </div>
                     </div>

@@ -63,7 +63,7 @@ const Testimonial = () => {
                                                 <img src={data.avatar.src} alt="avatar" />
                                             </div>
                                             <div className="testimonial__area-item-client-title">
-                                                <h5>{data.name}</h5>
+                                                <h3 className="testimonial-client-name">{data.name}</h3>
                                                 <span className="text-eight">{data.position}</span>
                                             </div>
                                         </div>

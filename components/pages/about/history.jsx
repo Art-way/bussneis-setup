@@ -13,7 +13,8 @@ const History = () => {
                     <div className="col-xl-12">
                         <div className="company__history-title t-center">
                             <span className="subtitle-one">Our Journey</span>
-                            <h2>Milestones of Success & Expertise</h2>
+                            <h2>Milestones of Success</h2>
+                            <h3> & Expertise</h3>
                         </div>
                     </div>
                 </div>
@@ -29,7 +30,7 @@ const History = () => {
                                     <div className="company__history-area-item-right-content mb-50 xl-mb-30">
                                         <div className="company__history-area-item-right-content-date">
                                             <span>2014</span>
-                                            <h5>Foundation & Vision</h5>
+                                            <h4>Foundation & Vision</h4>
                                         </div>
                                         <p>Business Setup UAE was founded with a clear mission: to make company formation in the Emirates simple, fast, and transparent for entrepreneurs worldwide.</p>
                                     </div>
@@ -41,7 +42,7 @@ const History = () => {
                                     <div className="company__history-area-items-left-content mb-50 xl-mb-30">
                                         <div className="company__history-area-items-left-content-date">
                                             <span>2018</span>
-                                            <h5>Embracing VAT Implementation</h5>
+                                            <h4>Embracing VAT Implementation</h4>
                                         </div>
                                         <p>As the UAE introduced VAT, we expanded our services to include VAT registration and advisory, successfully guiding hundreds of clients through the new tax landscape.</p>
                                     </div>
@@ -63,7 +64,7 @@ const History = () => {
                                     <div className="company__history-area-item-right-content mb-50 xl-mb-30">
                                         <div className="company__history-area-item-right-content-date">
                                             <span>2020</span>
-                                            <h5>Navigating New Ownership Laws</h5>
+                                            <h4>Navigating New Ownership Laws</h4>
                                         </div>
                                         <p>We became leading advisors on the landmark law allowing 100% foreign ownership for mainland companies, helping investors maximize their opportunities.</p>
                                     </div>
@@ -75,7 +76,7 @@ const History = () => {
                                     <div className="company__history-area-items-left-content mb-50 xl-mb-30">
                                         <div className="company__history-area-items-left-content-date">
                                             <span>2023</span>
-                                            <h5>Corporate Tax Expertise</h5>
+                                            <h4>Corporate Tax Expertise</h4>
                                         </div>
                                         <p>With the introduction of Corporate Tax, we launched a dedicated tax advisory wing, solidifying our role as a full-service consultancy for our clients.</p>
                                     </div>
@@ -97,7 +98,7 @@ const History = () => {
                                     <div className="company__history-area-item-right-content">
                                         <div className="company__history-area-item-right-content-date">
                                             <span>Today</span>
-                                            <h5>A Legacy of Success</h5>
+                                            <h4>A Legacy of Success</h4>
                                         </div>
                                         <p>Having successfully registered over 1,200 companies, we continue our commitment to providing world-class service and expert guidance for all business setup needs in the UAE.</p>
                                     </div>

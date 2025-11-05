@@ -16,8 +16,7 @@ const Video = () => {
                         <div className="col-xl-9">
                             <div className="solution__area-title">
                                 <span className="subtitle-two">Unlock Your Potential</span>
-                                <h1>A Premier Business Hub, Your Gateway to Success.</h1>
-                                <Link className="btn-five" href="/contact">Book a Consultation<i className="far fa-chevron-double-right"></i></Link>
+<h2 className="solution-title-visual">A Premier Business Hub, Your Gateway to Success.</h2>                                <Link className="btn-five" href="/contact">Book a Consultation<i className="far fa-chevron-double-right"></i></Link>
                             </div>					
                         </div>
                         <div className="col-xl-3">

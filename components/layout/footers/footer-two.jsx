@@ -11,7 +11,7 @@ const FooterTwo = () => {
                 <div className="container" style={{ paddingTop: '80px', paddingBottom: '40px' }}>
                     <div className="row">
 
-                        {/* --- العمود الأول: About Widget (معدّل ليأخذ مساحة أقل) --- */}
+                        {/* --- العمود الأول: About Widget --- */}
                         <div className="col-lg-4 col-md-6 mb-40">
                             <div className="footer__two-widget">
                                 <div className="footer__two-widget-about">
@@ -26,62 +26,64 @@ const FooterTwo = () => {
                             </div>
                         </div>
 
-                        {/* --- العمود الثاني: Our Services (باستخدام تنسيق القالب الأصلي) --- */}
+                        {/* --- العمود الثاني: Our Services --- */}
                         <div className="col-lg-3 col-md-6 mb-40">
                             <div className="footer__two-widget footer-border">
-                                <h4>Our Services</h4>
+                                {/* --- FIXED: h4 -> h2 --- */}
+                                <h2 className="footer-widget-title">Our Services</h2>
                                 <div className="post__item">
                                     <div className="post__item-title">
-                                        <h6><Link href="/uae-mainland-company-setup">Mainland Setup</Link></h6>
+                                        {/* --- FIXED: h6 -> h3 --- */}
+                                        <h3 className="footer-item-title"><Link href="/uae-mainland-company-setup">Mainland Setup</Link></h3>
                                         <span>Full UAE Market Access</span>
                                     </div>
                                 </div>
                                 <div className="post__item">
                                     <div className="post__item-title">
-                                        <h6><Link href="/uae-free-zones">Free Zone Setup</Link></h6>
+                                        <h3 className="footer-item-title"><Link href="/uae-free-zones">Free Zone Setup</Link></h3>
                                         <span>100% Foreign Ownership</span>
                                     </div>
                                 </div>
                                 <div className="post__item">
                                     <div className="post__item-title">
-                                        <h6><Link href="/services/pro-services-uae">PRO Services</Link></h6>
+                                        <h3 className="footer-item-title"><Link href="/services/pro-services-uae">PRO Services</Link></h3>
                                         <span>Visas & Gov Liaison</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
-                        {/* --- العمود الثالث: Quick Links (باستخدام تنسيق القالب الأصلي) --- */}
+                        {/* --- العمود الثالث: Quick Links --- */}
                         <div className="col-lg-2 col-md-6 mb-40">
                             <div className="footer__two-widget footer-border">
-                                <h4>Quick Links</h4>
+                                <h2 className="footer-widget-title">Quick Links</h2>
                                 <div className="post__item">
                                     <div className="post__item-title">
-                                        <h6><Link href="/about-us">About Us</Link></h6>
+                                        <h3 className="footer-item-title"><Link href="/about-us">About Us</Link></h3>
                                     </div>
                                 </div>
                                 <div className="post__item">
                                     <div className="post__item-title">
-                                        <h6><Link href="/blog">Blog</Link></h6>
+                                        <h3 className="footer-item-title"><Link href="/blog">Blog</Link></h3>
                                     </div>
                                 </div>
                                 <div className="post__item">
                                     <div className="post__item-title">
-                                        <h6><Link href="/contact">Contact Us</Link></h6>
+                                        <h3 className="footer-item-title"><Link href="/contact">Contact Us</Link></h3>
                                     </div>
                                 </div>
                                 <div className="post__item">
                                     <div className="post__item-title">
-                                        <h6><Link href="/faq">FAQs</Link></h6>
+                                        <h3 className="footer-item-title"><Link href="/faq">FAQs</Link></h3>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
-                        {/* --- العمود الرابع: Head Office (يبقى كما هو) --- */}
+                        {/* --- العمود الرابع: Head Office --- */}
                         <div className="col-lg-3 col-md-6 mb-40">
                             <div className="footer__two-widget footer-border">
-                                <h4>Head Office</h4>
+                                <h2 className="footer-widget-title">Head Office</h2>
                                 <div className="footer__two-widget-location">
                                     <div className="footer__two-widget-location-item">
                                         <div className="footer__two-widget-location-item-icon">
@@ -91,7 +93,8 @@ const FooterTwo = () => {
                                             <p>Office 2008, Iris Bay Tower, Business Bay, Dubai, UAE</p>
                                         </div>
                                     </div>
-                                    <h6 className="mt-20">Branch Office</h6>
+                                    {/* --- FIXED: h6 -> h3 --- */}
+                                   <h2 className="footer-widget-title">Branch Office</h2>
                                     <div className="footer__two-widget-location-item">
                                         <div className="footer__two-widget-location-item-icon">
                                             <i className="far fa-map-marker-alt"></i>
@@ -107,7 +110,7 @@ const FooterTwo = () => {
                     </div>
                 </div>
 
-                {/* --- قسم حقوق النشر (يبقى كما هو) --- */}
+                {/* --- قسم حقوق النشر --- */}
                 <div className="copyright__two">
                     <div className="container">
                         <div className="row">

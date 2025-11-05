@@ -35,7 +35,7 @@ const Team = () => {
                                 </div>
                             </div>
                             <div className="team__area-item-content">
-                                <h5><Link href={`/team/${data.id}`}>{data.name}</Link></h5>
+                                <h3 className="team-member-name"><Link href={`/team/${data.id}`}>{data.name}</Link></h3>
                                 <span>{data.position}</span>
                             </div>
                         </div>

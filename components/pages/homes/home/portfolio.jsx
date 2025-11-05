@@ -10,6 +10,7 @@ const Portfolio = () => {
     };
 
     return (
+        
         <div className="portfolio dark__image">
         {portfolioItem?.map((data, index) => (
             <div
@@ -20,11 +21,11 @@ const Portfolio = () => {
                 <img src={data.image.src} alt="image" />
                 <div className="portfolio-item-inner">
                     <div className="portfolio-item-inner-title">
-                        <h4><Link href={`/portfolio/${data.id}`}>{data.title}</Link></h4>
+                        <h3><Link href={`${data.link}`}>{data.title}</Link></h3>
                         <span>{data.subtitle}</span>
                     </div>
                     <div className="portfolio-item-inner-icon">
-                        <Link href={`${data.id}`}><i className="fal fa-long-arrow-up"></i></Link>
+                        <Link href={`${data.link}`}><i className="fal fa-long-arrow-up"></i></Link>
                     </div>
                 </div>
             </div>

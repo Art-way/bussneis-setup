@@ -8098,7 +8098,7 @@ FAQ CSS
 .faq__area-item:last-child {
   margin: 0;
 }
-.faq__area-item h6 {
+.faq__area-item h3 {
   font-size: 18px;
   line-height: 28px;
   padding: 16px 0;
@@ -11732,7 +11732,7 @@ Error CSS
 
 /* New Dark CTA Block */
 .cta-block-dark {
-    background-color: #2d2d2d;
+    background-color: #1a1a1a;
     padding: 80px 0;
     color: #fff;
 }
