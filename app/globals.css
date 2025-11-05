@@ -84,3 +84,45 @@
 }
 
 /* --- END: Custom Cluster Navigation Styling --- */
+
+/* --- START: Mobile Fix for Homepage Banner Arrows (Robust Version) --- */
+
+/* This code will only apply to screens with a width of 767px or less */
+@media (max-width: 767px) {
+
+    /* 
+     *  By using a more specific selector, we ensure this rule overrides the original template's CSS.
+     *  We are targeting the arrow container inside the main banner container.
+    */
+    .banner__two .banner__two-arrow {
+        /* 
+         *  Instead of changing 'top' which can be tricky, 
+         *  we use 'transform' to move the arrows down.
+         *  This is a more reliable method.
+        */
+        transform: translateY(100px); /* Adjust this value (e.g., 80px, 120px) to position it perfectly */
+
+        /* We also remove any 'top' and vertical transform from the original style */
+        top: auto !important;
+        margin-top: 20px; /* Adds some space from the top edge */
+    }
+
+    /* Reduce the size of the arrows on mobile to save space */
+    .banner__two .banner__two-arrow-prev,
+    .banner__two .banner__two-arrow-next {
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+    }
+}
+
+
+
+/* --- END: Mobile Fix for Homepage Banner Arrows (Robust Version) --- */
+
+
+.footer__two .all_f_logo {
+    display: block !important;
+}
+
+

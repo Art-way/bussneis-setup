@@ -20,7 +20,7 @@ const HomeTwo = ({addClass}) => {
     return (
         <>
             {/* Updated SEO Page Title */}
-            <SEO pageTitle="Business Setup in Dubai, UAE | Company Formation Services" />
+            <SEO pageTitle="Business Setup in Dubai, UAE" />
             
             <SwitchTab addClass={addClass} />
             <HeaderTwo />
