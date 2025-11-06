@@ -1,12 +1,12 @@
 // In: app/services/[slug]/page.jsx
 
-// This is the Server Component.
+// This is the final, corrected Server Component for service pages.
 
 import allServicesData from "@/components/data/services-data.jsx"; 
 import { notFound } from 'next/navigation';
 import ServiceClientPage from './service-client-page';
 
-// --- UPDATED: generateMetadata now only handles standard SEO tags ---
+// This function handles the basic SEO meta tags. It doesn't need the full valid schema.
 export async function generateMetadata({ params }) {
   const service = allServicesData.find((s) => s.slug === params.slug);
 
@@ -20,30 +20,47 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: `/services/${service.slug}`,
     },
-    // The "other" key for schema has been REMOVED from here.
   };
 }
 
-// This is the main Page component
+
 const Page = ({ params }) => {
-  // 1. Fetch the data on the server
   const serviceContent = allServicesData.find((service) => service.slug === params.slug);
 
   if (!serviceContent) {
     notFound();
   }
 
-  // --- ADDED: We create the schema object here to inject it directly ---
-  const serviceSchema = serviceContent.schema;
+  // --- AUTOMATIC SCHEMA CORRECTION LOGIC ---
+  // 1. Create a deep copy of the schema to safely modify it.
+  const correctedSchema = JSON.parse(JSON.stringify(serviceContent.schema));
 
-  // 3. Render the Client Component and inject the schema script alongside it
+  // 2. If a 'review' object exists, add the required 'itemReviewed' field to it.
+  if (correctedSchema.review) {
+    correctedSchema.review.itemReviewed = {
+      "@type": "Service",
+      "name": correctedSchema.name // It uses the service name from the schema itself.
+    };
+  }
+
+  // 3. If an 'aggregateRating' object exists, add the required 'itemReviewed' field to it.
+  if (correctedSchema.aggregateRating) {
+    correctedSchema.aggregateRating.itemReviewed = {
+      "@type": "Service",
+      "name": correctedSchema.name
+    };
+  }
+  // --- END OF CORRECTION LOGIC ---
+
   return (
     <>
-      {/* This script tag will be rendered on the server in the final HTML */}
+      {/* 4. Inject the new, CORRECTED schema into the page. */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(correctedSchema) }}
       />
+      
+      {/* The client component receives the original, unmodified data for display purposes. */}
       <ServiceClientPage serviceContent={serviceContent} />
     </>
   );
