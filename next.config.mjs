@@ -6,6 +6,7 @@ const nextConfig = {
   async rewrites() {
     return getAllServiceSlugs();
   },
+  
 };
 
 export default nextConfig;
