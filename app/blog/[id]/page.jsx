@@ -1,67 +1,97 @@
 // In: app/blog/[id]/page.jsx
 
-"use client";
+// This is the Server Component for a single blog post.
 
-import { useParams, useRouter } from "next/navigation";
 import blogData from '@/components/data/blog-data';
-import BlogDetails from '@/components/pages/blogs/blog-details';
+import { notFound } from 'next/navigation';
+import BlogDetailsClient from './blog-details-client'; // Import the new client component
 
-const BlogDetail = () => {
-    const params = useParams();
-    const router = useRouter();
-    const siteDomain = "https://businesssetupuae.ae"; // هذا هو نطاق موقعك
+// --- This function generates dynamic SEO & Metadata on the server ---
+export async function generateMetadata({ params }) {
+  const post = blogData.find((blog) => blog.id === params.id);
+  if (!post) { notFound(); }
 
-    const singleData = blogData.find((blog) => blog.id === params.id);
-
-    if (!singleData) {
-        if (typeof window !== 'undefined') {
-            router.push("/404-error");
-        }
-        return null;
-    }
-
-    // --- بناء سكيما SEO المثالية ---
-    const schema = {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": `${siteDomain}/blog/${singleData.id}`
+  return {
+    title: post.title,
+    description: post.summary, // Use the summary for the meta description
+    alternates: {
+      canonical: `/blog/${post.id}`,
+    },
+    // --- ADDED: Open Graph tags for better social sharing ---
+    openGraph: {
+      title: post.title,
+      description: post.summary,
+      url: `https://businesssetupuae.ae/blog/${post.id}`,
+      siteName: 'Business Setup UAE',
+      images: [
+        {
+          url: `https://businesssetupuae.ae${post.image.src}`, // Must be an absolute URL
+          width: 800,
+          height: 600,
         },
-        "headline": singleData.title,
-        "description": singleData.summary,
-        "image": `${siteDomain}${singleData.image.src}`, // يجب أن يكون رابط الصورة كاملاً
+      ],
+      type: 'article',
+      publishedTime: post.datePublished,
+      modifiedTime: post.dateModified,
+      authors: [post.author],
+    },
+  };
+}
+
+
+const Page = ({ params }) => {
+  // 1. Fetch data on the server
+  const singleData = blogData.find((blog) => blog.id === params.id);
+  if (!singleData) { notFound(); }
+
+  // 2. --- Build the definitive BlogPosting Schema on the server ---
+  const siteDomain = "https://businesssetupuae.ae";
+  const blogPostSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `${siteDomain}/blog/${singleData.id}`
+    },
+    "headline": singleData.title,
+    "description": singleData.summary,
+    "image": `${siteDomain}${singleData.image.src}`, // Full image URL
+    "author": {
+        "@type": "Person",
+        "name": singleData.author
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Business Setup UAE",
+        "logo": {
+            "@type": "ImageObject",
+            "url": `${siteDomain}/assets/img/logo-1.png`
+        }
+    },
+    "datePublished": singleData.datePublished,
+    "dateModified": singleData.dateModified,
+    "commentCount": singleData.comments.length,
+    "comment": singleData.comments.map(comment => ({
+        "@type": "Comment",
         "author": {
             "@type": "Person",
-            "name": singleData.author
+            "name": comment.author
         },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Business Setup UAE",
-            "logo": {
-                "@type": "ImageObject",
-                "url": `${siteDomain}/assets/img/logo-1.png` // رابط شعار موقعك كاملاً
-            }
-        },
-        "datePublished": singleData.datePublished,
-        "dateModified": singleData.dateModified,
-        // --- إضافة سكيما التعليقات ---
-        "commentCount": singleData.comments.length,
-        "comment": singleData.comments.map(comment => ({
-            "@type": "Comment",
-            "author": {
-                "@type": "Person",
-                "name": comment.author
-            },
-            "datePublished": comment.date,
-            "text": comment.text
-        }))
-    };
+        "datePublished": comment.date,
+        "text": comment.text
+    }))
+  };
 
-    // تمرير البيانات والسكيما إلى المكون المسؤول عن العرض
-    return (
-        <BlogDetails singleData={singleData} schema={schema} />
-    );
+  // 3. Render the page, injecting the schema and passing data to the client component
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostSchema) }}
+      />
+      <BlogDetailsClient singleData={singleData} />
+    </>
+  );
 };
 
-export default BlogDetail;
+export default Page;
