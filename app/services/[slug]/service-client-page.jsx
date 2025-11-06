@@ -13,7 +13,6 @@ import { useState } from 'react';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import serviceListingData from "@/components/data/service-listing-data.jsx";
-import Head from 'next/head';
 
 // Intelligent Section Renderer (This stays inside the client component)
 const RenderSection = ({ section, slug }) => {
@@ -334,33 +333,11 @@ const ServiceClientPage = ({ serviceContent }) => {
     const router = useRouter();
 
     if (!serviceContent && typeof window !== 'undefined') {
-        router.push('/404-error');
+        router.push('/4-error');
         return null;
     }
     
-    // Fallback in case serviceContent is temporarily null during rendering
-    if (!serviceContent) {
-        return null;
-    }
-
-    // Extract the schema from the props
-    const serviceSchema = serviceContent.schema;
-
-    return (
-        <>
-            {/* Inject the schema script into the head of the document */}
-            <Head>
-                <script
-                    type-="application/ld+json" // The dash is intentional to avoid JSX parsing issues, it renders correctly
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-                    key="service-schema" // A unique key is good practice
-                />
-            </Head>
-
-            {/* Render the rest of your page content */}
-            <ServiceTemplatePage serviceContent={serviceContent} />
-        </>
-    );
+    return <ServiceTemplatePage serviceContent={serviceContent} />;
 };
 
 export default ServiceClientPage;
