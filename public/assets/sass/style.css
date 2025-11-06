@@ -11167,7 +11167,7 @@ All Side Bar CSS
 }
 .all__sidebar-item-post .post__item {
   margin-bottom: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   border-bottom: 1px solid var(--border-color-3);
 }
 .all__sidebar-item-post .post__item:last-child {

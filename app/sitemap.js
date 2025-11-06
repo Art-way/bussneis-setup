@@ -21,6 +21,9 @@ export default function sitemap() {
     '/testimonial',
     '/blog',
     '/team', // --- 2. إضافة صفحة الفريق الرئيسية ---
+     '/privacy-policy', // <-- ADD THIS
+    '/terms-and-conditions', // <-- AND ADD THIS
+    '/pricing-plans',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),

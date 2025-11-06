@@ -174,7 +174,7 @@ const blogData = [
                     <li><strong>Emirates ID Biometrics & Card:</strong> The fee for capturing your data and issuing the official ID card.</li>
                     <li><strong>Visa Stamping:</strong> The final step where the residence visa is placed in your passport.</li>
                 </ul>
-                For a detailed breakdown of these specific costs, see our dedicated guide to <a href="/blog/uae-residence-visa-costs-breakdown">UAE residence visa costs</a>.
+                For a detailed breakdown of these specific costs, see our dedicated guide to <a href="/uae-residence-visas">UAE residence visa costs</a>.
             </li>
 
             <li style="margin-bottom: 20px;">
