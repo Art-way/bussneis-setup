@@ -1,0 +1,844 @@
+@import 'react-modal-video/css/modal-video.min.css';
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import "swiper/css/bundle";
+@import "../public/assets/css/animate.css";
+@import "../public/assets/css/fontawesome.css";
+@import "../public/assets/css/meanmenu.min.css";
+@import "../public/assets/sass/style.css";
+@import "../public/assets/font/flaticon_conbix.css";
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap');
+/* --- START: Custom Cluster Navigation Styling (SVG Version) --- */
+
+/* Main container for spacing */
+.cluster__navigation {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    overflow: hidden; /* يمنع ظهور أي أشرطة تمرير غير مرغوب فيها */
+}
+
+/* The clickable card item */
+.cluster__navigation-item {
+    display: block;
+    text-decoration: none;
+    padding: 30px;
+    background-color: var(--color-white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Professional Hover Effect */
+.cluster__navigation-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    border-color: var(--primary-color-one);
+}
+
+/* Typography inside the card */
+.cluster__navigation-item h4 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.cluster__navigation-item:hover h4 {
+    color: var(--primary-color-one);
+}
+
+.cluster__navigation-item p {
+    font-size: 16px;
+    color: var(--text-color);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Arrow Styling inside the card */
+.cluster__navigation-item .cluster-arrow {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color-one);
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+.cluster__navigation-item:hover .cluster-arrow {
+    transform: translateX(8px);
+}
+
+/* Header Styling */
+.cluster__navigation .work__area-title h2 {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.cluster__navigation .work__area-title p {
+    font-size: 18px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- END: Custom Cluster Navigation Styling --- */
+
+/* --- START: Mobile Fix for Homepage Banner Arrows (Robust Version) --- */
+
+/* This code will only apply to screens with a width of 767px or less */
+@media (max-width: 767px) {
+
+    /* 
+     *  By using a more specific selector, we ensure this rule overrides the original template's CSS.
+     *  We are targeting the arrow container inside the main banner container.
+    */
+    .banner__two .banner__two-arrow {
+        /* 
+         *  Instead of changing 'top' which can be tricky, 
+         *  we use 'transform' to move the arrows down.
+         *  This is a more reliable method.
+        */
+        transform: translateY(100px); /* Adjust this value (e.g., 80px, 120px) to position it perfectly */
+
+        /* We also remove any 'top' and vertical transform from the original style */
+        top: auto !important;
+        margin-top: 20px; /* Adds some space from the top edge */
+    }
+
+    /* Reduce the size of the arrows on mobile to save space */
+    .banner__two .banner__two-arrow-prev,
+    .banner__two .banner__two-arrow-next {
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+    }
+}
+
+
+
+/* --- END: Mobile Fix for Homepage Banner Arrows (Robust Version) --- */
+
+
+.footer__two .all_f_logo {
+    display: block !important;
+}
+
+
+.about__two-right-experience-counter .counter-visual {
+    /* These values are copied from the original template's h1 style */
+    font-size: 70px;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--heading-color);
+    margin-bottom: 0;
+}
+
+
+.solution__area-title .solution-title-visual {
+    /* These values are typical for a large hero heading like this */
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 1.2;
+    color:#FFFFFF;; /* Assuming the text is white on a dark background */
+    margin-bottom: 25px; /* Adjust spacing as needed */
+}
+
+/* On smaller screens, reduce the font size */
+@media (max-width: 767px) {
+    .solution__area-title .solution-title-visual {
+        font-size: 38px;
+    }
+}
+
+.work__area-item .work-step-title {
+    /* These styles are designed to match the original h6 appearance */
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-heading-color);
+    margin-bottom: 10px;
+    line-height: 30px;
+    transition: color 0.4s;
+    font-family: var(--heading-font);
+}
+
+/* Optional: Add a hover effect for better user experience */
+.work__area-item:hover .work-step-title {
+    color: var(--primary-color-one);
+}
+
+/* --- END: Styling for H3 in Work Process Section --- */
+
+/* --- START: Styling for H3 in Homepage Team Section --- */
+
+.team__area-item-content .team-member-name {
+    /* These styles are copied exactly from your screenshot for h5 */
+    font-size: 22px;
+    line-height: 32px;
+    padding: 0;
+    margin: 0;
+    font-family: var(--heading-font);
+    font-weight: 700;
+    margin-bottom: 5px; /* Adds a small space above the 'position' text */
+}
+
+/* We also need to style the link inside the h3 */
+.team__area-item-content .team-member-name a {
+    color: var(--text-heading-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Add a hover effect for better user experience */
+.team__area-item:hover .team-member-name a {
+    color: var(--primary-color-one);
+}
+
+/* --- END: Styling for H3 in Homepage Team Section --- */
+
+/* --- START: Styling for H3 in Homepage Testimonial Section --- */
+
+.testimonial__area-item-client-title .testimonial-client-name {
+    /* These styles are copied exactly from your screenshot for h5 */
+    font-size: 22px;
+    line-height: 32px;
+    padding: 0;
+    margin: 0;
+    color: var(--text-heading-color);
+    font-family: var(--heading-font);
+    font-weight: 700;
+
+    /* Add a small space below the name, before the position */
+    margin-bottom: 4px; 
+}
+
+/* --- END: Styling for H3 in Homepage Testimonial Section --- */
+
+
+/* --- START: Styling for H3 in Homepage Blog Section --- */
+
+.blog__two-item-content .blog-card-title {
+    /* These styles are copied exactly from your screenshot for h4 */
+    font-size: 24px;
+    line-height: 34px;
+    padding: 0;
+    margin: 0;
+    font-family: var(--heading-font);
+    font-weight: 700;
+    
+    /* This creates space between the title and the "Read More" button */
+    margin-bottom: 20px;
+}
+
+/* We also need to style the link inside the h3 */
+.blog__two-item-content .blog-card-title a {
+    color: var(--text-heading-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Add a hover effect for better user experience */
+.blog__two-item:hover .blog-card-title a {
+    color: var(--primary-color-one);
+}
+
+/* --- END: Styling for H3 in Homepage Blog Section --- */
+
+/* --- START: Styling for Semantic Footer Headings --- */
+
+/* 
+ * Styling for the new H2 column titles.
+ * Based on your screenshot for H4, with white color.
+*/
+.footer__two-widget .footer-widget-title {
+    font-size: 24px;
+    line-height: 34px;
+    padding: 0;
+    margin: 0 0 30px 0; /* Added margin-bottom for spacing */
+    color: #FFFFFF; /* Explicit white color as requested */
+    font-family: var(--heading-font);
+    font-weight: 700;
+}
+
+/* 
+ * Styling for the new H3 item titles.
+ * Based on the typical style of H6 in the original template.
+*/
+.footer-item-title {
+    font-size: 16px; /* Typical size for h6 */
+    line-height: 1.2;
+    padding: 0;
+    margin: 0;
+    font-family: var(--heading-font);
+    font-weight: 600; /* Slightly less bold than h2 */
+}
+
+/* Styling for the links inside the new H3 titles */
+.footer-item-title a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for the links */
+.footer-item-title a:hover {
+    color: var(--primary-color-one);
+}
+
+/* --- END: Styling for Semantic Footer Headings --- */
+
+
+
+
+
+
+/* --- START: Service Page Template Fixes & Redesign --- */
+
+/* 
+==================================================
+    1. Redesign for Intro Section Form
+==================================================
+*/
+.intro-form {
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    border: 1px solid var(--border-color);
+}
+.dark-mode .intro-form {
+    background-color: #1f2124; /* لون أغمق قليلاً للخلفية في الوضع الداكن */
+    border-color: #333;
+}
+.intro-form h3 {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--heading-color);
+}
+.intro-form p {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+.intro-form input,
+.intro-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+.intro-form button.btn-one {
+    width: 100%;
+    justify-content: center;
+}
+
+/* 
+==================================================
+    2. Redesign for Icon Grid ("Why Choose Us" section)
+==================================================
+*/
+.solutions__two.redesigned-grid {
+    background-color: #f7f8fa; /* خلفية رمادية فاتحة للقسم كله */
+    padding: 80px 0;
+    border-radius: 10px;
+}
+.dark-mode .solutions__two.redesigned-grid {
+    background-color: #1a1c1e;
+}
+.solutions__two.redesigned-grid .solutions__two-item {
+    background-color: var(--color-white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    transition: all 0.3s ease;
+}
+.solutions__two.redesigned-grid .solutions__two-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color-one);
+}
+.solutions__two.redesigned-grid .solutions__two-item-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgba(255, 94, 22, 0.1); /* لون خلفية الأيقونة (برتقالي شفاف) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+}
+.solutions__two.redesigned-grid .solutions__two-item-icon i {
+    font-size: 32px !important;
+    color: var(--primary-color-one);
+}
+.solutions__two.redesigned-grid .solutions__two-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.work__area .table-responsive {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    
+    /* إطار خارجي رمادي فاتح */
+    border: 1px solid #e5e7eb; 
+    
+    /* زخرفة برتقالية عريضة في الأعلى */
+    border-top: 4px solid #ffa600; 
+}
+
+/* 
+==================================================
+    2. إزالة تنسيقات Bootstrap القديمة
+==================================================
+*/
+
+
+/* 
+==================================================
+    3. رأس الجدول (طلبك للنص البرتقالي)
+==================================================
+*/
+.work__area thead th {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 16px 24px;
+    text-align: center;
+    white-space: nowrap;
+    
+    /* النص باللون البرتقالي */
+    color: #f29500;; 
+    
+    background-color: #ffffff; /* خلفية رمادية فاتحة جداً */
+   
+}
+
+/* 
+==================================================
+    4. جسم الجدول (tbody)
+==================================================
+*/
+.work__area tbody td {
+    font-size: 15px;
+    color: #3e424a;
+    padding: 16px 24px;
+    vertical-align: middle;
+    border-top: 1px solid #e5e7eb;
+    background-color: #ffffff; /* خلفية بيضاء لجميع الصفوف */
+}
+
+.work__area tbody tr td:first-child {
+    font-weight: 800;
+    color: #392b02;
+}
+
+/* تأثير بسيط عند تمرير الماوس */
+.work__area tbody tr:hover td {
+    background-color: #faea10;
+}
+
+/* 
+==================================================
+    5. حل مشكلة الوضع الداكن
+==================================================
+*/
+.dark-mode .work__area .table-responsive {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-color: #374151; /* حدود أغمق */
+    border-top-color: var(--primary-color-one); /* الحفاظ على الزخرفة البرتقالية */
+}
+
+.dark-mode .work__area thead th {
+    color: #f7b034; /* يبقى النص برتقالياً */
+    background-color: #1f2937; /* خلفية رأس الجدول داكنة */
+    border-color: #374151;
+}
+
+.dark-mode .work__area tbody td {
+    color: #ffffff; /* نص أفتح */
+    background-color: #111827; /* خلفية الصفوف داكنة */
+    border-color: #111827;
+}
+
+.dark-mode .work__area tbody tr td:first-child {
+    color: #e5e7eb;
+}
+
+.dark-mode .work__area tbody tr:hover td {
+    background-color: #4e627f; /* لون أفتح قليلاً عند التمرير */
+}
+
+@media (max-width: 767px) {
+    .work__area .table-responsive {
+        /* On mobile, remove the outer border to save space */
+        border: none;
+        box-shadow: none;
+    }
+
+    .work__area thead th {
+        /* Reduce header font size */
+        font-size: 14px;
+        
+        /* Reduce padding to make columns narrower */
+        padding: 12px 10px;
+    }
+
+    .work__area tbody td {
+        /* Reduce body font size */
+        font-size: 14px;
+        
+        /* Reduce padding to make columns narrower */
+        padding: 12px 10px;
+
+        /* Allow long words to break to prevent horizontal scrolling */
+        word-break: break-word;
+    }
+}
+
+/* --- END: Service Page Template Fixes & Redesign --- */
+
+
+
+/* --- START: Full Redesign for CTA Block (FIXED Z-INDEX) --- */
+
+/* 
+==================================================
+    1. Main Block Styling
+==================================================
+*/
+.cta-block-dark {
+   
+    padding: 60px 0;
+    
+    /* حواف علوية منحنية فقط */
+    border-top-left-radius: 90px;
+    border-top-right-radius: 110px;
+    
+    /* هذا هو الإصلاح الرئيسي لمشكلة التداخل */
+    position: relative;
+    z-index: 2; /* تأكد من أنه تحت الأزرار العائمة (التي لها z-index أعلى) */
+
+    margin-top: -40px; /* يسحب القسم للأعلى قليلاً ليتداخل مع الفراغ الأبيض الذي فوقه */
+    margin-bottom: -1px; /* يضمن الالتصاق بالفوتر */
+}
+
+/* 
+==================================================
+    2. Typography Styling
+==================================================
+*/
+.cta-block-dark .cta-title {
+    color: #FFFFFF;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+.cta-block-dark .cta-description {
+    color: #dcdce0;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 90%; /* يمنع النص من الامتداد بشكل كبير */
+}
+
+/* 
+==================================================
+    3. Special Button Styling
+==================================================
+*/
+.btn-cta-special {
+    display: inline-block;
+    background-color: var(--primary-color-one);
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    font-weight: 700;
+}
+
+.btn-cta-special:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-cta-special span {
+    display: block;
+    line-height: 1.2;
+    font-size: 14px;
+}
+.btn-cta-special span:first-child {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+/* 
+==================================================
+    4. Mobile Responsiveness
+==================================================
+*/
+@media (max-width: 991px) {
+    .cta-block-dark .col-lg-8,
+    .cta-block-dark .col-md-7 {
+        text-align: center;
+    }
+    .cta-block-dark .cta-description {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .cta-block-dark .col-lg-4,
+    .cta-block-dark .col-md-5 {
+        text-align: center !important;
+        margin-top: 30px;
+    }
+    .cta-block-dark .cta-title {
+        font-size: 28px;
+    }
+}
+
+/* --- END: Full Redesign for CTA Block --- */
+
+
+
+
+/* --- START: Transparent Gradient Background for Service Pages --- */
+
+.service-page-wrapper {
+    position: relative; /* ضروري لتحديد موضع العنصر الزائف */
+    overflow: hidden;   /* يمنع أي عناصر زائدة من الظهور */
+}
+
+/* 
+ * نستخدم العنصر الزائف ::before لإنشاء طبقة خلفية منفصلة.
+ * هذا يضمن أنها ستكون دائماً خلف المحتوى.
+*/
+.service-page-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* 
+     * --- هذا هو كود الخلفية المتدرجة ---
+     * linear-gradient يبدأ من الأعلى (to bottom).
+     * اللون الأول: برتقالي شفاف جداً (rgba) في الأعلى.
+     * اللون الثاني: شفاف تماماً في الأسفل.
+     * يمكنك تعديل الألوان والشفافية كما تريد.
+    */
+    background: linear-gradient(
+        to bottom, 
+        rgba(224, 223, 223, 0.2), /* لون برتقالي (لون موقعك الأساسي) بشفافية 5% */
+        rgba(255, 94, 22, 0)      /* شفاف تماماً */
+    );
+    
+    /* نضع الخلفية خلف كل المحتوى */
+    z-index: -1; 
+}
+
+/* 
+ * التوافق مع الوضع الداكن: 
+ * يمكننا تغيير الخلفية قليلاً في الوضع الداكن إذا أردنا.
+ * هنا سنجعلها أغمق قليلاً وأكثر تشبعاً.
+*/
+.dark-mode .service-page-wrapper::before {
+    background: linear-gradient(
+        to bottom, 
+        rgba(255, 94, 22, 0.1),  /* شفافية 10% في الوضع الداكن */
+        rgba(255, 94, 22, 0)
+    );
+}
+
+/* --- END: Transparent Gradient Background for Service Pages --- */
+
+/* --- START: Styling for "Let's Talk" Form --- */
+
+.lets-talk-form {
+    background-color: rgba(236, 242, 247, 0.85); /* خلفية شبه شفافة */
+    backdrop-filter: blur(10px); /* تأثير زجاجي */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+.dark-mode .lets-talk-form {
+    background-color: rgba(24, 24, 27, 0.85);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.lets-talk-form h3 {
+    font-size: 36px;
+    font-weight: 800;
+    text-align: left;
+    margin-bottom: 5px;
+    color: var(--heading-color);
+}
+.lets-talk-form > p {
+    text-align: left;
+    margin-bottom: 25px;
+    font-size: 16px;
+    color: var(--text-color);
+}
+.lets-talk-form input,
+.lets-talk-form select {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: var(--text-color);
+    font-size: 16px;
+}
+.dark-mode .lets-talk-form input,
+.dark-mode .lets-talk-form select {
+    background-color: #27272a;
+    border-color: #52525b;
+}
+
+/* Styling for the react-phone-number-input library */
+.lets-talk-form .PhoneInput {
+    margin-bottom: 15px;
+}
+.lets-talk-form .PhoneInputInput {
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+    padding: 14px 18px !important;
+    font-size: 16px !important;
+    background-color: #ffffff !important;
+    color: var(--text-color) !important;
+    width: 100%;
+}
+.dark-mode .lets-talk-form .PhoneInputInput {
+    background-color: #27272a !important;
+    border-color: #52525b !important;
+}
+
+.lets-talk-form .PhoneInputCountry {
+    margin-right: 10px;
+}
+
+.lets-talk-form button.btn-one {
+    width: 100%;
+    justify-content: center;
+    padding: 14px;
+    font-size: 16px;
+}
+
+/* Styling for form status messages */
+.form-status {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+.form-status.success {
+    color: #16a34a;
+}
+.form-status.error {
+    color: #dc2626;
+}
+
+/* --- END: Styling for "Let's Talk" Form --- */
+
+
+.services__details p a {
+    color: #d9531a !important; /* Force orange color */
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-decoration-thickness: 1px !important;
+    text-underline-offset: 3px !important;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for all links */
+.services__details p a:hover {
+    color: #ff4d00 !important; /* Darker orange on hover */
+    text-decoration: none !important;
+}
+
+.blog__details-left a {
+    color: #d9531a !important; /* Force orange color */
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-decoration-thickness: 1px !important;
+    text-underline-offset: 3px !important;
+    transition: color 0.3s ease;
+}
+
+/* We exclude links inside buttons from this styling */
+.blog__details-left .btn-one a,
+.blog__details-left .all__sidebar-item-tag a {
+    color: inherit !important;
+    font-weight: inherit !important;
+    text-decoration: none !important;
+}
+
+
+/* Hover effect for all content links */
+.blog__details-left a:hover {
+    color: #ff4d00 !important; /* Darker orange on hover */
+    text-decoration: none !important;
+}
+
+
+/* --- START: Styling for Text-Based Pages --- */
+
+.text-page-content h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--heading-color);
+}
+
+.text-page-content h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: var(--heading-color);
+}
+
+.text-page-content p,
+.text-page-content li {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.text-page-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.text-page-content a {
+    color: var(--primary-color-one) !important;
+    text-decoration: underline !important;
+}
+
+/* --- END: Styling for Text-Based Pages --- */
+
+
+.homepage-form-section {
+    background-color: var(--color-6); /* أو أي لون خلفية فاتح من تصميمك */
+}
+
+/* لجعل الفورم في الوضع الداكن يبدو أفضل */
+.dark-mode .homepage-form-section {
+    background-color: #e78d05fa !important;
+}
+
