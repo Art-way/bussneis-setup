@@ -1,6 +1,6 @@
 // next.config.mjs
 
-import { getServiceRedirects } from './components/data/service-slugs.js';
+import { getServiceRedirects } from './components/data/service-slugs.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

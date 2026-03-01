@@ -82,7 +82,7 @@ const blogData = [
                 The application process is similar, but eligibility differs.
                 <ul style="margin-top: 10px;">
                     <li><strong>Mainland:</strong> There is no theoretical cap on the number of <a href="/services/uae-employment-visa">employment visas</a> you can have, but your eligibility is directly tied to the size of your physical office space.</li>
-                    <li><strong>Free Zone:</strong> Your visa eligibility is determined by the license package you purchase. A standard package may include 1, 2, or more visas, and you can often upgrade as your company grows. Our <a href="/services/uae-visa-services">visa services</a> manage this entire process.</li>
+                    <li><strong>Free Zone:</strong> Your visa eligibility is determined by the license package you purchase. A standard package may include 1, 2, or more visas, and you can often upgrade as your company grows. Our <a href="/services/uae-residence-visas">visa services</a> manage this entire process.</li>
                 </ul>
             </li>
         </ol>
