@@ -7,6 +7,13 @@ const nextConfig = {
   // يضمن هذا الخيار أن جميع الروابط تنتهي بـ / (مثل /services/uae-free-zones/)
   trailingSlash: true,
 
+  // The Arabic server stylesheet reads these authored files at module startup.
+  outputFileTracingIncludes: {
+    '/ar': ['./app/ar/arabic.css', './components/arabic/blog/cards.css'],
+    '/ar/**': ['./app/ar/arabic.css', './components/arabic/blog/cards.css'],
+    '/api/arabic-home': ['./app/ar/arabic.css', './components/arabic/blog/cards.css', './public/assets/arabic/native-home.js'],
+  },
+
   async redirects() {
     // 1. جلب التوجيهات الآلية لصفحات الخدمات (من القديم إلى /services/)
     const automatedServiceRedirects = getServiceRedirects();

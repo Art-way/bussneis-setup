@@ -20,7 +20,7 @@ const Consulting = () => {
                             <div className="consulting__area-right-title">
                                 <span className="subtitle-two">Making The Right Choice</span>
                                 <h2>Mainland vs. Free Zone: Understand the Difference</h2>
-                                <p>Your choice of jurisdiction is the most important decision you'll make. It impacts your ownership structure, business scope, and long-term costs. We're here to provide clarity.</p>
+                                <p>Your choice of jurisdiction is the most important decision you&apos;ll make. It impacts your ownership structure, business scope, and long-term costs. We&apos;re here to provide clarity.</p>
                             </div>
                             <div className="consulting__area-right-list">
                                 <span><i className="far fa-check"></i>Mainland offers unrestricted access to the local market.</span>

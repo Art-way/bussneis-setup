@@ -1,0 +1,13 @@
+.playFrame { position: relative; width: 90px; height: 90px; margin-inline: auto; }
+.playButton { position: relative; z-index: 2; display: grid; place-items: center; width: 90px; height: 90px; padding: 0; border: 0; border-radius: 50%; background: var(--bg-white, #fff); color: var(--primary-color-2, #f29500); font-size: 20px; cursor: pointer; }
+.playButton:hover { background: #fff3d7; }
+.playButton:focus-visible, .closeButton:focus-visible { outline: 3px solid #f29500; outline-offset: 5px; }
+.dialog { width: min(960px, calc(100vw - 32px)); max-width: none; max-height: calc(100svh - 32px); margin: auto; padding: 0; overflow: auto; border: 0; border-radius: 8px; background: #101820; color: #fff; box-shadow: 0 20px 80px #0008; }
+.dialog::backdrop { background: #071018d9; }
+.dialogHeader { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 14px 20px; }
+.dialogHeader h2 { margin: 0; color: #fff; font-size: 18px; line-height: 1.5; }
+.closeButton { display: grid; place-items: center; flex: 0 0 40px; width: 40px; height: 40px; padding: 0; border: 1px solid #ffffff50; border-radius: 50%; background: transparent; color: #fff; font: inherit; font-size: 30px; line-height: 1; cursor: pointer; }
+.closeButton:hover { background: #ffffff20; }
+.frame { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; background: #000; }
+@media (max-width: 600px) { .dialogHeader { padding: 10px 12px; } .dialogHeader h2 { font-size: 16px; } }
+@media (prefers-reduced-motion: reduce) { .playFrame::before, .playFrame::after { animation: none; } }

@@ -1,5 +1,6 @@
 "use client";
 import Link from 'next/link';
+import NativeAnchor from '@/components/arabic/native-anchor';
 import logo1 from "../../../public/assets/img/logo-3.png"; // Placeholder for light logo
 import logo2 from "../../../public/assets/img/logo-5.png"; // Placeholder for dark logo
 import logo3 from "../../../public/assets/img/logo-4.png"; // Placeholder for light logo variation
@@ -27,6 +28,7 @@ const HeaderTwo = () => {
                             <div className="col-xl-6 col-sm-4">
                                <div className="header__two-topbar-left sm-t-center t-right">
                                     <Link href="mailto:info@businesssetupuae.ae"><i className="far fa-envelope"></i> info@businesssetupuae.ae</Link>
+                                    <NativeAnchor href="/ar/" lang="ar" hrefLang="ar-EG" style={{ marginInlineStart: 20, fontWeight: 700 }}>العربية</NativeAnchor>
                                 </div>
                             </div>
                         </div>

@@ -13,6 +13,7 @@ const slideControl = {
 		disableOnInteraction: false,
 	},
     navigation: {
+        addIcons: false,
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },

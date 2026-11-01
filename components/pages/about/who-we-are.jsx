@@ -17,7 +17,7 @@ const WhoWeAre = () => {
                                 <div className="company__two-left-title">
                                     <span className="subtitle-one">Our Mission & Values</span>
                                     <h2>Your Success is Our Business</h2>
-                                    <p>Our mission is to empower entrepreneurs by making business setup in the UAE transparent, efficient, and accessible. We are committed to providing honest advice and unwavering support, ensuring every client's journey is a success story. We operate on principles of integrity, expertise, and a client-first approach.</p>
+                                    <p>Our mission is to empower entrepreneurs by making business setup in the UAE transparent, efficient, and accessible. We are committed to providing honest advice and unwavering support, ensuring every client&apos;s journey is a success story. We operate on principles of integrity, expertise, and a client-first approach.</p>
                                 </div>
                                 <div className="company__two-left-skill">
                                     <div className="company__two-left-skill-item">
@@ -48,7 +48,7 @@ const WhoWeAre = () => {
                     <div className="row align-items-center">
                         <div className="col-xl-8">
                             <div className="about__solution-left xl-t-center">
-                                <h2>Let's Build Your UAE Business, Together.</h2>
+                                <h2>Let&apos;s Build Your UAE Business, Together.</h2>
                             </div>
                         </div>
                         <div className="col-xl-4">

@@ -86,9 +86,9 @@ const TeamSingleMain = ({teamDetails}) => {
                         <div className="team__single-right">
                             <div className="team__single-right-experience">
                                 <h3>Area of Expertise</h3>
-                                <p>With a deep understanding of the UAE's corporate law and regulatory environment, {teamDetails.name.split(' ')[0]} specializes in guiding international entrepreneurs through the complexities of company formation. Their focus is on creating seamless, compliant, and strategic business structures that align with our clients' long-term goals.</p>
+                                <p>With a deep understanding of the UAE&apos;s corporate law and regulatory environment, {teamDetails.name.split(' ')[0]} specializes in guiding international entrepreneurs through the complexities of company formation. Their focus is on creating seamless, compliant, and strategic business structures that align with our clients&apos; long-term goals.</p>
                                 <h3>Approach to Client Success</h3>
-                                <p>The approach is client-centric, focusing on clear communication and transparent processes. By understanding each client's unique business model, {teamDetails.name.split(' ')[0]} provides tailored advice that simplifies decision-making, whether it's choosing between a mainland or free zone setup, selecting the right business activities, or navigating visa and banking procedures.</p>
+                                <p>The approach is client-centric, focusing on clear communication and transparent processes. By understanding each client&apos;s unique business model, {teamDetails.name.split(' ')[0]} provides tailored advice that simplifies decision-making, whether it&apos;s choosing between a mainland or free zone setup, selecting the right business activities, or navigating visa and banking procedures.</p>
                             </div>
                             <div className="team__single-right-skill">
                                 <h3>Professional Skills</h3>

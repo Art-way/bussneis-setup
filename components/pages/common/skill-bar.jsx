@@ -1,25 +1,42 @@
-import { useState } from "react";
-import CountUp from 'react-countup';
-import ScrollTrigger from "react-scroll-trigger";
-import ReactSkillBar from 'react-skillbars';
+'use client';
 
-const SkillBarItem = ({countUp}) => {
-    const [skillBar, setSkillBar] = useState(false);
-    const skillLevel = [
-        { type: 'one', level: countUp }
-    ];
-    return (
-        <>
-            <ScrollTrigger onEnter={()=> setSkillBar(true)} onExit={()=> setSkillBar(false)}>
-                <div className="skill__area-item-inner">
-                    {skillBar && <ReactSkillBar skills={skillLevel} height={10} animationDuration={2000} />}
-                    <span className="skill__area-item-count text-two">
-                        <span className="counter text-two">{skillBar && <CountUp start={0} end={countUp} duration={4} delay={1}></CountUp>}</span>%
-                    </span>
-                </div>
-            </ScrollTrigger>
-        </>
-    );
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
+import CountUp from 'react-countup';
+import styles from './skill-bar.module.css';
+
+const reducedMotionQuery = '(prefers-reduced-motion: reduce)';
+const getServerSnapshot = () => false;
+const subscribeToBrowserCapabilities = () => () => {};
+const getObserverUnavailable = () => !('IntersectionObserver' in window);
+const getReducedMotion = () => window.matchMedia(reducedMotionQuery).matches;
+const subscribeToReducedMotion = (callback) => {
+  const motion = window.matchMedia(reducedMotionQuery);
+  motion.addEventListener('change', callback);
+  return () => motion.removeEventListener('change', callback);
 };
 
-export default SkillBarItem;
+export default function SkillBarItem({ countUp, label = 'Professional skill level' }) {
+  const barRef = useRef(null);
+  const [hasEntered, setHasEntered] = useState(false);
+  const reducedMotion = useSyncExternalStore(subscribeToReducedMotion, getReducedMotion, getServerSnapshot);
+  const observerUnavailable = useSyncExternalStore(subscribeToBrowserCapabilities, getObserverUnavailable, getServerSnapshot);
+  const visible = hasEntered || reducedMotion || observerUnavailable;
+  const progress = Math.min(100, Math.max(0, Number(countUp) || 0));
+
+  useEffect(() => {
+    if (reducedMotion || observerUnavailable || hasEntered || !('IntersectionObserver' in window)) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setHasEntered(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.15 });
+    if (barRef.current) observer.observe(barRef.current);
+    return () => observer.disconnect();
+  }, [reducedMotion, observerUnavailable, hasEntered]);
+
+  return <div ref={barRef} className={styles.bar} role="progressbar" aria-label={label} aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress}>
+    <div className={styles.fill} style={{ transform: `scaleX(${visible ? progress / 100 : 0})` }} />
+    <span className="skill__area-item-count text-two" aria-hidden="true"><span className="counter text-two">{reducedMotion ? progress : visible ? <CountUp start={0} end={progress} duration={2} /> : 0}</span>%</span>
+  </div>;
+}

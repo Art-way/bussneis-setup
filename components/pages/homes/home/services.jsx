@@ -14,6 +14,7 @@ const Services = () => {
             disableOnInteraction: false,
         },
         navigation: {
+            addIcons: false,
             nextEl: '.services__two-arrow-next',
             prevEl: '.services__two-arrow-prev',
         },

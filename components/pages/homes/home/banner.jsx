@@ -15,6 +15,7 @@ const BannerTwo = () => {
 			disableOnInteraction: false,
 		},
 		navigation: {
+			addIcons: false,
 			nextEl: ".banner__two-arrow-next",
 			prevEl: ".banner__two-arrow-prev",
 		},

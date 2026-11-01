@@ -35,7 +35,7 @@ const ServicesSingleMain = ({serviceDetails}) => {
                                         <img className="img__full" src="../assets/img/pages/help.jpg" alt="image" />
                                         <div className="all__sidebar-help-image-content">
                                             <img src="../assets/img/favicon-1.png" alt="icon" />
-                                            <h4>We're Always ready for help You</h4>
+                                            <h4>We&apos;re Always ready for help You</h4>
                                             <Link className="btn-one" href="/contact">Need Help<i className="far fa-chevron-double-right"></i></Link>
                                         </div>
                                     </div>
@@ -52,7 +52,7 @@ const ServicesSingleMain = ({serviceDetails}) => {
                                     <p className="mb-25">Proin molestie nunc id scelerisque facilisis. Nunc efficitur mollis nunc, ac facilisis orci viverra vel. Aliquam rutrum libero sit amet justo consectetur luctus. Duis dolor augue, euismod a accumsan at, commodo a lorem. Donec sit amet nibh condimentum libero</p>
                                     <p className="mb-25">Nunc efficitur mollis nunc, ac facilisis orci viverra vel. Aliquam rutrum libero sit amet justo consectetur luctus. Duis dolor augue, euismod a accumsan at, commodo a lorem.</p>                        
                                     <div className="services__details-left-content-list">
-                                        <span><i className="far fa-check"></i>It's essential to work with business consultants who have</span>
+                                        <span><i className="far fa-check"></i>It&apos;s essential to work with business consultants who have</span>
                                         <span><i className="far fa-check"></i>Business consultants may charge by the project or hour, or you may need to pay daily or monthly retainers.</span>
                                         <span><i className="far fa-check"></i>Meet with the board of directors and employees.</span>
                                     </div>

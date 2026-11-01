@@ -300,7 +300,7 @@ const allServicesData = [
             content: (
                 <>
                     <p>Starting a business in the UAE offers incredible opportunities, but the process involves complex legal procedures and documentation. Partnering with an expert business setup consultant saves you valuable time, prevents costly mistakes, and ensures your company is structured for long-term success.</p>
-                    <p>We act as your single point of contact, managing all interactions with government authorities like the DED and free zone registries. Our deep knowledge of the UAE's regulatory landscape allows us to fast-track your setup, letting you focus on what matters most: growing your business.</p>
+                    <p>We act as your single point of contact, managing all interactions with government authorities like the DED and free zone registries. Our deep knowledge of the UAE&apos;s regulatory landscape allows us to fast-track your setup, letting you focus on what matters most: growing your business.</p>
                 </>
             )
         },
@@ -410,7 +410,7 @@ const allServicesData = [
             title: "Understanding the UAE Residence Visa",
             content: (
                 <>
-                    <p>A UAE Residence Visa is a long-term permit that allows a foreign national to live and work legally in the United Arab Emirates. Typically valid for two years, it is sponsored by your newly formed company, whether it's a <Link href='/services/uae-free-zones/'>Free Zone</Link> or <Link href='/services/uae-mainland-company-setup/'>Mainland</Link> entity.</p>
+                    <p>A UAE Residence Visa is a long-term permit that allows a foreign national to live and work legally in the United Arab Emirates. Typically valid for two years, it is sponsored by your newly formed company, whether it&apos;s a <Link href='/services/uae-free-zones/'>Free Zone</Link> or <Link href='/services/uae-mainland-company-setup/'>Mainland</Link> entity.</p>
                     <p>This visa is mandatory for opening a personal bank account, signing residential leases, and accessing government services. It serves as the foundation of your personal and professional life in the UAE, and our experts ensure the process is managed efficiently and correctly from start to finish.</p>
                 </>
             )
@@ -521,8 +521,8 @@ const allServicesData = [
             title: "Why Choose a Dubai Free Zone?",
             content: (
                 <>
-                    <p>Dubai's free zones are world-renowned for their strategic locations, state-of-the-art infrastructure, and business-friendly regulations. Each zone is a dedicated economic district, governed by an independent authority that handles all licensing and registration.</p>
-                    <p>Choosing a Dubai free zone means joining a thriving community of entrepreneurs and multinational corporations while enjoying the core benefits of the <Link href='/services/uae-free-zones/'>UAE Free Zone</Link> model, including 100% foreign ownership and zero corporate tax. It's the ultimate platform for accessing markets across the Middle East, Africa, and Asia.</p>
+                    <p>Dubai&apos;s free zones are world-renowned for their strategic locations, state-of-the-art infrastructure, and business-friendly regulations. Each zone is a dedicated economic district, governed by an independent authority that handles all licensing and registration.</p>
+                    <p>Choosing a Dubai free zone means joining a thriving community of entrepreneurs and multinational corporations while enjoying the core benefits of the <Link href='/services/uae-free-zones/'>UAE Free Zone</Link> model, including 100% foreign ownership and zero corporate tax. It&apos;s the ultimate platform for accessing markets across the Middle East, Africa, and Asia.</p>
                 </>
             )
         },
@@ -754,8 +754,8 @@ const allServicesData = [
             title: "Why Choose an Abu Dhabi Free Zone?",
             content: (
                 <>
-                    <p>Abu Dhabi's free zones are integral to its economic diversification strategy, providing targeted ecosystems for specific industries. These zones offer world-class infrastructure, strategic access to ports and airports, and a supportive regulatory framework.</p>
-                    <p>Setting up in an Abu Dhabi free zone provides all the core advantages of the wider <Link href='/services/uae-free-zones/'>UAE Free Zone</Link> model, but with a distinct focus on large-scale industrial projects, sophisticated financial services, and innovation in sustainability. It's the ideal choice for businesses seeking stability and strong government backing.</p>
+                    <p>Abu Dhabi&apos;s free zones are integral to its economic diversification strategy, providing targeted ecosystems for specific industries. These zones offer world-class infrastructure, strategic access to ports and airports, and a supportive regulatory framework.</p>
+                    <p>Setting up in an Abu Dhabi free zone provides all the core advantages of the wider <Link href='/services/uae-free-zones/'>UAE Free Zone</Link> model, but with a distinct focus on large-scale industrial projects, sophisticated financial services, and innovation in sustainability. It&apos;s the ideal choice for businesses seeking stability and strong government backing.</p>
                 </>
             )
         },
@@ -870,7 +870,7 @@ const allServicesData = [
             title: "What is an Abu Dhabi Mainland License?",
             content: (
                 <>
-                    <p>An Abu Dhabi mainland license is a business permit issued by the Abu Dhabi Department of Economic Development (ADDED). This license authorizes you to establish your office and operate directly within the onshore economy of the UAE's capital city and largest Emirate.</p>
+                    <p>An Abu Dhabi mainland license is a business permit issued by the Abu Dhabi Department of Economic Development (ADDED). This license authorizes you to establish your office and operate directly within the onshore economy of the UAE&apos;s capital city and largest Emirate.</p>
                     <p>This structure is essential for businesses aiming to work with governmental and semi-governmental bodies or to trade freely across Abu Dhabi and the wider UAE. Unlike an <Link href='/services/abu-dhabi-free-zones/'>Abu Dhabi Free Zone company</Link>, a mainland entity faces no geographical restrictions on its operations within the country. To understand the broader context, visit our guide to <Link href='/services/uae-mainland-company-setup/'>UAE Mainland Company Setup</Link>.</p>
                 </>
             )
@@ -974,7 +974,7 @@ const allServicesData = [
             title: "Why Choose a Sharjah Free Zone?",
             content: (
                 <>
-                    <p>Sharjah, the UAE's cultural capital, has established itself as a powerful industrial and educational hub. Its free zones are strategically designed to be business-friendly, with a strong focus on minimizing bureaucracy and reducing costs for entrepreneurs.</p>
+                    <p>Sharjah, the UAE&apos;s cultural capital, has established itself as a powerful industrial and educational hub. Its free zones are strategically designed to be business-friendly, with a strong focus on minimizing bureaucracy and reducing costs for entrepreneurs.</p>
                     <p>Opting for a Sharjah free zone gives you access to the complete benefits of the <Link href='/services/uae-free-zones/'>UAE Free Zone</Link> framework, such as 100% foreign ownership, but often at a fraction of the cost of other Emirates. This makes it an exceptionally smart choice for businesses in media, e-commerce, publishing, and light manufacturing.</p>
                 </>
             )
@@ -1088,7 +1088,7 @@ const allServicesData = [
             title: "What is a Sharjah Mainland License?",
             content: (
                 <>
-                    <p>A Sharjah mainland license allows your company to operate directly within the onshore economy of the Emirate. Governed by the Sharjah Economic Development Department (SEDD), this structure provides unrestricted access to the local market and the ability to establish your business in Sharjah's numerous industrial and commercial areas.</p>
+                    <p>A Sharjah mainland license allows your company to operate directly within the onshore economy of the Emirate. Governed by the Sharjah Economic Development Department (SEDD), this structure provides unrestricted access to the local market and the ability to establish your business in Sharjah&apos;s numerous industrial and commercial areas.</p>
                     <p>Choosing a mainland license is ideal for businesses in manufacturing, trading, and services that want to cater directly to the local population and industrial sectors. Unlike a <Link href='/services/sharjah-free-zones/'>Sharjah Free Zone company</Link>, a mainland entity has the freedom to operate anywhere in the UAE. For more details, see our main <Link href='/services/uae-mainland-company-setup/'>UAE Mainland Company Setup</Link> guide.</p>
                 </>
             )
@@ -1409,7 +1409,7 @@ const allServicesData = [
             content: (
                 <>
                     <p>While the benefits of a UAE free zone are clear, the process of selecting the right one from over 50 options and navigating its specific requirements can be complex and time-consuming. Our dedicated service eliminates this burden, providing you with a seamless path to your business license.</p>
-                    <p>We leverage our deep knowledge of each free zone's regulations, costs, and processes to your advantage. Our goal is to ensure you not only get your license quickly but also that your company is established in the optimal jurisdiction for its long-term success. For a broader overview of the jurisdictions, you can explore our <Link href='/services/uae-free-zones/'>UAE Free Zones guide</Link>.</p>
+                    <p>We leverage our deep knowledge of each free zone&apos;s regulations, costs, and processes to your advantage. Our goal is to ensure you not only get your license quickly but also that your company is established in the optimal jurisdiction for its long-term success. For a broader overview of the jurisdictions, you can explore our <Link href='/services/uae-free-zones/'>UAE Free Zones guide</Link>.</p>
                 </>
             )
         },
@@ -1625,7 +1625,7 @@ const allServicesData = [
                 { icon: "flaticon-technical-support", title: "Dedicated Banking Specialist", description: "A specialist will manage your entire application, providing guidance and handling all communication with the bank." },
                 { icon: "flaticon-check-mark", title: "Pre-Approval Assessment", description: "We assess your profile against bank requirements beforehand to identify and mitigate any potential red flags." },
                 { icon: "flaticon-creative-process", title: "Business Plan Support", description: "We can help you draft a clear and concise business plan summary, a key requirement for most banks." },
-                { icon: "flaticon-completed-task", title: "Process Management", description: <>We track your application's progress and proactively follow up to ensure a timely outcome, a key part of our <Link href='/services/pro-services-uae/'>PRO services</Link>.</> }
+                { icon: "flaticon-completed-task", title: "Process Management", description: <>We track your application&apos;s progress and proactively follow up to ensure a timely outcome, a key part of our <Link href='/services/pro-services-uae/'>PRO services</Link>.</> }
             ]
         },
         {
@@ -1829,7 +1829,7 @@ const allServicesData = [
             title: "The Critical Importance of Timely Renewal",
             content: (
                 <>
-                    <p>Failing to renew your trade license on time can lead to severe consequences, including substantial financial penalties, blacklisting of the company, and the non-renewal of shareholder and employee <Link href='/services/uae-residence-visas/'>residence visas</Link>. Furthermore, all your company's bank accounts can be frozen, halting your operations entirely.</p>
+                    <p>Failing to renew your trade license on time can lead to severe consequences, including substantial financial penalties, blacklisting of the company, and the non-renewal of shareholder and employee <Link href='/services/uae-residence-visas/'>residence visas</Link>. Furthermore, all your company&apos;s bank accounts can be frozen, halting your operations entirely.</p>
                     <p>The renewal process involves submitting the correct documents, such as a valid tenancy contract (Ejari/Tawtheeq) and updated approvals. Our service takes this critical administrative burden off your shoulders, whether you have a <Link href='/services/uae-mainland-company-setup/'>mainland license</Link> or are based in a <Link href='/services/uae-free-zones/'>free zone</Link>. We make sure every detail is handled correctly and on time.</p>
                 </>
             )
@@ -1943,7 +1943,7 @@ const allServicesData = [
             content: (
                 <>
                     <p>The Investor Visa is the standard residency permit for foreign entrepreneurs who have established a business in the UAE. By becoming a shareholder in either a <Link href='/services/uae-mainland-company-setup/'>mainland company</Link> or a <Link href='/services/uae-free-zones/'>free zone company</Link>, you become eligible to sponsor yourself for this long-term visa, which is typically valid for two years.</p>
-                    <p>This visa is your personal gateway to living and working in the country. It allows you to open a personal bank account, rent a home, and serves as your primary identification document. Securing this visa is a fundamental step in your entrepreneurial journey, and it's a core component of all our <Link href='/services/business-setup-services/'>business setup services</Link>. For a complete overview of all visa types, please see our main <Link href='/services/uae-residence-visas/'>UAE Residence Visas</Link> guide.</p>
+                    <p>This visa is your personal gateway to living and working in the country. It allows you to open a personal bank account, rent a home, and serves as your primary identification document. Securing this visa is a fundamental step in your entrepreneurial journey, and it&apos;s a core component of all our <Link href='/services/business-setup-services/'>business setup services</Link>. For a complete overview of all visa types, please see our main <Link href='/services/uae-residence-visas/'>UAE Residence Visas</Link> guide.</p>
                 </>
             )
         },
@@ -2476,7 +2476,7 @@ const allServicesData = [
             title: "Why is JAFZA a Global Logistics Powerhouse?",
             content: (
                 <>
-                    <p>Established in 1985, Jebel Ali Free Zone (JAFZA) is the flagship free zone of DP World and a cornerstone of Dubai's economy. Its unique, integrated ecosystem connects a deep-water seaport, Jebel Ali Port, with Al Maktoum International Airport, creating an unparalleled sea-air logistics corridor.</p>
+                    <p>Established in 1985, Jebel Ali Free Zone (JAFZA) is the flagship free zone of DP World and a cornerstone of Dubai&apos;s economy. Its unique, integrated ecosystem connects a deep-water seaport, Jebel Ali Port, with Al Maktoum International Airport, creating an unparalleled sea-air logistics corridor.</p>
                     <p>For companies involved in import, export, manufacturing, and distribution, JAFZA offers unmatched operational advantages. While it provides the standard benefits of all <Link href='/services/dubai-free-zones/'>Dubai Free Zones</Link>, its true strength lies in its vast scale, comprehensive facilities, and seamless customs processes. It is a vital component of the broader <Link href='/services/uae-free-zones/'>UAE Free Zone</Link> landscape.</p>
                 </>
             )
@@ -2708,8 +2708,8 @@ const allServicesData = [
             title: "Why Choose Meydan Free Zone?",
             content: (
                 <>
-                    <p>Meydan Free Zone is uniquely positioned within the luxurious Meydan Hotel complex, offering a premium business address that enhances your company's image. It is designed to be a hub for professional services, media, and investment companies, providing a highly efficient and streamlined setup process.</p>
-                    <p>Unlike larger, more industrial free zones, Meydan focuses on creating a boutique business community. It offers all the essential benefits of other <Link href='/services/dubai-free-zones/'>Dubai Free Zones</Link>, such as 100% ownership and zero tax, but with a strong emphasis on flexibility and professional networking. It is a smart choice for consultants who want to be close to the city's commercial centre. For a broader context, explore our main <Link href='/services/uae-free-zones/'>UAE Free Zones</Link> guide.</p>
+                    <p>Meydan Free Zone is uniquely positioned within the luxurious Meydan Hotel complex, offering a premium business address that enhances your company&apos;s image. It is designed to be a hub for professional services, media, and investment companies, providing a highly efficient and streamlined setup process.</p>
+                    <p>Unlike larger, more industrial free zones, Meydan focuses on creating a boutique business community. It offers all the essential benefits of other <Link href='/services/dubai-free-zones/'>Dubai Free Zones</Link>, such as 100% ownership and zero tax, but with a strong emphasis on flexibility and professional networking. It is a smart choice for consultants who want to be close to the city&apos;s commercial centre. For a broader context, explore our main <Link href='/services/uae-free-zones/'>UAE Free Zones</Link> guide.</p>
                 </>
             )
         },
@@ -3030,7 +3030,7 @@ const allServicesData = [
             title: "How to Compare Dubai Free Zones",
             content: (
                 <>
-                    <p>Every Dubai free zone is designed to serve specific industries and business types. There is no single "best" option—only the one that is best for *your* specific needs. To choose correctly, you must compare them based on several key factors: your intended business activity, your budget for setup and renewal, your visa requirements, and the importance of a physical location or specific facilities.</p>
+                    <p>Every Dubai free zone is designed to serve specific industries and business types. There is no single &quot;best&quot; option—only the one that is best for *your* specific needs. To choose correctly, you must compare them based on several key factors: your intended business activity, your budget for setup and renewal, your visa requirements, and the importance of a physical location or specific facilities.</p>
                     <p>This comparison focuses on the most popular choices for entrepreneurs and SMEs. For a general overview of the benefits, please see our main <Link href='/services/dubai-free-zones/'>Dubai Free Zones</Link> page. Our <Link href='/services/business-setup-services/'>consultants</Link> are always available to provide a personalized recommendation based on your unique business plan.</p>
                 </>
             )
@@ -3149,7 +3149,7 @@ const allServicesData = [
             title: "Factors That Influence Your Final Package Cost",
             content: (
                 <>
-                    <p>While the number of visas is the biggest factor, several other elements can affect the final price of your setup package. It's important to consider these when budgeting for your new company.</p>
+                    <p>While the number of visas is the biggest factor, several other elements can affect the final price of your setup package. It&apos;s important to consider these when budgeting for your new company.</p>
                     <ul>
                         <li><strong>Choice of Free Zone:</strong> Premium zones like <Link href='/services/dmcc-free-zone/'>DMCC</Link> or <Link href='/services/difc-free-zone/'>DIFC</Link> have significantly higher fees than more affordable options in <Link href='/services/sharjah-free-zones/'>Sharjah</Link> or the <Link href='/services/northern-emirates-free-zones/'>Northern Emirates</Link>.</li>
                         <li><strong>Number of Business Activities:</strong> Most packages include 1-3 business activities. Adding more activities, or choosing activities from different groups, often incurs additional fees.</li>
@@ -3172,7 +3172,7 @@ const allServicesData = [
             subtitle: 'Understanding the Investment',
             questions: [
                 { title: 'Are the visa costs included in these packages?', answer: <>No. The package price typically covers the license and visa *allocation*. The costs for the actual visa processing (entry permit, medical test, stamping, Emirates ID) are separate. See our <Link href='/services/uae-residence-visas/'>visa cost guide</Link> for details.</> },
-                { title: 'What are the annual renewal costs?', answer: <>Renewal costs are usually slightly lower than the first year's setup fee because they do not include the one-time registration and establishment card fees. We provide clear renewal quotes through our <Link href='/services/business-license-renewal/'>license renewal service</Link>.</> },
+                { title: 'What are the annual renewal costs?', answer: <>Renewal costs are usually slightly lower than the first year&apos;s setup fee because they do not include the one-time registration and establishment card fees. We provide clear renewal quotes through our <Link href='/services/business-license-renewal/'>license renewal service</Link>.</> },
                 { title: 'Can I upgrade my package later?', answer: 'Yes, most free zones allow you to upgrade your package. For example, you can move from a 1-visa package to a 2-visa package by paying the difference in government fees. This provides excellent flexibility as your business grows.' },
                 { title: 'Why is there a price range for packages?', answer: 'The final price depends on the specific free zone, the number of activities you choose, and any current promotions offered by the authority. The prices shown are the most common starting points. We will always secure the best available price for you.' },
                 { title: 'Do these prices include your service fee?', answer: 'The "Starting From" prices are an estimate of the total government fees for the package. Our professional service fee is quoted separately but is highly competitive. We will provide you with a single, all-inclusive final quote.' }
@@ -3346,7 +3346,7 @@ const allServicesData = [
             title: "Why You Need an Expert for Your Trade License",
             content: (
                 <>
-                    <p>A mainland trade license is the legal document that authorizes your business to operate in the UAE's onshore economy. The process involves navigating specific regulations of the Economic Department (DED/ADDED) in your chosen Emirate, which can be complex. Errors in your application or legal structure can lead to significant delays or rejection.</p>
+                    <p>A mainland trade license is the legal document that authorizes your business to operate in the UAE&apos;s onshore economy. The process involves navigating specific regulations of the Economic Department (DED/ADDED) in your chosen Emirate, which can be complex. Errors in your application or legal structure can lead to significant delays or rejection.</p>
                     <p>Our service is designed to prevent these issues. We ensure your business activities align perfectly with your chosen license type (e.g., Commercial, Professional) and legal structure (e.g., an <Link href='/services/llc-company-formation-dubai-mainland/'>LLC</Link>). We manage all paperwork, submissions, and government liaison, allowing you to focus on your business plan, not bureaucracy. This is the core of our <Link href='/services/mainland-company-formation'>mainland formation service</Link>.</p>
                 </>
             )
@@ -3398,7 +3398,7 @@ const allServicesData = [
             title: 'Mainland License FAQs',
             subtitle: 'Key Information',
             questions: [
-                { title: 'Can I have commercial and professional activities on the same license?', answer: <>Generally, no. Commercial and professional activities must be on separate licenses because they fall under different legal categories. However, a <Link href='/services/dubai-mainland-company-setup/'>Dubai mainland</Link> company can form a dual-license structure in some cases. It's best to consult with us.</> },
+                { title: 'Can I have commercial and professional activities on the same license?', answer: <>Generally, no. Commercial and professional activities must be on separate licenses because they fall under different legal categories. However, a <Link href='/services/dubai-mainland-company-setup/'>Dubai mainland</Link> company can form a dual-license structure in some cases. It&apos;s best to consult with us.</> },
                 { title: 'What is the difference between a License and a Legal Form?', answer: 'The License (e.g., Commercial) defines *what* your business does. The Legal Form (e.g., LLC, Sole Proprietorship) defines *who* owns the business and their liability. For example, you can have a Commercial License under an LLC legal form.' },
                 { title: 'What is a DED?', answer: 'DED stands for Department of Economic Development. It is the government body in each Emirate (like the DET in Dubai or ADDED in Abu Dhabi) responsible for issuing and regulating all mainland trade licenses.' },
                 { title: 'How do I check a company\'s trade license in the UAE?', answer: 'Each Emirate\'s DED has an online portal where you can conduct a "Trade Name Search" to verify a company\'s license status and details. This is part of the public record and a good due diligence step.' },
