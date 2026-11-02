@@ -18,4 +18,4 @@ Build from source on Vercel; do not upload local `node_modules` or the Windows `
 
 Use the temporary Vercel address for review. The existing main site's domain and canonical URLs remain configured for the original site. Do not connect or replace its custom domain for this review.
 
-Detailed Arabic content and taxonomy work remain a later phase. Preserve truthful organizational authorship. Final mobile performance confirmation is pending; earlier diagnostic scores are not a guarantee of this deployment's performance.
+Detailed Arabic content and taxonomy work remain a later phase. Preserve truthful organizational authorship. The current typography/readability update and separate simulated/actual-throttle lab results are documented in `arabic-design-refinement.md`. Mobile performance under actual throttling still needs improvement; lab scores are not a guarantee of this deployment's performance.

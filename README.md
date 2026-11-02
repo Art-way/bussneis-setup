@@ -33,4 +33,6 @@ The current Arabic articles are introductory content. Confirm the final taxonomy
 
 `npm run lint` uses the standard Next configuration. Legacy native image elements produce warnings; do not change validated responsive images simply to silence them. Asset provenance and font licensing are recorded in `docs/arabic-assets.md`.
 
+The 2 November typography, article-reading and publisher-panel improvements are documented in `docs/arabic-design-refinement.md`.
+
 This repository is a temporary review snapshot containing both language sections. See `docs/preview-deployment.md` for Vercel setup. Performance work is still in progress; this snapshot does not claim that every speed threshold is met. Local continuation notes and generated browser/audit files are excluded from the upload.
