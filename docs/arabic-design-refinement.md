@@ -26,7 +26,7 @@ The temporary Vercel deployment is not managed by this change. Continue to impor
 
 ## Current mobile lab measurements
 
-One report per case was retained after the final build. Methods are deliberately listed separately; simulation does not reproduce actual DevTools throttling.
+These measurements belong to typography source commit `f2cd47f`, before the subsequent Arabic URL migration. One report per case was retained after that build. Methods are deliberately listed separately; simulation does not reproduce actual DevTools throttling. The later URL-only change is verified separately in `arabic-url-migration.md`.
 
 | Page | Method | Performance | Accessibility / best practices / SEO | FCP | LCP | TBT | CLS |
 | --- | --- | --- | --- | --- | --- | --- | --- |

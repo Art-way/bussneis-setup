@@ -1,3 +1,5 @@
+import { arabicServiceSlugs } from './routes.mjs';
+
 export const services = [
   {
     slug: 'mainland',
@@ -14,7 +16,7 @@ export const services = [
       { title: 'صورة أشمل للتكلفة', description: 'اطلب عرضًا يفصل رسوم الترخيص والتأسيس والمقر وأتعاب الخدمة، ويبيّن ما يشمله وما يستثنيه ومتطلبات التجديد.' },
     ],
     source: { label: 'استثمر في دبي — تأسيس شركة في البر الرئيسي', url: 'https://www.investindubai.gov.ae/ar/business-setup/mainland-companies' },
-    guide: '/ar/blog/mainland-or-free-zone',
+    guide: '/ar/المدونة/البر-الرئيسي-أم-المنطقة-الحرة/',
   },
   {
     slug: 'free-zone',
@@ -31,7 +33,7 @@ export const services = [
       { title: 'خطوات مترابطة', description: 'نفصل مسار إصدار الرخصة عن متطلبات الإقامة والحساب المصرفي، ونرتّب ما يحتاج متابعة مع كل جهة.' },
     ],
     source: { label: 'بوابة دبي — خيارات تأسيس الأعمال', url: 'https://www.dubai.ae/web/dubai.ae/investing/starting-a-business/business-set-up-options' },
-    guide: '/ar/blog/mainland-or-free-zone',
+    guide: '/ar/المدونة/البر-الرئيسي-أم-المنطقة-الحرة/',
   },
   {
     slug: 'business-support',
@@ -48,8 +50,8 @@ export const services = [
       { title: 'دعم يناسب المرحلة', description: 'نحدّد معك نطاق الخدمة المطلوبة والجهة المختصة بها، ونوضح متى تحتاج المسألة إلى محاسب أو مستشار قانوني مؤهل.' },
     ],
     source: { label: 'وزارة الاقتصاد والسياحة — تأسيس الأعمال', url: 'https://www.moet.gov.ae/establishing-companies' },
-    guide: '/ar/blog',
+    guide: '/ar/المدونة/',
   },
-];
+].map(service => ({ ...service, urlSlug: arabicServiceSlugs[service.slug] }));
 
-export const getService = (slug) => services.find((service) => service.slug === slug);
+export const getService = (slug) => services.find((service) => service.slug === slug || service.urlSlug === slug);

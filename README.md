@@ -13,12 +13,15 @@ npm run build
 npm start
 ```
 
-Production preview uses port5047: [Arabic homepage](http://127.0.0.1:5047/ar/) and [Arabic blog](http://127.0.0.1:5047/ar/blog/). Production builds use the supported webpack option; the development server uses Next's default bundler.
+Production preview uses port5047: [Arabic homepage](http://127.0.0.1:5047/ar/) and [Arabic blog](http://127.0.0.1:5047/ar/المدونة/). Production builds use the supported webpack option; the development server uses Next's default bundler.
 
 ## Source structure
 
 - `app/(english)/`: original English URLs and isolated English layout/providers.
 - `app/ar/`: Arabic root layout, homepage, blog, categories, articles, authors, services and contact.
+- `app/ar/[...path]/page.jsx`: public Arabic URL dispatcher using supported dynamic path values.
+- `components/arabic/views/`: the Arabic Server Component templates and page metadata.
+- `components/arabic/routes.mjs`: Arabic public slugs and permanent redirects from the previous URLs.
 - `components/arabic/content.js`: introductory articles, categories, organizational author, dates and official sources.
 - `components/arabic/services.js`: Arabic service records.
 - `components/arabic/blog/`: article/listing/cover templates with separate lightweight card CSS.
@@ -34,5 +37,7 @@ The current Arabic articles are introductory content. Confirm the final taxonomy
 `npm run lint` uses the standard Next configuration. Legacy native image elements produce warnings; do not change validated responsive images simply to silence them. Asset provenance and font licensing are recorded in `docs/arabic-assets.md`.
 
 The 2 November typography, article-reading and publisher-panel improvements are documented in `docs/arabic-design-refinement.md`.
+
+Arabic URL migration and verification are documented in `docs/arabic-url-migration.md`. Run `node scripts/verify-arabic-urls.mjs` against the local production preview to verify routes, redirects and indexing metadata.
 
 This repository is a temporary review snapshot containing both language sections. See `docs/preview-deployment.md` for Vercel setup. Performance work is still in progress; this snapshot does not claim that every speed threshold is met. Local continuation notes and generated browser/audit files are excluded from the upload.

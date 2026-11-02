@@ -1,3 +1,5 @@
+import { arabicAuthorSlugs, arabicCategorySlugs, arabicPostSlugs } from './routes.mjs';
+
 export const siteUrl = 'https://businesssetupuae.ae';
 
 export const categories = [
@@ -5,15 +7,15 @@ export const categories = [
   { slug: 'free-zones', title: 'المناطق الحرة', kicker: 'اختر البيئة المناسبة', description: 'أدلة تساعدك على مقارنة المناطق الحرة والبر الرئيسي بحسب نشاطك وسوقك.' },
   { slug: 'costs-planning', title: 'التكاليف والتخطيط', kicker: 'خطّة أوضح لميزانيتك', description: 'تعرّف على بنود التكلفة والأسئلة التي تكشف تفاصيل عروض التأسيس.' },
   { slug: 'after-setup', title: 'ما بعد التأسيس', kicker: 'البداية تحتاج متابعة', description: 'نظّم مستنداتك والتزاماتك وخطوات التشغيل بعد إصدار الرخصة.' },
-];
+].map(category => ({ ...category, urlSlug: arabicCategorySlugs[category.slug] }));
 
 export const authors = [{
   slug: 'editorial-team', name: 'فريق تحرير Business Setup UAE', role: 'الجهة المسؤولة عن المحتوى', type: 'Organization',
   bio: 'تُنسب الأدلة التمهيدية في هذا القسم إلى فريق تحرير الموقع بصفته جهة نشر. نجمع المعلومات العامة من المصادر الرسمية الموضّحة أسفل كل دليل، ونفصل بينها وبين التقييم الخاص بحالة كل عميل. لا تمثّل هذه النسبة ادّعاءً بمؤهل قانوني أو ضريبي، ولا مراجعة مستقلة من مختص.'
-}];
+}].map(author => ({ ...author, urlSlug: arabicAuthorSlugs[author.slug] }));
 
 const base = {
-  authorSlug: 'editorial-team', publishedAt: '2026-10-29', updatedAt: '2026-10-29', image: null, relatedService: '/ar/services/',
+  authorSlug: 'editorial-team', publishedAt: '2026-10-29', updatedAt: '2026-10-29', image: null, relatedService: '/ar/الخدمات/',
 };
 
 const articles = [
@@ -91,9 +93,9 @@ const articles = [
   },
 ];
 
-export const posts = articles.map((post) => ({ ...base, ...post, relatedService: post.categorySlug === 'free-zones' ? '/ar/services/free-zone/' : post.categorySlug === 'after-setup' ? '/ar/services/business-support/' : '/ar/services/mainland/', readingMinutes: Math.max(1, Math.ceil([post.takeaway, ...post.sections.flatMap(s => s.paragraphs)].join(' ').split(/\s+/).length / 180)) }));
-export const getPost = (slug) => posts.find(post => post.slug === slug);
-export const getCategory = (slug) => categories.find(category => category.slug === slug);
-export const getAuthor = (slug) => authors.find(author => author.slug === slug);
+export const posts = articles.map((post) => ({ ...base, ...post, urlSlug: arabicPostSlugs[post.slug], relatedService: post.categorySlug === 'free-zones' ? '/ar/الخدمات/تأسيس-شركة-في-منطقة-حرة/' : post.categorySlug === 'after-setup' ? '/ar/الخدمات/خدمات-ما-بعد-التأسيس/' : '/ar/الخدمات/تأسيس-شركة-في-البر-الرئيسي/', readingMinutes: Math.max(1, Math.ceil([post.takeaway, ...post.sections.flatMap(s => s.paragraphs)].join(' ').split(/\s+/).length / 180)) }));
+export const getPost = (slug) => posts.find(post => post.slug === slug || post.urlSlug === slug);
+export const getCategory = (slug) => categories.find(category => category.slug === slug || category.urlSlug === slug);
+export const getAuthor = (slug) => authors.find(author => author.slug === slug || author.urlSlug === slug);
 export const formatDate = (date) => new Intl.DateTimeFormat('ar-EG', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${date}T12:00:00Z`));
 export const formatReadingTime = (minutes) => minutes === 1 ? 'دقيقة قراءة' : minutes === 2 ? 'دقيقتان للقراءة' : `${new Intl.NumberFormat('ar-EG').format(minutes)} دقائق قراءة`;

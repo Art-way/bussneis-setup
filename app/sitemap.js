@@ -59,11 +59,11 @@ export default function sitemap() {
 
   const arabicStaticRoutes = [
     '/ar',
-    '/ar/services',
-    '/ar/contact',
-    '/ar/blog',
-    '/ar/authors',
-    '/ar/editorial-policy',
+    '/ar/الخدمات',
+    '/ar/تواصل-معنا',
+    '/ar/المدونة',
+    '/ar/المؤلفون',
+    '/ar/سياسة-التحرير',
   ];
 
   const arabicStaticPages = arabicStaticRoutes.map((route) => ({
@@ -73,19 +73,19 @@ export default function sitemap() {
   }));
 
   const arabicServicePages = arabicServices.map((service) => ({
-    url: `${baseUrl}/ar/services/${service.slug}/`,
+    url: `${baseUrl}/ar/الخدمات/${service.urlSlug}/`,
     changeFrequency: 'monthly',
     priority: 0.9,
   }));
 
   const arabicCategoryPages = categories.map((category) => ({
-    url: `${baseUrl}/ar/blog/category/${category.slug}/`,
+    url: `${baseUrl}/ar/المدونة/تصنيف/${category.urlSlug}/`,
     changeFrequency: 'weekly',
     priority: 0.7,
   }));
 
   const arabicBlogPages = posts.map((post) => ({
-    url: `${baseUrl}/ar/blog/${post.slug}/`,
+    url: `${baseUrl}/ar/المدونة/${post.urlSlug}/`,
     ...(post.updatedAt || post.publishedAt
       ? { lastModified: post.updatedAt || post.publishedAt }
       : {}),
@@ -94,20 +94,24 @@ export default function sitemap() {
   }));
 
   const arabicAuthorPages = authors.map((author) => ({
-    url: `${baseUrl}/ar/authors/${author.slug}/`,
+    url: `${baseUrl}/ar/المؤلفون/${author.urlSlug}/`,
     changeFrequency: 'monthly',
     priority: 0.6,
   }));
+
+  const arabicPages = [
+    ...arabicStaticPages,
+    ...arabicServicePages,
+    ...arabicCategoryPages,
+    ...arabicBlogPages,
+    ...arabicAuthorPages,
+  ].map(page => ({ ...page, url: new URL(page.url).href }));
 
   return [
     ...staticPages,
     ...servicePages,
     ...blogPages,
     ...teamPages,
-    ...arabicStaticPages,
-    ...arabicServicePages,
-    ...arabicCategoryPages,
-    ...arabicBlogPages,
-    ...arabicAuthorPages,
+    ...arabicPages,
   ];
 }
