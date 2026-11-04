@@ -51,7 +51,8 @@ for (const post of posts) {
       check(`${post.slug} ${block.kind} original ALT and geometry`, html.includes(`alt="${block.alt}"`) && html.includes(`width="${block.width}" height="${block.height}"`));
       for (const image of block.srcSet.split(', ').map(value => value.split(' ')[0])) {
         const response = await fetch(base + image);
-        check(`${image} WEBP200`, response.status === 200 && response.headers.get('content-type')?.startsWith('image/webp'));
+        const bytes = new Uint8Array(await response.arrayBuffer());
+        check(`${image} WEBP200`, response.status === 200 && response.headers.get('content-type')?.startsWith('image/webp') && String.fromCharCode(...bytes.slice(0, 4)) === 'RIFF' && String.fromCharCode(...bytes.slice(8, 12)) === 'WEBP');
       }
     }
   }
@@ -75,6 +76,7 @@ check('Native homepage retains no Next JS', !home.includes('/_next/static/chunks
 check('Dubai service includes real form entry', pages.get(dubaiServicePath).includes('افتح نموذج طلب الاستشارة') && pages.get(dubaiServicePath).includes('id="request"'));
 for (const path of ['/ar/تأسيس-شركة-في-الشارقة/', '/ar/تأسيس-شركة-في-عجمان/', '/ar/تأسيس-شركة-في-أبوظبي/', dubaiServicePath + 'المقاولات/', '/ar/مقال-غير-موجود/']) {
   const response = await fetch(base + path);
+  await response.arrayBuffer();
   check(`${path} no empty generated page`, response.status === 404);
 }
 await fs.writeFile('output/security/dubai-publication-verification.json', JSON.stringify({ base, at: new Date().toISOString(), checks }, null, 2));

@@ -44,6 +44,7 @@ for (const path of paths) {
 for (const [oldPath, destination] of legacyArabicRedirects) {
   const response = await fetch(`${base}${oldPath}/?utm_source=url-check&q=${encodeURIComponent('تأسيس')}`, { redirect: 'manual' });
   const location = response.headers.get('location');
+  await response.arrayBuffer();
   const target = location && new URL(location, base);
   check(`${oldPath}/ permanent direct redirect`, response.status === 308 && target?.pathname === new URL(base + destination).pathname && target.searchParams.get('utm_source') === 'url-check' && target.searchParams.get('q') === 'تأسيس', { status: response.status, location });
 }
@@ -58,10 +59,12 @@ for (const path of ['/ar/المدونة/', '/ar/المدونة/تصنيف/تأس
 }
 for (const path of ['/ar/غير-موجود/', '/ar/المدونة/missing/', '/ar/المدونة/start-a-uae-company-from-egypt/', '/ar/%E0%A4%A/']) {
   const response = await fetch(base + path, { redirect: 'manual' });
+  await response.arrayBuffer();
   check(`${path} invalid path stays4xx`, [400, 404].includes(response.status), response.status);
 }
 const composed = '/ar/المدونة/تأسيس-شركة-في-الإمارات-من-مصر/';
 const normalizedResponse = await fetch(base + composed.normalize('NFD'), { redirect: 'manual' });
+await normalizedResponse.arrayBuffer();
 check('Decomposed Unicode redirects to NFC', normalizedResponse.status === 308 && new URL(normalizedResponse.headers.get('location'), base).pathname === new URL(base + composed).pathname);
 
 for (const path of ['/', '/about-us/', '/services/']) {
