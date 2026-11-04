@@ -35,7 +35,7 @@ for (const post of posts) {
   check(`${post.slug} exact SEO title`, decode(html.match(/<title[^>]*>(.*?)<\/title>/s)?.[1] || '') === post.metaTitle);
   check(`${post.slug} exact SEO description`, decode(html.match(/<meta name="description" content="([^"]*)"/)?.[1] || '') === post.excerpt);
   check(`${post.slug} article identity`, article?.headline === post.title && article?.mainEntityOfPage === canonicalArabicUrl(path) && article?.author?.['@type'] === 'Organization' && article?.image?.[0] === 'https://businesssetupuae.ae' + post.image.src);
-  check(`${post.slug} no fabricated date`, !article?.datePublished && !article?.dateModified && !/تاريخ النشر:/.test(html));
+  check(`${post.slug} verified actual publication date`, article?.datePublished === '2026-11-04' && article?.dateModified === '2026-11-04' && /\bdatetime="2026-11-04"/i.test(html));
   check(`${post.slug} Dubai breadcrumb`, breadcrumb?.itemListElement?.length === 3 && breadcrumb.itemListElement[1].item === canonicalArabicUrl(dubaiServicePath) && breadcrumb.itemListElement[2].item === canonicalArabicUrl(path));
   check(`${post.slug} no invented translation`, !/hrefLang="en"/.test(html.split('</head>')[0]));
   check(`${post.slug} no administrative material`, !/بطاقة النشر للمقال|خريطة الربط الداخلي المقترحة|نتائج البحث المقتبس|تحليل المنافسين/.test(html));

@@ -94,9 +94,10 @@ const articles = [
   },
 ];
 
-// No individual author or publication date was supplied for the Word articles.
-// Attribute the publisher honestly and leave dates absent until public launch.
-export const dubaiPosts = dubaiArticles.map(post => ({ ...post, publishedAt: null, updatedAt: null }));
+// First public availability was verified on the production Vercel deployment
+// on 4 November 2026 (ffacea2), independently of the Word preparation date.
+// No personal author or specialist reviewer was supplied; keep the publisher.
+export const dubaiPosts = dubaiArticles.map(post => ({ ...post, publishedAt: '2026-11-04', updatedAt: '2026-11-04' }));
 export const posts = [...dubaiPosts, ...articles.map((post) => ({ ...base, ...post, urlSlug: arabicPostSlugs[post.slug], relatedService: post.categorySlug === 'free-zones' ? '/ar/الخدمات/تأسيس-شركة-في-منطقة-حرة/' : post.categorySlug === 'after-setup' ? '/ar/الخدمات/خدمات-ما-بعد-التأسيس/' : '/ar/الخدمات/تأسيس-شركة-في-البر-الرئيسي/', readingMinutes: Math.max(1, Math.ceil([post.takeaway, ...post.sections.flatMap(s => s.paragraphs)].join(' ').split(/\s+/).length / 180)) }))];
 export const getPost = (slug) => posts.find(post => post.slug === slug || post.urlSlug === slug);
 export const getCategory = (slug) => categories.find(category => category.slug === slug || category.urlSlug === slug);
