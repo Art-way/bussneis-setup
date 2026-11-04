@@ -3,7 +3,7 @@
 import blogData from '@/components/data/blog-data';
 import allServicesData from '@/components/data/services-data'; // تأكد أن هذا الملف يحتوي على مصفوفة الخدمات
 import teamData from '@/components/data/team-data';
-import { postPath, dubaiServicePath } from '@/components/arabic/routes.mjs';
+import { postPath, dubaiServicePath, costRequestPath } from '@/components/arabic/routes.mjs';
 import { categories, posts, authors } from '@/components/arabic/content';
 import { services as arabicServices } from '@/components/arabic/services';
 
@@ -62,6 +62,7 @@ export default function sitemap() {
     '/ar',
     '/ar/الخدمات',
     dubaiServicePath.replace(/\/$/, ''),
+    costRequestPath.replace(/\/$/, ''),
     '/ar/تواصل-معنا',
     '/ar/المدونة',
     '/ar/المؤلفون',

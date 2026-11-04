@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
-import { canonicalArabicUrl, dubaiServicePath, postPath, canonicalArabicPaths } from '../components/arabic/routes.mjs';
+import { canonicalArabicUrl, dubaiServicePath, costRequestPath, postPath, canonicalArabicPaths } from '../components/arabic/routes.mjs';
 
 const base = process.argv[2] || 'http://127.0.0.1:5047';
 const posts = JSON.parse(await fs.readFile('components/arabic/dubai-articles.json', 'utf8'));
@@ -10,7 +10,7 @@ const stripScripts = html => html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,
 const decode = value => value.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 
 const pages = new Map();
-for (const path of ['/ar/', dubaiServicePath, '/ar/المدونة/', '/ar/الخدمات/', '/ar/المؤلفون/فريق-التحرير/', '/ar/تواصل-معنا/', ...posts.map(postPath)]) {
+for (const path of ['/ar/', dubaiServicePath, costRequestPath, '/ar/المدونة/', '/ar/الخدمات/', '/ar/المؤلفون/فريق-التحرير/', '/ar/تواصل-معنا/', ...posts.map(postPath)]) {
   const response = await fetch(base + path);
   const html = await response.text();
   const visible = stripScripts(html);
@@ -40,6 +40,8 @@ for (const post of posts) {
   check(`${post.slug} no invented translation`, !/hrefLang="en"/.test(html.split('</head>')[0]));
   check(`${post.slug} no administrative material`, !/بطاقة النشر للمقال|خريطة الربط الداخلي المقترحة|نتائج البحث المقتبس|تحليل المنافسين/.test(html));
   check(`${post.slug} exactly two full-size article illustrations`, (html.match(/<figure\b/g) || []).length === 2);
+  check(`${post.slug} simplified Word has no table or publishing markers`, !/<table\b/.test(html) && !/>H[123]:/.test(html) && !/النص البديل للصورة:/.test(html));
+  check(`${post.slug} native numbered list preserved`, /<ol\b[^>]*start="1"/.test(html) && post.blocks.filter(block => block.type === 'ol').reduce((sum, block) => sum + block.items.length, 0) === 5);
   for (const block of post.blocks) {
     if (block.type === 'h2' || block.type === 'h3') check(`${post.slug} ${block.id} heading and anchor`, html.includes(`id="${block.id}"`) && html.includes(block.text));
     if (block.type === 'p') {
@@ -70,10 +72,12 @@ for (const [query, expected] of [['emirate=dubai',3], ['emirate=dubai&topic=cont
 }
 
 const sitemap = await (await fetch(base + '/sitemap.xml')).text();
-for (const path of [dubaiServicePath, ...posts.map(postPath)]) check(`${path} sitemap exactly once`, sitemap.split(`<loc>${canonicalArabicUrl(path)}</loc>`).length === 2);
+for (const path of [dubaiServicePath, costRequestPath, ...posts.map(postPath)]) check(`${path} sitemap exactly once`, sitemap.split(`<loc>${canonicalArabicUrl(path)}</loc>`).length === 2);
 const home = pages.get('/ar/');
 check('Native homepage retains no Next JS', !home.includes('/_next/static/chunks/')); // Scripts separately verified by browser.
 check('Dubai service includes real form entry', pages.get(dubaiServicePath).includes('افتح نموذج طلب الاستشارة') && pages.get(dubaiServicePath).includes('id="request"'));
+check('Cost request is a real intake entry without quoted prices', pages.get(costRequestPath).includes('id="cost-request-form"') && pages.get(costRequestPath).includes('id="arabic-request-widget"') && !/\bAED\b|\b\d[\d,]*\s*(درهم|د\.إ)/.test(pages.get(costRequestPath)));
+check('All three calculator references point to the published intake path', posts.flatMap(post => post.blocks.flatMap(block => block.content || [])).filter(run => run.href === costRequestPath).length === 3);
 for (const path of ['/ar/تأسيس-شركة-في-الشارقة/', '/ar/تأسيس-شركة-في-عجمان/', '/ar/تأسيس-شركة-في-أبوظبي/', dubaiServicePath + 'المقاولات/', '/ar/مقال-غير-موجود/']) {
   const response = await fetch(base + path);
   await response.arrayBuffer();

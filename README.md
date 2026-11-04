@@ -34,7 +34,7 @@ Production preview uses port5047: [Arabic homepage](http://127.0.0.1:5047/ar/) a
 
 ## Publishing and verification
 
-Dubai now has one main service at `/ar/تأسيس-شركة-في-دبي/` and three Word-supplied articles using their approved root-level Arabic slugs. See [the Dubai delivery report](docs/dubai-publication.md) for taxonomy, internal links and actual publication/form status. The original six introductory guides remain available. Preserve truthful publisher identity, verified service scope and actual publication dates; the educational legal model and hypothetical budget are not individualized advice.
+Dubai now has one main service at `/ar/تأسيس-شركة-في-دبي/`, three revised Word articles with their approved root-level Arabic slugs, and `/ar/حاسبة-تكلفة-تأسيس-شركة/` as a choice-based cost-review request form with no displayed prices. See [the latest Word revision report](docs/dubai-word-revision.md) for square illustrations, native numbering, internal links and verified email reception. [The original delivery report](docs/dubai-publication.md) retains the first implementation history. The original six introductory guides remain available. Preserve truthful publisher identity, verified service scope and actual publication dates; the educational legal model and hypothetical budget are not individualized advice.
 
 `npm run lint` uses the standard Next configuration. Legacy native image elements produce warnings; do not change validated responsive images simply to silence them. Asset provenance and font licensing are recorded in `docs/arabic-assets.md`.
 

@@ -4,11 +4,11 @@ import { useState } from 'react';
 import Script from 'next/script';
 import styles from './service-pages.module.css';
 
-export default function ArabicContactForm() {
-  const [open, setOpen] = useState(false);
+export default function ArabicContactForm({ initiallyOpen = false, costRequest = false }) {
+  const [open, setOpen] = useState(initiallyOpen);
   const [failed, setFailed] = useState(false);
   return <div className={styles.requestForm}>
-    <p>أرسل تفاصيل نشاطك ووسيلة التواصل المناسبة عبر نموذج الاستقبال المعتمد بالموقع.</p>
+    <p>{costRequest ? 'اختر الخدمة وموقع التأسيس، واكتب نشاطك واحتياجاتك في خانة التفاصيل. بعد ذلك أضف بريدك ورقمك وأرسل الطلب للفريق.' : 'أرسل تفاصيل نشاطك ووسيلة التواصل المناسبة عبر نموذج الاستقبال المعتمد بالموقع.'}</p>
     {!open ? <button className="ar-button" type="button" aria-expanded={false} aria-controls="arabic-request-widget" onClick={() => setOpen(true)}>افتح نموذج طلب الاستشارة <span aria-hidden="true">←</span></button> : <>
       <p className={styles.formHelp}>النموذج الحالي باللغة الإنجليزية، ويمكنك كتابة رسالتك بالعربية. لا ترفع بيانات بنكية أو وثائق هوية مع الاستفسار الأولي.</p>
       <Script id="arabic-elfsight-platform" src="https://elfsightcdn.com/platform.js" strategy="afterInteractive" onError={() => setFailed(true)} />

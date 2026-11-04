@@ -11,7 +11,7 @@ export const categories = [
 ].map(category => ({ ...category, urlSlug: arabicCategorySlugs[category.slug] }));
 
 export const authors = [{
-  slug: 'editorial-team', name: 'فريق تحرير Business Setup UAE', role: 'الجهة المسؤولة عن المحتوى', type: 'Organization',
+  slug: 'editorial-team', name: 'فريق Business Setup UAE', role: 'الجهة المسؤولة عن المحتوى', type: 'Organization',
   bio: 'تُنسب الأدلة التمهيدية في هذا القسم إلى فريق تحرير الموقع بصفته جهة نشر. نجمع المعلومات العامة من المصادر الرسمية الموضّحة داخل كل دليل، ونفصل بينها وبين التقييم الخاص بحالة كل عميل. لا تمثّل هذه النسبة ادّعاءً بمؤهل قانوني أو ضريبي، ولا مراجعة مستقلة من مختص.'
 }].map(author => ({ ...author, urlSlug: arabicAuthorSlugs[author.slug] }));
 

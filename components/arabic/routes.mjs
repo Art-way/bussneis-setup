@@ -32,6 +32,7 @@ export const arabicCategorySlugs = {
 export const arabicAuthorSlugs = { 'editorial-team': 'فريق-التحرير' };
 
 export const dubaiServicePath = '/ar/تأسيس-شركة-في-دبي/';
+export const costRequestPath = '/ar/حاسبة-تكلفة-تأسيس-شركة/';
 export const dubaiArticleSlugs = [
   'نموذج-عقد-تأسيس-شركة-ذات-مسئولية-محدودة-دبي',
   'تكلفة-تاسيس-شركة-مقاولات-في-دبي',
@@ -46,6 +47,7 @@ export const arabicPageRoutes = [
   ...Object.entries(arabicCategorySlugs).map(([oldSlug, slug]) => ({ legacyPath: `/ar/blog/category/${oldSlug}`, path: `${arabicSectionPaths.blog}تصنيف/${slug}/`, view: 'category', slug })),
   ...Object.entries(arabicAuthorSlugs).map(([oldSlug, slug]) => ({ legacyPath: `/ar/authors/${oldSlug}`, path: `${arabicSectionPaths.authors}${slug}/`, view: 'author', slug })),
   { path: dubaiServicePath, view: 'dubai' },
+  { path: costRequestPath, view: 'cost-request' },
   ...dubaiArticleSlugs.map(slug => ({ path: `/ar/${slug}/`, view: 'post', slug })),
 ];
 
