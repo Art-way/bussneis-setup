@@ -3,6 +3,7 @@
 import blogData from '@/components/data/blog-data';
 import allServicesData from '@/components/data/services-data'; // تأكد أن هذا الملف يحتوي على مصفوفة الخدمات
 import teamData from '@/components/data/team-data';
+import { postPath, dubaiServicePath } from '@/components/arabic/routes.mjs';
 import { categories, posts, authors } from '@/components/arabic/content';
 import { services as arabicServices } from '@/components/arabic/services';
 
@@ -60,6 +61,7 @@ export default function sitemap() {
   const arabicStaticRoutes = [
     '/ar',
     '/ar/الخدمات',
+    dubaiServicePath.replace(/\/$/, ''),
     '/ar/تواصل-معنا',
     '/ar/المدونة',
     '/ar/المؤلفون',
@@ -85,7 +87,7 @@ export default function sitemap() {
   }));
 
   const arabicBlogPages = posts.map((post) => ({
-    url: `${baseUrl}/ar/المدونة/${post.urlSlug}/`,
+    url: `${baseUrl}${postPath(post)}`,
     ...(post.updatedAt || post.publishedAt
       ? { lastModified: post.updatedAt || post.publishedAt }
       : {}),

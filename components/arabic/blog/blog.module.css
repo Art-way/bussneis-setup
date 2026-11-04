@@ -150,6 +150,26 @@
 @media(max-width:520px){.heroGrid h1{font-size:42px;letter-spacing:normal}.heroAside{grid-template-columns:32px 1fr;gap:0 13px}.editorialMark{font-size:33px}.heroAside p{font-size:16px}.heroAside .textLink{font-size:14px}.featuredContent{padding:22px}.featuredContent h2{font-size:23px;line-height:1.75}.featuredContent>p{font-size:15px}.featuredBottom>div>span{font-size:12px}.featuredLabel{font-size:12px}.cardGrid{grid-template-columns:1fr;gap:24px}.libraryTop{display:block;margin-bottom:23px}.libraryTop h2{font-size:25px}.libraryTop .search{width:100%;margin-top:22px}.libraryTop>.textLink{margin-top:15px}.categories{gap:7px}.categories a{font-size:13px;padding:9px 12px}.trustStrip{padding:28px 0}.trustIcon{height:42px;width:42px;font-size:25px}.trustStrip h2{font-size:18px}.trustStrip>div{gap:15px}.trustStrip>div>a{margin-inline-start:57px}.byline{align-items:flex-start;flex-direction:column;gap:15px}.dateLine{flex-direction:row;flex-wrap:wrap;gap:4px 13px}.articleHeading h1{font-size:30px;letter-spacing:normal;line-height:1.6}.articleHeader .breadcrumb{margin-bottom:28px}.articleIntro{font-size:17px}.authorLink strong{font-size:15px}.authorLink .avatar{width:45px;height:45px;font-size:23px}.articleLayout{padding-bottom:40px}.toc ol{grid-template-columns:1fr}.toc li:last-child{display:list-item}.toc li a{font-size:14px}.articleCover[data-cover]{aspect-ratio:1.6}.takeaway{padding:20px 22px}.takeaway p{font-size:17px}.proseSection{margin-block:28px}.proseSection h2{font-size:25px}.proseSection p{font-size:18px;line-height:1.95}.articleCta{padding:28px 24px}.articleCta h2{font-size:24px}.articleCta p{font-size:15px}.sources h2{font-size:24px}.authorBox{padding:23px;gap:14px;flex-direction:column}.authorBox h2{font-size:20px}.authorBox .avatar{height:46px;width:46px;font-size:23px}.profilePage h1,.policyPage h1{font-size:33px;letter-spacing:normal}.profilePage .breadcrumb{margin-bottom:32px}.profilePrinciples{grid-template-columns:1fr;gap:25px}.profilePrinciples>div{padding-inline-start:30px;position:relative}.profilePrinciples>div>span{position:absolute;right:0;top:8px}.profilePrinciples p{font-size:13px}.profileActions{gap:18px}.profileActions .textLink{font-size:12px}.policyInner .profileIntro{font-size:17px}.policyPage .breadcrumb{margin-bottom:35px}}
 @media(prefers-reduced-motion:reduce){.roundArrow,.categories a,.button{transition:none}}
 .tocMobile{display:none}
+.breadcrumbItem{display:inline-flex;align-items:center;gap:12px}
+.wordArticle{margin-top:0}
+.wordArticle>h2{margin:44px 0 18px;scroll-margin-top:110px}
+.wordArticle>h3{font-size:21px;line-height:1.75;color:#103b32;font-weight:600;margin:30px 0 12px;scroll-margin-top:110px}
+.wordArticle a{color:#205b45;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;overflow-wrap:anywhere}
+.wordArticle a:hover{color:#9c4429}
+.wordFigure{margin:24px 0 30px}
+.wordFigure img{display:block;width:100%;height:auto;border:1px solid #dce3d5;border-radius:12px}
+.wordFigure figcaption{font-size:14px;line-height:1.9;color:#586953;text-align:center;margin-top:10px}
+.tableScroll{max-width:100%;overflow-x:auto;margin-block:26px;border:1px solid #dce3d5;border-radius:9px;overscroll-behavior-inline:contain}
+.proseSection .tableScroll table{margin:0;min-width:510px;border-style:hidden}
+.tableScroll tbody th{font-weight:500;background:#f7f8f2}
+.tableScroll:focus-visible{outline:3px solid #ad4c29;outline-offset:3px}
+.marketFilters{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 18px;font-size:14px;line-height:1.8}
+.marketFilters strong{font-weight:600;color:#103b32;margin-inline-end:8px}
+.marketFilters a{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;text-decoration:none;border:1px solid #cad6c6;border-radius:8px;color:#315442;background:#fff}
+.marketFilters a[aria-current=page]{background:#103b32;color:#fff;border-color:#103b32}
+.featuredImage>img{display:block;width:100%;height:100%;object-fit:contain;background:#eef1e8}
+@media(max-width:640px){.wordArticle>h2{font-size:25px;margin-top:34px}.wordArticle>h3{font-size:21px}.wordFigure{margin:20px 0 26px}.marketFilters{gap:8px}.marketFilters strong{width:100%}}
+@media print{.tableScroll{overflow:visible}.proseSection .tableScroll table{min-width:0}.wordFigure{break-inside:avoid}}
 .authorLinks{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:16px}
 .authorLinks a{min-height:36px;align-items:center}
 .authorBox .avatar{height:64px;width:64px;border-radius:16px}

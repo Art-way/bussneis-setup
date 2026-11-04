@@ -7,6 +7,7 @@ import { arabicPageRoutes } from '@/components/arabic/routes.mjs';
 const views = {
   services: () => import('@/components/arabic/views/services'),
   service: () => import('@/components/arabic/views/service'),
+  dubai: () => import('@/components/arabic/views/dubai'),
   contact: () => import('@/components/arabic/views/contact'),
   blog: () => import('@/components/arabic/views/blog'),
   post: () => import('@/components/arabic/views/post'),

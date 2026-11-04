@@ -7,11 +7,11 @@ export async function generateMetadata({ params: paramsPromise, searchParams: se
   const [params, searchParams] = await Promise.all([paramsPromise, searchParamsPromise]);
   const category = getCategory(params.slug);
   if (!category) return {};
-  return editorialMetadata(`${category.title} في الإمارات`, category.description, `/ar/المدونة/تصنيف/${category.urlSlug}/`, searchParams?.q ? { robots: { index: false, follow: true } } : {});
+  return editorialMetadata(`${category.title} في الإمارات`, category.description, `/ar/المدونة/تصنيف/${category.urlSlug}/`, (searchParams?.q || searchParams?.emirate || searchParams?.topic) ? { robots: { index: false, follow: true } } : {});
 }
 export default async function CategoryPage({ params: paramsPromise, searchParams: searchParamsPromise }) {
   const [params, searchParams] = await Promise.all([paramsPromise, searchParamsPromise]);
   if (!getCategory(params.slug)) notFound();
   const query = typeof searchParams?.q === 'string' ? searchParams.q.slice(0, 120) : '';
-  return <BlogListing categorySlug={params.slug} query={query} />;
+  return <BlogListing categorySlug={params.slug} query={query} emirateSlug={typeof searchParams?.emirate === 'string' ? searchParams.emirate : ''} topicSlug={typeof searchParams?.topic === 'string' ? searchParams.topic : ''} />;
 }

@@ -1,4 +1,5 @@
 import { arabicAuthorSlugs, arabicCategorySlugs, arabicPostSlugs } from './routes.mjs';
+import dubaiArticles from './dubai-articles.json';
 
 export const siteUrl = 'https://businesssetupuae.ae';
 
@@ -11,7 +12,7 @@ export const categories = [
 
 export const authors = [{
   slug: 'editorial-team', name: 'فريق تحرير Business Setup UAE', role: 'الجهة المسؤولة عن المحتوى', type: 'Organization',
-  bio: 'تُنسب الأدلة التمهيدية في هذا القسم إلى فريق تحرير الموقع بصفته جهة نشر. نجمع المعلومات العامة من المصادر الرسمية الموضّحة أسفل كل دليل، ونفصل بينها وبين التقييم الخاص بحالة كل عميل. لا تمثّل هذه النسبة ادّعاءً بمؤهل قانوني أو ضريبي، ولا مراجعة مستقلة من مختص.'
+  bio: 'تُنسب الأدلة التمهيدية في هذا القسم إلى فريق تحرير الموقع بصفته جهة نشر. نجمع المعلومات العامة من المصادر الرسمية الموضّحة داخل كل دليل، ونفصل بينها وبين التقييم الخاص بحالة كل عميل. لا تمثّل هذه النسبة ادّعاءً بمؤهل قانوني أو ضريبي، ولا مراجعة مستقلة من مختص.'
 }].map(author => ({ ...author, urlSlug: arabicAuthorSlugs[author.slug] }));
 
 const base = {
@@ -93,7 +94,10 @@ const articles = [
   },
 ];
 
-export const posts = articles.map((post) => ({ ...base, ...post, urlSlug: arabicPostSlugs[post.slug], relatedService: post.categorySlug === 'free-zones' ? '/ar/الخدمات/تأسيس-شركة-في-منطقة-حرة/' : post.categorySlug === 'after-setup' ? '/ar/الخدمات/خدمات-ما-بعد-التأسيس/' : '/ar/الخدمات/تأسيس-شركة-في-البر-الرئيسي/', readingMinutes: Math.max(1, Math.ceil([post.takeaway, ...post.sections.flatMap(s => s.paragraphs)].join(' ').split(/\s+/).length / 180)) }));
+// No individual author or publication date was supplied for the Word articles.
+// Attribute the publisher honestly and leave dates absent until public launch.
+export const dubaiPosts = dubaiArticles.map(post => ({ ...post, publishedAt: null, updatedAt: null }));
+export const posts = [...dubaiPosts, ...articles.map((post) => ({ ...base, ...post, urlSlug: arabicPostSlugs[post.slug], relatedService: post.categorySlug === 'free-zones' ? '/ar/الخدمات/تأسيس-شركة-في-منطقة-حرة/' : post.categorySlug === 'after-setup' ? '/ar/الخدمات/خدمات-ما-بعد-التأسيس/' : '/ar/الخدمات/تأسيس-شركة-في-البر-الرئيسي/', readingMinutes: Math.max(1, Math.ceil([post.takeaway, ...post.sections.flatMap(s => s.paragraphs)].join(' ').split(/\s+/).length / 180)) }))];
 export const getPost = (slug) => posts.find(post => post.slug === slug || post.urlSlug === slug);
 export const getCategory = (slug) => categories.find(category => category.slug === slug || category.urlSlug === slug);
 export const getAuthor = (slug) => authors.find(author => author.slug === slug || author.urlSlug === slug);

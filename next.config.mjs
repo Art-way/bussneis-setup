@@ -7,6 +7,13 @@ const nextConfig = {
   // يضمن هذا الخيار أن جميع الروابط تنتهي بـ / (مثل /services/uae-free-zones/)
   trailingSlash: true,
 
+  // Optional local escape hatch for a full disk. This affects only the
+  // rebuildable webpack cache, not runtime assets or Vercel's default build.
+  webpack(config) {
+    if (process.env.DISABLE_LOCAL_WEBPACK_CACHE === '1') config.cache = false;
+    return config;
+  },
+
   // The Arabic server stylesheet reads these authored files at module startup.
   outputFileTracingIncludes: {
     '/ar': ['./app/ar/arabic.css', './components/arabic/blog/cards.css'],

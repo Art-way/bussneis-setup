@@ -20,4 +20,6 @@ Use the temporary Vercel address for review. The existing main site's domain and
 
 Public Arabic path names and legacy redirects are documented in `arabic-url-migration.md`.
 
-Detailed Arabic content and taxonomy work remain a later phase. Preserve truthful organizational authorship. The current typography/readability update and separate simulated/actual-throttle lab results are documented in `arabic-design-refinement.md`. Mobile performance under actual throttling still needs improvement; lab scores are not a guarantee of this deployment's performance.
+The first Dubai content group is now implemented: one Dubai service and three Word-supplied articles. See `dubai-publication.md` for paths, taxonomy, form verification and remaining publication settings. Preserve truthful organizational authorship. The typography/readability update and separate historical simulated/actual-throttle lab results are documented in `arabic-design-refinement.md`; they are not measurements of this new content build.
+
+For local rebuilds on a full disk, the optional environment flag `DISABLE_LOCAL_WEBPACK_CACHE=1` skips only webpack's rebuildable cache. Leave it unset for normal Vercel builds.

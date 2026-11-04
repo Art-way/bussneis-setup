@@ -23,6 +23,8 @@ Production preview uses port5047: [Arabic homepage](http://127.0.0.1:5047/ar/) a
 - `components/arabic/views/`: the Arabic Server Component templates and page metadata.
 - `components/arabic/routes.mjs`: Arabic public slugs and permanent redirects from the previous URLs.
 - `components/arabic/content.js`: introductory articles, categories, organizational author, dates and official sources.
+- `components/arabic/dubai-articles.json`: three faithful Word article imports with structured, escaped body blocks and exact SEO metadata.
+- `components/arabic/market-segments.js`: emirate availability and topic taxonomy; planned emirates have no public destinations.
 - `components/arabic/services.js`: Arabic service records.
 - `components/arabic/blog/`: article/listing/cover templates with separate lightweight card CSS.
 - `components/arabic/critical-css.js`: server-rendered Arabic base/card styles; the two authored CSS files are explicitly included in Arabic server traces by `next.config.mjs`.
@@ -32,11 +34,20 @@ Production preview uses port5047: [Arabic homepage](http://127.0.0.1:5047/ar/) a
 
 ## Publishing and verification
 
-The current Arabic articles are introductory content. Confirm the final taxonomy, service scope, author identities and specialist review before publishing detailed legal or tax guidance. Preserve true publication/update dates and match schema to visible content and real author data.
+Dubai now has one main service at `/ar/تأسيس-شركة-في-دبي/` and three Word-supplied articles using their approved root-level Arabic slugs. See [the Dubai delivery report](docs/dubai-publication.md) for taxonomy, internal links and actual publication/form status. The original six introductory guides remain available. Preserve truthful publisher identity, verified service scope and actual publication dates; the educational legal model and hypothetical budget are not individualized advice.
 
 `npm run lint` uses the standard Next configuration. Legacy native image elements produce warnings; do not change validated responsive images simply to silence them. Asset provenance and font licensing are recorded in `docs/arabic-assets.md`.
 
 The 2 November typography, article-reading and publisher-panel improvements are documented in `docs/arabic-design-refinement.md`.
+
+Verify Arabic routing and Dubai publication with:
+
+```sh
+node scripts/verify-arabic-urls.mjs http://127.0.0.1:5047
+node scripts/verify-dubai-publication.mjs http://127.0.0.1:5047
+```
+
+Elfsight loads only when a visitor opens the consultation form. Its existing English field labels and Swedish success copy are vendor settings; the shared English widget is preserved. Actual request acceptance was tested once, with no claim about email inbox delivery. For a local disk with little free space, set `DISABLE_LOCAL_WEBPACK_CACHE=1` for a build to skip rebuildable webpack cache; leave it unset for normal deployment.
 
 Arabic URL migration and verification are documented in `docs/arabic-url-migration.md`. Run `node scripts/verify-arabic-urls.mjs` against the local production preview to verify routes, redirects and indexing metadata.
 
