@@ -1,7 +1,7 @@
 import Link from '../link';
 import styles from './blog.module.css';
 
-function Inline({ content }) {
+export function Inline({ content }) {
   return content.map((run, index) => {
     let text = run.bold ? <strong>{run.text}</strong> : run.text;
     if (run.italic) text = <em>{text}</em>;

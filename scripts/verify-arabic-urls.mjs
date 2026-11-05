@@ -20,7 +20,7 @@ function checkStructuredUrls(value, issues) {
   else if (value && typeof value === 'object') Object.values(value).forEach(item => checkStructuredUrls(item, issues));
 }
 
-assert.equal(paths.length, 26, 'The Arabic section has 26 canonical pages including the Dubai formation guide.');
+assert.equal(paths.length, 27, 'The Arabic section has 27 canonical pages including the Dubai licence fees article.');
 for (const path of paths) {
   check(`${path} Arabic-only public segments`, path.split('/').slice(2).filter(Boolean).every(segment => /[\u0600-\u06ff]/.test(segment) && !/[a-z]/i.test(segment)));
   const response = await fetch(base + path, { redirect: 'manual' });

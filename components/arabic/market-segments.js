@@ -20,6 +20,7 @@ export const dubaiTopics = [
 ];
 export const articleTopics = {
   'formation-steps': 'خطوات التأسيس',
+  'trade-licences': 'الرخص التجارية',
   contracts: 'عقود التأسيس', 'legal-forms': 'الشركات ذات المسؤولية المحدودة',
   contracting: 'شركات المقاولات', 'formation-benefits': 'مميزات التأسيس',
 };

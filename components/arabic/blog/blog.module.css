@@ -154,7 +154,7 @@
 .wordArticle{margin-top:0}
 .wordArticle>h2{margin:44px 0 18px;scroll-margin-top:110px}
 .wordArticle>h3{font-size:21px;line-height:1.75;color:#103b32;font-weight:600;margin:30px 0 12px;scroll-margin-top:110px}
-.wordArticle a{color:#205b45;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;overflow-wrap:anywhere}
+.wordArticle a,.articleIntro a{color:#205b45;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;overflow-wrap:anywhere}
 .wordArticle a:hover{color:#9c4429}
 .wordFigure{margin:24px 0 30px}
 .wordFigure img{display:block;width:100%;height:auto;border:1px solid #dce3d5;border-radius:12px}

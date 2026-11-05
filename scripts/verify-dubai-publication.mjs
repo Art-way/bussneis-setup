@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
-import { canonicalArabicUrl, dubaiGuideSlug, dubaiServicePath, costRequestPath, postPath, canonicalArabicPaths } from '../components/arabic/routes.mjs';
+import { arabicPostSlugs, canonicalArabicUrl, dubaiGuideSlug, dubaiLicenceFeesPath, dubaiServicePath, costRequestPath, postPath, canonicalArabicPaths } from '../components/arabic/routes.mjs';
 
 const base = process.argv[2] || 'http://127.0.0.1:5047';
 const posts = JSON.parse(await fs.readFile('components/arabic/dubai-articles.json', 'utf8'));
@@ -12,9 +12,11 @@ const guide = posts.find(post => post.urlSlug === dubaiGuideSlug);
 const contract = posts.find(post => post.slug === 'dubai-llc-memorandum');
 const budget = posts.find(post => post.slug === 'dubai-contracting-budget');
 const benefits = posts.find(post => post.slug === 'dubai-formation-benefits');
+const licenceFees = posts.find(post => post.path === dubaiLicenceFeesPath);
+const costGuide = { slug: 'company-setup-cost-checklist', path: postPath({ urlSlug: arabicPostSlugs['company-setup-cost-checklist'] }) };
 
 const pages = new Map();
-for (const path of ['/ar/', dubaiServicePath, costRequestPath, '/ar/المدونة/', '/ar/الخدمات/', '/ar/المؤلفون/فريق-التحرير/', '/ar/تواصل-معنا/', ...posts.map(postPath)]) {
+for (const path of ['/ar/', dubaiServicePath, costRequestPath, costGuide.path, '/ar/المدونة/', '/ar/الخدمات/', '/ar/المؤلفون/فريق-التحرير/', '/ar/تواصل-معنا/', ...posts.map(postPath)]) {
   const response = await fetch(base + path, { redirect: 'manual' });
   const html = await response.text();
   const visible = stripScripts(html);
@@ -45,7 +47,8 @@ for (const post of posts) {
   check(`${post.slug} Dubai breadcrumb`, breadcrumb?.itemListElement?.length === 3 && breadcrumb.itemListElement[1].item === canonicalArabicUrl(dubaiServicePath) && breadcrumb.itemListElement[2].item === canonicalArabicUrl(path));
   check(`${post.slug} no invented translation`, !/hrefLang="en"/.test(html.split('</head>')[0]));
   check(`${post.slug} no administrative material`, !/بطاقة النشر للمقال|خريطة الربط الداخلي المقترحة|نتائج البحث المقتبس|تحليل المنافسين/.test(html));
-  check(`${post.slug} exactly two full-size article illustrations`, (html.match(/<figure\b/g) || []).length === 2);
+  const figureCount = post.blocks.filter(block => block.type === 'image').length;
+  check(`${post.slug} expected full-size article illustrations`, (html.match(/<figure\b/g) || []).length === figureCount);
   check(`${post.slug} simplified Word has no table or publishing markers`, !/<table\b/.test(html) && !/>H[123]:|\[H[123]\]|النص البديل للصورة:/.test(html));
   if (post === contract || post === benefits) check(`${post.slug} native numbered list preserved`, /<ol\b[^>]*start="1"/.test(html) && post.blocks.filter(block => block.type === 'ol').reduce((sum, block) => sum + block.items.length, 0) === 5);
   for (const block of post.blocks) {
@@ -72,7 +75,7 @@ for (const post of posts) {
   check(`${post.slug} working service request link`, html.includes(`href="${dubaiServicePath}#request"`));
 }
 
-for (const [query, expected] of [['emirate=dubai',4], ['emirate=dubai&topic=formation-steps',1], ['emirate=dubai&topic=contracting',1], ['emirate=dubai&topic=contracts',1], ['emirate=dubai&topic=formation-benefits',1]]) {
+for (const [query, expected] of [['emirate=dubai',5], ['emirate=dubai&topic=formation-steps',1], ['emirate=dubai&topic=contracting',1], ['emirate=dubai&topic=contracts',1], ['emirate=dubai&topic=formation-benefits',1], ['emirate=dubai&topic=trade-licences',1]]) {
   const html = await (await fetch(base + '/ar/المدونة/?' + query)).text();
   const cards = (html.match(/class="ar-article-card"/g) || []).length;
   check(`${query} filter content`, cards === expected, cards);
@@ -98,6 +101,12 @@ for (const [source, anchor, target] of [
   [budget, 'حاسبة تكلفة تأسيس الشركة على موقعنا', costRequestPath],
   [benefits, 'خطوات فتح شركة في دبي', guide.path],
   [contract, 'دليل تأسيس الشركة في دبي', guide.path],
+  [guide, 'أسعار الرخص التجارية في دبي', licenceFees.path],
+  [costGuide, 'رسوم إصدار وتجديد الرخصة التجارية', licenceFees.path],
+  [licenceFees, 'خطوات تأسيس شركة في دبي', guide.path],
+  [licenceFees, 'قراءة عرض تكلفة تأسيس شركة في الإمارات', costGuide.path],
+  [licenceFees, 'حاسبة تكلفة تأسيس شركة', costRequestPath],
+  [licenceFees, 'خدمة تأسيس شركة في دبي', dubaiServicePath],
 ]) {
   const body = pages.get(source.path).match(/<article\b[^>]*>([\s\S]*?)<\/article>/)?.[1] || '';
   const anchors = [...body.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)];

@@ -34,11 +34,14 @@ export const arabicAuthorSlugs = { 'editorial-team': 'فريق-التحرير' }
 export const dubaiServicePath = '/ar/تأسيس-شركة-في-دبي/';
 export const costRequestPath = '/ar/حاسبة-تكلفة-تأسيس-شركة/';
 export const dubaiGuideSlug = 'كيف-افتح-شركة-في-دبي';
+const dubaiLicenceFeesSlug = 'أسعار-الرخص-التجارية-في-دبي';
+export const dubaiLicenceFeesPath = `/ar/${dubaiLicenceFeesSlug}/`;
 export const dubaiArticleSlugs = [
   dubaiGuideSlug,
   'نموذج-عقد-تأسيس-شركة-ذات-مسئولية-محدودة-دبي',
   'تكلفة-تاسيس-شركة-مقاولات-في-دبي',
   'مميزات-فتح-شركة-في-دبي',
+  dubaiLicenceFeesSlug,
 ];
 export const postPath = post => post.path || `${arabicSectionPaths.blog}${post.urlSlug}/`;
 

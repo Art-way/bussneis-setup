@@ -6,7 +6,7 @@ import { articleTopics } from '../market-segments';
 import { editorialMetadata, JsonLd, breadcrumbs } from '../blog/seo';
 import EditorialCover from '../blog/cover';
 import ArticleCard from '../blog/article-card';
-import ArticleBlocks from '../blog/article-blocks';
+import ArticleBlocks, { Inline } from '../blog/article-blocks';
 import styles from '../blog/blog.module.css';
 
 export async function generateMetadata({ params: paramsPromise }) {
@@ -43,6 +43,7 @@ export default async function ArticlePage({ params: paramsPromise }) {
   const trail = isDubai ? [{ name: 'تأسيس الشركات في دبي', path: dubaiServicePath }] : [{ name: 'المجلة', path: '/ar/المدونة/' }, { name: category.title, path: categoryPath }];
   const related = posts.filter(item => item.slug !== post.slug).sort((a, b) => (Number(b.emirateSlug === post.emirateSlug) * 2 + Number(b.categorySlug === post.categorySlug)) - (Number(a.emirateSlug === post.emirateSlug) * 2 + Number(a.categorySlug === post.categorySlug))).slice(0, 3);
   const index = <ArticleContents sections={post.sections} showSources={post.sources.length > 0} />;
+  const introduction = post.blocks?.[0]?.content;
   return <>
     <JsonLd data={breadcrumbs([...trail, { name: post.title, path }])} />
     <JsonLd data={{ '@context': 'https://schema.org', '@type': 'BlogPosting', '@id': canonicalArabicUrl(path + '#article'), headline: post.title, description: post.excerpt, inLanguage: 'ar-EG', mainEntityOfPage: canonicalArabicUrl(path),
@@ -54,7 +55,7 @@ export default async function ArticlePage({ params: paramsPromise }) {
     <article>
       <header className={styles.articleHeader}><div className="ar-container">
         <nav aria-label="مسار التصفح" className={styles.breadcrumb}><Link href="/ar/">الرئيسية العربية</Link>{trail.map(item => <span key={item.path} className={styles.breadcrumbItem}><span aria-hidden="true">/</span><Link href={item.path}>{item.name}</Link></span>)}{isDubai && <><span aria-hidden="true">/</span><span aria-current="page">{post.title}</span></>}</nav>
-        <div className={styles.articleHeading}><Link className={styles.categoryTag} href={collectionPath}>{isDubai ? 'دبي · ' + articleTopics[post.topicSlugs[0]] : category.title}</Link><h1>{post.title}</h1><p className={styles.articleIntro}>{post.blocks ? post.takeaway : post.excerpt}</p>
+        <div className={styles.articleHeading}><Link className={styles.categoryTag} href={collectionPath}>{isDubai ? 'دبي · ' + articleTopics[post.topicSlugs[0]] : category.title}</Link><h1>{post.title}</h1><p className={styles.articleIntro}>{introduction?.some(run => run.href) ? <Inline content={introduction} /> : post.blocks ? post.takeaway : post.excerpt}</p>
           <div className={styles.byline}><Link href={authorPath} className={styles.authorLink}><span className={styles.avatar} aria-hidden="true">B<span>U</span></span><span><strong>{author.name}</strong><small>{author.role}</small></span></Link><div className={styles.dateLine}>{post.publishedAt && <span>تاريخ النشر: <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time></span>}{post.updatedAt && <span>آخر تحديث: <time dateTime={post.updatedAt}>{formatDate(post.updatedAt)}</time></span>}<span>{formatReadingTime(post.readingMinutes)} تقريباً</span></div></div>
         </div>
       </div></header>
@@ -65,7 +66,7 @@ export default async function ArticlePage({ params: paramsPromise }) {
             <EditorialCover category={post.categorySlug} className={styles.articleCover} />
             <div className={styles.takeaway}><span>الجواب أولاً</span><p>{post.takeaway}</p></div>
             <p className={styles.articleDisclosure}>دليل تمهيدي للمعلومات العامة. تختلف المتطلبات بحسب النشاط والجهة والحالة؛ راجع الجهة المختصة قبل أي التزام مالي أو قانوني.</p>
-            {post.sections.map(section => <section className={styles.proseSection} id={section.id} key={section.id}><h2>{section.title}</h2>{section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</section>)}
+            {post.sections.map(section => <section className={styles.proseSection} id={section.id} key={section.id}><h2>{section.title}</h2>{section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}{section.followUp && <p><Inline content={section.followUp} /></p>}</section>)}
             <div className={styles.articleCta}><span className={styles.eyebrow}>حوّل المعرفة إلى خطوة</span><h2>عندك مشروع في بالك؟</h2><p>تعرّف على خدمات التأسيس، ثم شاركنا نشاطك واحتياجاتك لمناقشة المسار المناسب.</p><Link href={post.relatedService} className={styles.button}>استكشف خدمات التأسيس <span aria-hidden="true">←</span></Link></div>
           </>}
           {post.sources.length > 0 && <section id="sources" className={styles.sources}><p className={styles.eyebrow}>للتأكد والقراءة الإضافية</p><h2>المصادر الرسمية</h2><p>استند هذا الدليل إلى الصفحات التالية عند إعداد نسخته بتاريخ {formatDate(post.updatedAt)}. قد تحدّث الجهات متطلباتها لاحقاً.</p><ol>{post.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}<span aria-hidden="true">↗</span><small dir="ltr">{new URL(source.url).hostname}</small></a></li>)}</ol><Link href="/ar/سياسة-التحرير/" className={styles.textLink}>سياسة إعداد المحتوى والتصحيح ←</Link></section>}
