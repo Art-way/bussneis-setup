@@ -5,7 +5,7 @@ import { arabicMetadata, StructuredData } from '../seo';
 import { breadcrumbs } from '../blog/seo';
 import styles from '../service-pages.module.css';
 
-export const metadata = arabicMetadata('حاسبة تكلفة تأسيس شركة — أرسل متطلباتك للفريق', 'اختر خدمة تأسيس الشركة وموقعها، وأرسل تفاصيل مشروعك ووسيلة التواصل إلى Business Setup UAE لطلب مراجعة التكلفة. لا تعرض الصفحة سعرًا تلقائيًا.', costRequestPath);
+export const metadata = arabicMetadata('حاسبة تكلفة تأسيس شركة — أرسل متطلباتك للفريق', 'اختر خدمة تأسيس الشركة وموقعها، وأرسل تفاصيل مشروعك ووسيلة التواصل إلى Business Setup UAE لطلب مراجعة التكلفة. لا تعرض الصفحة سعراً تلقائياً.', costRequestPath);
 
 export default function CostRequestPage() {
   return <>
@@ -13,9 +13,9 @@ export default function CostRequestPage() {
     <StructuredData data={{ '@context': 'https://schema.org', '@type': 'WebPage', name: 'حاسبة تكلفة تأسيس شركة', description: 'نموذج اختيارات لطلب مراجعة تكلفة التأسيس من الفريق دون تسعير آلي.', url: canonicalArabicUrl(costRequestPath), inLanguage: 'ar-EG' }} />
     <section className={`ar-container ${styles.costRequestHero}`}>
       <nav className={styles.breadcrumb} aria-label="مسار التنقل"><Link href="/ar/">الرئيسية العربية</Link><span aria-hidden="true">/</span><span>طلب مراجعة التكلفة</span></nav>
-      <span className="ar-eyebrow">اختياراتك أولًا، ثم مراجعة تناسب مشروعك</span>
+      <span className="ar-eyebrow">اختياراتك أولاً، ثم مراجعة تناسب مشروعك</span>
       <h1>حاسبة تكلفة<br /><span className={styles.accent}>تأسيس شركة.</span></h1>
-      <p className={styles.lead}>ابدأ بتحديد الخدمة ومكان التأسيس، ثم أرسل تفاصيل مشروعك وبيانات التواصل. هذا نموذج لطلب مراجعة التكلفة من الفريق؛ لا يعرض سعرًا أو عرضًا تلقائيًا.</p>
+      <p className={styles.lead}>ابدأ بتحديد الخدمة ومكان التأسيس، ثم أرسل تفاصيل مشروعك وبيانات التواصل. هذا نموذج لطلب مراجعة التكلفة من الفريق؛ لا يعرض سعراً أو عرضاً تلقائياً.</p>
       <a href="#cost-request-form" className="ar-button">ابدأ اختياراتك <span aria-hidden="true">↓</span></a>
     </section>
     <section className={`ar-container ${styles.costRequestLayout}`} aria-labelledby="cost-request-title">
@@ -31,6 +31,6 @@ export default function CostRequestPage() {
       </aside>
       <div id="cost-request-form" className={styles.costRequestForm}><span className="ar-eyebrow">خطوتان لإكمال الطلب</span><h2 id="cost-request-title">جهّز طلب مراجعة التكلفة</h2><ArabicContactForm initiallyOpen costRequest /></div>
     </section>
-    <section className={`ar-container ${styles.costRequestHelp}`} aria-label="مساعدة في إكمال الطلب"><h2>تحتاج توضيحًا قبل الإرسال؟</h2><p>يمكنك أيضًا التواصل عبر <a href="https://wa.me/971507706746" target="_blank" rel="noopener noreferrer">واتساب</a> أو البريد <a href="mailto:info@businesssetupuae.ae">info@businesssetupuae.ae</a>. أرسل وصفًا مختصرًا للنشاط دون وثائق هوية أو بيانات بنكية.</p></section>
+    <section className={`ar-container ${styles.costRequestHelp}`} aria-label="مساعدة في إكمال الطلب"><h2>تحتاج توضيحاً قبل الإرسال؟</h2><p>يمكنك أيضاً التواصل عبر <a href="https://wa.me/971507706746" target="_blank" rel="noopener noreferrer">واتساب</a> أو البريد <a href="mailto:info@businesssetupuae.ae">info@businesssetupuae.ae</a>. أرسل وصفاً مختصراً للنشاط دون وثائق هوية أو بيانات بنكية.</p></section>
   </>;
 }

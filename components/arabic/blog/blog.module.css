@@ -162,6 +162,8 @@
 .wordArticle ol{list-style:decimal;list-style-position:outside}
 .wordArticle ol>li{display:list-item;list-style:decimal}
 .wordArticle ol>li::marker{color:#103b32;font-weight:600}
+.wordArticle ul>li{display:list-item;list-style:disc}
+.wordArticle ul>li::marker{color:#103b32}
 .wordFigure figcaption{font-size:14px;line-height:1.9;color:#586953;text-align:center;margin-top:10px}
 .tableScroll{max-width:100%;overflow-x:auto;margin-block:26px;border:1px solid #dce3d5;border-radius:9px;overscroll-behavior-inline:contain}
 .proseSection .tableScroll table{margin:0;min-width:510px;border-style:hidden}

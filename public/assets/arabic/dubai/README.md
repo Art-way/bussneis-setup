@@ -14,3 +14,5 @@ The Word originals were extracted without changing the source document. `scripts
 | word/media/image6.png | article-3-figure-square |
 
 No third-party stock images or new font assets were added for these articles. Local import evidence retains source image SHA256 hashes and dimensions; deployment uses the committed optimized variants.
+
+The 5 November 2026 Word file «دليل تأسيس شركة في دبي وتكلفة المقاولات» supplies four square illustrations for the formation guide and the revised contracting budget article. Its first two images use the `formation-guide` stem and its last two use `contracting-budget`, in hero and figure order. The same 600px and 1200px WebP process preserves their square dimensions and the supplied ALT text. The older `article-2` files still serve their original image URLs.

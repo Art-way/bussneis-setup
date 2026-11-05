@@ -55,7 +55,7 @@
 .dubaiDocuments,.dubaiRequest{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:65px;align-items:start}
 .dubaiDocuments h2,.dubaiRequest h2,.dubaiFaq h2{font-size:clamp(30px,3.4vw,44px);font-weight:600;line-height:1.55;color:#103b32;margin:8px 0 22px}
 .dubaiDocuments ul{margin:0 0 20px;padding-inline-start:25px}.dubaiDocuments li{padding-inline-start:5px;margin:0 0 16px}
-.resourceGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.resourceGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
 .dubaiFaq{max-width:920px}.dubaiFaq details{border-bottom:1px solid #cfdbca;padding-block:6px}
 .dubaiFaq summary{list-style:none;cursor:pointer;padding:18px 0;min-height:56px;display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:19px;line-height:1.8;color:#103b32;font-weight:500}
 .dubaiFaq summary::-webkit-details-marker{display:none}.dubaiFaq summary span{font:26px Arial,sans-serif}.dubaiFaq details[open] summary span{transform:rotate(45deg)}.dubaiFaq p{margin:0 0 20px;max-width:770px}
@@ -65,7 +65,7 @@
 .formAlternatives{display:flex;flex-wrap:wrap;gap:12px 24px;font-size:15px;line-height:1.8}.formAlternatives a{color:#204d3c;min-height:44px;display:inline-flex;align-items:center;text-underline-offset:4px}
 .dubaiReferences{padding-block:0 50px;font-size:14px;line-height:1.9;color:#576951}.dubaiReferences a{color:#214f3c;text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
 .dubaiIndexCard{display:flex;align-items:center;justify-content:space-between;gap:40px;padding:38px;background:#e9eee1;border:1px solid #cedbc4;border-radius:14px}.dubaiIndexCard>div{max-width:680px}.dubaiIndexCard h3{font-size:36px;line-height:1.5;color:#103b32;font-weight:600;margin:6px 0 14px}.dubaiIndexCard h3 a{color:inherit;text-decoration:none}.dubaiIndexCard p{font-size:17px;line-height:1.95;color:#526653}.dubaiIndexCard>a{flex-shrink:0}
-@media(max-width:1000px){.dubaiTopicGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.dubaiDocuments,.dubaiRequest{gap:35px}.resourceGrid{gap:16px}}
+@media(max-width:1000px){.dubaiTopicGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.dubaiDocuments,.dubaiRequest{gap:35px}.resourceGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
 @media(max-width:760px){.dubaiTopicGrid,.resourceGrid,.dubaiDocuments,.dubaiRequest{grid-template-columns:minmax(0,1fr)}.dubaiArt{border-radius:80px 80px 12px 12px}.dubaiArt img{min-height:250px}.dubaiArt>span{font-size:45px;bottom:22px;inset-inline:24px}.dubaiHero{padding-bottom:32px}.dubaiDocuments,.dubaiRequest{gap:25px}.dubaiIndexCard{display:block;padding:26px}.dubaiIndexCard h3{font-size:29px}.dubaiIndexCard>a{margin-top:14px}.topicNav{gap:8px}.topicNav a{font-size:13px}.resourceGrid{gap:24px}}
 .costRequestHero{padding-block:32px 65px;max-width:1100px}.costRequestHero h1{font-size:clamp(40px,5.5vw,70px);font-weight:600;line-height:1.4;color:#103b32;margin:15px 0 24px}.costRequestHero .lead{max-width:740px}
 .costRequestLayout{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:58px;align-items:start;padding-bottom:65px}

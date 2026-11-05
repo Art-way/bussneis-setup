@@ -21,6 +21,7 @@ export default function ArticleBlocks({ blocks }) {
       case 'h3': return <h3 id={block.id} key={index}>{block.text}</h3>;
       case 'p': return <p key={index}><Inline content={block.content} /></p>;
       case 'ol': return <ol key={index} start={block.start || 1}>{block.items.map((item, i) => <li key={i}><Inline content={item} /></li>)}</ol>;
+      case 'ul': return <ul key={index}>{block.items.map((item, i) => <li key={i}><Inline content={item} /></li>)}</ul>;
       case 'table': return <div key={index} className={styles.tableScroll} role="region" tabIndex={0} aria-label={`جدول: ${block.headers.join('، ')}`}><table><thead><tr>{block.headers.map((cell, i) => <th key={i} scope="col">{cell}</th>)}</tr></thead><tbody>{block.rows.map((row, i) => <tr key={i}>{row.map((cell, j) => j === 0 ? <th key={j} scope="row">{cell}</th> : <td key={j}>{cell}</td>)}</tr>)}</tbody></table></div>;
       case 'image': return <figure className={styles.wordFigure} key={index}><img src={block.src} srcSet={block.srcSet} sizes="(max-width: 780px) 90vw, (max-width: 1100px) 65vw, 720px" width={block.width} height={block.height} alt={block.alt} loading={block.kind === 'hero' ? 'eager' : 'lazy'} fetchPriority={block.kind === 'hero' ? 'high' : undefined} decoding="async" />{block.caption && <figcaption>{block.caption}</figcaption>}</figure>;
       default: return null;
