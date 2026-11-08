@@ -1,6 +1,10 @@
 (() => {
   const button = document.querySelector('.ar-menu-button');
   const navigation = document.getElementById('arabic-navigation');
+  const services = document.querySelector('.ar-services-menu');
+  document.addEventListener('click', event => {
+    if (services && !services.contains(event.target)) services.open = false;
+  });
   if (button && navigation) {
     const setOpen = (open, restoreFocus = false) => {
       button.setAttribute('aria-expanded', String(open));
@@ -10,10 +14,14 @@
     };
     button.addEventListener('click', () => setOpen(button.getAttribute('aria-expanded') !== 'true'));
     navigation.addEventListener('click', event => {
-      if (event.target.closest('a')) setOpen(false);
+      if (event.target.closest('a')) { if (services) services.open = false; setOpen(false); }
     });
     document.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') {
+      if (event.key === 'Escape' && services?.open) {
+        event.preventDefault();
+        services.open = false;
+        services.querySelector('summary').focus();
+      } else if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') {
         event.preventDefault();
         setOpen(false, true);
       }

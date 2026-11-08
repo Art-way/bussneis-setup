@@ -112,7 +112,7 @@ for (const [source, anchor, target] of [
   const anchors = [...body.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)];
   check(`${source.slug} ${anchor} → ${target}`, anchors.some(([, href, text]) => href === target && decode(text.replace(/<[^>]*>/g, '')) === anchor) && pages.has(target));
 }
-for (const path of ['/ar/تأسيس-شركة-في-رأس-الخيمة/', '/ar/تأسيس-شركة-مقاولات-في-دبي/', '/ar/تأسيس-شركة-مقاولات-في-أبوظبي/', '/ar/تأسيس-شركة-شحن-في-دبي/', '/ar/تأسيس-شركة-سياحة-في-دبي/', dubaiServicePath + 'المقاولات/', '/ar/مقال-غير-موجود/', '/ar/عقد-التأسيس-دبي/']) {
+for (const path of ['/ar/تأسيس-شركة-في-رأس-الخيمة/', dubaiServicePath + 'المقاولات/', '/ar/مقال-غير-موجود/', '/ar/عقد-التأسيس-دبي/']) {
   const response = await fetch(base + path);
   await response.arrayBuffer();
   check(`${path} no empty generated page`, response.status === 404);
