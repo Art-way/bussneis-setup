@@ -12,17 +12,17 @@
     "authorSlug": "editorial-team",
     "relatedService": "/ar/تأسيس-شركة-في-دبي/",
     "sources": [],
-    "title": "كيف أفتح شركة في دبي؟ خطوات التأسيس للمصريين من البداية حتى إصدار الرخصة",
-    "metaTitle": "كيف أفتح شركة في دبي؟ خطوات التأسيس للمصريين",
-    "excerpt": "تعرّف على كيفية فتح شركة في دبي من مصر، وكيف تختار جهة الترخيص وتجهز المستندات وتتابع الطلب حتى إصدار الرخصة، سواء بدأت باسمك أو توسّعت من شركة مصرية.",
+    "title": "كيف أفتح شركة في دبي؟ خطوات التأسيس لرواد الأعمال من البداية حتى إصدار الرخصة",
+    "metaTitle": "كيف أفتح شركة في دبي؟ خطوات التأسيس لرواد الأعمال",
+    "excerpt": "تعرّف على كيفية فتح شركة في دبي من خارج الإمارات، وكيف تختار جهة الترخيص وتجهز المستندات وتتابع الطلب حتى إصدار الرخصة، سواء بدأت باسمك أو توسّعت من شركة قائمة خارج الإمارات.",
     "publishedAt": "2026-11-05",
-    "updatedAt": "2026-11-05",
-    "takeaway": "إذا كنت في مصر وتسأل كيف أفتح شركة في دبي، فابدأ بتحديد النشاط الذي تريد ترخيصه والعملاء الذين ستخدمهم، ثم قارن بين البر الرئيسي والمنطقة الحرة. بعد اختيار جهة الترخيص، اطلب قائمة مستنداتها وحدد ما يمكنك تقديمه إلكترونياً وما يتطلب توقيعاً أو حضوراً. بهذه الطريقة تعرف أي أوراق تجهّز وأي مصروفات تنتظر قبل دفع رسوم أو حجز سفر.",
+    "updatedAt": "2026-11-08",
+    "takeaway": "إذا كنت خارج الإمارات وتسأل كيف أفتح شركة في دبي، فابدأ بتحديد النشاط الذي تريد ترخيصه والعملاء الذين ستخدمهم، ثم قارن بين البر الرئيسي والمنطقة الحرة. بعد اختيار جهة الترخيص، اطلب قائمة مستنداتها وحدد ما يمكنك تقديمه إلكترونياً وما يتطلب توقيعاً أو حضوراً. بهذه الطريقة تعرف أي أوراق تجهّز وأي مصروفات تنتظر قبل دفع رسوم أو حجز سفر.",
     "image": {
       "type": "image",
       "kind": "hero",
-      "src": "/assets/arabic/dubai/formation-guide-hero-square-1200.webp",
-      "srcSet": "/assets/arabic/dubai/formation-guide-hero-square-600.webp 600w, /assets/arabic/dubai/formation-guide-hero-square-1200.webp 1200w",
+      "src": "/assets/brand/illustrations/dubai-formation-guide-hero-1200.webp",
+      "srcSet": "/assets/brand/illustrations/dubai-formation-guide-hero-600.webp 600w, /assets/brand/illustrations/dubai-formation-guide-hero-1200.webp 1200w",
       "width": 1200,
       "height": 1200,
       "alt": "مخطط دليل تأسيس شركة في دبي من تحديد النشاط إلى تقديم طلب الرخصة",
@@ -31,7 +31,7 @@
     "sections": [
       {
         "id": "section-1",
-        "title": "كيف أبدأ تأسيس شركة في دبي وأنا في مصر؟",
+        "title": "كيف أبدأ تأسيس شركة في دبي وأنا خارج الإمارات؟",
         "paragraphs": []
       },
       {
@@ -41,7 +41,7 @@
       },
       {
         "id": "section-3",
-        "title": "ما الأوراق التي أجهزها قبل التقديم من مصر؟",
+        "title": "ما الأوراق التي أجهزها قبل التقديم من خارج الإمارات؟",
         "paragraphs": []
       },
       {
@@ -65,15 +65,15 @@
         "type": "p",
         "content": [
           {
-            "text": "إذا كنت في مصر وتسأل كيف أفتح شركة في دبي، فابدأ بتحديد النشاط الذي تريد ترخيصه والعملاء الذين ستخدمهم، ثم قارن بين البر الرئيسي والمنطقة الحرة. بعد اختيار جهة الترخيص، اطلب قائمة مستنداتها وحدد ما يمكنك تقديمه إلكترونياً وما يتطلب توقيعاً أو حضوراً. بهذه الطريقة تعرف أي أوراق تجهّز وأي مصروفات تنتظر قبل دفع رسوم أو حجز سفر."
+            "text": "إذا كنت خارج الإمارات وتسأل كيف أفتح شركة في دبي، فابدأ بتحديد النشاط الذي تريد ترخيصه والعملاء الذين ستخدمهم، ثم قارن بين البر الرئيسي والمنطقة الحرة. بعد اختيار جهة الترخيص، اطلب قائمة مستنداتها وحدد ما يمكنك تقديمه إلكترونياً وما يتطلب توقيعاً أو حضوراً. بهذه الطريقة تعرف أي أوراق تجهّز وأي مصروفات تنتظر قبل دفع رسوم أو حجز سفر."
           }
         ]
       },
       {
         "type": "image",
         "kind": "hero",
-        "src": "/assets/arabic/dubai/formation-guide-hero-square-1200.webp",
-        "srcSet": "/assets/arabic/dubai/formation-guide-hero-square-600.webp 600w, /assets/arabic/dubai/formation-guide-hero-square-1200.webp 1200w",
+        "src": "/assets/brand/illustrations/dubai-formation-guide-hero-1200.webp",
+        "srcSet": "/assets/brand/illustrations/dubai-formation-guide-hero-600.webp 600w, /assets/brand/illustrations/dubai-formation-guide-hero-1200.webp 1200w",
         "width": 1200,
         "height": 1200,
         "alt": "مخطط دليل تأسيس شركة في دبي من تحديد النشاط إلى تقديم طلب الرخصة",
@@ -83,7 +83,7 @@
         "type": "p",
         "content": [
           {
-            "text": "في هذا الدليل، يشرح فريق Business Setup UAE خطوات القرار والتقديم. إذا كان النشاط والمسار واضحين لديك، يمكنك الانتقال إلى "
+            "text": "في هذا الدليل، يشرح فريق BSetup UAE خطوات القرار والتقديم. إذا كان النشاط والمسار واضحين لديك، يمكنك الانتقال إلى "
           },
           {
             "text": "خدمة تأسيس شركة في دبي",
@@ -96,7 +96,7 @@
       },
       {
         "type": "h2",
-        "text": "كيف أبدأ تأسيس شركة في دبي وأنا في مصر؟",
+        "text": "كيف أبدأ تأسيس شركة في دبي وأنا خارج الإمارات؟",
         "id": "section-1"
       },
       {
@@ -159,7 +159,7 @@
       },
       {
         "type": "h2",
-        "text": "ما الأوراق التي أجهزها قبل التقديم من مصر؟",
+        "text": "ما الأوراق التي أجهزها قبل التقديم من خارج الإمارات؟",
         "id": "section-3"
       },
       {
@@ -177,7 +177,7 @@
       },
       {
         "type": "h3",
-        "text": "إذا كنت توسّع نشاط شركة مصرية قائمة",
+        "text": "إذا كنت توسّع نشاط شركة قائمة خارج الإمارات",
         "id": "section-5"
       },
       {
@@ -203,8 +203,8 @@
       {
         "type": "image",
         "kind": "figure",
-        "src": "/assets/arabic/dubai/formation-guide-figure-square-1200.webp",
-        "srcSet": "/assets/arabic/dubai/formation-guide-figure-square-600.webp 600w, /assets/arabic/dubai/formation-guide-figure-square-1200.webp 1200w",
+        "src": "/assets/brand/illustrations/dubai-formation-guide-figure-1200.webp",
+        "srcSet": "/assets/brand/illustrations/dubai-formation-guide-figure-600.webp 600w, /assets/brand/illustrations/dubai-formation-guide-figure-1200.webp 1200w",
         "width": 1200,
         "height": 1200,
         "alt": "ترتيب قرارات التأسيس وإجراءات الترخيص في دبي",
@@ -334,14 +334,14 @@
       },
       {
         "type": "h3",
-        "text": "هل يمكنني بدء الإجراءات من مصر قبل السفر؟",
+        "text": "هل يمكنني بدء الإجراءات من خارج الإمارات قبل السفر؟",
         "id": "section-12"
       },
       {
         "type": "p",
         "content": [
           {
-            "text": "يمكنك تجهيز البيانات والمستندات من مصر، وبعض الجهات تستقبل طلباً أولياً إلكترونياً. للتأكد من إمكانية إكمال ملفك عن بُعد، اسأل الجهة عن التوقيع والتحقق من الهوية لكل مؤسس، وافحص متطلبات الإقامة والحساب المصرفي بشكل مستقل. "
+            "text": "يمكنك تجهيز البيانات والمستندات من خارج الإمارات، وبعض الجهات تستقبل طلباً أولياً إلكترونياً. للتأكد من إمكانية إكمال ملفك عن بُعد، اسأل الجهة عن التوقيع والتحقق من الهوية لكل مؤسس، وافحص متطلبات الإقامة والحساب المصرفي بشكل مستقل. "
           },
           {
             "text": "مثال رسمي على التقديم الإلكتروني",
@@ -362,6 +362,14 @@
         "content": [
           {
             "text": "يعتمد نوع المقر وتوقيت تقديم مستنده على جهة الترخيص والنشاط. اطلب اسم المستند المطلوب والخيارات المقبولة لنشاطك قبل الالتزام بعقد، واطلب بيان ما إذا كان المقر مشمولاً في الباقة وما تكلفة تجديده."
+          }
+        ]
+      },
+      {
+        "type": "p",
+        "content": [
+          {
+            "text": "في شركة BSetup UAE، نقدم لك خدمات ترتيب تأسيس الشركة في الإمارات، من مراجعة النشاط وجهة الترخيص إلى تنظيم المستندات ومتابعة الطلب. نستند إلى خبرتنا في هذا المجال منذ 2021 لتحديد الخطوات التي تخص مشروعك."
           }
         ]
       },
@@ -403,8 +411,8 @@
     "image": {
       "type": "image",
       "kind": "hero",
-      "src": "/assets/arabic/dubai/article-1-hero-square-1200.webp",
-      "srcSet": "/assets/arabic/dubai/article-1-hero-square-600.webp 600w, /assets/arabic/dubai/article-1-hero-square-1200.webp 1200w",
+      "src": "/assets/brand/illustrations/dubai-llc-memorandum-hero-1200.webp",
+      "srcSet": "/assets/brand/illustrations/dubai-llc-memorandum-hero-600.webp 600w, /assets/brand/illustrations/dubai-llc-memorandum-hero-1200.webp 1200w",
       "width": 1200,
       "height": 1200,
       "alt": "رسم توضيحي لملف عقد تأسيس شركة يتضمن بيانات الشركاء والحصص والإدارة",
@@ -464,8 +472,8 @@
       {
         "type": "image",
         "kind": "hero",
-        "src": "/assets/arabic/dubai/article-1-hero-square-1200.webp",
-        "srcSet": "/assets/arabic/dubai/article-1-hero-square-600.webp 600w, /assets/arabic/dubai/article-1-hero-square-1200.webp 1200w",
+        "src": "/assets/brand/illustrations/dubai-llc-memorandum-hero-1200.webp",
+        "srcSet": "/assets/brand/illustrations/dubai-llc-memorandum-hero-600.webp 600w, /assets/brand/illustrations/dubai-llc-memorandum-hero-1200.webp 1200w",
         "width": 1200,
         "height": 1200,
         "alt": "رسم توضيحي لملف عقد تأسيس شركة يتضمن بيانات الشركاء والحصص والإدارة",
@@ -718,7 +726,7 @@
         "type": "p",
         "content": [
           {
-            "text": "نعتمد في فريق Business Setup UAE على فصل جمع البيانات عن صياغة الاتفاق. نجهز أولاً نسخة موحدة لأسماء الشركاء والنشاط والحصص، ثم نناقش الإدارة والتوقيع والتخارج. بهذه الطريقة يستطيع كل شريك مراجعة ما يخصه، ويمكن تتبع أي تعديل قبل إرسال المسودة إلى الجهة المختصة."
+            "text": "نعتمد في فريق BSetup UAE على فصل جمع البيانات عن صياغة الاتفاق. نجهز أولاً نسخة موحدة لأسماء الشركاء والنشاط والحصص، ثم نناقش الإدارة والتوقيع والتخارج. بهذه الطريقة يستطيع كل شريك مراجعة ما يخصه، ويمكن تتبع أي تعديل قبل إرسال المسودة إلى الجهة المختصة."
           }
         ]
       },
@@ -819,8 +827,8 @@
       {
         "type": "image",
         "kind": "figure",
-        "src": "/assets/arabic/dubai/article-1-figure-square-1200.webp",
-        "srcSet": "/assets/arabic/dubai/article-1-figure-square-600.webp 600w, /assets/arabic/dubai/article-1-figure-square-1200.webp 1200w",
+        "src": "/assets/brand/illustrations/dubai-llc-memorandum-figure-1200.webp",
+        "srcSet": "/assets/brand/illustrations/dubai-llc-memorandum-figure-600.webp 600w, /assets/brand/illustrations/dubai-llc-memorandum-figure-1200.webp 1200w",
         "width": 1200,
         "height": 1200,
         "alt": "مخطط مراجعة بيانات الشركاء والحصص وصلاحيات المدير قبل توثيق عقد التأسيس",
@@ -983,6 +991,14 @@
         "type": "p",
         "content": [
           {
+            "text": "نقدم لك في شركة BSetup UAE خدمة تنظيم ملف التأسيس وبيانات الشركاء والحصص والإدارة، مستندين إلى خبرتنا في خدمات تأسيس الشركات في الإمارات منذ 2021. نرتب البيانات للتحضير، ثم تُراجع الصيغة والتوثيق بحسب متطلبات الجهة المختصة."
+          }
+        ]
+      },
+      {
+        "type": "p",
+        "content": [
+          {
             "text": "ابدأ تجهيز ملف "
           },
           {
@@ -998,7 +1014,7 @@
     "readingMinutes": 8,
     "sources": [],
     "publishedAt": "2026-11-04",
-    "updatedAt": "2026-11-05"
+    "updatedAt": "2026-11-08"
   },
   {
     "slug": "dubai-contracting-budget",
@@ -1019,8 +1035,8 @@
     "image": {
       "type": "image",
       "kind": "hero",
-      "src": "/assets/arabic/dubai/contracting-budget-hero-square-1200.webp",
-      "srcSet": "/assets/arabic/dubai/contracting-budget-hero-square-600.webp 600w, /assets/arabic/dubai/contracting-budget-hero-square-1200.webp 1200w",
+      "src": "/assets/brand/illustrations/dubai-contracting-budget-hero-1200.webp",
+      "srcSet": "/assets/brand/illustrations/dubai-contracting-budget-hero-600.webp 600w, /assets/brand/illustrations/dubai-contracting-budget-hero-1200.webp 1200w",
       "width": 1200,
       "height": 1200,
       "alt": "رسم لملف التأسيس ومعدات شركة مقاولات في دبي",
@@ -1065,8 +1081,8 @@
       {
         "type": "image",
         "kind": "hero",
-        "src": "/assets/arabic/dubai/contracting-budget-hero-square-1200.webp",
-        "srcSet": "/assets/arabic/dubai/contracting-budget-hero-square-600.webp 600w, /assets/arabic/dubai/contracting-budget-hero-square-1200.webp 1200w",
+        "src": "/assets/brand/illustrations/dubai-contracting-budget-hero-1200.webp",
+        "srcSet": "/assets/brand/illustrations/dubai-contracting-budget-hero-600.webp 600w, /assets/brand/illustrations/dubai-contracting-budget-hero-1200.webp 1200w",
         "width": 1200,
         "height": 1200,
         "alt": "رسم لملف التأسيس ومعدات شركة مقاولات في دبي",
@@ -1169,8 +1185,8 @@
       {
         "type": "image",
         "kind": "figure",
-        "src": "/assets/arabic/dubai/contracting-budget-figure-square-1200.webp",
-        "srcSet": "/assets/arabic/dubai/contracting-budget-figure-square-600.webp 600w, /assets/arabic/dubai/contracting-budget-figure-square-1200.webp 1200w",
+        "src": "/assets/brand/illustrations/dubai-contracting-budget-figure-1200.webp",
+        "srcSet": "/assets/brand/illustrations/dubai-contracting-budget-figure-600.webp 600w, /assets/brand/illustrations/dubai-contracting-budget-figure-1200.webp 1200w",
         "width": 1200,
         "height": 1200,
         "alt": "مخطط بنود التأسيس والمقر والكوادر والسيولة ومقارنة العروض",
@@ -1348,6 +1364,14 @@
         "type": "p",
         "content": [
           {
+            "text": "في شركة BSetup UAE، نقدم لك مراجعة لبنود عرض التأسيس وتنظيم نطاق المتابعة، بخبرة في خدمات تأسيس الشركات في الإمارات منذ 2021. نفصل ما يخص الترخيص عن المقر والتجهيز والتشغيل لتعرف ما تحتاج إضافته لميزانية مشروعك."
+          }
+        ]
+      },
+      {
+        "type": "p",
+        "content": [
+          {
             "text": "بعد حصر البنود، تواصل معنا عبر "
           },
           {
@@ -1363,7 +1387,7 @@
     "readingMinutes": 4,
     "sources": [],
     "publishedAt": "2026-11-04",
-    "updatedAt": "2026-11-05"
+    "updatedAt": "2026-11-08"
   },
   {
     "slug": "dubai-formation-benefits",
@@ -1384,8 +1408,8 @@
     "image": {
       "type": "image",
       "kind": "hero",
-      "src": "/assets/arabic/dubai/article-3-hero-square-1200.webp",
-      "srcSet": "/assets/arabic/dubai/article-3-hero-square-600.webp 600w, /assets/arabic/dubai/article-3-hero-square-1200.webp 1200w",
+      "src": "/assets/brand/illustrations/dubai-formation-benefits-hero-1200.webp",
+      "srcSet": "/assets/brand/illustrations/dubai-formation-benefits-hero-600.webp 600w, /assets/brand/illustrations/dubai-formation-benefits-hero-1200.webp 1200w",
       "width": 1200,
       "height": 1200,
       "alt": "رسم توضيحي لأفق دبي وشبكة أعمال تربط الشركة بالعملاء والأسواق",
@@ -1460,8 +1484,8 @@
       {
         "type": "image",
         "kind": "hero",
-        "src": "/assets/arabic/dubai/article-3-hero-square-1200.webp",
-        "srcSet": "/assets/arabic/dubai/article-3-hero-square-600.webp 600w, /assets/arabic/dubai/article-3-hero-square-1200.webp 1200w",
+        "src": "/assets/brand/illustrations/dubai-formation-benefits-hero-1200.webp",
+        "srcSet": "/assets/brand/illustrations/dubai-formation-benefits-hero-600.webp 600w, /assets/brand/illustrations/dubai-formation-benefits-hero-1200.webp 1200w",
         "width": 1200,
         "height": 1200,
         "alt": "رسم توضيحي لأفق دبي وشبكة أعمال تربط الشركة بالعملاء والأسواق",
@@ -1491,7 +1515,7 @@
         "type": "p",
         "content": [
           {
-            "text": "نعتمد في فريق Business Setup UAE على ربط كل ميزة باحتياج واضح: أين يوجد العميل، وكيف ستقدم الخدمة، وما النشاط المطلوب، وما الميزانية التي تستطيع الشركة تحملها؟ بعد تحديد هذه النقاط تصبح مقارنة المسارات أكثر فائدة من جمع مميزات عامة لا ترتبط بطريقة عمل المشروع."
+            "text": "نعتمد في فريق BSetup UAE على ربط كل ميزة باحتياج واضح: أين يوجد العميل، وكيف ستقدم الخدمة، وما النشاط المطلوب، وما الميزانية التي تستطيع الشركة تحملها؟ بعد تحديد هذه النقاط تصبح مقارنة المسارات أكثر فائدة من جمع مميزات عامة لا ترتبط بطريقة عمل المشروع."
           }
         ]
       },
@@ -1584,7 +1608,7 @@
         "type": "p",
         "content": [
           {
-            "text": "إذا كنت تدير نشاطاً قائماً في مصر، اسأل عما ستضيفه الشركة الجديدة: فريق مبيعات قريب من العملاء، أم موقع لتقديم الخدمة، أم إدارة توريد وتوزيع؟ وجود غرض محدد يسهل قياس العائد المتوقع من التوسع."
+            "text": "إذا كنت تدير نشاطاً قائماً خارج الإمارات، اسأل عما ستضيفه الشركة الجديدة: فريق مبيعات قريب من العملاء، أم موقع لتقديم الخدمة، أم إدارة توريد وتوزيع؟ وجود غرض محدد يسهل قياس العائد المتوقع من التوسع."
           }
         ]
       },
@@ -1788,15 +1812,15 @@
         "type": "p",
         "content": [
           {
-            "text": "إذا كنت تقيم في مصر أو لديك شركة فيها، فقيّم آثار الهيكل الجديد والعمليات العابرة للحدود مع مختص في الاختصاصات المعنية. وجود شركة في دبي لا يحسم بمفرده وضعك الضريبي الشخصي أو التزامات نشاطك خارج الإمارات."
+            "text": "إذا كنت تقيم خارج الإمارات أو لديك شركة فيها، فقيّم آثار الهيكل الجديد والعمليات العابرة للحدود مع مختص في الاختصاصات المعنية. وجود شركة في دبي لا يحسم بمفرده وضعك الضريبي الشخصي أو التزامات نشاطك خارج الإمارات."
           }
         ]
       },
       {
         "type": "image",
         "kind": "figure",
-        "src": "/assets/arabic/dubai/article-3-figure-square-1200.webp",
-        "srcSet": "/assets/arabic/dubai/article-3-figure-square-600.webp 600w, /assets/arabic/dubai/article-3-figure-square-1200.webp 1200w",
+        "src": "/assets/brand/illustrations/dubai-formation-benefits-figure-1200.webp",
+        "srcSet": "/assets/brand/illustrations/dubai-formation-benefits-figure-600.webp 600w, /assets/brand/illustrations/dubai-formation-benefits-figure-1200.webp 1200w",
         "width": 1200,
         "height": 1200,
         "alt": "مخطط تقييم قرار فتح شركة في دبي عبر العملاء والنشاط والميزانية والتنفيذ",
@@ -1826,7 +1850,7 @@
         "type": "p",
         "content": [
           {
-            "text": "إذا كنت تبحث عن تأسيس شركة في دبي للمصريين، فابدأ أيضاً بالنشاط ومكان العملاء ووضع الشركاء والوثائق المطلوبة للحالة. الجنسية وحدها لا تحدد المسار أو التكلفة، ولا تجعل ميزة متاحة لنشاط معين قاعدة عامة لكل مشروع."
+            "text": "إذا كنت تبحث عن تأسيس شركة في دبي لرواد الأعمال، فابدأ أيضاً بالنشاط ومكان العملاء ووضع الشركاء والوثائق المطلوبة للحالة. الجنسية وحدها لا تحدد المسار أو التكلفة، ولا تجعل ميزة متاحة لنشاط معين قاعدة عامة لكل مشروع."
           }
         ]
       },
@@ -1971,7 +1995,7 @@
       },
       {
         "type": "h3",
-        "text": "هل تكفي مصروفات التأسيس لبدء المشروع",
+        "text": "هل تكخارج الإماراتوفات التأسيس لبدء المشروع",
         "id": "section-21"
       },
       {
@@ -1979,6 +2003,14 @@
         "content": [
           {
             "text": "تحتاج أيضاً إلى تقدير التشغيل والمقر والفريق والتجهيز وسيولة الفترة السابقة للتحصيل. احسب هذه البنود وفق النشاط وجدول بدء العمل، ثم راجع قدرتك على تمويلها."
+          }
+        ]
+      },
+      {
+        "type": "p",
+        "content": [
+          {
+            "text": "نقدم لك في شركة BSetup UAE خدمة مراجعة مسار التأسيس وربطه بنشاطك ومكان العملاء ومتطلبات التشغيل. خبرتنا في خدمات تأسيس الشركات في الإمارات منذ 2021 تساعدنا على ترتيب المقارنة قبل الاتفاق على نطاق التقديم والمتابعة."
           }
         ]
       },
@@ -2001,7 +2033,7 @@
     "readingMinutes": 8,
     "sources": [],
     "publishedAt": "2026-11-04",
-    "updatedAt": "2026-11-05"
+    "updatedAt": "2026-11-08"
   },
   {
     "slug": "dubai-trade-licence-fees",
@@ -2019,7 +2051,7 @@
     "authorSlug": "editorial-team",
     "relatedService": "/ar/تأسيس-شركة-في-دبي/",
     "publishedAt": "2026-11-05",
-    "updatedAt": "2026-11-05",
+    "updatedAt": "2026-11-08",
     "takeaway": "تختلف أسعار الرخص التجارية في دبي بحسب جهة الترخيص ونوع الرخصة والنشاط المطلوب. لمعرفة المبلغ الذي ستدفعه، اطلب ثلاثة أرقام منفصلة: رسم إصدار الرخصة، وأي رسوم إضافية لإتمام الإصدار، وتكلفة التجديد. إذا كنت تقارن بين البر الرئيسي ومنطقة حرة، تأكد أولاً أن الخيارين يسمحان بالنشاط الذي تحتاجه، ثم قارن ما يشمله كل سعر. مرجع إصدار الرخصة – استثمر في دبي",
     "image": {
       "type": "image",
@@ -2102,7 +2134,7 @@
         "type": "p",
         "content": [
           {
-            "text": "ومن الأمثلة المنشورة على البوابة رخصة «تاجر» الإلكترونية. تذكر صفحة الخدمة 1,070 درهماً للترخيص ورسوم المعرفة والابتكار، و300 درهم لعضوية غرفة دبي للتجارة، بإجمالي 1,370 درهماً لهذين البندين. المثال يخص رخصة «تاجر» بالشروط المذكورة في صفحة الخدمة. إذا كنت تقدّم من مصر، تحقّق من أهليتك ونشاطك قبل استخدام هذا الرقم في ميزانيتك. "
+            "text": "ومن الأمثلة المنشورة على البوابة رخصة «تاجر» الإلكترونية. تذكر صفحة الخدمة 1,070 درهماً للترخيص ورسوم المعرفة والابتكار، و300 درهم لعضوية غرفة دبي للتجارة، بإجمالي 1,370 درهماً لهذين البندين. المثال يخص رخصة «تاجر» بالشروط المذكورة في صفحة الخدمة. إذا كنت تقدّم من خارج الإمارات، تحقّق من أهليتك ونشاطك قبل استخدام هذا الرقم في ميزانيتك. "
           },
           {
             "text": "بيانات رخصة تاجر – استثمر في دبي",
@@ -2279,6 +2311,14 @@
         "type": "h3",
         "text": "كيف أحصل على تقدير يناسب نشاطي قبل الدفع؟",
         "id": "section-10"
+      },
+      {
+        "type": "p",
+        "content": [
+          {
+            "text": "في شركة BSetup UAE، نقدم لك مراجعة نطاق طلب الترخيص وتنظيم بنود العرض والمستندات، مستندين إلى خبرتنا في خدمات تأسيس الشركات في الإمارات منذ 2021. نوضح رسوم الرخصة وأتعاب المتابعة والبنود الإضافية التي تخص نشاطك."
+          }
+        ]
       },
       {
         "type": "p",

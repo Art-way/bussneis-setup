@@ -7,7 +7,7 @@ const FooterTwo = () => {
     return (
         <>
             <div className="footer__two" data-background="/assets/img/shape/footer-bg-1.png">
-                
+
                 <div className="container" style={{ paddingTop: '80px', paddingBottom: '40px' }}>
                     <div className="row">
 
@@ -16,12 +16,12 @@ const FooterTwo = () => {
                             <div className="footer__two-widget">
                                 <div className="footer__two-widget-about">
                                     <Link href="/">
-                                        <img className="all_f_logo" src="/assets/img/logo-2.png" alt="Business Setup UAE" style={{ maxWidth: '200px' }} />
+                                        <img className="all_f_logo" src="/assets/brand/bsetup-uae-light.svg" width="200" height="55" alt="BSetup UAE" style={{ maxWidth: '200px' }} />
                                     </Link>
                                     <p className="mt-30">Your expert partner for company formation and corporate services in the UAE. We provide clear, efficient, and reliable solutions for entrepreneurs and businesses worldwide.</p>
                                     <div className="footer__two-widget-about-social">
                                         <Social />
-                                    </div>							
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -52,7 +52,7 @@ const FooterTwo = () => {
                                 </div>
                             </div>
                         </div>
-                        
+
                         {/* --- العمود الثالث: Quick Links --- */}
                         <div className="col-lg-2 col-md-6 mb-40">
                             <div className="footer__two-widget footer-border">
@@ -66,7 +66,7 @@ const FooterTwo = () => {
                                     <div className="post__item-title">
                                         <h3 className="footer-item-title"><Link href="/blog">Blog</Link></h3>
                                     </div>
-                                    
+
                                 </div>
                                 <div className="post__item">
                                     <div className="post__item-title">
@@ -76,13 +76,13 @@ const FooterTwo = () => {
                                 <div className="post__item">
                                     <div className="post__item-title">
                                         <h3 className="footer-item-title"><Link href="/faq">FAQs</Link></h3>
-                                        
+
                                     </div>
                                 </div>
-                     
+
                             </div>
                         </div>
-                    
+
                         {/* --- العمود الرابع: Head Office --- */}
                         <div className="col-lg-3 col-md-6 mb-40">
                             <div className="footer__two-widget footer-border">
@@ -118,12 +118,12 @@ const FooterTwo = () => {
                     <div className="container">
                         <div className="row">
                             <div className="col-xl-12">
-                                <p>Copyright 2025 © <Link href="/">Business Setup UAE</Link> - All Rights Reserved | <Link href="/terms-and-conditions">Terms & Conditions</Link> | <Link href="/privacy-policy">Privacy Policy</Link></p> 
+                                <p>Copyright 2025 © <Link href="/">BSetup UAE</Link> - All Rights Reserved | <Link href="/terms-and-conditions">Terms & Conditions</Link> | <Link href="/privacy-policy">Privacy Policy</Link></p>
                             </div>
                         </div>
                     </div>
-                </div>		
-            </div>          
+                </div>
+            </div>
         </>
     );
 };

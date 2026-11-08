@@ -1,11 +1,11 @@
 import { dubaiServicePath } from './routes.mjs';
+import { regionalProfiles, regionalServicePages } from './regional-services.mjs';
 
 // Planned segments have no public URL and are never navigation destinations.
 export const emirates = [
   { slug: 'dubai', name: 'دبي', title: 'تأسيس الشركات في دبي', path: dubaiServicePath, status: 'available' },
-  { slug: 'sharjah', name: 'الشارقة', status: 'planned' },
-  { slug: 'ajman', name: 'عجمان', status: 'planned' },
-  { slug: 'abu-dhabi', name: 'أبوظبي', status: 'planned' },
+  ...regionalProfiles.map(profile => ({ ...profile, title: `تأسيس الشركات في ${profile.name}`, status: 'available' })),
+  { slug: 'ras-al-khaimah', name: 'رأس الخيمة', title: 'تأسيس شركة في المنطقة الحرة رأس الخيمة', path: regionalServicePages.find(service => service.slug === 'rak-free-zone').path, status: 'available' },
 ];
 export const availableEmirates = emirates.filter(emirate => emirate.status === 'available' && emirate.path);
 export const getEmirate = slug => emirates.find(emirate => emirate.slug === slug);

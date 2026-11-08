@@ -2,17 +2,17 @@ import shape1 from "../../../../public/assets/img/shape/about.png";
 import shape2 from "../../../../public/assets/img/shape/about-dark.png";
 import image1 from "../../../../public/assets/img/about/about-3.jpg";
 import image2 from "../../../../public/assets/img/about/about-4.jpg";
-import Count from "../../common/count";
+
 import Link from "next/link";
 
 const About = () => {
     // Updated data object with relevant content for your business
     const aboutData = {
-        subtitle: 'About Business Setup UAE',
+        subtitle: 'About BSetup UAE',
         title: 'Your Trusted Partner for UAE Company Formation',
-        description: 'We are a team of dedicated business setup consultants passionate about helping entrepreneurs and established companies navigate the landscape of company formation in the UAE. Our goal is to provide clear, efficient, and reliable solutions tailored to your unique business needs.',
-        count: 10,
-        exp: 'Years of Combined Experience in the UAE Market',
+        description: 'Our UAE business setup experience dates to 2021. We are a team of dedicated business setup consultants passionate about helping entrepreneurs and established companies navigate the landscape of company formation in the UAE. Our goal is to provide clear, efficient, and reliable solutions tailored to your unique business needs.',
+        count: 2021,
+        exp: 'UAE business setup experience since 2021',
         btn_title: 'Learn More About Us',
         btn_link: '/about-us',
     }
@@ -43,7 +43,7 @@ const About = () => {
                             </div>
                             <div className="about__two-right-experience">
                                 <div className="about__two-right-experience-counter">
-                                        <div className="counter-visual"><Count number={aboutData.count}/>+</div>
+                                        <div className="counter-visual">2021</div>
 
                                 </div>
                                 <div>

@@ -11,8 +11,8 @@ export const categories = [
 ].map(category => ({ ...category, urlSlug: arabicCategorySlugs[category.slug] }));
 
 export const authors = [{
-  slug: 'editorial-team', name: 'فريق Business Setup UAE', role: 'الجهة المسؤولة عن المحتوى', type: 'Organization',
-  bio: 'تُنسب الأدلة التمهيدية في هذا القسم إلى فريق تحرير الموقع بصفته جهة نشر. نجمع المعلومات العامة من المصادر الرسمية الموضّحة داخل كل دليل، ونفصل بينها وبين التقييم الخاص بحالة كل عميل. لا تمثّل هذه النسبة ادّعاءً بمؤهل قانوني أو ضريبي، ولا مراجعة مستقلة من مختص.'
+  slug: 'editorial-team', name: 'فريق BSetup UAE', role: 'الجهة المسؤولة عن المحتوى', type: 'Organization',
+  bio: 'تستند BSetup UAE إلى خبرة في خدمات تأسيس الشركات في الإمارات منذ 2021. تُنسب الأدلة التمهيدية في هذا القسم إلى فريق تحرير الموقع بصفته جهة نشر. نجمع المعلومات العامة من المصادر الرسمية الموضّحة داخل كل دليل، ونفصل بينها وبين التقييم الخاص بحالة كل عميل. لا تمثّل هذه النسبة ادّعاءً بمؤهل قانوني أو ضريبي، ولا مراجعة مستقلة من مختص.'
 }].map(author => ({ ...author, urlSlug: arabicAuthorSlugs[author.slug] }));
 
 const base = {
@@ -21,12 +21,12 @@ const base = {
 
 const articles = [
   {
-    slug: 'start-a-uae-company-from-egypt', title: 'من مصر إلى الإمارات: من أين تبدأ تأسيس شركتك؟',
+    slug: 'start-a-uae-company-from-egypt', title: 'لتأسيس شركتك في الإمارات: من أين تبدأ تأسيس شركتك؟',
     excerpt: 'ابدأ بنشاطك وعملائك، ثم اختر مسار التأسيس. خريطة أولية لترتيب القرار قبل دفع أي رسوم.', categorySlug: 'company-formation',
     takeaway: 'ابدأ بتحديد نشاط الشركة ومكان عملائها. اختيار الرخصة والجهة المصدرة يأتي بعد فهم طريقة عمل مشروعك، وليس قبلها.',
     sections: [
       { id: 'business-model', title: 'عرّف مشروعك قبل اختيار الرخصة', paragraphs: ['اكتب ما الذي ستبيعه، ولمن، ومن أين ستدير العمليات. هل تقدم خدمات رقمية لعملاء خارج الإمارات، أم تبيع منتجات داخل السوق الإماراتي؟ هذه الأسئلة تجعل المقارنة بين الخيارات أكثر دقة.', 'جهّز وصفاً واضحاً للنشاط، وعدد الشركاء، والحاجة إلى مقر وإقامات. لا تفترض أن اسم الرخصة التسويقي يغطّي كل الأعمال التي تنوي ممارستها؛ تأكّد من الأنشطة المسموح بها لدى جهة الترخيص.'] },
-      { id: 'jurisdiction', title: 'قارن بين جهة الترخيص ومتطلبات التشغيل', paragraphs: ['تعرض بوابة الاستثمار في دبي مسارين أساسيين: البر الرئيسي والمناطق الحرة. تختلف جهة الترخيص والإجراءات ومتطلبات التشغيل بحسب المسار والنشاط.', 'قارن نطاق العمل المسموح به، وموقع العملاء، والمكتب المطلوب، وإمكانات التوسع. وجودك في مصر لا يكفي وحده لتحديد المسار الملائم أو تأكيد أن كل الإجراءات ستتم عن بُعد.'] },
+      { id: 'jurisdiction', title: 'قارن بين جهة الترخيص ومتطلبات التشغيل', paragraphs: ['تعرض بوابة الاستثمار في دبي مسارين أساسيين: البر الرئيسي والمناطق الحرة. تختلف جهة الترخيص والإجراءات ومتطلبات التشغيل بحسب المسار والنشاط.', 'قارن نطاق العمل المسموح به، وموقع العملاء، والمكتب المطلوب، وإمكانات التوسع. وجودك خارج الإمارات لا يكفي وحده لتحديد المسار الملائم أو تأكيد أن كل الإجراءات ستتم عن بُعد.'] },
       { id: 'before-paying', title: 'اطلب خطة مكتوبة قبل دفع الرسوم', paragraphs: ['اطلب عرضاً يفصل رسوم الجهة الحكومية عن أتعاب مقدم الخدمة، ويوضح ما يشمله السعر وما يستثنيه. اسأل عن المستندات المطلوبة، والحضور الشخصي إن لزم، ورسوم التجديد.', 'اجعل قرارك مبنياً على متطلبات مشروعك الفعلية. إصدار الرخصة وفتح حساب مصرفي وترتيب الإقامة مسارات لها متطلبات مختلفة؛ لا تتعامل معها كضمان واحد ضمن عبارة «تأسيس كامل».'] },
     ], sources: [
       { label: 'بوابة دبي الرسمية: خيارات تأسيس الأعمال', url: 'https://www.dubai.ae/web/dubai.ae/investing/starting-a-business/business-set-up-options' },
@@ -65,7 +65,7 @@ const articles = [
           { text: ' قبل مقارنة إجمالي عروض التأسيس.' },
         ],
       },
-      { id: 'compare-offers', title: 'قارن على أساس واحد', paragraphs: ['جهّز جدولاً بنفس البنود لكل عرض، وسجّل بجانب كل بند: مشمول، غير مشمول، أو يحتاج تأكيداً. لا تتعامل مع الخانة غير الواضحة على أنها مجانية.', 'لا يقدّم هذا الدليل سعراً ثابتاً أو تحويلاً إلى الجنيه المصري؛ احصل على عرض حديث وتحقق من عملته وصلاحيته وطريقة السداد قبل الالتزام.'] },
+      { id: 'compare-offers', title: 'قارن على أساس واحد', paragraphs: ['جهّز جدولاً بنفس البنود لكل عرض، وسجّل بجانب كل بند: مشمول، غير مشمول، أو يحتاج تأكيداً. لا تتعامل مع الخانة غير الواضحة على أنها مجانية.', 'لا يقدّم هذا الدليل سعراً ثابتاً أو تحويلاً إلى عملة أخرى؛ احصل على عرض حديث وتحقق من عملته وصلاحيته وطريقة السداد قبل الالتزام.'] },
     ], sources: [{ label: 'بوابة دبي الرسمية: خيارات التأسيس وبنود التكلفة', url: 'https://www.dubai.ae/web/dubai.ae/investing/starting-a-business/business-set-up-options' }],
   },
   {
@@ -110,7 +110,29 @@ const articles = [
 // on 4 November 2026 (ffacea2), independently of the Word preparation date.
 // No personal author or specialist reviewer was supplied; keep the publisher.
 export const dubaiPosts = dubaiArticles;
-export const posts = [...dubaiPosts, ...articles.map((post) => ({ ...base, ...post, urlSlug: arabicPostSlugs[post.slug], relatedService: post.categorySlug === 'free-zones' ? '/ar/الخدمات/تأسيس-شركة-في-منطقة-حرة/' : post.categorySlug === 'after-setup' ? '/ar/الخدمات/خدمات-ما-بعد-التأسيس/' : '/ar/الخدمات/تأسيس-شركة-في-البر-الرئيسي/', readingMinutes: Math.max(1, Math.ceil([post.takeaway, ...post.sections.flatMap(s => s.paragraphs)].join(' ').split(/\s+/).length / 180)) }))];
+const articleExperience = {
+  "start-a-uae-company-from-egypt": "تستند BSetup UAE إلى خبرة في خدمات تأسيس الشركات في الإمارات منذ 2021 لمساعدة أصحاب المشاريع على ترتيب النشاط والمستندات وخطوات التقديم. شاركنا طريقة عمل مشروعك من خارج الإمارات لنراجع ما تحتاج إلى تجهيزه.",
+  "mainland-or-free-zone": "نستند في BSetup UAE إلى خبرتنا في خدمات تأسيس الشركات في الإمارات منذ 2021 عند مقارنة مسارات التأسيس. نبدأ بالنشاط والعملاء والمقر المطلوب قبل مراجعة الباقات والرسوم.",
+  "company-setup-cost-checklist": "تساعد خبرة BSetup UAE في خدمات تأسيس الشركات في الإمارات منذ 2021 على مراجعة نطاق عرض التأسيس وبنوده. نرتب الرسوم والمقر والإقامات وأتعاب المتابعة بحسب ما يشمله العرض الذي يخص مشروعك.",
+  "prepare-company-formation-documents": "من خلال خبرة BSetup UAE في خدمات تأسيس الشركات في الإمارات منذ 2021، نساعدك على ترتيب بيانات المؤسسين والنشاط والوثائق ضمن ملف واضح، ثم نطابق المطلوب مع قائمة جهة الترخيص المختارة.",
+  "after-your-trade-license": "تستند BSetup UAE إلى خبرة في خدمات تأسيس الشركات في الإمارات منذ 2021 لدعم ترتيب الخطوات المرتبطة بملف الشركة. نراجع معك احتياجات المتابعة بعد الرخصة ونحدد البنود التي تحتاج الرجوع إلى جهتها المختصة.",
+  "choose-your-free-zone": "نستخدم في BSetup UAE خبرتنا في خدمات تأسيس الشركات في الإمارات منذ 2021 لمراجعة ملاءمة المنطقة الحرة لنشاطك. نقارن شروط الترخيص والمقر ونطاق العمل والمتابعة قبل اختيار الباقة."
+};
+
+export const posts = [...dubaiPosts, ...articles.map(post => {
+  const sections = post.sections.map((section, index) => index === post.sections.length - 1
+    ? { ...section, paragraphs: [...section.paragraphs, articleExperience[post.slug]] }
+    : section);
+  return {
+    ...base, ...post, sections, updatedAt: '2026-11-08', urlSlug: arabicPostSlugs[post.slug],
+    relatedService: post.categorySlug === 'free-zones'
+      ? '/ar/الخدمات/تأسيس-شركة-في-منطقة-حرة/'
+      : post.categorySlug === 'after-setup'
+        ? '/ar/الخدمات/خدمات-ما-بعد-التأسيس/'
+        : '/ar/الخدمات/تأسيس-شركة-في-البر-الرئيسي/',
+    readingMinutes: Math.max(1, Math.ceil([post.takeaway, ...sections.flatMap(section => section.paragraphs)].join(' ').split(/\s+/).length / 180)),
+  };
+})];
 export const getPost = (slug) => posts.find(post => post.slug === slug || post.urlSlug === slug);
 export const getCategory = (slug) => categories.find(category => category.slug === slug || category.urlSlug === slug);
 export const getAuthor = (slug) => authors.find(author => author.slug === slug || author.urlSlug === slug);

@@ -49,7 +49,7 @@ export default async function ArticlePage({ params: paramsPromise }) {
     <JsonLd data={{ '@context': 'https://schema.org', '@type': 'BlogPosting', '@id': canonicalArabicUrl(path + '#article'), headline: post.title, description: post.excerpt, inLanguage: 'ar-EG', mainEntityOfPage: canonicalArabicUrl(path),
       ...(post.publishedAt ? { datePublished: post.publishedAt } : {}), ...(post.updatedAt ? { dateModified: post.updatedAt } : {}),
       ...(post.image ? { image: [new URL(post.image.src, siteUrl).href] } : {}),
-      author: { '@type': 'Organization', name: author.name, url: canonicalArabicUrl(authorPath) }, publisher: { '@type': 'Organization', name: 'Business Setup UAE', url: siteUrl }, articleSection: isDubai ? ['تأسيس الشركات في دبي', ...post.topicSlugs.map(slug => articleTopics[slug])] : category.title,
+      author: { '@type': 'Organization', name: author.name, url: canonicalArabicUrl(authorPath) }, publisher: { '@type': 'Organization', name: 'BSetup UAE', url: siteUrl }, articleSection: isDubai ? ['تأسيس الشركات في دبي', ...post.topicSlugs.map(slug => articleTopics[slug])] : category.title,
       ...(post.sources.length ? { citation: post.sources.map(source => source.url) } : {}),
     }} />
     <article>

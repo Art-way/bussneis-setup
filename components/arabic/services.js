@@ -1,4 +1,5 @@
 import { arabicServiceSlugs } from './routes.mjs';
+import { regionalServicePages } from './regional-services.mjs';
 
 export const services = [
   {
@@ -52,6 +53,6 @@ export const services = [
     source: { label: 'وزارة الاقتصاد والسياحة — تأسيس الأعمال', url: 'https://www.moet.gov.ae/establishing-companies' },
     guide: '/ar/المدونة/',
   },
-].map(service => ({ ...service, urlSlug: arabicServiceSlugs[service.slug] }));
+].map(service => ({ ...service, urlSlug: arabicServiceSlugs[service.slug] })).concat(regionalServicePages);
 
 export const getService = (slug) => services.find((service) => service.slug === slug || service.urlSlug === slug);

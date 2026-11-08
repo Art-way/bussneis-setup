@@ -17,8 +17,8 @@ const ContactUs = () => {
     const localBusinessSchema = {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
-        "name": "Business Setup UAE",
-        "image": "https://businesssetupuae.ae/assets/img/logo-1.png",
+        "name": "BSetup UAE",
+        "image": "https://businesssetupuae.ae/assets/brand/bsetup-uae.svg",
         "@id": "https://businesssetupuae.ae/",
         "url": "https://businesssetupuae.ae/contact",
         "telephone": "+971-50-770-6746",

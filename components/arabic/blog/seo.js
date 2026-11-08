@@ -3,9 +3,9 @@ import { canonicalArabicUrl } from '../routes.mjs';
 export function editorialMetadata(title, description, path, options = {}) {
   const url = canonicalArabicUrl(path);
   return {
-    title: { absolute: `${title} | Business Setup UAE` }, description,
+    title: { absolute: `${title} | BSetup UAE` }, description,
     alternates: { canonical: url },
-    openGraph: { title, description, url, type: 'website', locale: 'ar_EG', siteName: 'Business Setup UAE' },
+    openGraph: { title, description, url, type: 'website', locale: 'ar_EG', siteName: 'BSetup UAE' },
     ...options,
   };
 }

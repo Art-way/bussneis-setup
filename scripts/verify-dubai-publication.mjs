@@ -43,7 +43,7 @@ for (const post of posts) {
   check(`${post.slug} exact SEO description`, decode(html.match(/<meta name="description" content="([^"]*)"/)?.[1] || '') === post.excerpt);
   check(`${post.slug} article identity`, article?.headline === post.title && article?.mainEntityOfPage === canonicalArabicUrl(path) && article?.author?.['@type'] === 'Organization' && article?.image?.[0] === 'https://businesssetupuae.ae' + post.image.src);
   check(`${post.slug} publication and modification dates`, article?.datePublished === post.publishedAt && article?.dateModified === post.updatedAt && html.includes(`dateTime="${post.publishedAt}"`) && html.includes(`dateTime="${post.updatedAt}"`));
-  check(`${post.slug} supplied writer name`, article?.author?.name === 'فريق Business Setup UAE');
+  check(`${post.slug} supplied writer name`, article?.author?.name === 'فريق BSetup UAE');
   check(`${post.slug} Dubai breadcrumb`, breadcrumb?.itemListElement?.length === 3 && breadcrumb.itemListElement[1].item === canonicalArabicUrl(dubaiServicePath) && breadcrumb.itemListElement[2].item === canonicalArabicUrl(path));
   check(`${post.slug} no invented translation`, !/hrefLang="en"/.test(html.split('</head>')[0]));
   check(`${post.slug} no administrative material`, !/بطاقة النشر للمقال|خريطة الربط الداخلي المقترحة|نتائج البحث المقتبس|تحليل المنافسين/.test(html));
@@ -112,7 +112,7 @@ for (const [source, anchor, target] of [
   const anchors = [...body.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)];
   check(`${source.slug} ${anchor} → ${target}`, anchors.some(([, href, text]) => href === target && decode(text.replace(/<[^>]*>/g, '')) === anchor) && pages.has(target));
 }
-for (const path of ['/ar/تأسيس-شركة-في-الشارقة/', '/ar/تأسيس-شركة-في-عجمان/', '/ar/تأسيس-شركة-في-أبوظبي/', dubaiServicePath + 'المقاولات/', '/ar/مقال-غير-موجود/', '/ar/عقد-التأسيس-دبي/']) {
+for (const path of ['/ar/تأسيس-شركة-في-رأس-الخيمة/', '/ar/تأسيس-شركة-مقاولات-في-دبي/', '/ar/تأسيس-شركة-مقاولات-في-أبوظبي/', '/ar/تأسيس-شركة-شحن-في-دبي/', '/ar/تأسيس-شركة-سياحة-في-دبي/', dubaiServicePath + 'المقاولات/', '/ar/مقال-غير-موجود/', '/ar/عقد-التأسيس-دبي/']) {
   const response = await fetch(base + path);
   await response.arrayBuffer();
   check(`${path} no empty generated page`, response.status === 404);

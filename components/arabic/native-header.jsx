@@ -6,7 +6,7 @@ import { arabicNavigationLinks } from './navigation';
 export default function NativeHeader() {
   return <>
     <NativeAnchor className="ar-skip" href="#main-content">انتقل إلى المحتوى</NativeAnchor>
-    <div className="ar-topline"><div className="ar-container"><span>من مصر، إلى فرص أوسع في الإمارات <span aria-hidden="true">↗</span></span><NativeAnchor href="tel:+971507706746" dir="ltr">+971 50 770 6746</NativeAnchor></div></div>
+    <div className="ar-topline"><div className="ar-container"><span>BSetup UAE · خبرة في التأسيس منذ 2021 <span aria-hidden="true">↗</span></span><NativeAnchor href="tel:+971507706746" dir="ltr">+971 50 770 6746</NativeAnchor></div></div>
     <header className="ar-header"><div className="ar-container ar-header-inner">
       <NativeAnchor href="/ar/"><Brand /></NativeAnchor>
       <nav className="ar-nav " id="arabic-navigation" aria-label="التنقل الرئيسي">{arabicNavigationLinks.map(([href, label]) => <NativeAnchor key={href} href={href} aria-current={href === '/ar/' ? 'page' : undefined}>{label}</NativeAnchor>)}<NativeAnchor className="ar-mobile-contact" href="/ar/تواصل-معنا/">تحدث معنا</NativeAnchor></nav>

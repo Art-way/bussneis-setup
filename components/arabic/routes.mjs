@@ -1,3 +1,5 @@
+import { regionalRoutes } from './regional-services.mjs';
+
 // Public Arabic URL segments are independent of stable content/category IDs.
 export const arabicSectionPaths = {
   services: '/ar/الخدمات/',
@@ -44,6 +46,7 @@ export const dubaiArticleSlugs = [
   dubaiLicenceFeesSlug,
 ];
 export const postPath = post => post.path || `${arabicSectionPaths.blog}${post.urlSlug}/`;
+export const servicePath = service => service.path || `${arabicSectionPaths.services}${service.urlSlug}/`;
 
 export const arabicPageRoutes = [
   ...Object.entries(arabicSectionPaths).map(([view, path]) => ({ legacyPath: `/ar/${view}`, path, view })),
@@ -54,6 +57,7 @@ export const arabicPageRoutes = [
   { path: dubaiServicePath, view: 'dubai' },
   { path: costRequestPath, view: 'cost-request' },
   ...dubaiArticleSlugs.map(slug => ({ path: `/ar/${slug}/`, view: 'post', slug })),
+  ...regionalRoutes,
 ];
 
 export const legacyArabicRedirects = new Map(arabicPageRoutes.filter(route => route.legacyPath).map(route => [route.legacyPath, route.path]));

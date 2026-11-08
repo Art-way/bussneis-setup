@@ -5,7 +5,7 @@ import { arabicMetadata, StructuredData } from '../seo';
 import { breadcrumbs } from '../blog/seo';
 import styles from '../service-pages.module.css';
 
-export const metadata = arabicMetadata('حاسبة تكلفة تأسيس شركة — أرسل متطلباتك للفريق', 'اختر خدمة تأسيس الشركة وموقعها، وأرسل تفاصيل مشروعك ووسيلة التواصل إلى Business Setup UAE لطلب مراجعة التكلفة. لا تعرض الصفحة سعراً تلقائياً.', costRequestPath);
+export const metadata = arabicMetadata('حاسبة تكلفة تأسيس شركة — أرسل متطلباتك للفريق', 'اختر خدمة تأسيس الشركة وموقعها، وأرسل تفاصيل مشروعك ووسيلة التواصل إلى BSetup UAE لطلب مراجعة التكلفة. لا تعرض الصفحة سعراً تلقائياً.', costRequestPath);
 
 export default function CostRequestPage() {
   return <>

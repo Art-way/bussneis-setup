@@ -21,7 +21,7 @@ const blogData = [
     author: 'Roberto Ramon',
     authorImage: authorAvatar1,
     datePublished: '2025-11-06',
-    dateModified: '2025-11-06',
+    dateModified: '2026-11-08',
     image: image1,
     summary: 'The ultimate guide to choosing between a UAE mainland and free zone company. Compare ownership, market access, office requirements, costs, and visa eligibility to make the right choice.',
 
@@ -91,7 +91,7 @@ const blogData = [
             <i class="fa-sharp fa-solid fa-ditto"></i>
             <div>
                 <h5>Choosing the right jurisdiction is the foundation of your business success in the UAE. Analyze your business model carefully before making a decision.</h5>                                
-                <span>- Business Setup UAE Team</span>
+                <span>- BSetup UAE Team</span>
             </div>
         </div>
 
@@ -111,6 +111,7 @@ const blogData = [
             <li>Low startup cost and a fast setup are your highest priorities.</li>
         </ul>
         
+        <p>BSetup UAE draws on UAE business setup experience dating to 2021 to compare mainland and free zone requirements against your business model. We review the proposed activity, customer locations and office needs when discussing the route for your company.</p>
         <p>Making the right choice can be complex. Our expert consultants are here to provide a free, no-obligation consultation to analyze your business needs and recommend the perfect jurisdiction for you. <a href="/contact">Contact us today to get started</a>.</p>
     `,
 
@@ -137,7 +138,7 @@ const blogData = [
     author: 'Roberto Ramon',
     authorImage: authorAvatar1,
     datePublished: '2025-11-07',
-    dateModified: '2025-11-07',
+    dateModified: '2026-11-08',
     image: image1,
     summary: 'A complete guide to UAE free zone company setup costs. Understand the fees for registration, trade license, visas, and other hidden costs to budget for your new business.',
 
@@ -187,7 +188,7 @@ const blogData = [
             <i class="fa-sharp fa-solid fa-ditto"></i>
             <div>
                 <h5>Always ask for a fully itemized quote that clearly separates government fees from professional service fees. Transparency is the mark of a good consultant.</h5>                                
-                <span>- Business Setup UAE Team</span>
+                <span>- BSetup UAE Team</span>
             </div>
         </div>
 
@@ -200,6 +201,7 @@ const blogData = [
         </ul>
         <p>Therefore, the total investment is the sum of these three components. This is why getting a personalized quote is so important.</p>
         
+        <p>At BSetup UAE, our UAE business setup experience since 2021 informs how we review licence, office, visa and service-fee items. We work through the scope of an offer with you so that the requirements for your activity are clear.</p>
         <p>Don't let the costs intimidate you. A free zone company in the UAE remains one of the most affordable and high-value business structures in the world. <a href="/contact">Contact us today for a free, no-obligation quote</a> and we will find the most cost-effective solution for your business.</p>
     `,
 
@@ -229,7 +231,7 @@ const blogData = [
     author: 'Roberto Ramon',
     authorImage: authorAvatar1,
     datePublished: '2025-11-08',
-    dateModified: '2025-11-08',
+    dateModified: '2026-11-08',
     image: image1,
     summary: 'A clear guide to UAE local sponsors and local service agents (LSA) for mainland companies. Understand when a sponsor is needed and how 100% foreign ownership works.',
 
@@ -254,13 +256,14 @@ const blogData = [
             <i class="fa-sharp fa-solid fa-ditto"></i>
             <div>
                 <h5>For most new businesses, the 51% sponsor is a thing of the past. The focus is now on the LSA for professional firms.</h5>                                
-                <span>- Business Setup UAE Team</span>
+                <span>- BSetup UAE Team</span>
             </div>
         </div>
 
         <h2 style="margin-top: 30px;">When is a Local Sponsor Still Needed?</h2>
         <p style="margin-bottom: 25px;">While largely phased out for new businesses, the 51% local sponsor model is still required for a small number of strategic and regulated business activities, often related to national security or key infrastructure sectors. Our consultants will immediately identify if your specific activity falls into this rare category during your free consultation.</p>
         
+        <p>BSetup UAE brings UAE business setup experience dating to 2021 to discussions about mainland company formation. We begin with the intended activity and ownership structure, then review the documents and approvals relevant to the selected licensing authority.</p>
         <p>Navigating the nuances of corporate structuring is our expertise. We provide reliable and secure corporate sponsorship and LSA services, ensuring your interests are always protected. <a href="/contact">Contact us today</a> to discuss the perfect structure for your mainland business.</p>
     `,
 
@@ -290,7 +293,7 @@ const blogData = [
     author: 'Roberto Ramon',
     authorImage: authorAvatar1,
     datePublished: '2025-11-09',
-    dateModified: '2025-11-09',
+    dateModified: '2026-11-08',
     image: image1,
     summary: 'A step-by-step guide to the UAE company formation process. Learn the 7 key steps from choosing your jurisdiction and legal structure to getting your trade license and visas.',
 
@@ -343,10 +346,11 @@ const blogData = [
             <i class="fa-sharp fa-solid fa-ditto"></i>
             <div>
                 <h5>While the steps are clear, each one has its own complexities. Working with an expert ensures every stage is completed correctly and efficiently.</h5>                                
-                <span>- Business Setup UAE Team</span>
+                <span>- BSetup UAE Team</span>
             </div>
         </div>
         
+        <p>Our UAE business setup experience at BSetup UAE dates to 2021. We use it to help organise activity selection, founder information and application documents into a company formation plan for the relevant authority.</p>
         <p>This structured process ensures that all legal and regulatory requirements are met, setting a solid foundation for your business. If you're ready to start your journey, <a href="/contact">contact us today for a free consultation</a>. We're here to guide you through every step.</p>
     `,
 
@@ -376,7 +380,7 @@ const blogData = [
     author: 'Roberto Ramon',
     authorImage: authorAvatar1,
     datePublished: '2024-11-10',
-    dateModified: '2024-11-10',
+    dateModified: '2026-11-08',
     image: image1,
     summary: 'A guide to the tax benefits of a UAE free zone company. Learn about 0% Corporate Tax on qualifying income, VAT exemptions, and customs duties for your business.',
 
@@ -406,7 +410,7 @@ const blogData = [
             <i class="fa-sharp fa-solid fa-ditto"></i>
             <div>
                 <h5>The 0% Corporate Tax rate on qualifying income is the most powerful tax benefit a free zone offers, making it ideal for international business.</h5>                                
-                <span>- Business Setup UAE Team</span>
+                <span>- BSetup UAE Team</span>
             </div>
         </div>
 
@@ -427,6 +431,7 @@ const blogData = [
             </li>
         </ol>
         
+        <p>BSetup UAE has experience in UAE business setup dating to 2021. When reviewing a free zone option, we consider its activity and operating requirements alongside the company formation plan. Tax obligations require review of the applicable rules and the facts of the business.</p>
         <p style="margin-top: 30px;">Navigating the new tax landscape is crucial for any business. Our experts can provide tailored advice to ensure your company is structured to legally maximize these powerful tax benefits. <a href="/contact">Contact us for a free consultation</a>.</p>
     `,
 
@@ -456,7 +461,7 @@ const blogData = [
     author: 'Roberto Ramon',
     authorImage: authorAvatar1,
     datePublished: '2024-11-12',
-    dateModified: '2024-11-12',
+    dateModified: '2026-11-08',
     image: image1,
     summary: 'A detailed breakdown of UAE residence visa costs for 2025. Understand the fees for entry permits, medical tests, Emirates ID, and visa stamping for investors and employees.',
 
@@ -494,7 +499,7 @@ const blogData = [
             <i class="fa-sharp fa-solid fa-ditto"></i>
             <div>
                 <h5>As a rough estimate, you should budget approximately AED 3,500 to AED 5,000 per person for the complete visa processing fees, separate from your license cost.</h5>                                
-                <span>- Business Setup UAE Team</span>
+                <span>- BSetup UAE Team</span>
             </div>
         </div>
 
@@ -503,6 +508,7 @@ const blogData = [
         
         <p>Other factors that can influence the cost include medical insurance (which is mandatory in Dubai and Abu Dhabi) and any refundable security deposits that may be required by certain free zones. Our consultants will always provide you with a fully transparent, itemized quotation that includes all these potential costs.</p>
         
+        <p>At BSetup UAE, our UAE business setup experience since 2021 helps us review which visa-related items belong in the company formation scope. We discuss the required applications and fee items for your situation before preparing a service offer.</p>
         <p>For a precise, no-obligation quote that covers your company license and all associated visa fees, please <a href="/contact">contact our team for a free consultation</a>.</p>
     `,
 
@@ -532,7 +538,7 @@ const blogData = [
     author: 'Roberto Ramon',
     authorImage: authorAvatar1,
     datePublished: '2024-11-15',
-    dateModified: '2024-11-15',
+    dateModified: '2026-11-08',
     image: image1,
     summary: 'A step-by-step guide to the UAE residence visa application process. Learn about the entry permit, medical test, Emirates ID, and visa stamping for a smooth residency process.',
 
@@ -570,7 +576,7 @@ const blogData = [
             <i class="fa-sharp fa-solid fa-ditto"></i>
             <div>
                 <h5>The entire process, from entry permit to visa stamping, typically takes between 10 to 15 working days if all documents are in order.</h5>                                
-                <span>- Business Setup UAE Team</span>
+                <span>- BSetup UAE Team</span>
             </div>
         </div>
 
@@ -582,6 +588,7 @@ const blogData = [
             <li>A copy of your current visa (if you are already in the UAE)</li>
         </ul>
         
+        <p>BSetup UAE draws on UAE business setup experience dating to 2021 when helping organise company and residence application requirements. We review the requested documents and sequence of steps for the relevant application route.</p>
         <p>The visa process is a well-defined path. With an expert partner managing the paperwork and appointments, it becomes a simple and stress-free experience, allowing you to focus on your new life and business in the UAE. If you have any questions about your eligibility or the costs involved, please <a href="/contact">contact us for a free consultation</a>.</p>
     `,
 

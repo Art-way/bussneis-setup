@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Count from "../common/count";
+
 
 const AboutMain = () => {
     // Updated data object with relevant content for your business
@@ -8,7 +8,7 @@ const AboutMain = () => {
         image_2: '/assets/img/about/about-8.jpg',
         subtitle: 'Who We Are',
         title: 'Your Trusted Partner for Business Success in the UAE',
-        description: 'Business Setup UAE was founded with a clear mission: to simplify the company formation process for entrepreneurs and businesses from around the world. We are a team of expert consultants with deep-rooted experience in the UAE\'s legal and corporate landscape. We understand the challenges you face, and we are dedicated to providing clear, efficient, and reliable solutions that pave the way for your success.',
+        description: 'BSetup UAE draws on UAE business setup experience dating to 2021, with a clear mission: to simplify the company formation process for entrepreneurs and businesses from around the world. We are a team of expert consultants with deep-rooted experience in the UAE\'s legal and corporate landscape. We understand the challenges you face, and we are dedicated to providing clear, efficient, and reliable solutions that pave the way for your success.',
         btn_text: 'Get in Touch With Our Experts',
         btn_href: '/contact', // Changed to link to the contact page
         shape_1: '/assets/img/shape/about-1.png',
@@ -28,8 +28,8 @@ const AboutMain = () => {
                                 </div>
                                 <div className="about__company-left-experience">
                                     {/* Updated counter to be more relevant */}
-                                    <h2><Count number={1200} />+</h2>
-                                    <h6>Successful Company Formations</h6>
+                                    <h2>2021</h2>
+                                    <h6>Business setup experience since</h6>
                                 </div>
                             </div>
                         </div>

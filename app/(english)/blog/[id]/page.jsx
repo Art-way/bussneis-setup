@@ -6,7 +6,7 @@ import BlogDetailsClient from './blog-details-client';
 
 // Helper function to get image URL safely
 const getImageUrl = (img) => {
-    if (!img) return '/assets/img/logo-1.png'; // Fallback image
+    if (!img) return '/assets/brand/bsetup-uae.svg'; // Fallback image
     // If it's an imported object (Next.js), use .src, otherwise use the string directly
     const src = typeof img === 'object' ? img.src : img;
     return `https://businesssetupuae.ae${src.startsWith('/') ? '' : '/'}${src}`;
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }) {
       title: post.title,
       description: post.summary,
       url: `https://businesssetupuae.ae/blog/${post.id}`,
-      siteName: 'Business Setup UAE',
+      siteName: 'BSetup UAE',
       images: [
         {
           url: imageUrl,
@@ -72,10 +72,10 @@ const Page = async ({ params }) => {
     },
     "publisher": {
         "@type": "Organization",
-        "name": "Business Setup UAE",
+        "name": "BSetup UAE",
         "logo": {
             "@type": "ImageObject",
-            "url": `${siteDomain}/assets/img/logo-1.png`
+            "url": `${siteDomain}/assets/brand/bsetup-uae.svg`
         }
     },
     "datePublished": singleData.datePublished,

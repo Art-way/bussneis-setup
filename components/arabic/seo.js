@@ -5,10 +5,10 @@ export const SITE_URL = 'https://businesssetupuae.ae';
 export function arabicMetadata(title, description, path = '/ar/') {
   const canonicalPath = path.endsWith('/') ? path : `${path}/`;
   return {
-    title: { absolute: `${title} | Business Setup UAE` },
+    title: { absolute: `${title} | BSetup UAE` },
     description,
     alternates: { canonical: canonicalArabicUrl(canonicalPath) },
-    openGraph: { title, description, url: canonicalArabicUrl(canonicalPath), siteName: 'Business Setup UAE', locale: 'ar_EG', type: 'website', images: [{ url: `${SITE_URL}/assets/arabic/dubai-skyline.jpg`, width: 1400, height: 933, alt: 'أفق دبي وقت الغروب' }] },
+    openGraph: { title, description, url: canonicalArabicUrl(canonicalPath), siteName: 'BSetup UAE', locale: 'ar_EG', type: 'website', images: [{ url: `${SITE_URL}/assets/arabic/dubai-skyline.jpg`, width: 1400, height: 933, alt: 'أفق دبي وقت الغروب' }] },
   };
 }
 

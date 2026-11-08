@@ -12,7 +12,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "UAE Free Zone Company Setup",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
         "name": "Expert UAE Free Zone Company Setup Services",
         "description": "Establish your business in a UAE Free Zone with our expert guidance. We handle your company license, visas, and bank account, ensuring you benefit from 100% foreign ownership and 0% corporate tax.",
@@ -140,7 +140,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "UAE Mainland Company Setup",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
         "name": "Expert UAE Mainland Company Formation Services",
         "description": "Establish your business on the UAE mainland for unrestricted access to the local market. We guide you through DED approvals, licensing, and visa processes, including options for 100% foreign ownership.",
@@ -264,7 +264,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "Business Setup Consultancy",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
         "name": "Expert Business Setup Services in Dubai & UAE",
         "description": "End-to-end business setup services in the UAE. Our expert consultants handle company formation, trade licenses, visas, bank accounts, and PRO services to ensure a seamless launch for your business.",
@@ -375,7 +375,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "UAE Visa Services",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
         "name": "UAE Residence Visa Services for Investors & Business Owners",
         "description": "Expert assistance with UAE Residence Visas for investors, employees, and their families. We manage the entire process, from entry permit to visa stamping, ensuring a fast and smooth application.",
@@ -483,7 +483,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "Dubai Free Zone Company Setup",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": {
             "@type": "City",
             "name": "Dubai"
@@ -600,7 +600,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "Dubai Mainland Company Setup",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": {
             "@type": "City",
             "name": "Dubai"
@@ -716,7 +716,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "Abu Dhabi Free Zone Company Setup",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": {
             "@type": "City",
             "name": "Abu Dhabi"
@@ -832,7 +832,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "Abu Dhabi Mainland Company Setup",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": {
             "@type": "City",
             "name": "Abu Dhabi"
@@ -936,7 +936,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "Sharjah Free Zone Company Setup",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": {
             "@type": "City",
             "name": "Sharjah"
@@ -1050,7 +1050,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "Sharjah Mainland Company Setup",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": {
             "@type": "City",
             "name": "Sharjah"
@@ -1154,7 +1154,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "Northern Emirates Free Zone Company Setup",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": {
             "@type": "AdministrativeArea",
             "name": "Northern Emirates"
@@ -1269,7 +1269,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "Northern Emirates Mainland Company Setup",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": {
             "@type": "AdministrativeArea",
             "name": "Northern Emirates"
@@ -1373,7 +1373,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "Free Zone Company Formation Services",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
         "name": "Expert Free Zone Company Formation Services in UAE",
         "description": "Professional services for setting up your company in any UAE free zone. We manage the entire process, from jurisdiction selection and licensing to visas and bank account opening, ensuring a fast and hassle-free launch.",
@@ -1474,7 +1474,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "Mainland Company Formation Services",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
         "name": "Expert Mainland Company Formation Services in UAE",
         "description": "Professional services for mainland company formation across the UAE. We manage the entire DED/ADDED process, securing your license and visas for unrestricted access to the local market.",
@@ -1575,7 +1575,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "Corporate Bank Account Opening Assistance",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
         "name": "Corporate Bank Account Opening Assistance in UAE",
         "description": "Expert assistance for opening a corporate bank account in the UAE. We prepare your compliance documents, introduce you to the right banks, and manage the process to ensure a successful outcome.",
@@ -1679,7 +1679,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "PRO Services (Government Liaison)",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
         "name": "Professional PRO Services in Dubai & UAE",
         "description": "Comprehensive PRO services for businesses in the UAE. We handle all government liaison, document clearing, visa processing, and labor department tasks, ensuring your company remains compliant and efficient.",
@@ -1794,7 +1794,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "Business License Renewal Services",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
         "name": "UAE Business License Renewal Services | Dubai, Abu Dhabi, Sharjah",
         "description": "Ensure your business remains 100% compliant with our professional trade license renewal services. We handle all paperwork for mainland and free zone licenses, preventing fines and operational disruptions.",
@@ -1907,7 +1907,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "UAE Investor Visa Processing",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
         "name": "UAE Investor Visa Services for Business Owners",
         "description": "Secure your UAE Investor Visa through your new company. We manage the complete process, from company formation to visa stamping, enabling you to live and work in the UAE as a business owner.",
@@ -2008,7 +2008,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "UAE Employment Visa Processing",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
         "name": "UAE Employment Visa Services for Companies",
         "description": "Comprehensive employment visa services for your staff. We manage the entire process, from offer letter and labor approval to medical tests and visa stamping, ensuring compliance for your business.",
@@ -2109,7 +2109,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "UAE Dependent Visa Services",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
         "name": "UAE Family & Dependent Visa Sponsorship Services",
         "description": "Complete visa services for sponsoring your family in the UAE. We manage the entire dependent visa process for your spouse, children, and parents, including all documentation and approvals.",
@@ -2210,7 +2210,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "UAE Golden Visa Program Assistance",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
         "name": "UAE Golden Visa Services for Investors and Entrepreneurs",
         "description": "Secure your 10-year UAE Golden Visa. We provide expert services for investors, entrepreneurs, and exceptional talents, managing the entire application process and ensuring you meet all eligibility criteria.",
@@ -2322,7 +2322,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "DMCC Company Setup",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": {
             "@type": "City",
             "name": "Dubai"
@@ -2438,7 +2438,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "JAFZA Company Setup",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": {
             "@type": "City",
             "name": "Dubai"
@@ -2554,7 +2554,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "DIFC Company Setup",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": {
             "@type": "City",
             "name": "Dubai"
@@ -2670,7 +2670,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "Meydan Free Zone Company Setup",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": {
             "@type": "City",
             "name": "Dubai"
@@ -2785,7 +2785,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "Dubai Silicon Oasis (DSO) Company Setup",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": {
             "@type": "City",
             "name": "Dubai"
@@ -2900,7 +2900,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "Hamriyah Free Zone Company Setup",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": {
             "@type": "City",
             "name": "Sharjah"
@@ -3197,7 +3197,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "LLC Company Formation in Dubai",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": {
             "@type": "City",
             "name": "Dubai"
@@ -3306,7 +3306,7 @@ const allServicesData = [
         "serviceType": "UAE Mainland Trade License Services",
         "provider": {
             "@type": "Organization",
-            "name": "Business Setup UAE",
+            "name": "BSetup UAE",
             "url": "https://businesssetupuae.ae/"
         },
         "areaServed": {
@@ -3427,7 +3427,7 @@ const allServicesData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "serviceType": "Offshore Company Formation",
-        "provider": { "@type": "Organization", "name": "Business Setup UAE", "url": "https://businesssetupuae.ae/" },
+        "provider": { "@type": "Organization", "name": "BSetup UAE", "url": "https://businesssetupuae.ae/" },
         "areaServed": { "@type": "Country", "name": "United Arab Emirates" },
         "name": "UAE Offshore Company Formation Services (RAK ICC, JAFZA)",
         "description": "Establish a UAE offshore company for international trade, asset protection, and tax optimization. We provide expert registration services for RAK ICC and JAFZA offshore companies.",

@@ -6,7 +6,7 @@ import blogData from '@/components/data/blog-data';
 // 1. الميتا تاج القياسية (SEO Metadata)
 export const metadata = {
     title: "Blog & Insights | Business Setup in Dubai & UAE",
-    description: "Read the latest articles and insights on UAE business laws, company formation, market trends, and practical advice for entrepreneurs from the experts at Business Setup UAE.",
+    description: "Read the latest articles and insights on UAE business laws, company formation, market trends, and practical advice for entrepreneurs from the experts at BSetup UAE.",
     alternates: {
       canonical: "/blog",
     },
@@ -19,15 +19,15 @@ const Blog = () => {
     const blogListingSchema = {
         "@context": "https://schema.org",
         "@type": "Blog",
-        "name": "Business Setup UAE Blog",
+        "name": "BSetup UAE Blog",
         "description": "Insights on UAE business laws, company formation, and market trends.",
         "url": `${siteDomain}/blog`,
         "publisher": {
             "@type": "Organization",
-            "name": "Business Setup UAE",
+            "name": "BSetup UAE",
             "logo": {
                 "@type": "ImageObject",
-                "url": `${siteDomain}/assets/img/logo-1.png`
+                "url": `${siteDomain}/assets/brand/bsetup-uae-og.png`
             }
         },
         // نأخذ أول 10 مقالات فقط لتقليل حجم الصفحة

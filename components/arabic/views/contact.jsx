@@ -3,7 +3,7 @@ import { arabicMetadata } from '@/components/arabic/seo';
 import ArabicContactForm from '../contact-form';
 import styles from '@/components/arabic/service-pages.module.css';
 
-export const metadata = arabicMetadata('تواصل معنا — لنرتّب بداية مشروعك', 'تواصل مع Business Setup UAE حول تأسيس شركتك في الإمارات من مصر، عبر واتساب أو الهاتف أو البريد الإلكتروني.', '/ar/تواصل-معنا');
+export const metadata = arabicMetadata('تواصل معنا — لنرتّب بداية مشروعك', 'تواصل مع BSetup UAE حول تأسيس شركتك في الإمارات من خارج الإمارات، عبر واتساب أو الهاتف أو البريد الإلكتروني.', '/ar/تواصل-معنا');
 
 export default function ArabicContactPage() {
   return <>

@@ -15,7 +15,7 @@ export const metadata = {
       "@context": "https://schema.org",
       "@type": "ItemList",
       "name": "Business Setup Services",
-      "description": "Core services offered by Business Setup UAE.",
+      "description": "Core services offered by BSetup UAE.",
       "itemListElement": serviceListingData.map((service, index) => ({
         "@type": "ListItem",
         "position": index + 1,

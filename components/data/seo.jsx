@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 // --- UPDATED: The component now accepts metaDescription and canonicalUrl ---
 const SEO = ({ pageTitle, metaDescription, canonicalUrl }) => {
-  const siteName = "Business Setup UAE";
+  const siteName = "BSetup UAE";
   const fullTitle = `${pageTitle} | ${siteName}`;
   const siteUrl = 'https://businesssetupuae.ae';
 
@@ -27,7 +27,7 @@ const SEO = ({ pageTitle, metaDescription, canonicalUrl }) => {
       {metaDescription && <meta property="og:description" content={metaDescription} />}
       <meta property="og:type" content="website" />
       {canonicalUrl && <meta property="og:url" content={`${siteUrl}${canonicalUrl}`} />}
-      <meta property="og:image" content={`${siteUrl}/assets/img/logo-1.png`} />
+      <meta property="og:image" content={`${siteUrl}/assets/brand/bsetup-uae-og.png`} />
       <meta property="og:site_name" content={siteName} />
     </Head>
   );

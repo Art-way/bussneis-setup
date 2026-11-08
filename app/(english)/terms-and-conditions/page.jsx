@@ -8,7 +8,7 @@ const TermsContent = () => (
         <h2>Terms and Conditions</h2>
         <p><strong>Effective Date: November 6, 2025</strong></p>
         <p>
-            Please read these Terms and Conditions (&quot;Terms&quot;, &quot;Terms and Conditions&quot;) carefully before using the https://businesssetupuae.ae website (the &quot;Service&quot;) operated by Business Setup UAE (&quot;us&quot;, &quot;we&quot;, or &quot;our&quot;).
+            Please read these Terms and Conditions (&quot;Terms&quot;, &quot;Terms and Conditions&quot;) carefully before using the https://businesssetupuae.ae website (the &quot;Service&quot;) operated by BSetup UAE (&quot;us&quot;, &quot;we&quot;, or &quot;our&quot;).
         </p>
         <p>
             Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users, and others who access or use the Service. By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.
@@ -16,7 +16,7 @@ const TermsContent = () => (
         
         <h3>1. Scope of Services</h3>
         <p>
-            Business Setup UAE provides business consultancy services, including but not limited to, company formation in UAE mainland, free zones, and offshore jurisdictions; visa processing assistance; corporate bank account opening assistance; and other related PRO services.
+            BSetup UAE provides business consultancy services, including but not limited to, company formation in UAE mainland, free zones, and offshore jurisdictions; visa processing assistance; corporate bank account opening assistance; and other related PRO services.
         </p>
         <p>
             All information provided on our website or during consultations is for general informational and guidance purposes only. It does not constitute legal, financial, or tax advice. We are a business consultancy firm and not a law firm. You are solely responsible for seeking independent professional advice before making any business decisions.
@@ -38,12 +38,12 @@ const TermsContent = () => (
 
         <h3>4. Intellectual Property</h3>
         <p>
-            The Service and its original content (excluding content provided by users), features, and functionality are and will remain the exclusive property of Business Setup UAE and its licensors. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Business Setup UAE.
+            The Service and its original content (excluding content provided by users), features, and functionality are and will remain the exclusive property of BSetup UAE and its licensors. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of BSetup UAE.
         </p>
 
         <h3>5. Limitation of Liability</h3>
         <p>
-            In no event shall Business Setup UAE, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content obtained from the Service; and (iv) unauthorized access, use or alteration of your transmissions or content.
+            In no event shall BSetup UAE, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content obtained from the Service; and (iv) unauthorized access, use or alteration of your transmissions or content.
         </p>
         <p>
             Our liability is limited to the value of the fees paid for our services. We are not responsible for decisions made by government authorities or banks regarding your applications.

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
 
   return {
     title: `${teamMember.name} - ${teamMember.position}`,
-    description: `Meet ${teamMember.name}, our ${teamMember.position} at Business Setup UAE. Expert guidance for your company formation.`,
+    description: `Meet ${teamMember.name}, our ${teamMember.position} at BSetup UAE. Expert guidance for your company formation.`,
     alternates: {
       canonical: `/team/${id}`,
     },

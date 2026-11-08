@@ -5,8 +5,8 @@ import teamData from '@/components/data/team-data'; // Import data for schema
 
 // --- ADDED: Metadata for the main Team page ---
 export const metadata = {
-  title: "Our Expert Team | Business Setup UAE Consultants",
-  description: "Meet the expert team at Business Setup UAE. Our consultants specialize in mainland and free zone company formation, providing professional guidance for your business.",
+  title: "Our Expert Team | BSetup UAE Consultants",
+  description: "Meet the expert team at BSetup UAE. Our consultants specialize in mainland and free zone company formation, providing professional guidance for your business.",
   alternates: {
     canonical: "/team",
   },
@@ -15,7 +15,7 @@ export const metadata = {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "name": "Our Expert Team",
-      "description": "Meet the consultants and specialists at Business Setup UAE.",
+      "description": "Meet the consultants and specialists at BSetup UAE.",
       // Using ItemList to list the team members on this page
       "mainEntity": {
         "@type": "ItemList",

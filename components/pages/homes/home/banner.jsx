@@ -32,7 +32,7 @@ const BannerTwo = () => {
 							<div className="row">
 								<div className="col-xl-12">
 									<div className="banner__two-content">
-										<b className="subtitle">Business Setup UAE</b>
+										<b className="subtitle">BSetup UAE</b>
 										<span>Welcome to Your Future</span>
 										<h1>Launch Your Dubai Business With Expert Guidance</h1>
 										<div className="banner__two-content-button">

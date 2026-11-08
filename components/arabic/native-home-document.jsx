@@ -6,7 +6,7 @@ import { SITE_URL, StructuredData } from './seo';
 
 const organizationSchema = {
   '@context': 'https://schema.org', '@type': 'Organization', '@id': `${SITE_URL}/#organization`,
-  name: 'Business Setup UAE', url: SITE_URL,
+  name: 'BSetup UAE', url: SITE_URL,
   contactPoint: { '@type': 'ContactPoint', telephone: '+971507706746', contactType: 'customer service', availableLanguage: ['Arabic', 'English'] },
 };
 

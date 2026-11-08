@@ -10,15 +10,15 @@ export const metadata = {
     canonical: './',
   },
   title: {
-    default: "Business Setup UAE | Company Formation in Dubai",
-    template: "%s | Business Setup UAE" // سيظهر هذا الاسم تلقائياً بعد اسم كل صفحة
+    default: "BSetup UAE | Company Formation in Dubai",
+    template: "%s | BSetup UAE" // سيظهر هذا الاسم تلقائياً بعد اسم كل صفحة
   },
   description: "Your trusted partner for company formation in Dubai and UAE. Mainland, Free Zone, and Offshore business setup services.",
   openGraph: {
-    title: 'Business Setup UAE',
+    title: 'BSetup UAE',
     description: 'Expert Company Formation Services in Dubai & UAE',
     url: './', 
-    siteName: 'Business Setup UAE',
+    siteName: 'BSetup UAE',
     locale: 'en_US',
     type: 'website',
   },
@@ -40,9 +40,9 @@ export default function RootLayout({ children }) {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Business Setup UAE",
+    "name": "BSetup UAE",
     "url": "https://businesssetupuae.ae",
-    "logo": "https://businesssetupuae.ae/assets/img/logo-1.png",
+    "logo": "https://businesssetupuae.ae/assets/brand/bsetup-uae.svg",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+971-50-770-6746",
@@ -60,7 +60,7 @@ export default function RootLayout({ children }) {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Business Setup UAE",
+    "name": "BSetup UAE",
     "url": "https://businesssetupuae.ae",
     "potentialAction": {
       "@type": "SearchAction",

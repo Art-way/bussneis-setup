@@ -5,10 +5,10 @@ import TextPageComponent from "@/components/pages/common/TextPageComponent";
 // --- IMPORTANT: This is placeholder text. Replace it with your actual Privacy Policy. ---
 const PrivacyPolicyContent = () => (
     <>
-        <h2>Privacy Policy for Business Setup UAE</h2>
+        <h2>Privacy Policy for BSetup UAE</h2>
         <p><strong>Effective Date: November 6, 2025</strong></p>
         <p>
-            Welcome to Business Setup UAE. We are committed to protecting the privacy and security of our clients and website visitors. This Privacy Policy outlines how Business Setup UAE, operating through the website https://businesssetupuae.ae (&quot;the Site&quot;), collects, uses, discloses, and safeguards your information when you visit our Site or use our services.
+            Welcome to BSetup UAE. We are committed to protecting the privacy and security of our clients and website visitors. This Privacy Policy outlines how BSetup UAE, operating through the website https://businesssetupuae.ae (&quot;the Site&quot;), collects, uses, discloses, and safeguards your information when you visit our Site or use our services.
         </p>
         <p>
             Please read this policy carefully. By using our Site and services, you consent to the data practices described in this statement.
@@ -18,7 +18,7 @@ const PrivacyPolicyContent = () => (
         <ul>
             <li><strong>Personal Data:</strong> Any information relating to an identified or identifiable natural person.</li>
             <li><strong>Processing:</strong> Any operation performed on Personal Data, such as collection, recording, organization, storage, adaptation, or disclosure.</li>
-            <li><strong>Data Controller:</strong> The natural or legal person which, alone or jointly with others, determines the purposes and means of the processing of Personal Data. For the purpose of this policy, Business Setup UAE is the Data Controller.</li>
+            <li><strong>Data Controller:</strong> The natural or legal person which, alone or jointly with others, determines the purposes and means of the processing of Personal Data. For the purpose of this policy, BSetup UAE is the Data Controller.</li>
             <li><strong>User:</strong> Any individual who visits our Site or uses our services (&quot;you&quot; or &quot;your&quot;).</li>
         </ul>
 

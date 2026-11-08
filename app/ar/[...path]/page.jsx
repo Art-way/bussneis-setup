@@ -8,6 +8,7 @@ const views = {
   services: () => import('@/components/arabic/views/services'),
   service: () => import('@/components/arabic/views/service'),
   dubai: () => import('@/components/arabic/views/dubai'),
+  emirate: () => import('@/components/arabic/views/emirate'),
   'cost-request': () => import('@/components/arabic/views/cost-request'),
   contact: () => import('@/components/arabic/views/contact'),
   blog: () => import('@/components/arabic/views/blog'),

@@ -30,16 +30,16 @@ export async function generateMetadata({ params }) {
                           "Expert assistance for company formation in Dubai and UAE.";
 
   return {
-    title: pageTitle, // سيقوم Next.js بإضافة اللاحقة | Business Setup UAE تلقائياً من layout.jsx
+    title: pageTitle, // سيقوم Next.js بإضافة اللاحقة | BSetup UAE تلقائياً من layout.jsx
     description: pageDescription,
     openGraph: {
       title: pageTitle,
       description: pageDescription,
       url: `https://businesssetupuae.ae/services/${slug}`,
-      siteName: 'Business Setup UAE',
+      siteName: 'BSetup UAE',
       images: [
         {
-          url: '/assets/img/logo-1.png', // صورة افتراضية لأن البيانات الحالية لا تحتوي صوراً بارزة
+          url: '/assets/brand/bsetup-uae-og.png', // صورة افتراضية لأن البيانات الحالية لا تحتوي صوراً بارزة
           width: 800,
           height: 600,
           alt: pageTitle,

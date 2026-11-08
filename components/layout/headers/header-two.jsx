@@ -1,9 +1,9 @@
 "use client";
 import Link from 'next/link';
 import NativeAnchor from '@/components/arabic/native-anchor';
-import logo1 from "../../../public/assets/img/logo-3.png"; // Placeholder for light logo
-import logo2 from "../../../public/assets/img/logo-5.png"; // Placeholder for dark logo
-import logo3 from "../../../public/assets/img/logo-4.png"; // Placeholder for light logo variation
+
+
+
 import MainMenu from './header-menu';
 import Search from './search';
 import { useState } from 'react';
@@ -40,9 +40,9 @@ const HeaderTwo = () => {
                             <div className="header__area-menubar-left-logo">
                                 <Link href='/'>
                                     {/* Replace these with your actual logo files */}
-                                    <img className='one' src={logo1.src} alt='Business Setup UAE Logo' />
-                                    <img className="two" src={logo2.src} alt="Business Setup UAE Logo" />
-                                    <img className="light" src={logo3.src} alt="Business Setup UAE Logo" />
+                                    <img className='one' src="/assets/brand/bsetup-uae-light.svg" width="200" height="55" alt='BSetup UAE Logo' />
+                                    <img className="two" src="/assets/brand/bsetup-uae.svg" width="200" height="55" alt="BSetup UAE Logo" />
+                                    <img className="light" src="/assets/brand/bsetup-uae-light.svg" width="200" height="55" alt="BSetup UAE Logo" />
                                 </Link>
                             </div>
                         </div>
