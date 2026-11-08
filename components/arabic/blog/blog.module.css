@@ -190,3 +190,4 @@
 @media print{.tocMobile{display:none}.tocDesktop{display:block}.articleLayout{display:block}.articleBody{max-width:none}.tocDesktop>nav{display:block}}
 
 .button.button{background:#fca028;color:#131313}.button.button:hover{background:#131313;color:#fff}.categories a[aria-current],.marketFilters a[aria-current=page]{background:#fca028;border-color:#fca028;color:#131313}
+.categories a[aria-current]>span{color:#131313}
