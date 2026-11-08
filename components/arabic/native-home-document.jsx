@@ -35,7 +35,7 @@ export default function NativeHomeDocument({ css, cssHref, scriptUrl, indexable 
   </head><body className="ar-site">
     <StructuredData data={organizationSchema} />
     <NativeHeader />
-    <main id="main-content"><ArabicHomeView LinkComponent={NativeAnchor} /></main>
+    <main id="main-content" tabIndex={-1}><ArabicHomeView LinkComponent={NativeAnchor} /></main>
     <Footer LinkComponent={NativeAnchor} />
   </body></html>;
 }

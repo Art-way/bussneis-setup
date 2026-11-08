@@ -40,7 +40,7 @@ const HeaderTwo = () => {
                             <div className="header__area-menubar-left-logo">
                                 <Link href='/'>
                                     {/* Replace these with your actual logo files */}
-                                    <img className='one' src="/assets/brand/bsetup-uae-light.svg" width="200" height="55" alt='BSetup UAE Logo' />
+                                    <img className='one' src="/assets/brand/bsetup-uae-on-orange.svg" width="200" height="55" alt='BSetup UAE Logo' />
                                     <img className="two" src="/assets/brand/bsetup-uae.svg" width="200" height="55" alt="BSetup UAE Logo" />
                                     <img className="light" src="/assets/brand/bsetup-uae-light.svg" width="200" height="55" alt="BSetup UAE Logo" />
                                 </Link>

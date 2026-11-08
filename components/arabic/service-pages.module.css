@@ -77,3 +77,4 @@
 @media(max-width:760px){.requestForm input,.requestForm select,.requestForm textarea{font-size:16px!important}}
 @media(max-width:760px){.costRequestForm:global(#cost-request-form) :global(#arabic-request-widget) :is(input,select,textarea){font-size:16px!important}}
 .costRequestForm:global(#cost-request-form) :global(#arabic-request-widget) button{background-color:#131313!important;border-color:#131313!important;color:#fff!important;min-height:48px}
+.requestForm :global(#arabic-request-widget) button{background-color:#131313!important;border-color:#131313!important;color:#fff!important;min-height:48px}
