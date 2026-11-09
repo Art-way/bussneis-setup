@@ -156,6 +156,8 @@
 .wordArticle>h3{font-size:21px;line-height:1.75;color:#131313;font-weight:600;margin:30px 0 12px;scroll-margin-top:110px}
 .wordArticle a,.articleIntro a{color:#131313;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;overflow-wrap:anywhere}
 .wordArticle a:hover,.proseSection a:hover,.correction a:hover{text-decoration-thickness:2px}
+.proseSection a[href^="/ar/"],.articleIntro a[href^="/ar/"]{color:#624000;background:#fff0b3;text-decoration:underline;text-underline-offset:4px;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding-inline:.12em}
+.proseSection a[href^="/ar/"]:hover,.articleIntro a[href^="/ar/"]:hover{color:#4d3100;background:#ffdf73;text-decoration-thickness:2px}
 .wordFigure{margin:24px 0 30px}
 .wordFigure img{display:block;width:100%;height:auto;border:1px solid #e1e1e1;border-radius:12px}
 .wordArticle>h2,.wordArticle>h3,.wordArticle strong{font-weight:600}
