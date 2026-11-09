@@ -84,7 +84,7 @@ export default function sitemap() {
   }));
 
   const arabicCategoryPages = categories.map((category) => ({
-    url: `${baseUrl}/ar/المدونة/تصنيف/${category.urlSlug}/`,
+    url: `${baseUrl}/ar/تصنيف/${category.urlSlug}/`,
     changeFrequency: 'weekly',
     priority: 0.7,
   }));

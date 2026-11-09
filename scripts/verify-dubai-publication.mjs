@@ -19,7 +19,7 @@ const licenceServicePath = '/ar/إصدار-رخصة-تجارية-في-دبي/';
 const costGuide = { slug: 'company-setup-cost-checklist', path: postPath({ urlSlug: arabicPostSlugs['company-setup-cost-checklist'] }) };
 
 const pages = new Map();
-const categoryPath = post => `${blogPath}تصنيف/${arabicCategorySlugs[post.categorySlug]}/`;
+const categoryPath = post => `/ar/تصنيف/${arabicCategorySlugs[post.categorySlug]}/`;
 for (const path of new Set(['/ar/', dubaiServicePath, contractingServicePath, licenceServicePath, costRequestPath, costGuide.path, blogPath, '/ar/الخدمات/', '/ar/المؤلفون/فريق-التحرير/', '/ar/تواصل-معنا/', ...posts.map(postPath), ...posts.map(categoryPath)])) {
   const response = await fetch(base + path, { redirect: 'manual' });
   const html = await response.text();

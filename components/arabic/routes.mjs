@@ -45,6 +45,7 @@ export const dubaiArticleSlugs = [
   'مميزات-فتح-شركة-في-دبي',
   dubaiLicenceFeesSlug,
 ];
+export const categoryPath = slug => `/ar/تصنيف/${slug}/`;
 export const postPath = post => post.path || `${arabicSectionPaths.blog}${post.urlSlug}/`;
 export const servicePath = service => service.path || `${arabicSectionPaths.services}${service.urlSlug}/`;
 
@@ -52,7 +53,7 @@ export const arabicPageRoutes = [
   ...Object.entries(arabicSectionPaths).map(([view, path]) => ({ legacyPath: `/ar/${view}`, path, view })),
   ...Object.entries(arabicServiceSlugs).map(([oldSlug, slug]) => ({ legacyPath: `/ar/services/${oldSlug}`, path: `${arabicSectionPaths.services}${slug}/`, view: 'service', slug })),
   ...Object.entries(arabicPostSlugs).map(([oldSlug, slug]) => ({ legacyPath: `/ar/blog/${oldSlug}`, path: `${arabicSectionPaths.blog}${slug}/`, view: 'post', slug })),
-  ...Object.entries(arabicCategorySlugs).map(([oldSlug, slug]) => ({ legacyPath: `/ar/blog/category/${oldSlug}`, path: `${arabicSectionPaths.blog}تصنيف/${slug}/`, view: 'category', slug })),
+  ...Object.entries(arabicCategorySlugs).map(([oldSlug, slug]) => ({ legacyPath: `/ar/blog/category/${oldSlug}`, path: categoryPath(slug), view: 'category', slug })),
   ...Object.entries(arabicAuthorSlugs).map(([oldSlug, slug]) => ({ legacyPath: `/ar/authors/${oldSlug}`, path: `${arabicSectionPaths.authors}${slug}/`, view: 'author', slug })),
   { path: dubaiServicePath, view: 'dubai' },
   { path: costRequestPath, view: 'cost-request' },
@@ -60,7 +61,10 @@ export const arabicPageRoutes = [
   ...regionalRoutes,
 ];
 
-export const legacyArabicRedirects = new Map(arabicPageRoutes.filter(route => route.legacyPath).map(route => [route.legacyPath, route.path]));
+export const legacyArabicRedirects = new Map([
+  ...arabicPageRoutes.filter(route => route.legacyPath).map(route => [route.legacyPath, route.path]),
+  ...Object.values(arabicCategorySlugs).map(slug => [`${arabicSectionPaths.blog}تصنيف/${slug}`, categoryPath(slug)]),
+]);
 
 export const canonicalArabicPaths = new Set([
   '/ar',

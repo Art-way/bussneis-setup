@@ -1,3 +1,4 @@
+import { categoryPath } from '@/components/arabic/routes.mjs';
 import { notFound } from 'next/navigation';
 import { getCategory } from '@/components/arabic/content';
 import BlogListing from '@/components/arabic/blog/blog-listing';
@@ -7,7 +8,7 @@ export async function generateMetadata({ params: paramsPromise, searchParams: se
   const [params, searchParams] = await Promise.all([paramsPromise, searchParamsPromise]);
   const category = getCategory(params.slug);
   if (!category) return {};
-  return editorialMetadata(`${category.title} في الإمارات`, category.description, `/ar/المدونة/تصنيف/${category.urlSlug}/`, (searchParams?.q || searchParams?.emirate || searchParams?.topic) ? { robots: { index: false, follow: true } } : {});
+  return editorialMetadata(`${category.title} في الإمارات`, category.description, categoryPath(category.urlSlug), (searchParams?.q || searchParams?.emirate || searchParams?.topic) ? { robots: { index: false, follow: true } } : {});
 }
 export default async function CategoryPage({ params: paramsPromise, searchParams: searchParamsPromise }) {
   const [params, searchParams] = await Promise.all([paramsPromise, searchParamsPromise]);

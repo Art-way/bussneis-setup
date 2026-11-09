@@ -53,7 +53,7 @@ const sitemap = await (await fetch(base + '/sitemap.xml')).text();
 check('Sitemap lists every encoded Arabic canonical', paths.every(path => sitemap.includes(canonicalArabicUrl(path))));
 check('Sitemap removes legacy Arabic URLs', [...legacyArabicRedirects.keys()].every(path => !sitemap.includes(`https://businesssetupuae.ae${path}/`)));
 
-for (const path of ['/ar/المدونة/', '/ar/المدونة/تصنيف/تأسيس-الشركات/']) {
+for (const path of ['/ar/المدونة/', '/ar/تصنيف/تأسيس-الشركات/']) {
   const html = await (await fetch(`${base}${path}?q=${encodeURIComponent('تأسيس')}`)).text();
   check(`${path} search noindex and clean canonical`, /<meta name="robots" content="noindex/.test(html) && html.includes(`rel="canonical" href="${canonicalArabicUrl(path)}"`));
 }

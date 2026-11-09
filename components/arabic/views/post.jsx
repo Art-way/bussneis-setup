@@ -1,4 +1,4 @@
-import { canonicalArabicUrl, postPath } from '../routes.mjs';
+import { canonicalArabicUrl, categoryPath, postPath } from '../routes.mjs';
 import Link from '../link';
 import { notFound } from 'next/navigation';
 import { categories, posts, getPost, getCategory, getAuthor, formatDate, formatReadingTime, siteUrl } from '../content';
@@ -35,7 +35,7 @@ function ArticleSidebar({ categorySlug }) {
     <nav className={styles.sidebarSection} aria-labelledby="sidebar-categories">
       <h2 id="sidebar-categories">تصنيفات المدونة</h2>
       <ul>{categories.map(category => <li key={category.slug}>
-        <Link prefetch={false} className={category.slug === categorySlug ? styles.sidebarActive : undefined} href={`/ar/المدونة/تصنيف/${category.urlSlug}/`}>
+        <Link prefetch={false} className={category.slug === categorySlug ? styles.sidebarActive : undefined} href={categoryPath(category.urlSlug)}>
           {category.title}<span aria-hidden="true">←</span>
         </Link>
       </li>)}</ul>
@@ -68,8 +68,8 @@ export default async function ArticlePage({ params: paramsPromise }) {
   const authorPath = '/ar/المؤلفون/' + author.urlSlug + '/';
   const isDubai = post.emirateSlug === 'dubai';
   const path = postPath(post);
-  const categoryPath = '/ar/المدونة/تصنيف/' + category.urlSlug + '/';
-  const categoryCrumb = { name: category.title, path: categoryPath };
+  const categoryUrl = categoryPath(category.urlSlug);
+  const categoryCrumb = { name: category.title, path: categoryUrl };
   const blogCrumb = { name: 'المدونة', path: '/ar/المدونة/' };
   const trail = [blogCrumb, categoryCrumb];
   const related = posts.filter(item => item.slug !== post.slug).sort((a, b) => (Number(b.emirateSlug === post.emirateSlug) * 2 + Number(b.categorySlug === post.categorySlug)) - (Number(a.emirateSlug === post.emirateSlug) * 2 + Number(a.categorySlug === post.categorySlug))).slice(0, 3);
@@ -91,7 +91,7 @@ export default async function ArticlePage({ params: paramsPromise }) {
           {isDubai && <><span aria-hidden="true">/</span><span aria-current="page">{post.title}</span></>}
         </nav>
         <div className={styles.articleHeading}>
-          {!isDubai && <Link className={styles.categoryTag} href={categoryPath}>{category.title}</Link>}
+          {!isDubai && <Link className={styles.categoryTag} href={categoryUrl}>{category.title}</Link>}
           <h1>{post.title}</h1>
           <p className={styles.articleIntro}>{post.blocks ? post.takeaway : post.excerpt}</p>
           {isDubai ? <p className={styles.revisionLine}>آخر تعديل <time dateTime={post.updatedAt}>{formatDate(post.updatedAt)}</time></p> :
@@ -116,6 +116,6 @@ export default async function ArticlePage({ params: paramsPromise }) {
         {isDubai && <ArticleSidebar categorySlug={post.categorySlug} />}
       </div>
     </article>
-    <section className={styles.related}><div className="ar-container"><div className={styles.libraryTop}><div><p className={styles.eyebrow}>كمّل الصورة</p><h2>أدلة قد تفيد خطوتك القادمة</h2></div><Link href={categoryPath} className={styles.textLink}>تصفّح الأدلة ذات الصلة ←</Link></div><div className={styles.cardGrid}>{related.map(item => <ArticleCard post={item} key={item.slug} />)}</div></div></section>
+    <section className={styles.related}><div className="ar-container"><div className={styles.libraryTop}><div><p className={styles.eyebrow}>كمّل الصورة</p><h2>أدلة قد تفيد خطوتك القادمة</h2></div><Link href={categoryUrl} className={styles.textLink}>تصفّح الأدلة ذات الصلة ←</Link></div><div className={styles.cardGrid}>{related.map(item => <ArticleCard post={item} key={item.slug} />)}</div></div></section>
   </>;
 }
