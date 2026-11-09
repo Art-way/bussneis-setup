@@ -210,4 +210,5 @@
 .consultationCta .eyebrow{display:block;color:#ffcf91;margin-bottom:10px}
 .consultationCta h2{font-size:clamp(25px,3.1vw,36px);line-height:1.55;font-weight:600}
 .consultationCta :global(.ar-button){margin-top:3px}
+@media(min-width:901px){.articleSidebar{position:sticky;top:110px;max-height:calc(100dvh - 126px);overflow-y:auto}}
 @media(max-width:900px){.articleLayout.dubaiArticleLayout{display:flex;flex-direction:column;max-width:720px}.articleLayout.dubaiArticleLayout .articleBody{width:100%}}
