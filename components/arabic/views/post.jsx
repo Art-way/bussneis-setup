@@ -19,7 +19,7 @@ export async function generateMetadata({ params: paramsPromise }) {
     ...(post.metaTitle ? { title: { absolute: post.metaTitle } } : {}),
     openGraph: { type: 'article', title: post.metaTitle || post.title, description: post.excerpt, url, locale: 'ar_EG',
       ...(post.publishedAt ? { publishedTime: post.publishedAt } : {}), ...(post.updatedAt ? { modifiedTime: post.updatedAt } : {}),
-      authors: [canonicalArabicUrl('/ar/المؤلفون/' + getAuthor(post.authorSlug).urlSlug + '/')],
+      authors: [canonicalArabicUrl('/ar/authors/' + getAuthor(post.authorSlug).urlSlug + '/')],
       ...(post.image ? { images: [{ url: new URL(post.image.src, siteUrl).href, width: post.image.width, height: post.image.height, alt: post.image.alt }] } : {}),
     },
     ...(post.image ? { twitter: { card: 'summary_large_image', title: post.metaTitle, description: post.excerpt, images: [{ url: new URL(post.image.src, siteUrl).href, alt: post.image.alt }] } } : {}),
@@ -65,7 +65,7 @@ export default async function ArticlePage({ params: paramsPromise }) {
   if (!post) notFound();
   const category = getCategory(post.categorySlug);
   const author = getAuthor(post.authorSlug);
-  const authorPath = '/ar/المؤلفون/' + author.urlSlug + '/';
+  const authorPath = '/ar/authors/' + author.urlSlug + '/';
   const isDubai = post.emirateSlug === 'dubai';
   const path = postPath(post);
   const categoryUrl = categoryPath(category.urlSlug);

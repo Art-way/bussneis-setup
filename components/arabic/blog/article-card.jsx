@@ -14,7 +14,7 @@ export default function ArticleCard({ post, LinkComponent = NextLink }) {
       <div className="ar-article-card-meta"><Link prefetch={false} href={post.emirateSlug === 'dubai' ? dubaiServicePath : categoryPath(category.urlSlug)}>{post.emirateSlug === 'dubai' ? `دبي · ${articleTopics[post.topicSlugs[0]]}` : category.title}</Link><span>{formatReadingTime(post.readingMinutes)}</span></div>
       <h3><Link prefetch={false} href={postPath(post)}>{post.title}</Link></h3>
       <p>{post.excerpt}</p>
-      <div className="ar-article-card-footer"><Link prefetch={false} href={`/ar/المؤلفون/${author.urlSlug}/`}><span className="ar-article-mini-avatar">B<span>U</span></span><span>فريق التحرير</span></Link>{post.publishedAt && <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>}</div>
+      <div className="ar-article-card-footer"><Link prefetch={false} href={`/ar/authors/${author.urlSlug}/`}><span className="ar-article-mini-avatar">B<span>U</span></span><span>فريق التحرير</span></Link>{post.publishedAt && <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>}</div>
     </div>
   </article>;
 }

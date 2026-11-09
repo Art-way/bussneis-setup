@@ -22,7 +22,7 @@ function checkStructuredUrls(value, issues) {
 
 assert.equal(paths.length, 49, 'The Arabic section has 49 canonical pages including the Arabic legal pages.');
 for (const path of paths) {
-  check(`${path} Arabic slugs and category prefix`, path.split('/').slice(2).filter(Boolean).every((segment, index) => (index === 0 && segment === 'category' && path.startsWith('/ar/category/')) || /[\u0600-\u06ff]/.test(segment) && !/[a-z]/i.test(segment)));
+  check(`${path} Arabic slugs and allowed English prefixes`, path.split('/').slice(2).filter(Boolean).every((segment, index) => (index === 0 && ['category', 'authors'].includes(segment)) || /[\u0600-\u06ff]/.test(segment) && !/[a-z]/i.test(segment)));
   const response = await fetch(base + path, { redirect: 'manual' });
   const html = await response.text();
   const canonical = html.match(/<link\b[^>]*rel="canonical"[^>]*href="([^"]+)"/)?.[1];

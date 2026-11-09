@@ -67,7 +67,7 @@ export default function sitemap() {
     ...regionalProfiles.map(profile => profile.path.replace(/\/$/, '')),
     '/ar/تواصل-معنا',
     '/ar/المدونة',
-    '/ar/المؤلفون',
+    '/ar/authors',
     '/ar/سياسة-التحرير',
     ...Object.values(arabicLegalPaths).map(path => path.slice(0, -1)),
   ];
@@ -100,7 +100,7 @@ export default function sitemap() {
   }));
 
   const arabicAuthorPages = authors.map((author) => ({
-    url: `${baseUrl}/ar/المؤلفون/${author.urlSlug}/`,
+    url: `${baseUrl}/ar/authors/${author.urlSlug}/`,
     changeFrequency: 'monthly',
     priority: 0.6,
   }));

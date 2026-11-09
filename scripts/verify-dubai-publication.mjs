@@ -20,7 +20,7 @@ const costGuide = { slug: 'company-setup-cost-checklist', path: postPath({ urlSl
 
 const pages = new Map();
 const categoryPath = post => categoryUrl(arabicCategorySlugs[post.categorySlug]);
-for (const path of new Set(['/ar/', dubaiServicePath, contractingServicePath, licenceServicePath, costRequestPath, costGuide.path, blogPath, '/ar/الخدمات/', '/ar/المؤلفون/فريق-التحرير/', '/ar/تواصل-معنا/', ...posts.map(postPath), ...posts.map(categoryPath)])) {
+for (const path of new Set(['/ar/', dubaiServicePath, contractingServicePath, licenceServicePath, costRequestPath, costGuide.path, blogPath, '/ar/الخدمات/', '/ar/authors/فريق-التحرير/', '/ar/تواصل-معنا/', ...posts.map(postPath), ...posts.map(categoryPath)])) {
   const response = await fetch(base + path, { redirect: 'manual' });
   const html = await response.text();
   const visible = stripScripts(html);
@@ -57,7 +57,7 @@ for (const post of posts) {
   check(`${post.slug} supplied writer name`, article?.author?.name === 'فريق BSetup UAE');
   check(`${post.slug} blog, category and article breadcrumb`, JSON.stringify(breadcrumb?.itemListElement?.map(item => item.item)) === JSON.stringify(expectedTrail) && JSON.stringify(crumbLinks) === JSON.stringify([blogPath, category]) && visibleTrail.includes('aria-current="page"'));
   check(`${post.slug} category lists this article`, pages.get(category).includes(`href="${path}"`));
-  check(`${post.slug} link-free introduction and no top author or category button`, intro.length > 0 && !/<a\b/.test(intro) && !heading.includes('categoryTag') && !heading.includes('/ar/المؤلفون/'));
+  check(`${post.slug} link-free introduction and no top author or category button`, intro.length > 0 && !/<a\b/.test(intro) && !heading.includes('categoryTag') && !heading.includes('/ar/authors/'));
   check(`${post.slug} no invented translation`, !/hrefLang="en"/.test(html.split('</head>')[0]));
   check(`${post.slug} no administrative material`, !/بطاقة النشر للمقال|خريطة الربط الداخلي المقترحة|نتائج البحث المقتبس|تحليل المنافسين/.test(html));
   const figureCount = post.blocks.filter(block => block.type === 'image').length;
@@ -80,7 +80,7 @@ for (const post of posts) {
       }
     }
   }
-  const inboundSources = [dubaiServicePath, '/ar/المدونة/', '/ar/المؤلفون/فريق-التحرير/'];
+  const inboundSources = [dubaiServicePath, '/ar/المدونة/', '/ar/authors/فريق-التحرير/'];
   if (posts.slice(0, 3).includes(post)) inboundSources.push('/ar/');
   for (const source of inboundSources) {
     check(`${post.slug} inbound link from ${source}`, pages.get(source).includes(`href="${path}"`));
