@@ -16,6 +16,20 @@ const licenceFees = posts.find(post => post.path === dubaiLicenceFeesPath);
 const blogPath = '/ar/المدونة/';
 const contractingServicePath = '/ar/تأسيس-شركة-مقاولات-في-دبي/';
 const licenceServicePath = '/ar/إصدار-رخصة-تجارية-في-دبي/';
+const keywordPlan = new Map([
+  [guide.path, ['كيف افتح شركة في دبي', ['خطوات تأسيس شركة في دبي', 'كيفية تأسيس شركة في دبي']]],
+  [contract.path, ['نموذج عقد تأسيس شركة ذات مسئولية محدودة دبي', ['نموذج عقد تأسيس شركة في دبي']]],
+  [budget.path, ['تكلفة تاسيس شركة مقاولات في دبي', ['تأسيس شركة مقاولات في الإمارات', 'تأسيس شركة مقاولات في دبي']]],
+  [benefits.path, ['مميزات فتح شركة في دبي', ['فتح شركة في دبي']]],
+  [licenceFees.path, ['اسعار الرخص التجارية في دبي', ['تكلفة الرخصة التجارية في دبي', 'رسوم رخصة تجارية في دبي']]],
+]);
+const anchorByPath = new Map([
+  ...[...keywordPlan].map(([path, [primary]]) => [path, primary]),
+  [dubaiServicePath, 'تأسيس شركة في دبي'],
+  [contractingServicePath, 'تأسيس شركة مقاولات في دبي'],
+  [licenceServicePath, 'إصدار رخصة تجارية في دبي'],
+]);
+const seoReview = [];
 const costGuide = { slug: 'company-setup-cost-checklist', path: postPath({ urlSlug: arabicPostSlugs['company-setup-cost-checklist'] }) };
 
 const pages = new Map();
@@ -88,6 +102,31 @@ for (const post of posts) {
   const service = post === budget ? contractingServicePath : post === licenceFees ? licenceServicePath : dubaiServicePath;
   const consultation = articleHtml.match(/<section\b[^>]*id="article-consultation"[^>]*>[\s\S]*?<\/section>/)?.[0] || '';
   check(`${post.slug} consultation links to the relevant request form`, consultation.includes(`href="${service}#request"`) && pages.get(service).includes('id="request"'));
+  const editorial = articleHtml.match(/<div\b[^>]*class="[^"]*wordArticle[^"]*"[^>]*>([\s\S]*?)<\/div>/)?.[1] || '';
+  const firstH2 = editorial.indexOf('<h2');
+  const afterH2 = firstH2 >= 0 ? editorial.slice(firstH2) : '';
+  const paragraphs = [...afterH2.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/g)].map(match => match[1]);
+  const readAnchors = paragraph => [...paragraph.matchAll(/<a\b[^>]*href="(\/ar\/[^"#]+)"[^>]*>([\s\S]*?)<\/a>/g)]
+    .map(([, href, label]) => ({ href, label: decode(label.replace(/<[^>]*>/g, '')) }));
+  const contextual = paragraphs.flatMap(readAnchors);
+  const [primary, secondary] = keywordPlan.get(path);
+  const visibleH1 = decode(heading.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1] || '');
+  const opening = decode(heading.match(/<p\b[^>]*class="[^"]*articleIntro[^"]*"[^>]*>([\s\S]*?)<\/p>/)?.[1] || '');
+  const headings = [...afterH2.matchAll(/<h2\b[^>]*>([\s\S]*?)<\/h2>/g)].map(match => decode(match[1]));
+  const prose = paragraphs.map(paragraph => decode(paragraph.replace(/<[^>]*>/g, '')));
+  const placement = {
+    h1: visibleH1.includes(primary),
+    first100: opening.trim().split(/\s+/).slice(0, 100).join(' ').includes(primary),
+    h2: headings.filter(title => title.includes(primary)),
+    body: prose.some(paragraph => paragraph.includes(primary)),
+  };
+  check(`${post.slug} three to five distinct contextual internal links`, contextual.length >= 3 && contextual.length <= 5 && new Set(contextual.map(link => link.href)).size === contextual.length);
+  check(`${post.slug} exact approved anchor keywords and real destinations`, contextual.every(link => anchorByPath.get(link.href) === link.label && pages.has(link.href)));
+  check(`${post.slug} service link in the first suitable paragraph`, readAnchors(paragraphs[0] || '')[0]?.href === service);
+  check(`${post.slug} primary keyword in H1, first 100 words, H2 and prose`, placement.h1 && placement.first100 && placement.h2.length > 0 && placement.body);
+  const visibleEditorialText = [...headings, ...prose];
+  check(`${post.slug} planned secondary keywords`, secondary.every(keyword => visibleEditorialText.some(text => text.includes(keyword))));
+  seoReview.push({ path, primary, secondary, placement, introLinks: (intro.match(/<a\b/g) || []).length, contextual });
 }
 
 for (const [query, expected] of [['emirate=dubai',5], ['emirate=dubai&topic=formation-steps',1], ['emirate=dubai&topic=contracting',1], ['emirate=dubai&topic=contracts',1], ['emirate=dubai&topic=formation-benefits',1], ['emirate=dubai&topic=trade-licences',1]]) {
@@ -105,29 +144,13 @@ check('Dubai service includes real form entry', pages.get(dubaiServicePath).incl
 check('Cost request is a real intake entry without quoted prices', pages.get(costRequestPath).includes('id="cost-request-form"') && pages.get(costRequestPath).includes('id="arabic-request-widget"') && !/\bAED\b|\b\d[\d,]*\s*(درهم|د\.إ)/.test(pages.get(costRequestPath)));
 check('Contracting budget preserves first publication', budget.publishedAt === '2026-11-04');
 check('Contracting budget keeps the hypothetical example and five comparison questions', pages.get(budget.path).includes('مثال حسابي لتجهيز الميزانية (مثال افتراضي)') && pages.get(budget.path).includes('<ul><li>') && budget.blocks.some(block => block.type === 'ul' && block.items.length === 5));
-for (const [source, anchor, target] of [
-  [guide, 'مميزات فتح شركة في دبي حسب طبيعة مشروعك', benefits.path],
-  [guide, 'نموذج عقد تأسيس شركة ذات مسؤولية محدودة في دبي', contract.path],
-  [guide, 'تكلفة تأسيس شركة مقاولات في دبي', budget.path],
-  [budget, 'دليل اختيار المسار وتجهيز ملف الشركة في دبي', guide.path],
-  [budget, 'نموذج طلب مراجعة التكلفة', costRequestPath],
-  [benefits, 'خطوات فتح شركة في دبي', guide.path],
-  [contract, 'دليل تأسيس الشركة في دبي', guide.path],
-  [guide, 'أسعار الرخص التجارية في دبي', licenceFees.path],
-  [costGuide, 'رسوم إصدار وتجديد الرخصة التجارية', licenceFees.path],
-  [licenceFees, 'خطوات تأسيس شركة في دبي', guide.path],
-  [licenceFees, 'قراءة عرض تكلفة تأسيس شركة في الإمارات', costGuide.path],
-]) {
-  const body = pages.get(source.path).match(/<article\b[^>]*>([\s\S]*?)<\/article>/)?.[1] || '';
-  const anchors = [...body.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)];
-  check(`${source.slug} ${anchor} → ${target}`, anchors.some(([, href, text]) => href === target && decode(text.replace(/<[^>]*>/g, '')) === anchor) && pages.has(target));
-}
+check('The UAE cost guide still links to the Dubai licence fees article', pages.get(costGuide.path).includes(`href="${licenceFees.path}"`));
 for (const path of ['/ar/تأسيس-شركة-في-رأس-الخيمة/', dubaiServicePath + 'المقاولات/', '/ar/مقال-غير-موجود/', '/ar/عقد-التأسيس-دبي/']) {
   const response = await fetch(base + path);
   await response.arrayBuffer();
   check(`${path} no empty generated page`, response.status === 404);
 }
-await fs.writeFile('output/security/dubai-publication-verification.json', JSON.stringify({ base, at: new Date().toISOString(), checks }, null, 2));
+await fs.writeFile('output/security/dubai-publication-verification.json', JSON.stringify({ base, at: new Date().toISOString(), checks, seoReview }, null, 2));
 const failed = checks.filter(check => !check.pass);
 console.log(JSON.stringify({ checks: checks.length, failed }, null, 2));
 assert.equal(failed.length, 0, 'Dubai publication checks failed');
