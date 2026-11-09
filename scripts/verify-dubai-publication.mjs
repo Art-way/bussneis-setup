@@ -122,7 +122,11 @@ for (const post of posts) {
   };
   check(`${post.slug} three to five distinct contextual internal links`, contextual.length >= 3 && contextual.length <= 5 && new Set(contextual.map(link => link.href)).size === contextual.length);
   check(`${post.slug} exact approved anchor keywords and real destinations`, contextual.every(link => anchorByPath.get(link.href) === link.label && pages.has(link.href)));
-  check(`${post.slug} service link in the first suitable paragraph`, readAnchors(paragraphs[0] || '')[0]?.href === service);
+  const cta = paragraphs[1] || '';
+  const ctaLinks = readAnchors(cta);
+  check(`${post.slug} bold branded CTA with the first contextual link`,
+    !/<a\b/.test(paragraphs[0] || '') && ctaLinks.length === 1 && ctaLinks[0].href === service &&
+    /<strong\b[^>]*>[^<]*BSetup UAE/.test(cta) && !cta.replace(/<strong\b[^>]*>[\s\S]*?<\/strong>/g, '').replace(/<[^>]*>/g, '').trim());
   check(`${post.slug} primary keyword in H1, first 100 words, H2 and prose`, placement.h1 && placement.first100 && placement.h2.length > 0 && placement.body);
   const visibleEditorialText = [...headings, ...prose];
   check(`${post.slug} planned secondary keywords`, secondary.every(keyword => visibleEditorialText.some(text => text.includes(keyword))));
