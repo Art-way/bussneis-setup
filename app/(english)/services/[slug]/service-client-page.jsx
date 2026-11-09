@@ -5,7 +5,7 @@ import HeaderTwo from "@/components/layout/headers/header-two";
 import BreadCrumb from "@/components/pages/common/breadcrumb";
 import FooterTwo from "@/components/layout/footers/footer-two";
 import ScrollToTop from "@/components/pages/common/scroll/scroll-to-top";
-import WhatsAppButton from "@/components/pages/common/whatsapp-button";
+
 import Link from "next/link";
 import { useState } from 'react';
 import PhoneInput from 'react-phone-number-input';
@@ -330,7 +330,6 @@ const ServiceClientPage = ({ singleData }) => {
             <div className='all-footer'>
                 <FooterTwo />
             </div>
-            <WhatsAppButton />
             <ScrollToTop />
         </div>
     );

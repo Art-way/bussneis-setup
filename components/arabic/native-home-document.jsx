@@ -2,6 +2,7 @@ import ArabicHomeView, { arabicHomeMetadata } from './home';
 import Footer from './footer';
 import NativeAnchor from './native-anchor';
 import NativeHeader from './native-header';
+import WhatsAppButton from '@/components/pages/common/whatsapp-button';
 import { SITE_URL, StructuredData } from './seo';
 
 const organizationSchema = {
@@ -37,5 +38,6 @@ export default function NativeHomeDocument({ css, cssHref, scriptUrl, indexable 
     <NativeHeader />
     <main id="main-content" tabIndex={-1}><ArabicHomeView LinkComponent={NativeAnchor} /></main>
     <Footer LinkComponent={NativeAnchor} />
+    <WhatsAppButton language="ar" />
   </body></html>;
 }

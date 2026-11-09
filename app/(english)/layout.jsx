@@ -1,6 +1,7 @@
 // In: app/layout.jsx
 import "../globals.css";
 import Providers from "./providers"; // استدعاء المكون الذي أنشأناه
+import WhatsAppButton from '@/components/pages/common/whatsapp-button';
 
 // 1. إعدادات الميتا العامة للموقع بالكامل
 export const metadata = {
@@ -89,6 +90,7 @@ export default function RootLayout({ children }) {
         <Providers>
           {children}
         </Providers>
+        <WhatsAppButton />
       </body>
     </html>
   );

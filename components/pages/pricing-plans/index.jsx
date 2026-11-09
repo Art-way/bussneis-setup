@@ -5,7 +5,7 @@ import BreadCrumb from "../common/breadcrumb";
 import FooterTwo from "@/components/layout/footers/footer-two";
 import PricingPlansMain from "./pricing-plans";
 import ScrollToTop from "../common/scroll/scroll-to-top";
-import WhatsAppButton from "@/components/pages/common/whatsapp-button";
+
 const PricingPages = () => {
     return (
         <>
@@ -18,7 +18,6 @@ const PricingPages = () => {
             <div className='all-footer'>
                 <FooterTwo />
             </div>    
-            <WhatsAppButton />
             <ScrollToTop />        
         </>
     );
