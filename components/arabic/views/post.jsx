@@ -1,4 +1,4 @@
-import { canonicalArabicUrl, postPath, dubaiServicePath } from '../routes.mjs';
+import { canonicalArabicUrl, postPath } from '../routes.mjs';
 import Link from '../link';
 import { notFound } from 'next/navigation';
 import { posts, getPost, getCategory, getAuthor, formatDate, formatReadingTime, siteUrl } from '../content';
@@ -39,13 +39,14 @@ export default async function ArticlePage({ params: paramsPromise }) {
   const isDubai = post.emirateSlug === 'dubai';
   const path = postPath(post);
   const categoryPath = '/ar/المدونة/تصنيف/' + category.urlSlug + '/';
-  const collectionPath = isDubai ? '/ar/المدونة/?emirate=dubai#articles' : categoryPath;
-  const trail = isDubai ? [{ name: 'تأسيس الشركات في دبي', path: dubaiServicePath }] : [{ name: 'المجلة', path: '/ar/المدونة/' }, { name: category.title, path: categoryPath }];
+  const categoryCrumb = { name: category.title, path: categoryPath };
+  const blogCrumb = { name: 'المدونة', path: '/ar/المدونة/' };
+  const trail = isDubai ? [categoryCrumb, blogCrumb] : [blogCrumb, categoryCrumb];
   const related = posts.filter(item => item.slug !== post.slug).sort((a, b) => (Number(b.emirateSlug === post.emirateSlug) * 2 + Number(b.categorySlug === post.categorySlug)) - (Number(a.emirateSlug === post.emirateSlug) * 2 + Number(a.categorySlug === post.categorySlug))).slice(0, 3);
   const index = <ArticleContents sections={post.sections} showSources={post.sources.length > 0} />;
-  const introduction = post.blocks?.[0]?.content;
+  const contents = isDubai ? <details className={`${styles.toc} ${styles.inlineContents}`}><summary>محتويات المقال <span aria-hidden="true">+</span></summary>{index}</details> : null;
   return <>
-    <JsonLd data={breadcrumbs([...trail, { name: post.title, path }])} />
+    <JsonLd data={breadcrumbs([...trail, { name: post.title, path }], { includeHome: !isDubai })} />
     <JsonLd data={{ '@context': 'https://schema.org', '@type': 'BlogPosting', '@id': canonicalArabicUrl(path + '#article'), headline: post.title, description: post.excerpt, inLanguage: 'ar-EG', mainEntityOfPage: canonicalArabicUrl(path),
       ...(post.publishedAt ? { datePublished: post.publishedAt } : {}), ...(post.updatedAt ? { dateModified: post.updatedAt } : {}),
       ...(post.image ? { image: [new URL(post.image.src, siteUrl).href] } : {}),
@@ -54,15 +55,23 @@ export default async function ArticlePage({ params: paramsPromise }) {
     }} />
     <article>
       <header className={styles.articleHeader}><div className="ar-container">
-        <nav aria-label="مسار التصفح" className={styles.breadcrumb}><Link href="/ar/">الرئيسية العربية</Link>{trail.map(item => <span key={item.path} className={styles.breadcrumbItem}><span aria-hidden="true">/</span><Link href={item.path}>{item.name}</Link></span>)}{isDubai && <><span aria-hidden="true">/</span><span aria-current="page">{post.title}</span></>}</nav>
-        <div className={styles.articleHeading}><Link className={styles.categoryTag} href={collectionPath}>{isDubai ? 'دبي · ' + articleTopics[post.topicSlugs[0]] : category.title}</Link><h1>{post.title}</h1><p className={styles.articleIntro}>{introduction?.some(run => run.href) ? <Inline content={introduction} /> : post.blocks ? post.takeaway : post.excerpt}</p>
-          <div className={styles.byline}><Link href={authorPath} className={styles.authorLink}><span className={styles.avatar} aria-hidden="true">B<span>U</span></span><span><strong>{author.name}</strong><small>{author.role}</small></span></Link><div className={styles.dateLine}>{post.publishedAt && <span>تاريخ النشر: <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time></span>}{post.updatedAt && <span>آخر تحديث: <time dateTime={post.updatedAt}>{formatDate(post.updatedAt)}</time></span>}<span>{formatReadingTime(post.readingMinutes)} تقريباً</span></div></div>
+        <nav aria-label="مسار التصفح" className={styles.breadcrumb}>
+          {!isDubai && <Link href="/ar/">الرئيسية العربية</Link>}
+          {trail.map((item, i) => <span key={item.path} className={styles.breadcrumbItem}>{(!isDubai || i > 0) && <span aria-hidden="true">/</span>}<Link href={item.path}>{item.name}</Link></span>)}
+          {isDubai && <><span aria-hidden="true">/</span><span aria-current="page">{post.title}</span></>}
+        </nav>
+        <div className={styles.articleHeading}>
+          {!isDubai && <Link className={styles.categoryTag} href={categoryPath}>{category.title}</Link>}
+          <h1>{post.title}</h1>
+          <p className={styles.articleIntro}>{post.blocks ? post.takeaway : post.excerpt}</p>
+          {isDubai ? <p className={styles.revisionLine}>آخر تعديل <time dateTime={post.updatedAt}>{formatDate(post.updatedAt)}</time></p> :
+            <div className={styles.byline}><Link href={authorPath} className={styles.authorLink}><span className={styles.avatar} aria-hidden="true">B<span>U</span></span><span><strong>{author.name}</strong><small>{author.role}</small></span></Link><div className={styles.dateLine}>{post.publishedAt && <span>تاريخ النشر: <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time></span>}{post.updatedAt && <span>آخر تحديث: <time dateTime={post.updatedAt}>{formatDate(post.updatedAt)}</time></span>}<span>{formatReadingTime(post.readingMinutes)} تقريباً</span></div></div>}
         </div>
       </div></header>
-      <div className={'ar-container ' + styles.articleLayout}>
-        <aside className={styles.toc} aria-label="فهرس الدليل"><div className={styles.tocDesktop}><p className={styles.eyebrow}>في هذا الدليل</p>{index}<Link href={isDubai ? dubaiServicePath + '#request' : '/ar/تواصل-معنا/'} className={styles.tocCta}>جاهز لخطوتك القادمة؟<strong>خلّينا نتكلم عن مشروعك ←</strong></Link></div><details className={styles.tocMobile}><summary>في هذا الدليل <span aria-hidden="true">+</span></summary>{index}</details></aside>
+      <div className={`ar-container ${styles.articleLayout} ${isDubai ? styles.dubaiArticleLayout : ''}`}>
+        {!isDubai && <aside className={styles.toc} aria-label="فهرس الدليل"><div className={styles.tocDesktop}><p className={styles.eyebrow}>في هذا الدليل</p>{index}<Link href="/ar/تواصل-معنا/" className={styles.tocCta}>جاهز لخطوتك القادمة؟<strong>خلّينا نتكلم عن مشروعك ←</strong></Link></div><details className={styles.tocMobile}><summary>في هذا الدليل <span aria-hidden="true">+</span></summary>{index}</details></aside>}
         <div className={styles.articleBody}>
-          {post.blocks ? <ArticleBlocks blocks={post.blocks.slice(1)} /> : <>
+          {post.blocks ? <ArticleBlocks blocks={post.blocks.slice(1)} afterFirstHeading={contents} /> : <>
             <EditorialCover category={post.categorySlug} className={styles.articleCover} />
             <div className={styles.takeaway}><span>الجواب أولاً</span><p>{post.takeaway}</p></div>
             <p className={styles.articleDisclosure}>دليل تمهيدي للمعلومات العامة. تختلف المتطلبات بحسب النشاط والجهة والحالة؛ راجع الجهة المختصة قبل أي التزام مالي أو قانوني.</p>
@@ -75,6 +84,6 @@ export default async function ArticlePage({ params: paramsPromise }) {
         </div>
       </div>
     </article>
-    <section className={styles.related}><div className="ar-container"><div className={styles.libraryTop}><div><p className={styles.eyebrow}>كمّل الصورة</p><h2>أدلة قد تفيد خطوتك القادمة</h2></div><Link href={collectionPath} className={styles.textLink}>تصفّح الأدلة ذات الصلة ←</Link></div><div className={styles.cardGrid}>{related.map(item => <ArticleCard post={item} key={item.slug} />)}</div></div></section>
+    <section className={styles.related}><div className="ar-container"><div className={styles.libraryTop}><div><p className={styles.eyebrow}>كمّل الصورة</p><h2>أدلة قد تفيد خطوتك القادمة</h2></div><Link href={categoryPath} className={styles.textLink}>تصفّح الأدلة ذات الصلة ←</Link></div><div className={styles.cardGrid}>{related.map(item => <ArticleCard post={item} key={item.slug} />)}</div></div></section>
   </>;
 }

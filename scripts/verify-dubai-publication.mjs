@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
-import { arabicPostSlugs, canonicalArabicUrl, dubaiGuideSlug, dubaiLicenceFeesPath, dubaiServicePath, costRequestPath, postPath, canonicalArabicPaths } from '../components/arabic/routes.mjs';
+import { arabicCategorySlugs, arabicPostSlugs, canonicalArabicUrl, dubaiGuideSlug, dubaiLicenceFeesPath, dubaiServicePath, costRequestPath, postPath, canonicalArabicPaths } from '../components/arabic/routes.mjs';
 
 const base = process.argv[2] || 'http://127.0.0.1:5047';
 const posts = JSON.parse(await fs.readFile('components/arabic/dubai-articles.json', 'utf8'));
@@ -13,10 +13,14 @@ const contract = posts.find(post => post.slug === 'dubai-llc-memorandum');
 const budget = posts.find(post => post.slug === 'dubai-contracting-budget');
 const benefits = posts.find(post => post.slug === 'dubai-formation-benefits');
 const licenceFees = posts.find(post => post.path === dubaiLicenceFeesPath);
+const blogPath = '/ar/المدونة/';
+const contractingServicePath = '/ar/تأسيس-شركة-مقاولات-في-دبي/';
+const licenceServicePath = '/ar/إصدار-رخصة-تجارية-في-دبي/';
 const costGuide = { slug: 'company-setup-cost-checklist', path: postPath({ urlSlug: arabicPostSlugs['company-setup-cost-checklist'] }) };
 
 const pages = new Map();
-for (const path of ['/ar/', dubaiServicePath, costRequestPath, costGuide.path, '/ar/المدونة/', '/ar/الخدمات/', '/ar/المؤلفون/فريق-التحرير/', '/ar/تواصل-معنا/', ...posts.map(postPath)]) {
+const categoryPath = post => `${blogPath}تصنيف/${arabicCategorySlugs[post.categorySlug]}/`;
+for (const path of new Set(['/ar/', dubaiServicePath, contractingServicePath, licenceServicePath, costRequestPath, costGuide.path, blogPath, '/ar/الخدمات/', '/ar/المؤلفون/فريق-التحرير/', '/ar/تواصل-معنا/', ...posts.map(postPath), ...posts.map(categoryPath)])) {
   const response = await fetch(base + path, { redirect: 'manual' });
   const html = await response.text();
   const visible = stripScripts(html);
@@ -39,12 +43,21 @@ for (const post of posts) {
   const schemas = [...responseHtml.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1]));
   const article = schemas.find(s => s['@type'] === 'BlogPosting');
   const breadcrumb = schemas.find(s => s['@type'] === 'BreadcrumbList');
+  const articleHtml = html.match(/<article\b[\s\S]*?<\/article>/)?.[0] || '';
+  const heading = articleHtml.match(/<header\b[\s\S]*?<\/header>/)?.[0] || '';
+  const intro = articleHtml.split(/<h1\b/)[1]?.split(/<h2\b/)[0] || '';
+  const category = categoryPath(post);
+  const expectedTrail = [category, blogPath, path].map(canonicalArabicUrl);
+  const visibleTrail = heading.match(/<nav\b[\s\S]*?<\/nav>/)?.[0] || '';
+  const crumbLinks = [...visibleTrail.matchAll(/<a\b[^>]*href="([^"]+)"/g)].map(match => match[1]);
   check(`${post.slug} exact SEO title`, decode(html.match(/<title[^>]*>(.*?)<\/title>/s)?.[1] || '') === post.metaTitle);
   check(`${post.slug} exact SEO description`, decode(html.match(/<meta name="description" content="([^"]*)"/)?.[1] || '') === post.excerpt);
   check(`${post.slug} article identity`, article?.headline === post.title && article?.mainEntityOfPage === canonicalArabicUrl(path) && article?.author?.['@type'] === 'Organization' && article?.image?.[0] === 'https://businesssetupuae.ae' + post.image.src);
-  check(`${post.slug} publication and modification dates`, article?.datePublished === post.publishedAt && article?.dateModified === post.updatedAt && html.includes(`dateTime="${post.publishedAt}"`) && html.includes(`dateTime="${post.updatedAt}"`));
+  check(`${post.slug} publication and modification dates`, article?.datePublished === post.publishedAt && article?.dateModified === post.updatedAt && (heading.match(/<time\b/g) || []).length === 1 && heading.includes(`dateTime="${post.updatedAt}"`));
   check(`${post.slug} supplied writer name`, article?.author?.name === 'فريق BSetup UAE');
-  check(`${post.slug} Dubai breadcrumb`, breadcrumb?.itemListElement?.length === 3 && breadcrumb.itemListElement[1].item === canonicalArabicUrl(dubaiServicePath) && breadcrumb.itemListElement[2].item === canonicalArabicUrl(path));
+  check(`${post.slug} category, blog and article breadcrumb`, JSON.stringify(breadcrumb?.itemListElement?.map(item => item.item)) === JSON.stringify(expectedTrail) && JSON.stringify(crumbLinks) === JSON.stringify([category, blogPath]) && visibleTrail.includes('aria-current="page"'));
+  check(`${post.slug} category lists this article`, pages.get(category).includes(`href="${path}"`));
+  check(`${post.slug} link-free introduction and no top author or category button`, intro.length > 0 && !/<a\b/.test(intro) && !heading.includes('categoryTag') && !heading.includes('/ar/المؤلفون/'));
   check(`${post.slug} no invented translation`, !/hrefLang="en"/.test(html.split('</head>')[0]));
   check(`${post.slug} no administrative material`, !/بطاقة النشر للمقال|خريطة الربط الداخلي المقترحة|نتائج البحث المقتبس|تحليل المنافسين/.test(html));
   const figureCount = post.blocks.filter(block => block.type === 'image').length;
@@ -59,7 +72,7 @@ for (const post of posts) {
       }
     }
     if (block.type === 'image') {
-      check(`${post.slug} ${block.kind} original ALT and geometry`, html.includes(`alt="${block.alt}"`) && html.includes(`width="${block.width}" height="${block.height}"`));
+      check(`${post.slug} ${block.kind} approved ALT and geometry`, html.includes(`alt="${block.alt}"`) && html.includes(`width="${block.width}" height="${block.height}"`));
       for (const image of block.srcSet.split(', ').map(value => value.split(' ')[0])) {
         const response = await fetch(base + image);
         const bytes = new Uint8Array(await response.arrayBuffer());
@@ -72,7 +85,8 @@ for (const post of posts) {
   for (const source of inboundSources) {
     check(`${post.slug} inbound link from ${source}`, pages.get(source).includes(`href="${path}"`));
   }
-  check(`${post.slug} working service request link`, html.includes(`href="${dubaiServicePath}#request"`));
+  const service = post === budget ? contractingServicePath : post === licenceFees ? licenceServicePath : dubaiServicePath;
+  check(`${post.slug} relevant service link`, articleHtml.includes(`href="${service}"`) && pages.has(service));
 }
 
 for (const [query, expected] of [['emirate=dubai',5], ['emirate=dubai&topic=formation-steps',1], ['emirate=dubai&topic=contracting',1], ['emirate=dubai&topic=contracts',1], ['emirate=dubai&topic=formation-benefits',1], ['emirate=dubai&topic=trade-licences',1]]) {
@@ -95,18 +109,16 @@ for (const [source, anchor, target] of [
   [guide, 'نموذج عقد تأسيس شركة ذات مسؤولية محدودة في دبي', contract.path],
   [guide, 'تكلفة تأسيس شركة مقاولات في دبي', budget.path],
   [guide, 'خدمة تأسيس شركة في دبي', dubaiServicePath],
-  [budget, 'خطوات تأسيس شركة في دبي', guide.path],
-  [budget, 'خدمة تأسيس شركة في دبي', dubaiServicePath],
-  [budget, 'نموذج عقد التأسيس', contract.path],
-  [budget, 'حاسبة تكلفة تأسيس الشركة على موقعنا', costRequestPath],
+  [budget, 'دليل اختيار المسار وتجهيز ملف الشركة في دبي', guide.path],
+  [budget, 'خدمة تأسيس شركة مقاولات في دبي', contractingServicePath],
+  [budget, 'نموذج طلب مراجعة التكلفة', costRequestPath],
   [benefits, 'خطوات فتح شركة في دبي', guide.path],
   [contract, 'دليل تأسيس الشركة في دبي', guide.path],
   [guide, 'أسعار الرخص التجارية في دبي', licenceFees.path],
   [costGuide, 'رسوم إصدار وتجديد الرخصة التجارية', licenceFees.path],
   [licenceFees, 'خطوات تأسيس شركة في دبي', guide.path],
   [licenceFees, 'قراءة عرض تكلفة تأسيس شركة في الإمارات', costGuide.path],
-  [licenceFees, 'حاسبة تكلفة تأسيس شركة', costRequestPath],
-  [licenceFees, 'خدمة تأسيس شركة في دبي', dubaiServicePath],
+  [licenceFees, 'خدمة إصدار رخصة تجارية في دبي', licenceServicePath],
 ]) {
   const body = pages.get(source.path).match(/<article\b[^>]*>([\s\S]*?)<\/article>/)?.[1] || '';
   const anchors = [...body.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)];

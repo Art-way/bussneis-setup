@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import Link from '../link';
 import styles from './blog.module.css';
 
@@ -14,10 +15,11 @@ export function Inline({ content }) {
 }
 
 // Typed source data, never Word HTML or executable Markdown. React escapes text.
-export default function ArticleBlocks({ blocks }) {
+export default function ArticleBlocks({ blocks, afterFirstHeading }) {
+  const firstHeading = blocks.findIndex(block => block.type === 'h2');
   return <div className={`${styles.proseSection} ${styles.wordArticle}`}>{blocks.map((block, index) => {
     switch (block.type) {
-      case 'h2': return <h2 id={block.id} key={index}>{block.text}</h2>;
+      case 'h2': return <Fragment key={index}><h2 id={block.id}>{block.text}</h2>{index === firstHeading && afterFirstHeading}</Fragment>;
       case 'h3': return <h3 id={block.id} key={index}>{block.text}</h3>;
       case 'p': return <p key={index}><Inline content={block.content} /></p>;
       case 'ol': return <ol key={index} start={block.start || 1}>{block.items.map((item, i) => <li key={i}><Inline content={item} /></li>)}</ol>;

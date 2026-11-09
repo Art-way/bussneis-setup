@@ -14,4 +14,10 @@ export function JsonLd({ data }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, '\\u003c') }} />;
 }
 
-export const breadcrumbs = (items) => ({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ name: 'الرئيسية', path: '/ar/' }, ...items].map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.name, item: canonicalArabicUrl(item.path) })) });
+export function breadcrumbs(items, { includeHome = true } = {}) {
+  const trail = includeHome ? [{ name: 'الرئيسية', path: '/ar/' }, ...items] : items;
+  return {
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: trail.map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.name, item: canonicalArabicUrl(item.path) })),
+  };
+}
