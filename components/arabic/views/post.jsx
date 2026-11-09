@@ -41,7 +41,7 @@ export default async function ArticlePage({ params: paramsPromise }) {
   const categoryPath = '/ar/المدونة/تصنيف/' + category.urlSlug + '/';
   const categoryCrumb = { name: category.title, path: categoryPath };
   const blogCrumb = { name: 'المدونة', path: '/ar/المدونة/' };
-  const trail = isDubai ? [categoryCrumb, blogCrumb] : [blogCrumb, categoryCrumb];
+  const trail = [blogCrumb, categoryCrumb];
   const related = posts.filter(item => item.slug !== post.slug).sort((a, b) => (Number(b.emirateSlug === post.emirateSlug) * 2 + Number(b.categorySlug === post.categorySlug)) - (Number(a.emirateSlug === post.emirateSlug) * 2 + Number(a.categorySlug === post.categorySlug))).slice(0, 3);
   const index = <ArticleContents sections={post.sections} showSources={post.sources.length > 0} />;
   const contents = isDubai ? <details className={`${styles.toc} ${styles.inlineContents}`}><summary>محتويات المقال <span aria-hidden="true">+</span></summary>{index}</details> : null;

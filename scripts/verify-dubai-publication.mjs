@@ -47,7 +47,7 @@ for (const post of posts) {
   const heading = articleHtml.match(/<header\b[\s\S]*?<\/header>/)?.[0] || '';
   const intro = articleHtml.split(/<h1\b/)[1]?.split(/<h2\b/)[0] || '';
   const category = categoryPath(post);
-  const expectedTrail = [category, blogPath, path].map(canonicalArabicUrl);
+  const expectedTrail = [blogPath, category, path].map(canonicalArabicUrl);
   const visibleTrail = heading.match(/<nav\b[\s\S]*?<\/nav>/)?.[0] || '';
   const crumbLinks = [...visibleTrail.matchAll(/<a\b[^>]*href="([^"]+)"/g)].map(match => match[1]);
   check(`${post.slug} exact SEO title`, decode(html.match(/<title[^>]*>(.*?)<\/title>/s)?.[1] || '') === post.metaTitle);
@@ -55,7 +55,7 @@ for (const post of posts) {
   check(`${post.slug} article identity`, article?.headline === post.title && article?.mainEntityOfPage === canonicalArabicUrl(path) && article?.author?.['@type'] === 'Organization' && article?.image?.[0] === 'https://businesssetupuae.ae' + post.image.src);
   check(`${post.slug} publication and modification dates`, article?.datePublished === post.publishedAt && article?.dateModified === post.updatedAt && (heading.match(/<time\b/g) || []).length === 1 && heading.includes(`dateTime="${post.updatedAt}"`));
   check(`${post.slug} supplied writer name`, article?.author?.name === 'فريق BSetup UAE');
-  check(`${post.slug} category, blog and article breadcrumb`, JSON.stringify(breadcrumb?.itemListElement?.map(item => item.item)) === JSON.stringify(expectedTrail) && JSON.stringify(crumbLinks) === JSON.stringify([category, blogPath]) && visibleTrail.includes('aria-current="page"'));
+  check(`${post.slug} blog, category and article breadcrumb`, JSON.stringify(breadcrumb?.itemListElement?.map(item => item.item)) === JSON.stringify(expectedTrail) && JSON.stringify(crumbLinks) === JSON.stringify([blogPath, category]) && visibleTrail.includes('aria-current="page"'));
   check(`${post.slug} category lists this article`, pages.get(category).includes(`href="${path}"`));
   check(`${post.slug} link-free introduction and no top author or category button`, intro.length > 0 && !/<a\b/.test(intro) && !heading.includes('categoryTag') && !heading.includes('/ar/المؤلفون/'));
   check(`${post.slug} no invented translation`, !/hrefLang="en"/.test(html.split('</head>')[0]));
