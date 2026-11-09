@@ -1,7 +1,8 @@
 import { canonicalArabicUrl, postPath } from '../routes.mjs';
 import Link from '../link';
 import { notFound } from 'next/navigation';
-import { posts, getPost, getCategory, getAuthor, formatDate, formatReadingTime, siteUrl } from '../content';
+import { categories, posts, getPost, getCategory, getAuthor, formatDate, formatReadingTime, siteUrl } from '../content';
+import { arabicServiceNavigation } from '../navigation';
 import { articleTopics } from '../market-segments';
 import { editorialMetadata, JsonLd, breadcrumbs } from '../blog/seo';
 import EditorialCover from '../blog/cover';
@@ -27,6 +28,35 @@ export async function generateMetadata({ params: paramsPromise }) {
 
 function ArticleContents({ sections, showSources }) {
   return <nav aria-label="محتويات المقال"><ol>{sections.map((section, index) => <li key={section.id}><a href={'#' + section.id}><span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>{section.title}</a></li>)}{showSources && <li><a href="#sources"><span aria-hidden="true">↗</span>المصادر والمراجع</a></li>}</ol></nav>;
+}
+
+function ArticleSidebar({ categorySlug }) {
+  return <aside className={styles.articleSidebar} aria-label="تصنيفات المدونة وخدمات الموقع">
+    <nav className={styles.sidebarSection} aria-labelledby="sidebar-categories">
+      <h2 id="sidebar-categories">تصنيفات المدونة</h2>
+      <ul>{categories.map(category => <li key={category.slug}>
+        <Link prefetch={false} className={category.slug === categorySlug ? styles.sidebarActive : undefined} href={`/ar/المدونة/تصنيف/${category.urlSlug}/`}>
+          {category.title}<span aria-hidden="true">←</span>
+        </Link>
+      </li>)}</ul>
+    </nav>
+    <nav className={styles.sidebarSection} aria-labelledby="sidebar-services">
+      <h2 id="sidebar-services">خدمات الموقع</h2>
+      <ul>{arabicServiceNavigation.map(service => <li key={service.path}>
+        <Link prefetch={false} href={service.path}>{service.title}<span aria-hidden="true">←</span></Link>
+      </li>)}</ul>
+      <Link prefetch={false} href="/ar/الخدمات/" className={styles.sidebarAllServices}>عرض كل الخدمات <span aria-hidden="true">←</span></Link>
+    </nav>
+  </aside>;
+}
+
+function ArticleConsultation({ consultation }) {
+  return <section id="article-consultation" className={`${styles.articleCta} ${styles.consultationCta}`} aria-labelledby="article-consultation-title">
+    <span className={styles.eyebrow}>استشارة مع فريق BSetup UAE</span>
+    <h2 id="article-consultation-title">{consultation.title}</h2>
+    <p>{consultation.description}</p>
+    <Link prefetch={false} href={consultation.href} className="ar-button">اطلب استشارة <span aria-hidden="true">←</span></Link>
+  </section>;
 }
 
 export default async function ArticlePage({ params: paramsPromise }) {
@@ -81,7 +111,9 @@ export default async function ArticlePage({ params: paramsPromise }) {
           {post.sources.length > 0 && <section id="sources" className={styles.sources}><p className={styles.eyebrow}>للتأكد والقراءة الإضافية</p><h2>المصادر الرسمية</h2><p>استند هذا الدليل إلى الصفحات التالية عند إعداد نسخته بتاريخ {formatDate(post.updatedAt)}. قد تحدّث الجهات متطلباتها لاحقاً.</p><ol>{post.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}<span aria-hidden="true">↗</span><small dir="ltr">{new URL(source.url).hostname}</small></a></li>)}</ol><Link href="/ar/سياسة-التحرير/" className={styles.textLink}>سياسة إعداد المحتوى والتصحيح ←</Link></section>}
           <section className={styles.authorBox} aria-label="عن الجهة الناشرة"><span className={styles.avatar} aria-hidden="true">B<span>U</span></span><div><p className={styles.eyebrow}>مسؤولية النشر</p><h2><Link href={authorPath}>{author.name}</Link></h2><p>{author.bio}</p><div className={styles.authorLinks}><Link className={styles.textLink} href={authorPath}>ملف الناشر وجميع أدلته <span aria-hidden="true">←</span></Link><Link className={styles.textLink} href="/ar/سياسة-التحرير/">سياسة التحرير والتصحيح <span aria-hidden="true">↗</span></Link></div></div></section>
           <p className={styles.correction}>لاحظت معلومة تحتاج تصحيحاً؟ <a href={'mailto:info@businesssetupuae.ae?subject=' + encodeURIComponent('تصحيح محتوى: ' + post.title)}>أبلغ فريق التحرير</a> مع رابط الدليل والمصدر المقترح.</p>
+          {post.consultation && <ArticleConsultation consultation={post.consultation} />}
         </div>
+        {isDubai && <ArticleSidebar categorySlug={post.categorySlug} />}
       </div>
     </article>
     <section className={styles.related}><div className="ar-container"><div className={styles.libraryTop}><div><p className={styles.eyebrow}>كمّل الصورة</p><h2>أدلة قد تفيد خطوتك القادمة</h2></div><Link href={categoryPath} className={styles.textLink}>تصفّح الأدلة ذات الصلة ←</Link></div><div className={styles.cardGrid}>{related.map(item => <ArticleCard post={item} key={item.slug} />)}</div></div></section>

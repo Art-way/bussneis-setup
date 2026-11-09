@@ -86,7 +86,8 @@ for (const post of posts) {
     check(`${post.slug} inbound link from ${source}`, pages.get(source).includes(`href="${path}"`));
   }
   const service = post === budget ? contractingServicePath : post === licenceFees ? licenceServicePath : dubaiServicePath;
-  check(`${post.slug} relevant service link`, articleHtml.includes(`href="${service}"`) && pages.has(service));
+  const consultation = articleHtml.match(/<section\b[^>]*id="article-consultation"[^>]*>[\s\S]*?<\/section>/)?.[0] || '';
+  check(`${post.slug} consultation links to the relevant request form`, consultation.includes(`href="${service}#request"`) && pages.get(service).includes('id="request"'));
 }
 
 for (const [query, expected] of [['emirate=dubai',5], ['emirate=dubai&topic=formation-steps',1], ['emirate=dubai&topic=contracting',1], ['emirate=dubai&topic=contracts',1], ['emirate=dubai&topic=formation-benefits',1], ['emirate=dubai&topic=trade-licences',1]]) {
@@ -108,9 +109,7 @@ for (const [source, anchor, target] of [
   [guide, 'مميزات فتح شركة في دبي حسب طبيعة مشروعك', benefits.path],
   [guide, 'نموذج عقد تأسيس شركة ذات مسؤولية محدودة في دبي', contract.path],
   [guide, 'تكلفة تأسيس شركة مقاولات في دبي', budget.path],
-  [guide, 'خدمة تأسيس شركة في دبي', dubaiServicePath],
   [budget, 'دليل اختيار المسار وتجهيز ملف الشركة في دبي', guide.path],
-  [budget, 'خدمة تأسيس شركة مقاولات في دبي', contractingServicePath],
   [budget, 'نموذج طلب مراجعة التكلفة', costRequestPath],
   [benefits, 'خطوات فتح شركة في دبي', guide.path],
   [contract, 'دليل تأسيس الشركة في دبي', guide.path],
@@ -118,7 +117,6 @@ for (const [source, anchor, target] of [
   [costGuide, 'رسوم إصدار وتجديد الرخصة التجارية', licenceFees.path],
   [licenceFees, 'خطوات تأسيس شركة في دبي', guide.path],
   [licenceFees, 'قراءة عرض تكلفة تأسيس شركة في الإمارات', costGuide.path],
-  [licenceFees, 'خدمة إصدار رخصة تجارية في دبي', licenceServicePath],
 ]) {
   const body = pages.get(source.path).match(/<article\b[^>]*>([\s\S]*?)<\/article>/)?.[1] || '';
   const anchors = [...body.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)];
