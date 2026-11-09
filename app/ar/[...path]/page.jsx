@@ -17,6 +17,7 @@ const views = {
   authors: () => import('@/components/arabic/views/authors'),
   author: () => import('@/components/arabic/views/author'),
   'editorial-policy': () => import('@/components/arabic/views/editorial-policy'),
+  legal: () => import('@/components/arabic/views/legal'),
 };
 
 export const dynamicParams = false;

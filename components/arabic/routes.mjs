@@ -9,6 +9,11 @@ export const arabicSectionPaths = {
   'editorial-policy': '/ar/سياسة-التحرير/',
 };
 
+export const arabicLegalPaths = {
+  'privacy-policy': '/ar/سياسة-الخصوصية/',
+  'terms-and-conditions': '/ar/الشروط-والأحكام/',
+};
+
 export const arabicServiceSlugs = {
   mainland: 'تأسيس-شركة-في-البر-الرئيسي',
   'free-zone': 'تأسيس-شركة-في-منطقة-حرة',
@@ -51,6 +56,7 @@ export const servicePath = service => service.path || `${arabicSectionPaths.serv
 
 export const arabicPageRoutes = [
   ...Object.entries(arabicSectionPaths).map(([view, path]) => ({ legacyPath: `/ar/${view}`, path, view })),
+  ...Object.entries(arabicLegalPaths).map(([slug, path]) => ({ legacyPath: `/ar/${slug}`, path, view: 'legal', slug })),
   ...Object.entries(arabicServiceSlugs).map(([oldSlug, slug]) => ({ legacyPath: `/ar/services/${oldSlug}`, path: `${arabicSectionPaths.services}${slug}/`, view: 'service', slug })),
   ...Object.entries(arabicPostSlugs).map(([oldSlug, slug]) => ({ legacyPath: `/ar/blog/${oldSlug}`, path: `${arabicSectionPaths.blog}${slug}/`, view: 'post', slug })),
   ...Object.entries(arabicCategorySlugs).map(([oldSlug, slug]) => ({ legacyPath: `/ar/blog/category/${oldSlug}`, path: categoryPath(slug), view: 'category', slug })),

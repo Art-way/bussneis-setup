@@ -3,7 +3,7 @@
 import blogData from '@/components/data/blog-data';
 import allServicesData from '@/components/data/services-data'; // تأكد أن هذا الملف يحتوي على مصفوفة الخدمات
 import teamData from '@/components/data/team-data';
-import { postPath, servicePath, dubaiServicePath, costRequestPath } from '@/components/arabic/routes.mjs';
+import { arabicLegalPaths, postPath, servicePath, dubaiServicePath, costRequestPath } from '@/components/arabic/routes.mjs';
 import { regionalProfiles } from '@/components/arabic/regional-services.mjs';
 import { categories, posts, authors } from '@/components/arabic/content';
 import { services as arabicServices } from '@/components/arabic/services';
@@ -69,6 +69,7 @@ export default function sitemap() {
     '/ar/المدونة',
     '/ar/المؤلفون',
     '/ar/سياسة-التحرير',
+    ...Object.values(arabicLegalPaths).map(path => path.slice(0, -1)),
   ];
 
   const arabicStaticPages = arabicStaticRoutes.map((route) => ({
