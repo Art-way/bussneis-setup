@@ -3,7 +3,7 @@
 import blogData from '@/components/data/blog-data';
 import allServicesData from '@/components/data/services-data'; // تأكد أن هذا الملف يحتوي على مصفوفة الخدمات
 import teamData from '@/components/data/team-data';
-import { arabicLegalPaths, postPath, servicePath, dubaiServicePath, costRequestPath } from '@/components/arabic/routes.mjs';
+import { categoryPath, arabicLegalPaths, postPath, servicePath, dubaiServicePath, costRequestPath } from '@/components/arabic/routes.mjs';
 import { regionalProfiles } from '@/components/arabic/regional-services.mjs';
 import { categories, posts, authors } from '@/components/arabic/content';
 import { services as arabicServices } from '@/components/arabic/services';
@@ -85,7 +85,7 @@ export default function sitemap() {
   }));
 
   const arabicCategoryPages = categories.map((category) => ({
-    url: `${baseUrl}/ar/تصنيف/${category.urlSlug}/`,
+    url: `${baseUrl}${categoryPath(category.urlSlug)}`,
     changeFrequency: 'weekly',
     priority: 0.7,
   }));

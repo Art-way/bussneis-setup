@@ -50,7 +50,7 @@ export const dubaiArticleSlugs = [
   'مميزات-فتح-شركة-في-دبي',
   dubaiLicenceFeesSlug,
 ];
-export const categoryPath = slug => `/ar/تصنيف/${slug}/`;
+export const categoryPath = slug => `/ar/category/${slug}/`;
 export const postPath = post => post.path || `${arabicSectionPaths.blog}${post.urlSlug}/`;
 export const servicePath = service => service.path || `${arabicSectionPaths.services}${service.urlSlug}/`;
 
@@ -69,7 +69,10 @@ export const arabicPageRoutes = [
 
 export const legacyArabicRedirects = new Map([
   ...arabicPageRoutes.filter(route => route.legacyPath).map(route => [route.legacyPath, route.path]),
-  ...Object.values(arabicCategorySlugs).map(slug => [`${arabicSectionPaths.blog}تصنيف/${slug}`, categoryPath(slug)]),
+  ...Object.values(arabicCategorySlugs).flatMap(slug => [
+    [`/ar/تصنيف/${slug}`, categoryPath(slug)],
+    [`${arabicSectionPaths.blog}تصنيف/${slug}`, categoryPath(slug)],
+  ]),
 ]);
 
 export const canonicalArabicPaths = new Set([

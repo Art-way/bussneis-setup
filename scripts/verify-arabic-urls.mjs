@@ -22,7 +22,7 @@ function checkStructuredUrls(value, issues) {
 
 assert.equal(paths.length, 49, 'The Arabic section has 49 canonical pages including the Arabic legal pages.');
 for (const path of paths) {
-  check(`${path} Arabic-only public segments`, path.split('/').slice(2).filter(Boolean).every(segment => /[\u0600-\u06ff]/.test(segment) && !/[a-z]/i.test(segment)));
+  check(`${path} Arabic slugs and category prefix`, path.split('/').slice(2).filter(Boolean).every((segment, index) => (index === 0 && segment === 'category' && path.startsWith('/ar/category/')) || /[\u0600-\u06ff]/.test(segment) && !/[a-z]/i.test(segment)));
   const response = await fetch(base + path, { redirect: 'manual' });
   const html = await response.text();
   const canonical = html.match(/<link\b[^>]*rel="canonical"[^>]*href="([^"]+)"/)?.[1];
@@ -53,7 +53,7 @@ const sitemap = await (await fetch(base + '/sitemap.xml')).text();
 check('Sitemap lists every encoded Arabic canonical', paths.every(path => sitemap.includes(canonicalArabicUrl(path))));
 check('Sitemap removes legacy Arabic URLs', [...legacyArabicRedirects.keys()].every(path => !sitemap.includes(`https://businesssetupuae.ae${path}/`)));
 
-for (const path of ['/ar/المدونة/', '/ar/تصنيف/تأسيس-الشركات/']) {
+for (const path of ['/ar/المدونة/', '/ar/category/تأسيس-الشركات/']) {
   const html = await (await fetch(`${base}${path}?q=${encodeURIComponent('تأسيس')}`)).text();
   check(`${path} search noindex and clean canonical`, /<meta name="robots" content="noindex/.test(html) && html.includes(`rel="canonical" href="${canonicalArabicUrl(path)}"`));
 }

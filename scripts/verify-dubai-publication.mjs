@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
-import { arabicCategorySlugs, arabicPostSlugs, canonicalArabicUrl, dubaiGuideSlug, dubaiLicenceFeesPath, dubaiServicePath, costRequestPath, postPath, canonicalArabicPaths } from '../components/arabic/routes.mjs';
+import { categoryPath as categoryUrl, arabicCategorySlugs, arabicPostSlugs, canonicalArabicUrl, dubaiGuideSlug, dubaiLicenceFeesPath, dubaiServicePath, costRequestPath, postPath, canonicalArabicPaths } from '../components/arabic/routes.mjs';
 
 const base = process.argv[2] || 'http://127.0.0.1:5047';
 const posts = JSON.parse(await fs.readFile('components/arabic/dubai-articles.json', 'utf8'));
@@ -19,7 +19,7 @@ const licenceServicePath = '/ar/إصدار-رخصة-تجارية-في-دبي/';
 const costGuide = { slug: 'company-setup-cost-checklist', path: postPath({ urlSlug: arabicPostSlugs['company-setup-cost-checklist'] }) };
 
 const pages = new Map();
-const categoryPath = post => `/ar/تصنيف/${arabicCategorySlugs[post.categorySlug]}/`;
+const categoryPath = post => categoryUrl(arabicCategorySlugs[post.categorySlug]);
 for (const path of new Set(['/ar/', dubaiServicePath, contractingServicePath, licenceServicePath, costRequestPath, costGuide.path, blogPath, '/ar/الخدمات/', '/ar/المؤلفون/فريق-التحرير/', '/ar/تواصل-معنا/', ...posts.map(postPath), ...posts.map(categoryPath)])) {
   const response = await fetch(base + path, { redirect: 'manual' });
   const html = await response.text();
