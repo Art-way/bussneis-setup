@@ -20,7 +20,7 @@ export const arabicServiceSlugs = {
   'business-support': 'خدمات-ما-بعد-التأسيس',
 };
 
-export const arabicPostSlugs = {
+const retiredArticleSlugs = {
   'start-a-uae-company-from-egypt': 'تأسيس-شركة-في-الإمارات-من-مصر',
   'mainland-or-free-zone': 'البر-الرئيسي-أم-المنطقة-الحرة',
   'company-setup-cost-checklist': 'تكلفة-تأسيس-شركة-في-الإمارات',
@@ -28,6 +28,12 @@ export const arabicPostSlugs = {
   'after-your-trade-license': 'ما-بعد-إصدار-الرخصة-التجارية',
   'choose-your-free-zone': 'اختيار-المنطقة-الحرة',
 };
+
+export const removedArabicArticlePaths = new Set(Object.entries(retiredArticleSlugs).flatMap(([oldSlug, slug]) => [
+  `/ar/${slug}`,
+  `/ar/المدونة/${slug}`,
+  `/ar/blog/${oldSlug}`,
+]));
 
 export const arabicCategorySlugs = {
   'company-formation': 'تأسيس-الشركات',
@@ -60,7 +66,6 @@ export const arabicPageRoutes = [
   ...Object.entries(arabicSectionPaths).map(([view, path]) => ({ legacyPath: legacySectionPaths[view] || `/ar/${view}`, path, view })),
   ...Object.entries(arabicLegalPaths).map(([slug, path]) => ({ legacyPath: `/ar/${slug}`, path, view: 'legal', slug })),
   ...Object.entries(arabicServiceSlugs).map(([oldSlug, slug]) => ({ legacyPath: `/ar/services/${oldSlug}`, path: `${arabicSectionPaths.services}${slug}/`, view: 'service', slug })),
-  ...Object.entries(arabicPostSlugs).map(([oldSlug, slug]) => ({ legacyPath: `/ar/blog/${oldSlug}`, path: `/ar/${slug}/`, view: 'post', slug })),
   ...Object.entries(arabicCategorySlugs).map(([oldSlug, slug]) => ({ legacyPath: `/ar/blog/category/${oldSlug}`, path: categoryPath(slug), view: 'category', slug })),
   ...Object.entries(arabicAuthorSlugs).map(([oldSlug, slug]) => ({ legacyPath: `/ar/authors/${oldSlug}`, path: `${arabicSectionPaths.authors}${slug}/`, view: 'author', slug })),
   { path: dubaiServicePath, view: 'dubai' },
@@ -71,7 +76,6 @@ export const arabicPageRoutes = [
 
 export const legacyArabicRedirects = new Map([
   ...arabicPageRoutes.filter(route => route.legacyPath).map(route => [route.legacyPath, route.path]),
-  ...Object.values(arabicPostSlugs).map(slug => [`${legacySectionPaths.blog}/${slug}`, `/ar/${slug}/`]),
   ...Object.values(arabicAuthorSlugs).map(slug => [`/ar/المؤلفون/${slug}`, `${arabicSectionPaths.authors}${slug}/`]),
   ...Object.values(arabicCategorySlugs).flatMap(slug => [
     [`/ar/تصنيف/${slug}`, categoryPath(slug)],

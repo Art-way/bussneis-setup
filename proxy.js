@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
-import { arabicSectionPaths, canonicalArabicPaths, legacyArabicRedirects } from './components/arabic/routes.mjs';
-import { arabicNotFoundDocument } from './components/arabic/not-found-document';
+import { arabicSectionPaths, canonicalArabicPaths, legacyArabicRedirects, removedArabicArticlePaths } from './components/arabic/routes.mjs';
+import { arabicGoneDocument, arabicNotFoundDocument } from './components/arabic/not-found-document';
 
 // Keep a complete branded 404 across the independent language root layouts.
-function arabicNotFound() {
-  return new NextResponse(arabicNotFoundDocument, {
-    status: 404,
+function arabicNotFound(status = 404) {
+  return new NextResponse(status === 410 ? arabicGoneDocument : arabicNotFoundDocument, {
+    status,
     headers: {
       'Content-Type': 'text/html; charset=utf-8',
       'X-Robots-Tag': 'noindex, follow',
@@ -23,6 +23,7 @@ export function proxy(request) {
     return arabicNotFound();
   }
   const pathname = decodedPath.normalize('NFC');
+  if (removedArabicArticlePaths.has(pathname)) return arabicNotFound(410);
   const replacement = legacyArabicRedirects.get(pathname);
   if (replacement || canonicalArabicPaths.has(pathname)) {
     const destination = request.nextUrl.clone();

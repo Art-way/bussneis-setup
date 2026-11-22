@@ -1,13 +1,14 @@
 // A complete static error document avoids the Next.js 14.1 multi-root 404
 // rendering bug. It intentionally contains no request data or client JavaScript.
-export const arabicNotFoundDocument = `<!DOCTYPE html>
+function arabicErrorDocument({ code, title, description, kicker, heading, body }) {
+  return `<!DOCTYPE html>
 <html lang="ar-EG" dir="rtl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, follow">
-  <title>الصفحة غير موجودة | BSetup UAE</title>
-  <meta name="description" content="لم نعثر على هذه الصفحة. ارجع للرئيسية أو تصفّح دليل تأسيس الشركات في الإمارات.">
+  <title>${title} | BSetup UAE</title>
+  <meta name="description" content="${description}">
   <link rel="icon" href="/icon.ico">
   <style>
     @font-face{font-family:Plex;src:url('/assets/arabic/fonts/plex-400.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
@@ -18,7 +19,23 @@ export const arabicNotFoundDocument = `<!DOCTYPE html>
 <body>
   <a class="skip" href="#main-content">انتقل إلى المحتوى</a>
   <header><div class="wrap"><a class="brand" href="/ar/" aria-label="BSetup UAE — الرئيسية"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span><b lang="en" dir="ltr">BSetup<br>UAE</b><small>بدايتك في الإمارات</small></span></a><nav aria-label="التنقل الرئيسي"><a class="home-link" href="/ar/">الرئيسية</a><a href="/ar/blog/">دليل الأعمال</a><a class="contact" href="/ar/تواصل-معنا/">تحدث معنا</a></nav></div></header>
-  <main id="main-content" tabindex="-1"><div class="wrap error-grid"><div><span class="eyebrow">٤٠٤ · صفحة غير موجودة</span><h1>خلّينا نرجع للطريق الصحيح.</h1><p>قد يكون الرابط تغير، أو أن الصفحة لم تعد موجودة. رحلتك لتأسيس شركتك لسه قدّامها خطوات كتير.</p><div class="actions"><a class="button" href="/ar/">العودة للرئيسية <span aria-hidden="true">←</span></a><a class="text-link" href="/ar/blog/">تصفح دليل الأعمال</a></div></div><div class="graphic" aria-hidden="true"><div class="number">4<span>0</span>4</div><span class="note">نرتّب الخطوة الجاية، سوا.</span></div></div></main>
+  <main id="main-content" tabindex="-1"><div class="wrap error-grid"><div><span class="eyebrow">${kicker}</span><h1>${heading}</h1><p>${body}</p><div class="actions"><a class="button" href="/ar/">العودة للرئيسية <span aria-hidden="true">←</span></a><a class="text-link" href="/ar/blog/">تصفح دليل الأعمال</a></div></div><div class="graphic" aria-hidden="true"><div class="number">${code[0]}<span>${code[1]}</span>${code[2]}</div><span class="note">نرتّب الخطوة الجاية، سوا.</span></div></div></main>
   <footer><div class="wrap"><span>BSetup UAE · بداية مدروسة لشركتك في الإمارات.</span><a href="/ar/تواصل-معنا/">تحتاج مساعدة للوصول للمعلومة؟ تواصل معنا</a></div></footer>
 </body>
 </html>`;
+
+}
+
+export const arabicNotFoundDocument = arabicErrorDocument({
+  code: "404", title: "الصفحة غير موجودة",
+  description: "لم نعثر على هذه الصفحة. ارجع للرئيسية أو تصفّح دليل تأسيس الشركات في الإمارات.",
+  kicker: "٤٠٤ · صفحة غير موجودة", heading: "خلّينا نرجع للطريق الصحيح.",
+  body: "قد يكون الرابط تغير، أو أن الصفحة لم تعد موجودة. رحلتك لتأسيس شركتك لسه قدّامها خطوات كتير.",
+});
+
+export const arabicGoneDocument = arabicErrorDocument({
+  code: "410", title: "المقالة أزيلت من الموقع",
+  description: "أزيلت هذه المقالة. تصفّح المدونة للوصول إلى الأدلة المنشورة حالياً.",
+  kicker: "٤١٠ · مقالة محذوفة", heading: "هذه المقالة لم تعد متاحة.",
+  body: "أزيلت هذه المقالة من الموقع. يمكنك متابعة الأدلة الحالية في المدونة أو التواصل معنا بشأن متطلبات شركتك.",
+});

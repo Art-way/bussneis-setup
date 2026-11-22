@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
-import { categoryPath as categoryUrl, arabicCategorySlugs, arabicPostSlugs, canonicalArabicUrl, dubaiGuideSlug, dubaiLicenceFeesPath, dubaiServicePath, costRequestPath, postPath, canonicalArabicPaths } from '../components/arabic/routes.mjs';
+import { categoryPath as categoryUrl, arabicCategorySlugs, canonicalArabicUrl, dubaiGuideSlug, dubaiLicenceFeesPath, dubaiServicePath, costRequestPath, postPath, canonicalArabicPaths } from '../components/arabic/routes.mjs';
 
 const base = process.argv[2] || 'http://127.0.0.1:5047';
 const posts = JSON.parse(await fs.readFile('components/arabic/dubai-articles.json', 'utf8'));
@@ -30,11 +30,10 @@ const anchorByPath = new Map([
   [licenceServicePath, 'إصدار رخصة تجارية في دبي'],
 ]);
 const seoReview = [];
-const costGuide = { slug: 'company-setup-cost-checklist', path: postPath({ urlSlug: arabicPostSlugs['company-setup-cost-checklist'] }) };
 
 const pages = new Map();
 const categoryPath = post => categoryUrl(arabicCategorySlugs[post.categorySlug]);
-for (const path of new Set(['/ar/', dubaiServicePath, contractingServicePath, licenceServicePath, costRequestPath, costGuide.path, blogPath, '/ar/الخدمات/', '/ar/authors/فريق-التحرير/', '/ar/تواصل-معنا/', ...posts.map(postPath), ...posts.map(categoryPath)])) {
+for (const path of new Set(['/ar/', dubaiServicePath, contractingServicePath, licenceServicePath, costRequestPath, blogPath, '/ar/الخدمات/', '/ar/authors/فريق-التحرير/', '/ar/تواصل-معنا/', ...posts.map(postPath), ...posts.map(categoryPath)])) {
   const response = await fetch(base + path, { redirect: 'manual' });
   const html = await response.text();
   const visible = stripScripts(html);
@@ -103,6 +102,8 @@ for (const post of posts) {
   const service = post === budget ? contractingServicePath : post === licenceFees ? licenceServicePath : dubaiServicePath;
   const consultation = articleHtml.match(/<section\b[^>]*id="article-consultation"[^>]*>[\s\S]*?<\/section>/)?.[0] || '';
   check(`${post.slug} consultation links to the relevant request form`, consultation.includes(`href="${service}#request"`) && pages.get(service).includes('id="request"'));
+  const sidebar = articleHtml.match(/<aside\b[^>]*aria-label="تصنيفات المدونة وخدمات الموقع"[^>]*>[\s\S]*?<\/aside>/)?.[0] || '';
+  check(`${post.slug} sidebar form slot links to a working request while awaiting the Arabic embed`, sidebar.includes('id="article-sidebar-form"') && sidebar.includes('data-form-status="pending"') && sidebar.includes(`href="${service}#request"`) && !sidebar.includes('<iframe'));
   const editorial = articleHtml.match(/<div\b[^>]*class="[^"]*wordArticle[^"]*"[^>]*>([\s\S]*?)<\/div>/)?.[1] || '';
   const firstH2 = editorial.indexOf('<h2');
   const afterH2 = firstH2 >= 0 ? editorial.slice(firstH2) : '';
@@ -149,7 +150,6 @@ check('Dubai service includes real form entry', pages.get(dubaiServicePath).incl
 check('Cost request is a real intake entry without quoted prices', pages.get(costRequestPath).includes('id="cost-request-form"') && pages.get(costRequestPath).includes('id="arabic-request-widget"') && !/\bAED\b|\b\d[\d,]*\s*(درهم|د\.إ)/.test(pages.get(costRequestPath)));
 check('Contracting budget preserves first publication', budget.publishedAt === '2026-11-04');
 check('Contracting budget keeps the hypothetical example and five comparison questions', pages.get(budget.path).includes('مثال حسابي لتجهيز الميزانية (مثال افتراضي)') && pages.get(budget.path).includes('<ul><li>') && budget.blocks.some(block => block.type === 'ul' && block.items.length === 5));
-check('The UAE cost guide still links to the Dubai licence fees article', pages.get(costGuide.path).includes(`href="${licenceFees.path}"`));
 for (const path of ['/ar/تأسيس-شركة-في-رأس-الخيمة/', dubaiServicePath + 'المقاولات/', '/ar/مقال-غير-موجود/', '/ar/عقد-التأسيس-دبي/']) {
   const response = await fetch(base + path);
   await response.arrayBuffer();

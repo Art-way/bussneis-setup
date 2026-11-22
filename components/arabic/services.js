@@ -17,7 +17,7 @@ export const services = [
       { title: 'صورة أشمل للتكلفة', description: 'اطلب عرضاً يفصل رسوم الترخيص والتأسيس والمقر وأتعاب الخدمة، ويبيّن ما يشمله وما يستثنيه ومتطلبات التجديد.' },
     ],
     source: { label: 'استثمر في دبي — تأسيس شركة في البر الرئيسي', url: 'https://www.investindubai.gov.ae/ar/business-setup/mainland-companies' },
-    guide: '/ar/البر-الرئيسي-أم-المنطقة-الحرة/',
+    guide: '/ar/blog/',
   },
   {
     slug: 'free-zone',
@@ -34,7 +34,7 @@ export const services = [
       { title: 'خطوات مترابطة', description: 'نفصل مسار إصدار الرخصة عن متطلبات الإقامة والحساب المصرفي، ونرتّب ما يحتاج متابعة مع كل جهة.' },
     ],
     source: { label: 'بوابة دبي — خيارات تأسيس الأعمال', url: 'https://www.dubai.ae/web/dubai.ae/investing/starting-a-business/business-set-up-options' },
-    guide: '/ar/البر-الرئيسي-أم-المنطقة-الحرة/',
+    guide: '/ar/blog/',
   },
   {
     slug: 'business-support',

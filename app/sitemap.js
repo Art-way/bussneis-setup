@@ -84,7 +84,7 @@ export default function sitemap() {
     priority: 0.9,
   }));
 
-  const arabicCategoryPages = categories.map((category) => ({
+  const arabicCategoryPages = categories.filter(category => posts.some(post => post.categorySlug === category.slug)).map((category) => ({
     url: `${baseUrl}${categoryPath(category.urlSlug)}`,
     changeFrequency: 'weekly',
     priority: 0.7,

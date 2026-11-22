@@ -1,10 +1,11 @@
 import assert from 'node:assert/strict';
-import { arabicPageRoutes, canonicalArabicPaths, canonicalArabicUrl, legacyArabicRedirects } from '../components/arabic/routes.mjs';
+import { arabicPageRoutes, canonicalArabicPaths, canonicalArabicUrl, legacyArabicRedirects, removedArabicArticlePaths } from '../components/arabic/routes.mjs';
 
 // Run against a local production preview, or pass an explicit deployment origin.
 const base = new URL(process.argv[2] || 'http://127.0.0.1:5047').origin;
 const paths = [...canonicalArabicPaths].map(path => `${path}/`);
 const checks = [];
+const indexablePaths = [];
 const check = (name, pass, detail) => checks.push({ name, pass: !!pass, ...(detail === undefined ? {} : { detail }) });
 const cleanPath = path => decodeURI(path).normalize('NFC').replace(/\/+$/, '');
 const localArabicPath = value => {
@@ -20,12 +21,13 @@ function checkStructuredUrls(value, issues) {
   else if (value && typeof value === 'object') Object.values(value).forEach(item => checkStructuredUrls(item, issues));
 }
 
-assert.equal(paths.length, 49, 'The Arabic section has 49 canonical pages including the Arabic legal pages.');
+assert.equal(paths.length, 43, 'The six old articles have been removed from the canonical pages.');
 check('Canonical paths never redirect to themselves', [...legacyArabicRedirects.keys()].every(path => !canonicalArabicPaths.has(path)));
 for (const path of paths) {
   check(`${path} Arabic slugs and allowed English prefixes`, path.split('/').slice(2).filter(Boolean).every((segment, index) => (index === 0 && ['blog', 'category', 'authors'].includes(segment)) || /[\u0600-\u06ff]/.test(segment) && !/[a-z]/i.test(segment)));
   const response = await fetch(base + path, { redirect: 'manual' });
   const html = await response.text();
+  if (!/<meta name="robots" content="noindex/.test(html)) indexablePaths.push(path);
   const canonical = html.match(/<link\b[^>]*rel="canonical"[^>]*href="([^"]+)"/)?.[1];
   check(`${path} HTTP and SSR`, response.status === 200 && (html.match(/<h1\b/g) || []).length === 1 && html.includes('<html lang="ar-EG" dir="rtl">'), response.status);
   check(`${path} canonical`, canonical === canonicalArabicUrl(path), canonical);
@@ -60,10 +62,18 @@ for (const { path } of arabicPageRoutes.filter(route => route.view === 'post' ||
 }
 
 const sitemap = await (await fetch(base + '/sitemap.xml')).text();
-check('Sitemap lists every encoded Arabic canonical', paths.every(path => sitemap.includes(canonicalArabicUrl(path))));
+check('Sitemap lists every encoded Arabic canonical', indexablePaths.every(path => sitemap.includes(canonicalArabicUrl(path))));
 check('Sitemap removes legacy Arabic URLs', [...legacyArabicRedirects.keys()].every(path => !sitemap.includes(`<loc>${canonicalArabicUrl(path + '/')}</loc>`)));
 const sitemapUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
 check('Sitemap contains no duplicate URLs', sitemapUrls.length === new Set(sitemapUrls).size);
+
+
+for (const path of removedArabicArticlePaths) {
+  const response = await fetch(base + path + '/', { redirect: 'manual' });
+  const html = await response.text();
+  check(`${path} removed article returns410 without redirect`, response.status === 410 && !response.headers.has('location') && html.includes('هذه المقالة لم تعد متاحة.') && !html.includes('"@type":"BlogPosting"'));
+  check(`${path} removed article is absent from sitemap and non-indexable`, !sitemap.includes(canonicalArabicUrl(path + '/')) && /<meta name="robots" content="noindex/.test(html));
+}
 
 for (const path of ['/ar/blog/', '/ar/category/تأسيس-الشركات/']) {
   const html = await (await fetch(`${base}${path}?q=${encodeURIComponent('تأسيس')}`)).text();
@@ -79,7 +89,7 @@ for (const path of ['/ar/غير-موجود/', '/ar/المدونة/missing/', '/a
   await response.arrayBuffer();
   check(`${path} invalid path stays4xx`, [400, 404].includes(response.status), response.status);
 }
-const composed = '/ar/تأسيس-شركة-في-الإمارات-من-مصر/';
+const composed = '/ar/تأسيس-شركة-في-دبي/';
 const normalizedResponse = await fetch(base + composed.normalize('NFD'), { redirect: 'manual' });
 await normalizedResponse.arrayBuffer();
 check('Decomposed Unicode redirects to NFC', normalizedResponse.status === 308 && new URL(normalizedResponse.headers.get('location'), base).pathname === new URL(base + composed).pathname);

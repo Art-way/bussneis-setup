@@ -62,10 +62,10 @@ export default async function EmiratePage({ params }) {
       </Link>)}</div>
     </section>}
     <section className={`ar-container ${styles.sourceNote}`}><span aria-hidden="true">↗</span><p>راجع المعلومات والمتطلبات لدى <a href={profile.source.url} target="_blank" rel="noopener noreferrer">{profile.source.label}</a>، وشاركنا بيانات نشاطك لتحديد نطاق الخدمة الذي يناسبه.</p></section>
-    <section className="ar-container ar-section" aria-labelledby="emirate-guides">
+    {(relatedGuides.length > 0 || generalGuides.length > 0) && <section className="ar-container ar-section" aria-labelledby="emirate-guides">
       <div className={styles.sectionHeading}><h2 id="emirate-guides">{relatedGuides.length ? `مقالات مرتبطة بـ${profile.name}` : 'أدلة عامة تساعدك قبل التقديم'}</h2><Link href="/ar/blog/" className={styles.textLink}>المدونة ←</Link></div>
       <div className={styles.resourceGrid}>{(relatedGuides.length ? relatedGuides : generalGuides).map(post => <ArticleCard key={postPath(post)} post={post} />)}</div>
-    </section>
+    </section>}
     <section id="request" className={`ar-container ar-section ${styles.costRequestForm}`}>
       <h2>شاركنا متطلبات التأسيس في {profile.name}</h2>
       <ArabicContactForm />
