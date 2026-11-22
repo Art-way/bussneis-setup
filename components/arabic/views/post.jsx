@@ -10,9 +10,6 @@ import ArticleBlocks from '../blog/article-blocks';
 import ArticleSidebarForm from '../blog/article-sidebar-form';
 import styles from '../blog/blog.module.css';
 
-// Set the owner's Arabic form embed URL here when it is supplied.
-const sidebarFormEmbedUrl = null;
-
 export async function generateMetadata({ params: paramsPromise }) {
   const params = await paramsPromise;
   const post = getPost(params.slug);
@@ -35,7 +32,7 @@ function ArticleContents({ sections, showSources }) {
 
 function ArticleSidebar({ categorySlug, requestHref }) {
   return <aside className={styles.articleSidebar} aria-label="تصنيفات المدونة وخدمات الموقع">
-    <ArticleSidebarForm embedUrl={sidebarFormEmbedUrl} requestHref={requestHref} />
+    <ArticleSidebarForm requestHref={requestHref} />
     <nav className={styles.sidebarSection} aria-labelledby="sidebar-categories">
       <h2 id="sidebar-categories">تصنيفات المدونة</h2>
       <ul>{categories.filter(category => posts.some(post => post.categorySlug === category.slug)).map(category => <li key={category.slug}>
