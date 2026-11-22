@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { canonicalArabicPaths, canonicalArabicUrl, legacyArabicRedirects } from '../components/arabic/routes.mjs';
+import { arabicPageRoutes, canonicalArabicPaths, canonicalArabicUrl, legacyArabicRedirects } from '../components/arabic/routes.mjs';
 
 // Run against a local production preview, or pass an explicit deployment origin.
 const base = new URL(process.argv[2] || 'http://127.0.0.1:5047').origin;
@@ -46,12 +46,23 @@ for (const [oldPath, destination] of legacyArabicRedirects) {
   const location = response.headers.get('location');
   await response.arrayBuffer();
   const target = location && new URL(location, base);
-  check(`${oldPath}/ permanent direct redirect`, response.status === 308 && target?.pathname === new URL(base + destination).pathname && target.searchParams.get('utm_source') === 'url-check' && target.searchParams.get('q') === 'تأسيس', { status: response.status, location });
+  const isListing = destination === '/ar/المدونة/' || destination.startsWith('/ar/category/');
+  check(`${oldPath}/ permanent direct redirect`, response.status === 308 && target?.pathname === new URL(base + destination).pathname && target.searchParams.get('utm_source') === 'url-check' && target.searchParams.get('q') === (isListing ? 'تأسيس' : null), { status: response.status, location });
+}
+
+for (const { path } of arabicPageRoutes.filter(route => route.view === 'post' || route.view === 'dubai')) {
+  const response = await fetch(`${base}${path}?q=test&emirate=dubai&topic=contracts&utm_source=url-check`, { redirect: 'manual' });
+  await response.arrayBuffer();
+  const location = response.headers.get('location');
+  const target = location && new URL(location, base);
+  check(`${path} removes ineffective listing filters in one redirect`, response.status === 308 && target?.pathname === new URL(base + path).pathname && target.search === '?utm_source=url-check', { status: response.status, location });
 }
 
 const sitemap = await (await fetch(base + '/sitemap.xml')).text();
 check('Sitemap lists every encoded Arabic canonical', paths.every(path => sitemap.includes(canonicalArabicUrl(path))));
-check('Sitemap removes legacy Arabic URLs', [...legacyArabicRedirects.keys()].every(path => !sitemap.includes(`https://businesssetupuae.ae${path}/`)));
+check('Sitemap removes legacy Arabic URLs', [...legacyArabicRedirects.keys()].every(path => !sitemap.includes(`<loc>${canonicalArabicUrl(path + '/')}</loc>`)));
+const sitemapUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
+check('Sitemap contains no duplicate URLs', sitemapUrls.length === new Set(sitemapUrls).size);
 
 for (const path of ['/ar/المدونة/', '/ar/category/تأسيس-الشركات/']) {
   const html = await (await fetch(`${base}${path}?q=${encodeURIComponent('تأسيس')}`)).text();
@@ -62,7 +73,7 @@ for (const path of ['/ar/غير-موجود/', '/ar/المدونة/missing/', '/a
   await response.arrayBuffer();
   check(`${path} invalid path stays4xx`, [400, 404].includes(response.status), response.status);
 }
-const composed = '/ar/المدونة/تأسيس-شركة-في-الإمارات-من-مصر/';
+const composed = '/ar/تأسيس-شركة-في-الإمارات-من-مصر/';
 const normalizedResponse = await fetch(base + composed.normalize('NFD'), { redirect: 'manual' });
 await normalizedResponse.arrayBuffer();
 check('Decomposed Unicode redirects to NFC', normalizedResponse.status === 308 && new URL(normalizedResponse.headers.get('location'), base).pathname === new URL(base + composed).pathname);

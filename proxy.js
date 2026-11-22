@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { canonicalArabicPaths, legacyArabicRedirects } from './components/arabic/routes.mjs';
+import { arabicSectionPaths, canonicalArabicPaths, legacyArabicRedirects } from './components/arabic/routes.mjs';
 import { arabicNotFoundDocument } from './components/arabic/not-found-document';
 
 // Keep a complete branded 404 across the independent language root layouts.
@@ -24,10 +24,21 @@ export function proxy(request) {
   }
   const pathname = decodedPath.normalize('NFC');
   const replacement = legacyArabicRedirects.get(pathname);
-  if (replacement || (canonicalArabicPaths.has(pathname) && decodedPath !== pathname)) {
+  if (replacement || canonicalArabicPaths.has(pathname)) {
     const destination = request.nextUrl.clone();
-    destination.pathname = replacement || `${pathname}/`;
-    return NextResponse.redirect(destination, 308);
+    const targetPath = replacement || `${pathname}/`;
+    destination.pathname = targetPath;
+    const isListing = targetPath === arabicSectionPaths.blog || targetPath.startsWith('/ar/category/');
+    // Listing controls have no effect on articles or services. Remove them
+    // during the same redirect as an old path, while retaining tracking data.
+    if (!isListing) {
+      for (const parameter of ['q', 'emirate', 'topic']) {
+        if (destination.searchParams.has(parameter)) destination.searchParams.delete(parameter);
+      }
+    }
+    if (replacement || decodedPath !== pathname || destination.search !== request.nextUrl.search) {
+      return NextResponse.redirect(destination, 308);
+    }
   }
   const headers = new Headers(request.headers);
   // This marker identifies our homepage rewrite; it is not an authentication
