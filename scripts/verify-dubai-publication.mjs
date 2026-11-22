@@ -103,7 +103,7 @@ for (const post of posts) {
   const consultation = articleHtml.match(/<section\b[^>]*id="article-consultation"[^>]*>[\s\S]*?<\/section>/)?.[0] || '';
   check(`${post.slug} consultation links to the relevant request form`, consultation.includes(`href="${service}#request"`) && pages.get(service).includes('id="request"'));
   const sidebar = articleHtml.match(/<aside\b[^>]*aria-label="تصنيفات المدونة وخدمات الموقع"[^>]*>[\s\S]*?<\/aside>/)?.[0] || '';
-  check(`${post.slug} Arabic sidebar form is ready, loads on intent and has a working alternative`, sidebar.includes('id="article-sidebar-form"') && sidebar.includes('data-form-status="ready"') && sidebar.includes('aria-controls="sidebar-form-embed"') && sidebar.includes('افتح نموذج التواصل') && sidebar.includes(`href="${service}#request"`) && !sidebar.includes('<iframe') && !sidebar.includes('src="https://elfsightcdn.com/platform.js"'));
+  check(`${post.slug} Arabic sidebar form is visible, viewport lazy loaded and has a working alternative`, sidebar.includes('id="article-sidebar-form"') && sidebar.includes('data-form-status="ready"') && sidebar.includes('id="sidebar-form-embed"') && sidebar.includes('data-load="viewport"') && !sidebar.includes('افتح نموذج التواصل') && !sidebar.includes('hidden=') && sidebar.includes(`href="${service}#request"`) && !sidebar.includes('<iframe') && !sidebar.includes('src="https://elfsightcdn.com/platform.js"'));
   const editorial = articleHtml.match(/<div\b[^>]*class="[^"]*wordArticle[^"]*"[^>]*>([\s\S]*?)<\/div>/)?.[1] || '';
   const firstH2 = editorial.indexOf('<h2');
   const afterH2 = firstH2 >= 0 ? editorial.slice(firstH2) : '';

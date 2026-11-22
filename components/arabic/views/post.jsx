@@ -8,6 +8,7 @@ import { editorialMetadata, JsonLd, breadcrumbs } from '../blog/seo';
 import ArticleCard from '../blog/article-card';
 import ArticleBlocks from '../blog/article-blocks';
 import ArticleSidebarForm from '../blog/article-sidebar-form';
+import StickyArticleSidebar from '../blog/sticky-sidebar';
 import styles from '../blog/blog.module.css';
 
 export async function generateMetadata({ params: paramsPromise }) {
@@ -31,7 +32,7 @@ function ArticleContents({ sections, showSources }) {
 }
 
 function ArticleSidebar({ categorySlug, requestHref }) {
-  return <aside className={styles.articleSidebar} aria-label="تصنيفات المدونة وخدمات الموقع">
+  return <StickyArticleSidebar>
     <ArticleSidebarForm requestHref={requestHref} />
     <nav className={styles.sidebarSection} aria-labelledby="sidebar-categories">
       <h2 id="sidebar-categories">تصنيفات المدونة</h2>
@@ -48,7 +49,7 @@ function ArticleSidebar({ categorySlug, requestHref }) {
       </li>)}</ul>
       <Link prefetch={false} href="/ar/الخدمات/" className={styles.sidebarAllServices}>عرض كل الخدمات <span aria-hidden="true">←</span></Link>
     </nav>
-  </aside>;
+  </StickyArticleSidebar>;
 }
 
 function ArticleConsultation({ consultation }) {

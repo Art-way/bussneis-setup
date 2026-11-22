@@ -194,7 +194,7 @@
 .button.button{background:#fca028;color:#131313}.button.button:hover{background:#131313;color:#fff}.categories a[aria-current],.marketFilters a[aria-current=page]{background:#fca028;border-color:#fca028;color:#131313}
 .categories a[aria-current]>span{color:#131313}
 .articleHeading .revisionLine{margin:22px 0 0;padding-top:14px;border-top:1px solid #e1e1e1;color:#131313;font-size:14px}
-.articleLayout.articleWithSidebar{grid-template-columns:minmax(0,720px) minmax(210px,250px);gap:clamp(24px,4vw,46px);max-width:1040px;align-items:start}
+.articleLayout.articleWithSidebar{grid-template-columns:minmax(0,720px) minmax(290px,340px);gap:clamp(24px,4vw,46px);max-width:1140px;align-items:start}
 .inlineContents{margin:0 0 24px;padding:0 18px;border:1px solid #e1e1e1;border-radius:10px;background:#fff}
 .inlineContents summary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:48px;cursor:pointer;list-style:none;font-weight:600}
 .inlineContents summary::-webkit-details-marker{display:none}
@@ -212,7 +212,7 @@
 .consultationCta .eyebrow{display:block;color:#ffcf91;margin-bottom:10px}
 .consultationCta h2{font-size:clamp(25px,3.1vw,36px);line-height:1.55;font-weight:600}
 .consultationCta :global(.ar-button){margin-top:3px}
-@media(min-width:901px){.articleSidebar{position:sticky;top:110px;max-height:calc(100dvh - 126px);overflow-y:auto}}
+@media(min-width:901px){.articleSidebar{position:sticky;top:min(110px,calc(100dvh - var(--sidebar-height,1500px) - 16px))}}
 @media(max-width:900px){.articleLayout.articleWithSidebar{display:flex;flex-direction:column;max-width:720px}.articleLayout.articleWithSidebar .articleBody{width:100%}}
 .search input::placeholder{color:#131313;opacity:1}
 :is(.library,.related,.authorList) :global(.ar-article-card-meta),
@@ -243,30 +243,6 @@
   font-size: 14px;
   line-height: 1.9;
 }
-.sidebarFormButton {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  width: 100%;
-  min-height: 48px;
-  padding: 11px 15px;
-  border: 1px solid transparent;
-  border-radius: 7px;
-  background: #fca028;
-  color: #131313;
-  font: inherit;
-  font-size: 14px;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-}
-.sidebarFormButton:hover {
-  background: #e98a0d;
-  color: #131313;
-}
-.sidebarFormButton:focus-visible,
 .sidebarFormAlternative:focus-visible {
   outline: 2px solid #131313;
   outline-offset: 4px;

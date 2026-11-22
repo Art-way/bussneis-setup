@@ -1,0 +1,11 @@
+.widget {
+  width: 100%;
+  min-width: 0;
+  min-height: 490px;
+}
+
+.widget p {
+  color: #131313;
+  font-size: 14px;
+  line-height: 1.9;
+}
