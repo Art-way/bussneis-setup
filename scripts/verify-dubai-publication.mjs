@@ -8,6 +8,19 @@ const checks = [];
 const check = (name, pass, detail) => checks.push({ name, pass: !!pass, ...(detail === undefined ? {} : { detail }) });
 const stripScripts = html => html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
 const decode = value => value.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+function editorialContent(html) {
+  const opening = /<div\b[^>]*class="[^"]*wordArticle[^"]*"[^>]*>/.exec(html);
+  if (!opening) return '';
+  const start = opening.index + opening[0].length;
+  const tags = /<\/?div\b[^>]*>/g;
+  tags.lastIndex = start;
+  let depth = 1;
+  for (let tag; (tag = tags.exec(html));) {
+    depth += tag[0].startsWith('</') ? -1 : 1;
+    if (!depth) return html.slice(start, tag.index);
+  }
+  return '';
+}
 const guide = posts.find(post => post.urlSlug === dubaiGuideSlug);
 const contract = posts.find(post => post.slug === 'dubai-llc-memorandum');
 const budget = posts.find(post => post.slug === 'dubai-contracting-budget');
@@ -67,7 +80,7 @@ for (const post of posts) {
   const crumbLinks = [...visibleTrail.matchAll(/<a\b[^>]*href="([^"]+)"/g)].map(match => match[1]);
   check(`${post.slug} exact SEO title`, decode(html.match(/<title[^>]*>(.*?)<\/title>/s)?.[1] || '') === post.metaTitle);
   check(`${post.slug} exact SEO description`, decode(html.match(/<meta name="description" content="([^"]*)"/)?.[1] || '') === post.excerpt);
-  check(`${post.slug} article identity`, article?.headline === post.title && article?.mainEntityOfPage === canonicalArabicUrl(path) && article?.author?.['@type'] === 'Organization' && article?.image?.[0] === 'https://businesssetupuae.ae' + post.image.src);
+  check(`${post.slug} article identity`, article?.headline === post.title && article?.mainEntityOfPage === canonicalArabicUrl(path) && article?.author?.['@type'] === 'Organization' && article?.image?.[0] === new URL(post.image.src, 'https://businesssetupuae.ae').href);
   check(`${post.slug} publication and modification dates`, article?.datePublished === post.publishedAt && article?.dateModified === post.updatedAt && (heading.match(/<time\b/g) || []).length === 1 && heading.includes(`dateTime="${post.updatedAt}"`));
   check(`${post.slug} supplied writer name`, article?.author?.name === 'فريق BSetup UAE');
   check(`${post.slug} home, category and article breadcrumb`, JSON.stringify(breadcrumb?.itemListElement?.map(item => item.item)) === JSON.stringify(expectedTrail) && JSON.stringify(crumbLinks) === JSON.stringify(['/ar/', category]) && visibleTrail.includes('aria-current="page"'));
@@ -118,7 +131,7 @@ for (const post of posts) {
   check(`${post.slug} consultation links to the relevant request form`, consultation.includes(`href="${service}#request"`) && pages.get(service).includes('id="request"'));
   const sidebar = articleHtml.match(/<aside\b[^>]*aria-label="تصنيفات المدونة وخدمات الموقع"[^>]*>[\s\S]*?<\/aside>/)?.[0] || '';
   check(`${post.slug} Arabic sidebar form is visible, viewport lazy loaded and has a working alternative`, sidebar.includes('id="article-sidebar-form"') && sidebar.includes('data-form-status="ready"') && sidebar.includes('id="sidebar-form-embed"') && sidebar.includes('data-load="viewport"') && !sidebar.includes('افتح نموذج التواصل') && !/\shidden(?:\s|=|>)/.test(sidebar) && sidebar.includes(`href="${service}#request"`) && !sidebar.includes('<iframe') && !sidebar.includes('src="https://elfsightcdn.com/platform.js"'));
-  const editorial = articleHtml.match(/<div\b[^>]*class="[^"]*wordArticle[^"]*"[^>]*>([\s\S]*?)<\/div>/)?.[1] || '';
+  const editorial = editorialContent(articleHtml);
   const firstH2 = editorial.indexOf('<h2');
   const afterH2 = firstH2 >= 0 ? editorial.slice(firstH2) : '';
   const paragraphs = [...afterH2.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/g)].map(match => match[1]);
@@ -147,7 +160,7 @@ for (const post of posts) {
     !/<a\b/.test(paragraphs[0] || '') && ctaLinks.length === 1 && ctaLinks[0].href === service &&
     /<strong\b[^>]*>[^<]*BSetup UAE/.test(cta) && !cta.replace(/<strong\b[^>]*>[\s\S]*?<\/strong>/g, '').replace(/<[^>]*>/g, '').trim());
   check(`${post.slug} primary keyword in H1, first 100 words, H2 and prose`, placement.h1 && placement.first100 && placement.h2.length > 0 && placement.body);
-  const visibleEditorialText = [...headings, ...prose];
+  const visibleEditorialText = [...[...afterH2.matchAll(/<h[23]\b[^>]*>([\s\S]*?)<\/h[23]>/g)].map(match => decode(match[1])), ...prose];
   check(`${post.slug} planned secondary keywords`, secondary.every(keyword => visibleEditorialText.some(text => text.includes(keyword))));
   seoReview.push({ path, primary, secondary, placement, introLinks: (intro.match(/<a\b/g) || []).length, contextual, contactCta, totalParagraphLinks: paragraphLinks.length });
 }
