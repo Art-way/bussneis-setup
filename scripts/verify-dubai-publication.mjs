@@ -13,7 +13,7 @@ const contract = posts.find(post => post.slug === 'dubai-llc-memorandum');
 const budget = posts.find(post => post.slug === 'dubai-contracting-budget');
 const benefits = posts.find(post => post.slug === 'dubai-formation-benefits');
 const licenceFees = posts.find(post => post.path === dubaiLicenceFeesPath);
-const blogPath = '/ar/المدونة/';
+const blogPath = '/ar/blog/';
 const contractingServicePath = '/ar/تأسيس-شركة-مقاولات-في-دبي/';
 const licenceServicePath = '/ar/إصدار-رخصة-تجارية-في-دبي/';
 const keywordPlan = new Map([
@@ -70,6 +70,7 @@ for (const post of posts) {
   check(`${post.slug} publication and modification dates`, article?.datePublished === post.publishedAt && article?.dateModified === post.updatedAt && (heading.match(/<time\b/g) || []).length === 1 && heading.includes(`dateTime="${post.updatedAt}"`));
   check(`${post.slug} supplied writer name`, article?.author?.name === 'فريق BSetup UAE');
   check(`${post.slug} blog, category and article breadcrumb`, JSON.stringify(breadcrumb?.itemListElement?.map(item => item.item)) === JSON.stringify(expectedTrail) && JSON.stringify(crumbLinks) === JSON.stringify([blogPath, category]) && visibleTrail.includes('aria-current="page"'));
+  check(`${post.slug} blog breadcrumb uses the approved Arabic label`, breadcrumb?.itemListElement?.[0]?.name === 'مدونة' && /href="\/ar\/blog\/"[^>]*>مدونة<\/a>/.test(visibleTrail));
   check(`${post.slug} category lists this article`, pages.get(category).includes(`href="${path}"`));
   check(`${post.slug} link-free introduction and no top author or category button`, intro.length > 0 && !/<a\b/.test(intro) && !heading.includes('categoryTag') && !heading.includes('/ar/authors/'));
   check(`${post.slug} no invented translation`, !/hrefLang="en"/.test(html.split('</head>')[0]));
@@ -94,7 +95,7 @@ for (const post of posts) {
       }
     }
   }
-  const inboundSources = [dubaiServicePath, '/ar/المدونة/', '/ar/authors/فريق-التحرير/'];
+  const inboundSources = [dubaiServicePath, '/ar/blog/', '/ar/authors/فريق-التحرير/'];
   if (posts.slice(0, 3).includes(post)) inboundSources.push('/ar/');
   for (const source of inboundSources) {
     check(`${post.slug} inbound link from ${source}`, pages.get(source).includes(`href="${path}"`));
@@ -134,10 +135,10 @@ for (const post of posts) {
 }
 
 for (const [query, expected] of [['emirate=dubai',5], ['emirate=dubai&topic=formation-steps',1], ['emirate=dubai&topic=contracting',1], ['emirate=dubai&topic=contracts',1], ['emirate=dubai&topic=formation-benefits',1], ['emirate=dubai&topic=trade-licences',1]]) {
-  const html = await (await fetch(base + '/ar/المدونة/?' + query)).text();
+  const html = await (await fetch(base + '/ar/blog/?' + query)).text();
   const cards = (html.match(/class="ar-article-card"/g) || []).length;
   check(`${query} filter content`, cards === expected, cards);
-  check(`${query} canonical and noindex`, html.includes(`rel="canonical" href="${canonicalArabicUrl('/ar/المدونة/')}"`) && /<meta name="robots" content="noindex/.test(html));
+  check(`${query} canonical and noindex`, html.includes(`rel="canonical" href="${canonicalArabicUrl('/ar/blog/')}"`) && /<meta name="robots" content="noindex/.test(html));
 }
 
 const sitemap = await (await fetch(base + '/sitemap.xml')).text();

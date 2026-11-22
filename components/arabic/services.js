@@ -51,7 +51,7 @@ export const services = [
       { title: 'دعم يناسب المرحلة', description: 'نحدّد معك نطاق الخدمة المطلوبة والجهة المختصة بها، ونوضح متى تحتاج المسألة إلى محاسب أو مستشار قانوني مؤهل.' },
     ],
     source: { label: 'وزارة الاقتصاد والسياحة — تأسيس الأعمال', url: 'https://www.moet.gov.ae/establishing-companies' },
-    guide: '/ar/المدونة/',
+    guide: '/ar/blog/',
   },
 ].map(service => ({ ...service, urlSlug: arabicServiceSlugs[service.slug] })).concat(regionalServicePages);
 

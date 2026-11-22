@@ -4,7 +4,7 @@ import { regionalRoutes } from './regional-services.mjs';
 export const arabicSectionPaths = {
   services: '/ar/الخدمات/',
   contact: '/ar/تواصل-معنا/',
-  blog: '/ar/المدونة/',
+  blog: '/ar/blog/',
   authors: '/ar/authors/',
   'editorial-policy': '/ar/سياسة-التحرير/',
 };
@@ -54,8 +54,10 @@ export const categoryPath = slug => `/ar/category/${slug}/`;
 export const postPath = post => post.path || `/ar/${post.urlSlug}/`;
 export const servicePath = service => service.path || `${arabicSectionPaths.services}${service.urlSlug}/`;
 
+const legacySectionPaths = { blog: '/ar/المدونة', authors: '/ar/المؤلفون' };
+
 export const arabicPageRoutes = [
-  ...Object.entries(arabicSectionPaths).map(([view, path]) => ({ legacyPath: view === 'authors' ? '/ar/المؤلفون' : `/ar/${view}`, path, view })),
+  ...Object.entries(arabicSectionPaths).map(([view, path]) => ({ legacyPath: legacySectionPaths[view] || `/ar/${view}`, path, view })),
   ...Object.entries(arabicLegalPaths).map(([slug, path]) => ({ legacyPath: `/ar/${slug}`, path, view: 'legal', slug })),
   ...Object.entries(arabicServiceSlugs).map(([oldSlug, slug]) => ({ legacyPath: `/ar/services/${oldSlug}`, path: `${arabicSectionPaths.services}${slug}/`, view: 'service', slug })),
   ...Object.entries(arabicPostSlugs).map(([oldSlug, slug]) => ({ legacyPath: `/ar/blog/${oldSlug}`, path: `/ar/${slug}/`, view: 'post', slug })),
@@ -69,11 +71,11 @@ export const arabicPageRoutes = [
 
 export const legacyArabicRedirects = new Map([
   ...arabicPageRoutes.filter(route => route.legacyPath).map(route => [route.legacyPath, route.path]),
-  ...Object.values(arabicPostSlugs).map(slug => [`${arabicSectionPaths.blog}${slug}`, `/ar/${slug}/`]),
+  ...Object.values(arabicPostSlugs).map(slug => [`${legacySectionPaths.blog}/${slug}`, `/ar/${slug}/`]),
   ...Object.values(arabicAuthorSlugs).map(slug => [`/ar/المؤلفون/${slug}`, `${arabicSectionPaths.authors}${slug}/`]),
   ...Object.values(arabicCategorySlugs).flatMap(slug => [
     [`/ar/تصنيف/${slug}`, categoryPath(slug)],
-    [`${arabicSectionPaths.blog}تصنيف/${slug}`, categoryPath(slug)],
+    [`${legacySectionPaths.blog}/تصنيف/${slug}`, categoryPath(slug)],
   ]),
 ]);
 

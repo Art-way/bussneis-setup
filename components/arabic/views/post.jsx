@@ -70,7 +70,7 @@ export default async function ArticlePage({ params: paramsPromise }) {
   const path = postPath(post);
   const categoryUrl = categoryPath(category.urlSlug);
   const categoryCrumb = { name: category.title, path: categoryUrl };
-  const blogCrumb = { name: 'المدونة', path: '/ar/المدونة/' };
+  const blogCrumb = { name: 'مدونة', path: '/ar/blog/' };
   const trail = [blogCrumb, categoryCrumb];
   const related = posts.filter(item => item.slug !== post.slug).sort((a, b) => (Number(b.emirateSlug === post.emirateSlug) * 2 + Number(b.categorySlug === post.categorySlug)) - (Number(a.emirateSlug === post.emirateSlug) * 2 + Number(a.categorySlug === post.categorySlug))).slice(0, 3);
   const index = <ArticleContents sections={post.sections} showSources={post.sources.length > 0} />;

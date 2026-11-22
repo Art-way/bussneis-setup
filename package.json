@@ -10,17 +10,17 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
-    "next": "16.4.3",
+    "next": "16.4.6",
     "react": "19.3.1",
     "react-countup": "^6.5.2",
     "react-dom": "19.3.1",
     "react-phone-number-input": "^3.4.13",
-    "swiper": "12.2.0",
-    "sharp": "0.35.5"
+    "sharp": "0.35.5",
+    "swiper": "12.2.0"
   },
   "devDependencies": {
     "eslint": "9.39.5",
-    "eslint-config-next": "16.4.3"
+    "eslint-config-next": "16.4.6"
   },
   "engines": {
     "node": ">=20.9.0"

@@ -203,7 +203,7 @@ export const regionalServicePages = [
   sections: service.sections.map(([title, description]) => ({ title, description })),
   icon: 'briefcase', eyebrow: service.group,
   fit: 'نحدّد نطاق الخدمة بعد مراجعة النشاط والوثائق والمرحلة التي وصل إليها مشروعك، مستندين إلى خبرتنا في خدمات تأسيس الشركات في الإمارات منذ 2021.',
-  guide: service.guide || (service.emirateSlug === 'dubai' ? '/ar/كيف-افتح-شركة-في-دبي/' : '/ar/المدونة/'),
+  guide: service.guide || (service.emirateSlug === 'dubai' ? '/ar/كيف-افتح-شركة-في-دبي/' : '/ar/blog/'),
 }));
 
 export const regionalRoutes = [

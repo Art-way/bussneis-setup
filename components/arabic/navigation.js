@@ -1,5 +1,5 @@
 export const arabicNavigationLinks = [
-  ['/ar/', 'الرئيسية'], ['/ar/تأسيس-شركة-في-دبي/', 'تأسيس في دبي'], ['/ar/الخدمات/', 'الخدمات'], ['/ar/المدونة/', 'المدونة'],
+  ['/ar/', 'الرئيسية'], ['/ar/تأسيس-شركة-في-دبي/', 'تأسيس في دبي'], ['/ar/الخدمات/', 'الخدمات'], ['/ar/blog/', 'المدونة'],
 ];
 
 // Keep navigation data small: the client header does not need service body copy.

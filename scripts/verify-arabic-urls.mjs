@@ -21,8 +21,9 @@ function checkStructuredUrls(value, issues) {
 }
 
 assert.equal(paths.length, 49, 'The Arabic section has 49 canonical pages including the Arabic legal pages.');
+check('Canonical paths never redirect to themselves', [...legacyArabicRedirects.keys()].every(path => !canonicalArabicPaths.has(path)));
 for (const path of paths) {
-  check(`${path} Arabic slugs and allowed English prefixes`, path.split('/').slice(2).filter(Boolean).every((segment, index) => (index === 0 && ['category', 'authors'].includes(segment)) || /[\u0600-\u06ff]/.test(segment) && !/[a-z]/i.test(segment)));
+  check(`${path} Arabic slugs and allowed English prefixes`, path.split('/').slice(2).filter(Boolean).every((segment, index) => (index === 0 && ['blog', 'category', 'authors'].includes(segment)) || /[\u0600-\u06ff]/.test(segment) && !/[a-z]/i.test(segment)));
   const response = await fetch(base + path, { redirect: 'manual' });
   const html = await response.text();
   const canonical = html.match(/<link\b[^>]*rel="canonical"[^>]*href="([^"]+)"/)?.[1];
@@ -46,7 +47,7 @@ for (const [oldPath, destination] of legacyArabicRedirects) {
   const location = response.headers.get('location');
   await response.arrayBuffer();
   const target = location && new URL(location, base);
-  const isListing = destination === '/ar/المدونة/' || destination.startsWith('/ar/category/');
+  const isListing = destination === '/ar/blog/' || destination.startsWith('/ar/category/');
   check(`${oldPath}/ permanent direct redirect`, response.status === 308 && target?.pathname === new URL(base + destination).pathname && target.searchParams.get('utm_source') === 'url-check' && target.searchParams.get('q') === (isListing ? 'تأسيس' : null), { status: response.status, location });
 }
 
@@ -64,10 +65,15 @@ check('Sitemap removes legacy Arabic URLs', [...legacyArabicRedirects.keys()].ev
 const sitemapUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
 check('Sitemap contains no duplicate URLs', sitemapUrls.length === new Set(sitemapUrls).size);
 
-for (const path of ['/ar/المدونة/', '/ar/category/تأسيس-الشركات/']) {
+for (const path of ['/ar/blog/', '/ar/category/تأسيس-الشركات/']) {
   const html = await (await fetch(`${base}${path}?q=${encodeURIComponent('تأسيس')}`)).text();
   check(`${path} search noindex and clean canonical`, /<meta name="robots" content="noindex/.test(html) && html.includes(`rel="canonical" href="${canonicalArabicUrl(path)}"`));
 }
+const oldBlog = await fetch(`${base}/ar/المدونة/?emirate=dubai&topic=contracting`, { redirect: 'manual' });
+await oldBlog.arrayBuffer();
+const blogLocation = oldBlog.headers.get('location');
+const blogTarget = blogLocation && new URL(blogLocation, base);
+check('Old blog preserves emirate and topic filters in a direct redirect', oldBlog.status === 308 && blogTarget?.pathname === '/ar/blog/' && blogTarget.searchParams.get('emirate') === 'dubai' && blogTarget.searchParams.get('topic') === 'contracting');
 for (const path of ['/ar/غير-موجود/', '/ar/المدونة/missing/', '/ar/المدونة/start-a-uae-company-from-egypt/', '/ar/%E0%A4%A/']) {
   const response = await fetch(base + path, { redirect: 'manual' });
   await response.arrayBuffer();

@@ -66,7 +66,7 @@ export default function sitemap() {
     costRequestPath.replace(/\/$/, ''),
     ...regionalProfiles.map(profile => profile.path.replace(/\/$/, '')),
     '/ar/تواصل-معنا',
-    '/ar/المدونة',
+    '/ar/blog',
     '/ar/authors',
     '/ar/سياسة-التحرير',
     ...Object.values(arabicLegalPaths).map(path => path.slice(0, -1)),
