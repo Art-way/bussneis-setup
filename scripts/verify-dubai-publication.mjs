@@ -18,9 +18,9 @@ const contractingServicePath = '/ar/تأسيس-شركة-مقاولات-في-دب
 const licenceServicePath = '/ar/إصدار-رخصة-تجارية-في-دبي/';
 const keywordPlan = new Map([
   [guide.path, ['كيف افتح شركة في دبي', ['خطوات تأسيس شركة في دبي', 'كيفية تأسيس شركة في دبي']]],
-  [contract.path, ['نموذج عقد تأسيس شركة ذات مسئولية محدودة دبي', ['نموذج عقد تأسيس شركة في دبي']]],
-  [budget.path, ['تكلفة تاسيس شركة مقاولات في دبي', ['تأسيس شركة مقاولات في الإمارات', 'تأسيس شركة مقاولات في دبي']]],
-  [benefits.path, ['مميزات فتح شركة في دبي', ['فتح شركة في دبي']]],
+  [contract.path, ['نموذج عقد تأسيس شركة ذات مسئولية محدودة دبي', ['نموذج عقد تأسيس شركة في دبي', 'عقد التأسيس دبي']]],
+  [budget.path, ['تكلفة تاسيس شركة مقاولات في دبي', ['تأسيس شركة مقاولات في الإمارات', 'تأسيس شركة مقاولات في دبي', 'ميزانية تأسيس شركة مقاولات']]],
+  [benefits.path, ['مميزات فتح شركة في دبي', ['فتح شركة في دبي', 'جدوى فتح شركة في دبي']]],
   [licenceFees.path, ['اسعار الرخص التجارية في دبي', ['تكلفة الرخصة التجارية في دبي', 'رسوم رخصة تجارية في دبي']]],
 ]);
 const anchorByPath = new Map([
@@ -28,6 +28,7 @@ const anchorByPath = new Map([
   [dubaiServicePath, 'تأسيس شركة في دبي'],
   [contractingServicePath, 'تأسيس شركة مقاولات في دبي'],
   [licenceServicePath, 'إصدار رخصة تجارية في دبي'],
+  ['/ar/تواصل-معنا/', 'تواصل معنا'],
 ]);
 const seoReview = [];
 
@@ -56,11 +57,12 @@ for (const post of posts) {
   const schemas = [...responseHtml.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1]));
   const article = schemas.find(s => s['@type'] === 'BlogPosting');
   const breadcrumb = schemas.find(s => s['@type'] === 'BreadcrumbList');
+  const faq = schemas.find(s => s['@type'] === 'FAQPage');
   const articleHtml = html.match(/<article\b[\s\S]*?<\/article>/)?.[0] || '';
   const heading = articleHtml.match(/<header\b[\s\S]*?<\/header>/)?.[0] || '';
   const intro = articleHtml.split(/<h1\b/)[1]?.split(/<h2\b/)[0] || '';
   const category = categoryPath(post);
-  const expectedTrail = [blogPath, category, path].map(canonicalArabicUrl);
+  const expectedTrail = ['/ar/', category, path].map(canonicalArabicUrl);
   const visibleTrail = heading.match(/<nav\b[\s\S]*?<\/nav>/)?.[0] || '';
   const crumbLinks = [...visibleTrail.matchAll(/<a\b[^>]*href="([^"]+)"/g)].map(match => match[1]);
   check(`${post.slug} exact SEO title`, decode(html.match(/<title[^>]*>(.*?)<\/title>/s)?.[1] || '') === post.metaTitle);
@@ -68,15 +70,26 @@ for (const post of posts) {
   check(`${post.slug} article identity`, article?.headline === post.title && article?.mainEntityOfPage === canonicalArabicUrl(path) && article?.author?.['@type'] === 'Organization' && article?.image?.[0] === 'https://businesssetupuae.ae' + post.image.src);
   check(`${post.slug} publication and modification dates`, article?.datePublished === post.publishedAt && article?.dateModified === post.updatedAt && (heading.match(/<time\b/g) || []).length === 1 && heading.includes(`dateTime="${post.updatedAt}"`));
   check(`${post.slug} supplied writer name`, article?.author?.name === 'فريق BSetup UAE');
-  check(`${post.slug} blog, category and article breadcrumb`, JSON.stringify(breadcrumb?.itemListElement?.map(item => item.item)) === JSON.stringify(expectedTrail) && JSON.stringify(crumbLinks) === JSON.stringify([blogPath, category]) && visibleTrail.includes('aria-current="page"'));
-  check(`${post.slug} blog breadcrumb uses the approved Arabic label`, breadcrumb?.itemListElement?.[0]?.name === 'مدونة' && /href="\/ar\/blog\/"[^>]*>مدونة<\/a>/.test(visibleTrail));
+  check(`${post.slug} home, category and article breadcrumb`, JSON.stringify(breadcrumb?.itemListElement?.map(item => item.item)) === JSON.stringify(expectedTrail) && JSON.stringify(crumbLinks) === JSON.stringify(['/ar/', category]) && visibleTrail.includes('aria-current="page"'));
+  check(`${post.slug} home breadcrumb uses the approved Arabic label`, breadcrumb?.itemListElement?.[0]?.name === 'الرئيسية' && /href="\/ar\/"[^>]*>الرئيسية<\/a>/.test(visibleTrail));
   check(`${post.slug} category lists this article`, pages.get(category).includes(`href="${path}"`));
   check(`${post.slug} link-free introduction and no top author or category button`, intro.length > 0 && !/<a\b/.test(intro) && !heading.includes('categoryTag') && !heading.includes('/ar/authors/'));
   check(`${post.slug} no invented translation`, !/hrefLang="en"/.test(html.split('</head>')[0]));
   check(`${post.slug} no administrative material`, !/بطاقة النشر للمقال|خريطة الربط الداخلي المقترحة|نتائج البحث المقتبس|تحليل المنافسين/.test(html));
   const figureCount = post.blocks.filter(block => block.type === 'image').length;
   check(`${post.slug} expected full-size article illustrations`, (html.match(/<figure\b/g) || []).length === figureCount);
-  check(`${post.slug} simplified Word has no table or publishing markers`, !/<table\b/.test(html) && !/>H[123]:|\[H[123]\]|النص البديل للصورة:/.test(html));
+  check(`${post.slug} authored tables and no publishing markers`, (html.match(/<table\b/g) || []).length === post.blocks.filter(block => block.type === 'table').length && !/>H[123]:|\[H[123]\]|النص البديل للصورة:/.test(html));
+  const faqStart = post.blocks.findIndex(block => block.type === 'h2' && block.text.startsWith('أسئلة شائعة'));
+  const faqBlocks = post.blocks.slice(faqStart + 1);
+  const expectedQuestions = faqBlocks.filter(block => block.type === 'h3');
+  check(`${post.slug} five to ten visible FAQ answers match FAQPage`, faqStart >= 0 && expectedQuestions.length >= 5 && expectedQuestions.length <= 10 && faq?.mainEntity?.length === expectedQuestions.length && faq.mainEntity.every((question, index) => {
+    const source = expectedQuestions[index];
+    const start = faqBlocks.indexOf(source) + 1;
+    const next = faqBlocks.slice(start).findIndex(block => block.type === 'h3' || block.type === 'h2');
+    const answerBlocks = next < 0 ? faqBlocks.slice(start) : faqBlocks.slice(start, start + next);
+    const answer = answerBlocks.filter(block => block.type === 'p').map(block => block.content.map(run => run.text).join('')).join('\n\n');
+    return question['@type'] === 'Question' && question.name === source.text && question.acceptedAnswer?.['@type'] === 'Answer' && question.acceptedAnswer.text === answer && decode(html).includes(source.text) && answerBlocks.every(block => block.type !== 'p' || block.content.every(run => decode(html).includes(run.text)));
+  }));
   if (post === contract || post === benefits) check(`${post.slug} native numbered list preserved`, /<ol\b[^>]*start="1"/.test(html) && post.blocks.filter(block => block.type === 'ol').reduce((sum, block) => sum + block.items.length, 0) === 5);
   for (const block of post.blocks) {
     if (block.type === 'h2' || block.type === 'h3') check(`${post.slug} ${block.id} heading and anchor`, html.includes(`id="${block.id}"`) && html.includes(block.text));
@@ -91,6 +104,7 @@ for (const post of posts) {
         const response = await fetch(base + image);
         const bytes = new Uint8Array(await response.arrayBuffer());
         check(`${image} WEBP200`, response.status === 200 && response.headers.get('content-type')?.startsWith('image/webp') && String.fromCharCode(...bytes.slice(0, 4)) === 'RIFF' && String.fromCharCode(...bytes.slice(8, 12)) === 'WEBP');
+        check(`${image} Arabic keyword filename and under 100KB`, decodeURI(image).includes(keywordPlan.get(path)[0].replaceAll(' ', '-')) && bytes.length < 100000);
       }
     }
   }
@@ -103,14 +117,16 @@ for (const post of posts) {
   const consultation = articleHtml.match(/<section\b[^>]*id="article-consultation"[^>]*>[\s\S]*?<\/section>/)?.[0] || '';
   check(`${post.slug} consultation links to the relevant request form`, consultation.includes(`href="${service}#request"`) && pages.get(service).includes('id="request"'));
   const sidebar = articleHtml.match(/<aside\b[^>]*aria-label="تصنيفات المدونة وخدمات الموقع"[^>]*>[\s\S]*?<\/aside>/)?.[0] || '';
-  check(`${post.slug} Arabic sidebar form is visible, viewport lazy loaded and has a working alternative`, sidebar.includes('id="article-sidebar-form"') && sidebar.includes('data-form-status="ready"') && sidebar.includes('id="sidebar-form-embed"') && sidebar.includes('data-load="viewport"') && !sidebar.includes('افتح نموذج التواصل') && !sidebar.includes('hidden=') && sidebar.includes(`href="${service}#request"`) && !sidebar.includes('<iframe') && !sidebar.includes('src="https://elfsightcdn.com/platform.js"'));
+  check(`${post.slug} Arabic sidebar form is visible, viewport lazy loaded and has a working alternative`, sidebar.includes('id="article-sidebar-form"') && sidebar.includes('data-form-status="ready"') && sidebar.includes('id="sidebar-form-embed"') && sidebar.includes('data-load="viewport"') && !sidebar.includes('افتح نموذج التواصل') && !/\shidden(?:\s|=|>)/.test(sidebar) && sidebar.includes(`href="${service}#request"`) && !sidebar.includes('<iframe') && !sidebar.includes('src="https://elfsightcdn.com/platform.js"'));
   const editorial = articleHtml.match(/<div\b[^>]*class="[^"]*wordArticle[^"]*"[^>]*>([\s\S]*?)<\/div>/)?.[1] || '';
   const firstH2 = editorial.indexOf('<h2');
   const afterH2 = firstH2 >= 0 ? editorial.slice(firstH2) : '';
   const paragraphs = [...afterH2.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/g)].map(match => match[1]);
   const readAnchors = paragraph => [...paragraph.matchAll(/<a\b[^>]*href="(\/ar\/[^"#]+)"[^>]*>([\s\S]*?)<\/a>/g)]
     .map(([, href, label]) => ({ href, label: decode(label.replace(/<[^>]*>/g, '')) }));
-  const contextual = paragraphs.flatMap(readAnchors);
+  const paragraphLinks = paragraphs.flatMap(readAnchors);
+  const contactCta = paragraphLinks.filter(link => link.href === '/ar/تواصل-معنا/');
+  const contextual = paragraphLinks.filter(link => link.href !== '/ar/تواصل-معنا/');
   const [primary, secondary] = keywordPlan.get(path);
   const visibleH1 = decode(heading.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1] || '');
   const opening = decode(heading.match(/<p\b[^>]*class="[^"]*articleIntro[^"]*"[^>]*>([\s\S]*?)<\/p>/)?.[1] || '');
@@ -123,7 +139,8 @@ for (const post of posts) {
     body: prose.some(paragraph => paragraph.includes(primary)),
   };
   check(`${post.slug} three to five distinct contextual internal links`, contextual.length >= 3 && contextual.length <= 5 && new Set(contextual.map(link => link.href)).size === contextual.length);
-  check(`${post.slug} exact approved anchor keywords and real destinations`, contextual.every(link => anchorByPath.get(link.href) === link.label && pages.has(link.href)));
+  check(`${post.slug} exact approved anchor keywords and real destinations`, paragraphLinks.every(link => anchorByPath.get(link.href) === link.label && pages.has(link.href)));
+  check(`${post.slug} separate bold branded contact CTA`, contactCta.length === 1 && paragraphs.some(paragraph => paragraph.includes('href="/ar/تواصل-معنا/"') && paragraph.includes('BSetup UAE') && /<strong>/.test(paragraph)));
   const cta = paragraphs[1] || '';
   const ctaLinks = readAnchors(cta);
   check(`${post.slug} bold branded CTA with the first contextual link`,
@@ -132,7 +149,7 @@ for (const post of posts) {
   check(`${post.slug} primary keyword in H1, first 100 words, H2 and prose`, placement.h1 && placement.first100 && placement.h2.length > 0 && placement.body);
   const visibleEditorialText = [...headings, ...prose];
   check(`${post.slug} planned secondary keywords`, secondary.every(keyword => visibleEditorialText.some(text => text.includes(keyword))));
-  seoReview.push({ path, primary, secondary, placement, introLinks: (intro.match(/<a\b/g) || []).length, contextual });
+  seoReview.push({ path, primary, secondary, placement, introLinks: (intro.match(/<a\b/g) || []).length, contextual, contactCta, totalParagraphLinks: paragraphLinks.length });
 }
 
 for (const [query, expected] of [['emirate=dubai',5], ['emirate=dubai&topic=formation-steps',1], ['emirate=dubai&topic=contracting',1], ['emirate=dubai&topic=contracts',1], ['emirate=dubai&topic=formation-benefits',1], ['emirate=dubai&topic=trade-licences',1]]) {

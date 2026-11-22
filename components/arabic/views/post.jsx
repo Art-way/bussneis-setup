@@ -9,6 +9,7 @@ import ArticleCard from '../blog/article-card';
 import ArticleBlocks from '../blog/article-blocks';
 import ArticleSidebarForm from '../blog/article-sidebar-form';
 import StickyArticleSidebar from '../blog/sticky-sidebar';
+import { articleFaqs } from '../blog/article-faq.mjs';
 import styles from '../blog/blog.module.css';
 
 export async function generateMetadata({ params: paramsPromise }) {
@@ -71,18 +72,19 @@ export default async function ArticlePage({ params: paramsPromise }) {
   const path = postPath(post);
   const categoryUrl = categoryPath(category.urlSlug);
   const categoryCrumb = { name: category.title, path: categoryUrl };
-  const blogCrumb = { name: 'مدونة', path: '/ar/blog/' };
-  const trail = [blogCrumb, categoryCrumb];
+  const trail = [{ name: 'الرئيسية', path: '/ar/' }, categoryCrumb];
+  const faqs = articleFaqs(post.blocks);
   const related = posts.filter(item => item.slug !== post.slug).sort((a, b) => (Number(b.emirateSlug === post.emirateSlug) * 2 + Number(b.categorySlug === post.categorySlug)) - (Number(a.emirateSlug === post.emirateSlug) * 2 + Number(a.categorySlug === post.categorySlug))).slice(0, 3);
   const index = <ArticleContents sections={post.sections} showSources={post.sources.length > 0} />;
   const contents = <details className={`${styles.toc} ${styles.inlineContents}`}><summary>محتويات المقال <span aria-hidden="true">+</span></summary>{index}</details>;
   return <>
     <JsonLd data={breadcrumbs([...trail, { name: post.title, path }], { includeHome: false })} />
+    {faqs.length > 0 && <JsonLd data={{ '@context': 'https://schema.org', '@type': 'FAQPage', '@id': canonicalArabicUrl(path + '#' + post.blocks.find(block => block.type === 'h2' && block.text.startsWith('أسئلة شائعة')).id), inLanguage: 'ar-EG', mainEntity: faqs.map(item => ({ '@type': 'Question', '@id': canonicalArabicUrl(path + '#' + item.id), name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) }} />}
     <JsonLd data={{ '@context': 'https://schema.org', '@type': 'BlogPosting', '@id': canonicalArabicUrl(path + '#article'), headline: post.title, description: post.excerpt, inLanguage: 'ar-EG', mainEntityOfPage: canonicalArabicUrl(path),
       ...(post.publishedAt ? { datePublished: post.publishedAt } : {}), ...(post.updatedAt ? { dateModified: post.updatedAt } : {}),
       ...(post.image ? { image: [new URL(post.image.src, siteUrl).href] } : {}),
       author: { '@type': 'Organization', name: author.name, url: canonicalArabicUrl(authorPath) }, publisher: { '@type': 'Organization', name: 'BSetup UAE', url: siteUrl }, articleSection: post.emirateSlug === 'dubai' ? ['تأسيس الشركات في دبي', ...post.topicSlugs.map(slug => articleTopics[slug])] : category.title,
-      ...(post.sources.length ? { citation: post.sources.map(source => source.url) } : {}),
+      ...(post.sources.length || post.priceReferences?.length ? { citation: [...post.sources, ...(post.priceReferences || [])].map(source => source.url) } : {}),
     }} />
     <article>
       <header className={styles.articleHeader}><div className="ar-container">

@@ -16,13 +16,13 @@
     "metaTitle": "كيف أفتح شركة في دبي؟ الخطوات والمستندات حتى الترخيص",
     "excerpt": "تعرّف على كيفية فتح شركة في دبي، من تحديد النشاط واختيار جهة الترخيص إلى تجهيز المستندات وتقديم الطلب، سواء بدأت مشروعاً جديداً أو توسّعت من شركة قائمة.",
     "publishedAt": "2026-11-05",
-    "updatedAt": "2026-11-09",
+    "updatedAt": "2026-11-22",
     "takeaway": "إذا كان سؤالك «كيف افتح شركة في دبي؟»، فابدأ بتحديد النشاط الذي تريد ترخيصه والعملاء الذين ستخدمهم، ثم قارن بين البر الرئيسي والمنطقة الحرة. بعد اختيار الجهة، اطلب قائمة المستندات وحدّد ما يمكنك تقديمه إلكترونياً وما يتطلب توقيعاً أو حضوراً. هكذا تعرف ما تجهّزه وما تدفعه قبل تقديم الطلب.",
     "image": {
       "type": "image",
       "kind": "hero",
-      "src": "/assets/brand/dubai-editorial/dubai-formation-guide-1200.webp",
-      "srcSet": "/assets/brand/dubai-editorial/dubai-formation-guide-600.webp 600w, /assets/brand/dubai-editorial/dubai-formation-guide-1200.webp 1200w",
+      "src": "/assets/brand/dubai-editorial/كيف-افتح-شركة-في-دبي-1200.webp",
+      "srcSet": "/assets/brand/dubai-editorial/كيف-افتح-شركة-في-دبي-600.webp 600w, /assets/brand/dubai-editorial/كيف-افتح-شركة-في-دبي-1200.webp 1200w",
       "width": 1200,
       "height": 1200,
       "alt": "كيف افتح شركة في دبي",
@@ -45,8 +45,33 @@
         "paragraphs": []
       },
       {
+        "id": "section-4",
+        "title": "إذا كنت تؤسس شركة باسمك أو مع شركاء أفراد",
+        "paragraphs": []
+      },
+      {
+        "id": "section-5",
+        "title": "إذا كنت توسّع نشاط شركة قائمة خارج الإمارات",
+        "paragraphs": []
+      },
+      {
         "id": "section-6",
         "title": "كيف افتح شركة في دبي من اختيار النشاط حتى إصدار الرخصة؟",
+        "paragraphs": []
+      },
+      {
+        "id": "section-7",
+        "title": "اختيار النشاط والشكل القانوني والاسم التجاري",
+        "paragraphs": []
+      },
+      {
+        "id": "section-8",
+        "title": "الموافقة المبدئية وعقد التأسيس والمقر بحسب المسار",
+        "paragraphs": []
+      },
+      {
+        "id": "section-9",
+        "title": "استكمال الموافقات وتقديم الطلب لإصدار الرخصة",
         "paragraphs": []
       },
       {
@@ -57,6 +82,31 @@
       {
         "id": "section-11",
         "title": "أسئلة شائعة",
+        "paragraphs": []
+      },
+      {
+        "id": "section-12",
+        "title": "هل يمكنني بدء الإجراءات من خارج الإمارات قبل السفر؟",
+        "paragraphs": []
+      },
+      {
+        "id": "section-13",
+        "title": "هل أحتاج مكتباً قبل إصدار الرخصة؟",
+        "paragraphs": []
+      },
+      {
+        "id": "dubai-formation-guide-faq-extra-1",
+        "title": "هل يكفي حجز الاسم التجاري لبدء النشاط؟",
+        "paragraphs": []
+      },
+      {
+        "id": "dubai-formation-guide-faq-extra-2",
+        "title": "كيف أتجنب نقص المستندات عند تقديم طلب التأسيس؟",
+        "paragraphs": []
+      },
+      {
+        "id": "dubai-formation-guide-faq-extra-3",
+        "title": "ما الفرق بين إصدار الرخصة وتجهيز الشركة للتشغيل؟",
         "paragraphs": []
       }
     ],
@@ -72,8 +122,8 @@
       {
         "type": "image",
         "kind": "hero",
-        "src": "/assets/brand/dubai-editorial/dubai-formation-guide-1200.webp",
-        "srcSet": "/assets/brand/dubai-editorial/dubai-formation-guide-600.webp 600w, /assets/brand/dubai-editorial/dubai-formation-guide-1200.webp 1200w",
+        "src": "/assets/brand/dubai-editorial/كيف-افتح-شركة-في-دبي-1200.webp",
+        "srcSet": "/assets/brand/dubai-editorial/كيف-افتح-شركة-في-دبي-600.webp 600w, /assets/brand/dubai-editorial/كيف-افتح-شركة-في-دبي-1200.webp 1200w",
         "width": 1200,
         "height": 1200,
         "alt": "كيف افتح شركة في دبي",
@@ -201,8 +251,8 @@
       {
         "type": "image",
         "kind": "figure",
-        "src": "/assets/brand/illustrations/dubai-formation-guide-figure-1200.webp",
-        "srcSet": "/assets/brand/illustrations/dubai-formation-guide-figure-600.webp 600w, /assets/brand/illustrations/dubai-formation-guide-figure-1200.webp 1200w",
+        "src": "/assets/brand/illustrations/كيف-افتح-شركة-في-دبي-توضيح-1200.webp",
+        "srcSet": "/assets/brand/illustrations/كيف-افتح-شركة-في-دبي-توضيح-600.webp 600w, /assets/brand/illustrations/كيف-افتح-شركة-في-دبي-توضيح-1200.webp 1200w",
         "width": 1200,
         "height": 1200,
         "alt": "كيف افتح شركة في دبي",
@@ -298,6 +348,24 @@
         ]
       },
       {
+        "type": "p",
+        "content": [
+          {
+            "text": "لمناقشة نشاطك وتجهيز ملف التأسيس، تواصل مع فريق BSetup UAE عبر صفحة ",
+            "bold": true
+          },
+          {
+            "text": "تواصل معنا",
+            "href": "/ar/تواصل-معنا/",
+            "bold": true
+          },
+          {
+            "text": " لنرتّب الخطوة المناسبة لحالة مشروعك.",
+            "bold": true
+          }
+        ]
+      },
+      {
         "type": "h2",
         "text": "أسئلة شائعة",
         "id": "section-11"
@@ -325,6 +393,45 @@
         "content": [
           {
             "text": "يعتمد نوع المقر وتوقيت تقديم مستنده على جهة الترخيص والنشاط. اطلب اسم المستند المطلوب والخيارات المقبولة لنشاطك قبل الالتزام بعقد، واطلب بيان ما إذا كان المقر مشمولاً في الباقة وما تكلفة تجديده."
+          }
+        ]
+      },
+      {
+        "type": "h3",
+        "id": "dubai-formation-guide-faq-extra-1",
+        "text": "هل يكفي حجز الاسم التجاري لبدء النشاط؟"
+      },
+      {
+        "type": "p",
+        "content": [
+          {
+            "text": "حجز الاسم خطوة في الملف، ويجب استكمال إجراءات الترخيص والموافقات المطلوبة قبل ممارسة النشاط. راجع الأنشطة المكتوبة في الرخصة عند استلامها حتى تتأكد من أنها تغطي العمل الذي ستقدمه."
+          }
+        ]
+      },
+      {
+        "type": "h3",
+        "id": "dubai-formation-guide-faq-extra-2",
+        "text": "كيف أتجنب نقص المستندات عند تقديم طلب التأسيس؟"
+      },
+      {
+        "type": "p",
+        "content": [
+          {
+            "text": "اطلب قائمة المستندات من جهة الترخيص للمسار والشكل القانوني المحددين. طابق أسماء الشركاء وبياناتهم، وتحقق من الترجمة والتصديق وطريقة التوقيع قبل إرسال الملف، ثم احتفظ بنسخة موحدة للمراجعة."
+          }
+        ]
+      },
+      {
+        "type": "h3",
+        "id": "dubai-formation-guide-faq-extra-3",
+        "text": "ما الفرق بين إصدار الرخصة وتجهيز الشركة للتشغيل؟"
+      },
+      {
+        "type": "p",
+        "content": [
+          {
+            "text": "الرخصة توثق النشاط المسموح به، بينما يحتاج التشغيل إلى ترتيب المقر والتمويل والموظفين والعقود بحسب مشروعك. وقد تكون إجراءات الإقامة والحساب المصرفي والالتزامات الضريبية ملفات مستقلة يجب التخطيط لها."
           }
         ]
       }
@@ -356,8 +463,8 @@
     "image": {
       "type": "image",
       "kind": "hero",
-      "src": "/assets/brand/dubai-editorial/dubai-llc-memorandum-1200.webp",
-      "srcSet": "/assets/brand/dubai-editorial/dubai-llc-memorandum-600.webp 600w, /assets/brand/dubai-editorial/dubai-llc-memorandum-1200.webp 1200w",
+      "src": "/assets/brand/dubai-editorial/نموذج-عقد-تأسيس-شركة-ذات-مسئولية-محدودة-دبي-1200.webp",
+      "srcSet": "/assets/brand/dubai-editorial/نموذج-عقد-تأسيس-شركة-ذات-مسئولية-محدودة-دبي-600.webp 600w, /assets/brand/dubai-editorial/نموذج-عقد-تأسيس-شركة-ذات-مسئولية-محدودة-دبي-1200.webp 1200w",
       "width": 1200,
       "height": 1200,
       "alt": "نموذج عقد تأسيس شركة ذات مسئولية محدودة دبي",
@@ -375,8 +482,58 @@
         "paragraphs": []
       },
       {
+        "id": "section-3",
+        "title": "الشركاء",
+        "paragraphs": []
+      },
+      {
+        "id": "section-4",
+        "title": "الشركة",
+        "paragraphs": []
+      },
+      {
+        "id": "section-5",
+        "title": "رأس المال",
+        "paragraphs": []
+      },
+      {
+        "id": "section-6",
+        "title": "الإدارة",
+        "paragraphs": []
+      },
+      {
+        "id": "section-7",
+        "title": "العلاقة بين الشركاء",
+        "paragraphs": []
+      },
+      {
         "id": "section-8",
         "title": "بنود نموذج عقد تأسيس شركة ذات مسئولية محدودة دبي",
+        "paragraphs": []
+      },
+      {
+        "id": "section-9",
+        "title": "تعريف الشركة والشركاء",
+        "paragraphs": []
+      },
+      {
+        "id": "section-10",
+        "title": "رأس المال والحصص",
+        "paragraphs": []
+      },
+      {
+        "id": "section-11",
+        "title": "الإدارة والقرارات",
+        "paragraphs": []
+      },
+      {
+        "id": "section-12",
+        "title": "الأرباح والتخارج والخلافات",
+        "paragraphs": []
+      },
+      {
+        "id": "section-13",
+        "title": "إتمام الوثيقة",
         "paragraphs": []
       },
       {
@@ -385,8 +542,33 @@
         "paragraphs": []
       },
       {
+        "id": "section-15",
+        "title": "مثال على اختلاف الملكية عن صلاحية التوقيع",
+        "paragraphs": []
+      },
+      {
+        "id": "section-16",
+        "title": "بيانات نضيفها إلى ورقة التحضير",
+        "paragraphs": []
+      },
+      {
         "id": "section-17",
         "title": "ثلاثة بنود تستحق نقاشاً مستقلاً",
+        "paragraphs": []
+      },
+      {
+        "id": "section-18",
+        "title": "حدود توقيع المدير",
+        "paragraphs": []
+      },
+      {
+        "id": "section-19",
+        "title": "خروج شريك من الشركة",
+        "paragraphs": []
+      },
+      {
+        "id": "section-20",
+        "title": "اختلاف الحصص والعمل اليومي",
         "paragraphs": []
       },
       {
@@ -403,6 +585,31 @@
         "id": "section-23",
         "title": "أسئلة شائعة عن عقد التأسيس في دبي",
         "paragraphs": []
+      },
+      {
+        "id": "section-24",
+        "title": "هل نموذج عقد التأسيس هو الرخصة التجارية",
+        "paragraphs": []
+      },
+      {
+        "id": "section-25",
+        "title": "هل أستخدم النموذج نفسه لشركة الشخص الواحد",
+        "paragraphs": []
+      },
+      {
+        "id": "section-26",
+        "title": "هل يمكن استعمال نموذج منطقة حرة للبر الرئيسي",
+        "paragraphs": []
+      },
+      {
+        "id": "section-27",
+        "title": "ماذا أفعل بعد تجهيز المسودة",
+        "paragraphs": []
+      },
+      {
+        "id": "dubai-llc-memorandum-faq-extra-1",
+        "title": "هل يكفي تحميل ملف بعنوان «عقد التأسيس دبي» لاعتماد عقد شركتي؟",
+        "paragraphs": []
       }
     ],
     "blocks": [
@@ -417,8 +624,8 @@
       {
         "type": "image",
         "kind": "hero",
-        "src": "/assets/brand/dubai-editorial/dubai-llc-memorandum-1200.webp",
-        "srcSet": "/assets/brand/dubai-editorial/dubai-llc-memorandum-600.webp 600w, /assets/brand/dubai-editorial/dubai-llc-memorandum-1200.webp 1200w",
+        "src": "/assets/brand/dubai-editorial/نموذج-عقد-تأسيس-شركة-ذات-مسئولية-محدودة-دبي-1200.webp",
+        "srcSet": "/assets/brand/dubai-editorial/نموذج-عقد-تأسيس-شركة-ذات-مسئولية-محدودة-دبي-600.webp 600w, /assets/brand/dubai-editorial/نموذج-عقد-تأسيس-شركة-ذات-مسئولية-محدودة-دبي-1200.webp 1200w",
         "width": 1200,
         "height": 1200,
         "alt": "نموذج عقد تأسيس شركة ذات مسئولية محدودة دبي",
@@ -785,8 +992,8 @@
       {
         "type": "image",
         "kind": "figure",
-        "src": "/assets/brand/illustrations/dubai-llc-memorandum-figure-1200.webp",
-        "srcSet": "/assets/brand/illustrations/dubai-llc-memorandum-figure-600.webp 600w, /assets/brand/illustrations/dubai-llc-memorandum-figure-1200.webp 1200w",
+        "src": "/assets/brand/illustrations/نموذج-عقد-تأسيس-شركة-ذات-مسئولية-محدودة-دبي-توضيح-1200.webp",
+        "srcSet": "/assets/brand/illustrations/نموذج-عقد-تأسيس-شركة-ذات-مسئولية-محدودة-دبي-توضيح-600.webp 600w, /assets/brand/illustrations/نموذج-عقد-تأسيس-شركة-ذات-مسئولية-محدودة-دبي-توضيح-1200.webp 1200w",
         "width": 1200,
         "height": 1200,
         "alt": "نموذج عقد تأسيس شركة ذات مسئولية محدودة دبي",
@@ -893,6 +1100,24 @@
         ]
       },
       {
+        "type": "p",
+        "content": [
+          {
+            "text": "لمراجعة متطلبات ملف الشركة بعد تجهيز بيانات الشركاء، تواصل مع فريق BSetup UAE عبر صفحة ",
+            "bold": true
+          },
+          {
+            "text": "تواصل معنا",
+            "href": "/ar/تواصل-معنا/",
+            "bold": true
+          },
+          {
+            "text": " لنرتّب الخطوة المناسبة لحالة مشروعك.",
+            "bold": true
+          }
+        ]
+      },
+      {
         "type": "h2",
         "text": "أسئلة شائعة عن عقد التأسيس في دبي",
         "id": "section-23"
@@ -948,12 +1173,25 @@
             "text": "راجع البيانات والصلاحيات والاتفاقات الخاصة، ثم استكمل اعتماد الوثيقة وتوثيقها وقيدها وفق المسار المطبق. احتفظ بالنسخة المعتمدة، وميزها بوضوح عن المسودات السابقة."
           }
         ]
+      },
+      {
+        "type": "h3",
+        "id": "dubai-llc-memorandum-faq-extra-1",
+        "text": "هل يكفي تحميل ملف بعنوان «عقد التأسيس دبي» لاعتماد عقد شركتي؟"
+      },
+      {
+        "type": "p",
+        "content": [
+          {
+            "text": "اسم الملف وحده لا يثبت أن الصيغة مناسبة لشركتك. طابق بيانات الشركاء والحصص والإدارة مع الشكل القانوني ومتطلبات جهة التسجيل، واستخدم النموذج التعليمي للتحضير قبل اعتماد الصيغة المطلوبة وإتمام التوثيق."
+          }
+        ]
       }
     ],
     "readingMinutes": 8,
     "sources": [],
     "publishedAt": "2026-11-04",
-    "updatedAt": "2026-11-09",
+    "updatedAt": "2026-11-22",
     "consultation": {
       "title": "جهّز ملف الشركة بعد ترتيب العقد",
       "description": "ناقش معنا نشاط الشركة والشركاء والإدارة لترتيب العقد مع باقي مستندات التأسيس.",
@@ -979,8 +1217,8 @@
     "image": {
       "type": "image",
       "kind": "hero",
-      "src": "/assets/brand/dubai-editorial/dubai-contracting-budget-1200.webp",
-      "srcSet": "/assets/brand/dubai-editorial/dubai-contracting-budget-600.webp 600w, /assets/brand/dubai-editorial/dubai-contracting-budget-1200.webp 1200w",
+      "src": "/assets/brand/dubai-editorial/تكلفة-تاسيس-شركة-مقاولات-في-دبي-1200.webp",
+      "srcSet": "/assets/brand/dubai-editorial/تكلفة-تاسيس-شركة-مقاولات-في-دبي-600.webp 600w, /assets/brand/dubai-editorial/تكلفة-تاسيس-شركة-مقاولات-في-دبي-1200.webp 1200w",
       "width": 1200,
       "height": 1200,
       "alt": "تكلفة تاسيس شركة مقاولات في دبي",
@@ -998,6 +1236,21 @@
         "paragraphs": []
       },
       {
+        "id": "budget-section-3",
+        "title": "رسوم التأسيس والتأهيل",
+        "paragraphs": []
+      },
+      {
+        "id": "budget-section-4",
+        "title": "المقر والفريق والمعدات",
+        "paragraphs": []
+      },
+      {
+        "id": "budget-section-5",
+        "title": "تمويل المشروع حتى تحصيل أول دفعة",
+        "paragraphs": []
+      },
+      {
         "id": "section-17",
         "title": "مثال حسابي لتجهيز الميزانية (مثال افتراضي)",
         "paragraphs": []
@@ -1010,6 +1263,31 @@
       {
         "id": "section-27",
         "title": "أسئلة شائعة عن ميزانية شركة المقاولات",
+        "paragraphs": []
+      },
+      {
+        "id": "budget-section-9",
+        "title": "هل سعر الرخصة يكفي لمعرفة المبلغ المطلوب؟",
+        "paragraphs": []
+      },
+      {
+        "id": "budget-section-10",
+        "title": "هل استئجار المعدات أوفر عند البداية؟",
+        "paragraphs": []
+      },
+      {
+        "id": "budget-section-11",
+        "title": "كيف أطلب تقديراً يخص مشروعي؟",
+        "paragraphs": []
+      },
+      {
+        "id": "dubai-contracting-budget-faq-extra-1",
+        "title": "كيف أحسب السيولة إذا كان العميل يدفع بعد إنجاز مراحل المشروع؟",
+        "paragraphs": []
+      },
+      {
+        "id": "dubai-contracting-budget-faq-extra-2",
+        "title": "هل تصلح ميزانية واحدة لجميع أنشطة المقاولات؟",
         "paragraphs": []
       }
     ],
@@ -1025,8 +1303,8 @@
       {
         "type": "image",
         "kind": "hero",
-        "src": "/assets/brand/dubai-editorial/dubai-contracting-budget-1200.webp",
-        "srcSet": "/assets/brand/dubai-editorial/dubai-contracting-budget-600.webp 600w, /assets/brand/dubai-editorial/dubai-contracting-budget-1200.webp 1200w",
+        "src": "/assets/brand/dubai-editorial/تكلفة-تاسيس-شركة-مقاولات-في-دبي-1200.webp",
+        "srcSet": "/assets/brand/dubai-editorial/تكلفة-تاسيس-شركة-مقاولات-في-دبي-600.webp 600w, /assets/brand/dubai-editorial/تكلفة-تاسيس-شركة-مقاولات-في-دبي-1200.webp 1200w",
         "width": 1200,
         "height": 1200,
         "alt": "تكلفة تاسيس شركة مقاولات في دبي",
@@ -1098,6 +1376,14 @@
         "id": "section-2"
       },
       {
+        "type": "p",
+        "content": [
+          {
+            "text": "ابنِ ميزانية تأسيس شركة مقاولات على ثلاثة أجزاء: متطلبات الترخيص والتأهيل، وتجهيز التشغيل، والسيولة التي تسبق تحصيل مستحقات العملاء. اربط كل بند بموعد دفعه، وميّز المصروف المتكرر من المبلغ الذي تدفعه مرة واحدة."
+          }
+        ]
+      },
+      {
         "type": "h3",
         "text": "رسوم التأسيس والتأهيل",
         "id": "budget-section-3"
@@ -1149,8 +1435,8 @@
       {
         "type": "image",
         "kind": "figure",
-        "src": "/assets/brand/illustrations/dubai-contracting-budget-figure-1200.webp",
-        "srcSet": "/assets/brand/illustrations/dubai-contracting-budget-figure-600.webp 600w, /assets/brand/illustrations/dubai-contracting-budget-figure-1200.webp 1200w",
+        "src": "/assets/brand/illustrations/تكلفة-تاسيس-شركة-مقاولات-في-دبي-توضيح-1200.webp",
+        "srcSet": "/assets/brand/illustrations/تكلفة-تاسيس-شركة-مقاولات-في-دبي-توضيح-600.webp 600w, /assets/brand/illustrations/تكلفة-تاسيس-شركة-مقاولات-في-دبي-توضيح-1200.webp 1200w",
         "width": 1200,
         "height": 1200,
         "alt": "تكلفة تاسيس شركة مقاولات في دبي",
@@ -1279,6 +1565,24 @@
         ]
       },
       {
+        "type": "p",
+        "content": [
+          {
+            "text": "لشرح نشاط المقاولات وطلب مراجعة بنود التأسيس، تواصل مع فريق BSetup UAE عبر صفحة ",
+            "bold": true
+          },
+          {
+            "text": "تواصل معنا",
+            "href": "/ar/تواصل-معنا/",
+            "bold": true
+          },
+          {
+            "text": " لنرتّب الخطوة المناسبة لحالة مشروعك.",
+            "bold": true
+          }
+        ]
+      },
+      {
         "type": "h2",
         "text": "أسئلة شائعة عن ميزانية شركة المقاولات",
         "id": "section-27"
@@ -1321,12 +1625,38 @@
             "text": "أرسل وصف النشاط ومكان التنفيذ وحجم الأعمال المتوقع، وأرفق عدد الشركاء وخطة المقر والتوظيف. اطلب من مقدم الخدمة تأكيد نطاق عرضه كتابةً، واسأله عمّا يحتاج استيضاحاً من الجهة المختصة قبل الدفع."
           }
         ]
+      },
+      {
+        "type": "h3",
+        "id": "dubai-contracting-budget-faq-extra-1",
+        "text": "كيف أحسب السيولة إذا كان العميل يدفع بعد إنجاز مراحل المشروع؟"
+      },
+      {
+        "type": "p",
+        "content": [
+          {
+            "text": "اربط جدول الدفعات بموعد صرف الأجور وشراء المواد وإيجار المعدات. احسب المصروفات التي تسبق كل دفعة تحصيل، ثم أضف احتياطياً يتناسب مع احتمال تأخر الدفعات ونطاق المشروع بدلاً من اعتماد رسم الرخصة وحده."
+          }
+        ]
+      },
+      {
+        "type": "h3",
+        "id": "dubai-contracting-budget-faq-extra-2",
+        "text": "هل تصلح ميزانية واحدة لجميع أنشطة المقاولات؟"
+      },
+      {
+        "type": "p",
+        "content": [
+          {
+            "text": "تختلف الاحتياجات بحسب النشاط والفئة وحجم الأعمال ومتطلبات الكادر الفني والمعدات. ابنِ تقديرك على نطاق عمل محدد، وافصل متطلبات التأهيل والتأسيس عن تكلفة تنفيذ أول عقد حتى تعرف سبب كل مبلغ في الميزانية."
+          }
+        ]
       }
     ],
     "readingMinutes": 4,
     "sources": [],
     "publishedAt": "2026-11-04",
-    "updatedAt": "2026-11-09",
+    "updatedAt": "2026-11-22",
     "consultation": {
       "title": "خلّينا نراجع ميزانية شركة المقاولات",
       "description": "شاركنا نوع المشاريع التي تستهدفها. نراجع معك بنود التأسيس ومتطلبات الترخيص والتأهيل لنشاطك.",
@@ -1352,8 +1682,8 @@
     "image": {
       "type": "image",
       "kind": "hero",
-      "src": "/assets/brand/dubai-editorial/dubai-formation-benefits-1200.webp",
-      "srcSet": "/assets/brand/dubai-editorial/dubai-formation-benefits-600.webp 600w, /assets/brand/dubai-editorial/dubai-formation-benefits-1200.webp 1200w",
+      "src": "/assets/brand/dubai-editorial/مميزات-فتح-شركة-في-دبي-1200.webp",
+      "srcSet": "/assets/brand/dubai-editorial/مميزات-فتح-شركة-في-دبي-600.webp 600w, /assets/brand/dubai-editorial/مميزات-فتح-شركة-في-دبي-1200.webp 1200w",
       "width": 1200,
       "height": 1200,
       "alt": "مميزات فتح شركة في دبي",
@@ -1363,6 +1693,11 @@
       {
         "id": "section-1",
         "title": "مميزات فتح شركة في دبي وكيف نقيمها مع خطة العمل",
+        "paragraphs": []
+      },
+      {
+        "id": "section-2",
+        "title": "مثالان لتقييم الميزة نفسها",
         "paragraphs": []
       },
       {
@@ -1378,6 +1713,26 @@
       {
         "id": "section-5",
         "title": "خيارات تأسيس تتكيف مع طريقة العمل",
+        "paragraphs": []
+      },
+      {
+        "id": "section-6",
+        "title": "عملاء وخدمة داخل دبي",
+        "paragraphs": []
+      },
+      {
+        "id": "section-7",
+        "title": "تجارة وتوريد",
+        "paragraphs": []
+      },
+      {
+        "id": "section-8",
+        "title": "خدمات تقدم عن بعد",
+        "paragraphs": []
+      },
+      {
+        "id": "section-9",
+        "title": "شركة قائمة تتوسع",
         "paragraphs": []
       },
       {
@@ -1401,6 +1756,11 @@
         "paragraphs": []
       },
       {
+        "id": "section-14",
+        "title": "ورقة قرار مختصرة قبل بدء الإجراءات",
+        "paragraphs": []
+      },
+      {
         "id": "section-15",
         "title": "اختبر ملاءمة المميزات بخمسة أسئلة",
         "paragraphs": []
@@ -1413,6 +1773,31 @@
       {
         "id": "section-17",
         "title": "أسئلة شائعة عن مميزات التأسيس في دبي",
+        "paragraphs": []
+      },
+      {
+        "id": "section-18",
+        "title": "هل التملك الأجنبي الكامل متاح لكل نشاط",
+        "paragraphs": []
+      },
+      {
+        "id": "section-19",
+        "title": "هل المنطقة الحرة هي الخيار الأفضل دائماً",
+        "paragraphs": []
+      },
+      {
+        "id": "section-20",
+        "title": "هل فتح الشركة يضمن الوصول إلى عملاء جدد",
+        "paragraphs": []
+      },
+      {
+        "id": "section-21",
+        "title": "هل تكفي رسوم التأسيس لبدء المشروع؟",
+        "paragraphs": []
+      },
+      {
+        "id": "dubai-formation-benefits-faq-extra-1",
+        "title": "كيف أقيّم جدوى فتح شركة في دبي قبل دفع الرسوم؟",
         "paragraphs": []
       }
     ],
@@ -1428,8 +1813,8 @@
       {
         "type": "image",
         "kind": "hero",
-        "src": "/assets/brand/dubai-editorial/dubai-formation-benefits-1200.webp",
-        "srcSet": "/assets/brand/dubai-editorial/dubai-formation-benefits-600.webp 600w, /assets/brand/dubai-editorial/dubai-formation-benefits-1200.webp 1200w",
+        "src": "/assets/brand/dubai-editorial/مميزات-فتح-شركة-في-دبي-1200.webp",
+        "srcSet": "/assets/brand/dubai-editorial/مميزات-فتح-شركة-في-دبي-600.webp 600w, /assets/brand/dubai-editorial/مميزات-فتح-شركة-في-دبي-1200.webp 1200w",
         "width": 1200,
         "height": 1200,
         "alt": "مميزات فتح شركة في دبي",
@@ -1759,8 +2144,8 @@
       {
         "type": "image",
         "kind": "figure",
-        "src": "/assets/brand/illustrations/dubai-formation-benefits-figure-1200.webp",
-        "srcSet": "/assets/brand/illustrations/dubai-formation-benefits-figure-600.webp 600w, /assets/brand/illustrations/dubai-formation-benefits-figure-1200.webp 1200w",
+        "src": "/assets/brand/illustrations/مميزات-فتح-شركة-في-دبي-توضيح-1200.webp",
+        "srcSet": "/assets/brand/illustrations/مميزات-فتح-شركة-في-دبي-توضيح-600.webp 600w, /assets/brand/illustrations/مميزات-فتح-شركة-في-دبي-توضيح-1200.webp 1200w",
         "width": 1200,
         "height": 1200,
         "alt": "مميزات فتح شركة في دبي",
@@ -1891,6 +2276,24 @@
         ]
       },
       {
+        "type": "p",
+        "content": [
+          {
+            "text": "لربط خيارات التأسيس بطريقة عملك وأهداف مشروعك، تواصل مع فريق BSetup UAE عبر صفحة ",
+            "bold": true
+          },
+          {
+            "text": "تواصل معنا",
+            "href": "/ar/تواصل-معنا/",
+            "bold": true
+          },
+          {
+            "text": " لنرتّب الخطوة المناسبة لحالة مشروعك.",
+            "bold": true
+          }
+        ]
+      },
+      {
         "type": "h2",
         "text": "أسئلة شائعة عن مميزات التأسيس في دبي",
         "id": "section-17"
@@ -1946,12 +2349,25 @@
             "text": "تحتاج أيضاً إلى تقدير التشغيل والمقر والفريق والتجهيز وسيولة الفترة السابقة للتحصيل. احسب هذه البنود وفق النشاط وجدول بدء العمل، ثم راجع قدرتك على تمويلها."
           }
         ]
+      },
+      {
+        "type": "h3",
+        "id": "dubai-formation-benefits-faq-extra-1",
+        "text": "كيف أقيّم جدوى فتح شركة في دبي قبل دفع الرسوم؟"
+      },
+      {
+        "type": "p",
+        "content": [
+          {
+            "text": "ابدأ بالعملاء المتوقعين وطريقة تقديم الخدمة والتكاليف السنوية والسيولة اللازمة للتشغيل. قارن الإيرادات المتوقعة بالمصروفات في أكثر من سيناريو، ثم اختر مسار التأسيس الذي يخدم نشاطك ويمكنك تحمل التزاماته."
+          }
+        ]
       }
     ],
     "readingMinutes": 8,
     "sources": [],
     "publishedAt": "2026-11-04",
-    "updatedAt": "2026-11-09",
+    "updatedAt": "2026-11-22",
     "consultation": {
       "title": "هل دبي مناسبة لخطة مشروعك؟",
       "description": "احكِ لنا عن نشاطك وعملائك ومكان التشغيل لنساعدك في اختيار مسار تأسيس يناسب المشروع.",
@@ -1974,13 +2390,13 @@
     "authorSlug": "editorial-team",
     "relatedService": "/ar/تأسيس-شركة-في-دبي/",
     "publishedAt": "2026-11-05",
-    "updatedAt": "2026-11-09",
-    "takeaway": "تختلف اسعار الرخص التجارية في دبي بحسب جهة الترخيص ونوع الرخصة والنشاط المطلوب. لمعرفة المبلغ الذي ستدفعه، اطلب ثلاثة أرقام منفصلة: رسم إصدار الرخصة، وأي رسوم إضافية لإتمام الإصدار، وتكلفة التجديد. إذا كنت تقارن بين البر الرئيسي ومنطقة حرة، تأكد أولاً أن الخيارين يسمحان بالنشاط الذي تحتاجه، ثم قارن ما يشمله كل سعر.",
+    "updatedAt": "2026-11-22",
+    "takeaway": "تختلف اسعار الرخص التجارية في دبي بحسب الجهة والنشاط. من الأمثلة الرسمية مجموع 1,370 درهماً لبندي رخصة «تاجر» وعضوية الغرفة، ورسم رخصة DMCC السنوي البالغ 20,285 درهماً في جدول التأسيس القياسي. يوضح الجدول أدناه حدود كل رقم؛ راجع أهلية المتقدم والنشاط وبقية بنود التأسيس والتجديد قبل اعتماد ميزانيتك.",
     "image": {
       "type": "image",
       "kind": "hero",
-      "src": "/assets/brand/dubai-editorial/dubai-trade-licence-fees-1200.webp",
-      "srcSet": "/assets/brand/dubai-editorial/dubai-trade-licence-fees-600.webp 600w, /assets/brand/dubai-editorial/dubai-trade-licence-fees-1200.webp 1200w",
+      "src": "/assets/brand/dubai-editorial/اسعار-الرخص-التجارية-في-دبي-1200.webp",
+      "srcSet": "/assets/brand/dubai-editorial/اسعار-الرخص-التجارية-في-دبي-600.webp 600w, /assets/brand/dubai-editorial/اسعار-الرخص-التجارية-في-دبي-1200.webp 1200w",
       "width": 1200,
       "height": 1200,
       "alt": "أسعار الرخص التجارية في دبي",
@@ -1993,8 +2409,23 @@
         "paragraphs": []
       },
       {
+        "id": "verified-licence-prices",
+        "title": "أمثلة رسوم رسمية منشورة — مراجعة 22 نوفمبر 2026",
+        "paragraphs": []
+      },
+      {
         "id": "section-2",
         "title": "كيف تختلف تكلفة الرخصة بين البر الرئيسي والمنطقة الحرة؟",
+        "paragraphs": []
+      },
+      {
+        "id": "section-3",
+        "title": "الرخصة في البر الرئيسي",
+        "paragraphs": []
+      },
+      {
+        "id": "section-4",
+        "title": "الرخصة في منطقة حرة",
         "paragraphs": []
       },
       {
@@ -2011,6 +2442,31 @@
         "id": "section-7",
         "title": "أسئلة شائعة عن أسعار الرخص التجارية في دبي",
         "paragraphs": []
+      },
+      {
+        "id": "section-8",
+        "title": "هل تختلف تكلفة الرخصة إذا أضفت نشاطاً آخر؟",
+        "paragraphs": []
+      },
+      {
+        "id": "section-9",
+        "title": "هل يشمل السعر المعلن التأشيرة والمكتب؟",
+        "paragraphs": []
+      },
+      {
+        "id": "section-10",
+        "title": "كيف أحصل على تقدير يناسب نشاطي قبل الدفع؟",
+        "paragraphs": []
+      },
+      {
+        "id": "dubai-trade-licence-fees-faq-extra-1",
+        "title": "هل مبلغ 1,370 درهماً ينطبق على جميع الرخص في دبي؟",
+        "paragraphs": []
+      },
+      {
+        "id": "dubai-trade-licence-fees-faq-extra-2",
+        "title": "ما الفرق بين رسم الرخصة وتكلفة تأسيس الشركة كاملة؟",
+        "paragraphs": []
       }
     ],
     "blocks": [
@@ -2018,15 +2474,15 @@
         "type": "p",
         "content": [
           {
-            "text": "تختلف اسعار الرخص التجارية في دبي بحسب جهة الترخيص ونوع الرخصة والنشاط المطلوب. لمعرفة المبلغ الذي ستدفعه، اطلب ثلاثة أرقام منفصلة: رسم إصدار الرخصة، وأي رسوم إضافية لإتمام الإصدار، وتكلفة التجديد. إذا كنت تقارن بين البر الرئيسي ومنطقة حرة، تأكد أولاً أن الخيارين يسمحان بالنشاط الذي تحتاجه، ثم قارن ما يشمله كل سعر."
+            "text": "تختلف اسعار الرخص التجارية في دبي بحسب الجهة والنشاط. من الأمثلة الرسمية مجموع 1,370 درهماً لبندي رخصة «تاجر» وعضوية الغرفة، ورسم رخصة DMCC السنوي البالغ 20,285 درهماً في جدول التأسيس القياسي. يوضح الجدول أدناه حدود كل رقم؛ راجع أهلية المتقدم والنشاط وبقية بنود التأسيس والتجديد قبل اعتماد ميزانيتك."
           }
         ]
       },
       {
         "type": "image",
         "kind": "hero",
-        "src": "/assets/brand/dubai-editorial/dubai-trade-licence-fees-1200.webp",
-        "srcSet": "/assets/brand/dubai-editorial/dubai-trade-licence-fees-600.webp 600w, /assets/brand/dubai-editorial/dubai-trade-licence-fees-1200.webp 1200w",
+        "src": "/assets/brand/dubai-editorial/اسعار-الرخص-التجارية-في-دبي-1200.webp",
+        "srcSet": "/assets/brand/dubai-editorial/اسعار-الرخص-التجارية-في-دبي-600.webp 600w, /assets/brand/dubai-editorial/اسعار-الرخص-التجارية-في-دبي-1200.webp 1200w",
         "width": 1200,
         "height": 1200,
         "alt": "أسعار الرخص التجارية في دبي",
@@ -2064,10 +2520,53 @@
         ]
       },
       {
+        "type": "h3",
+        "text": "أمثلة رسوم رسمية منشورة — مراجعة 22 نوفمبر 2026",
+        "id": "verified-licence-prices"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "المسار أو البند",
+          "المبلغ بالدرهم الإماراتي",
+          "ماذا يشمل الرقم؟"
+        ],
+        "rows": [
+          [
+            "رخصة «تاجر» — الترخيص",
+            "1,070",
+            "رسوم الترخيص والمعرفة والابتكار وفق صفحة الخدمة الرسمية."
+          ],
+          [
+            "رخصة «تاجر» — عضوية غرفة دبي للتجارة",
+            "300",
+            "بند العضوية المذكور مع الرخصة."
+          ],
+          [
+            "مجموع البندين المنشورين لرخصة «تاجر»",
+            "1,370",
+            "1,070 + 300؛ يخص هذه الرخصة وشروط أهلية المتقدم والنشاط."
+          ],
+          [
+            "رخصة DMCC — جدول التأسيس القياسي",
+            "20,285 سنوياً",
+            "رسم الرخصة؛ تظهر رسوم الطلب والتسجيل وعقد التأسيس وبطاقة المنشأة منفصلة. وقد يتغير مع إضافة أنشطة."
+          ]
+        ]
+      },
+      {
         "type": "p",
         "content": [
           {
-            "text": "ومن الأمثلة المنشورة على البوابة رخصة «تاجر» الإلكترونية. تذكر صفحة الخدمة 1,070 درهماً للترخيص ورسوم المعرفة والابتكار، و300 درهم لعضوية غرفة دبي للتجارة، بإجمالي 1,370 درهماً لهذين البندين. المثال يخص رخصة «تاجر» بالشروط المذكورة في صفحة الخدمة. إذا كنت تقدّم من خارج الإمارات، تحقّق من أهليتك ونشاطك قبل استخدام هذا الرقم في ميزانيتك."
+            "text": "المصدر والتاريخ: بوابة «استثمر في دبي»، صفحة «طلب إصدار رخصة تجارية»، وجدول الرسوم الرسمي لمركز دبي للسلع المتعددة (DMCC)، بمراجعة 22 نوفمبر 2026. يذكر جدول DMCC أيضاً رسوم المعرفة والابتكار ضمن شروطه العامة؛ لذلك اطلب الفاتورة النهائية وتفصيل البنود والضرائب المطبقة قبل الدفع."
+          }
+        ]
+      },
+      {
+        "type": "p",
+        "content": [
+          {
+            "text": "الأرقام أعلاه أمثلة لمسارين محددين، ويُحسب إجمالي ملف شركتك بحسب النشاط والشكل القانوني والمقر والموافقات والتأشيرات وأتعاب المتابعة. إذا كنت تتقدم من خارج الإمارات، تحقّق من متطلبات الهوية والأهلية قبل اعتماد مثال رخصة «تاجر»."
           }
         ]
       },
@@ -2198,6 +2697,24 @@
         ]
       },
       {
+        "type": "p",
+        "content": [
+          {
+            "text": "لطلب تقدير يفصل رسوم الرخصة عن أتعاب المتابعة، تواصل مع فريق BSetup UAE عبر صفحة ",
+            "bold": true
+          },
+          {
+            "text": "تواصل معنا",
+            "href": "/ar/تواصل-معنا/",
+            "bold": true
+          },
+          {
+            "text": " لنرتّب الخطوة المناسبة لحالة مشروعك.",
+            "bold": true
+          }
+        ]
+      },
+      {
         "type": "h2",
         "text": "أسئلة شائعة عن أسعار الرخص التجارية في دبي",
         "id": "section-7"
@@ -2240,6 +2757,32 @@
             "text": "جهّز وصف النشاط ومكان ممارسته وأي مقر أو تأشيرات تحتاجها. اطلب بياناً مكتوباً يفصل رسوم الجهة المرخّصة عن أتعاب المتابعة ويحدد البنود التي قد تتغير بحسب نشاطك."
           }
         ]
+      },
+      {
+        "type": "h3",
+        "id": "dubai-trade-licence-fees-faq-extra-1",
+        "text": "هل مبلغ 1,370 درهماً ينطبق على جميع الرخص في دبي؟"
+      },
+      {
+        "type": "p",
+        "content": [
+          {
+            "text": "هذا مجموع بندي الترخيص وعضوية الغرفة في مثال رخصة «تاجر» المحدد بالجدول. تحقّق من أهلية المتقدم والنشاط وشروط الرخصة، واطلب بيان الرسوم للمسار الذي يناسب شركتك قبل استخدام الرقم في الميزانية."
+          }
+        ]
+      },
+      {
+        "type": "h3",
+        "id": "dubai-trade-licence-fees-faq-extra-2",
+        "text": "ما الفرق بين رسم الرخصة وتكلفة تأسيس الشركة كاملة؟"
+      },
+      {
+        "type": "p",
+        "content": [
+          {
+            "text": "رسم الرخصة بند محدد، بينما قد يضم ملف التأسيس رسوم الطلب والتسجيل وعقد التأسيس والمقر وبطاقة المنشأة وموافقات النشاط وأتعاب المتابعة. اطلب تسعير كل بند على حدة لمعرفة المبلغ الإجمالي وتكلفة التجديد."
+          }
+        ]
       }
     ],
     "readingMinutes": 4,
@@ -2248,6 +2791,18 @@
       "title": "اعرف بنود رخصتك قبل الدفع",
       "description": "حدّد نشاطك وموقعه، ونراجع معك رسوم إصدار الرخصة وما يدخل في نطاق المتابعة.",
       "href": "/ar/إصدار-رخصة-تجارية-في-دبي/#request"
-    }
+    },
+    "priceReferences": [
+      {
+        "label": "بوابة استثمر في دبي — طلب إصدار رخصة تجارية",
+        "url": "https://www.investindubai.gov.ae/ar/business-setup/business-setup-services/request-to-issue-a-trade-licence",
+        "checkedAt": "2026-11-22"
+      },
+      {
+        "label": "مركز دبي للسلع المتعددة — جدول الرسوم",
+        "url": "https://dmcc.ae/members/support/schedule-charges",
+        "checkedAt": "2026-11-22"
+      }
+    ]
   }
 ]
